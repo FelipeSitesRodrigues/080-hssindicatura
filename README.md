@@ -12,6 +12,8 @@ briefing pede pra cada uma (seções 13 a 17). A copy vem do briefing
 (`Recursos Site/BRIEFING DO PROJETO (BEM IMPORTANTE)/`); o que ele não escreve saiu da
 apresentação comercial e da proposta do Piazza (`Recursos Site/DOCS DA EMPRESA/`).
 
+Código: https://github.com/FelipeSitesRodrigues/080-hssindicatura
+
 ## Rodar
 
 ```bash
@@ -67,10 +69,13 @@ npm run serve        # http://localhost:3080 (ou dois cliques em ABRIR-SITE.bat)
   arquivos do cliente. O recorte guardava um brilho laranja escondido nos pixels
   transparentes, e o símbolo do logo uma franja vermelha e um acento solto: o
   `processar-imagens.mjs` limpa os dois toda vez.
-- **Provisórias:** as 4 fotos de "Para quem atuamos" e a da vistoria saíram do próprio mockup,
-  ampliadas por IA (Swin2SR 4x), porque as imagens das seções não vieram. As definitivas se
-  geram no mesmo chat do mockup (`../080 - HS Sindicatura/prompt-imagens-secoes.md`), vão em
-  `Recursos Site/SEÇÕES/` com o nome indicado lá, e o `npm run imagens` pega sozinho.
+- **Para quem atuamos e vistoria:** as imagens das seções não vieram. As provisórias, ampliadas
+  do mockup por IA (Swin2SR 4x), ficavam borradas e saíram em 2026-09-28: hoje são fotos do
+  Pexels em `Recursos Site/WEB/` (`publico-conselho`, `publico-administradoras`,
+  `publico-residencial`, `publico-comercial` e `vistoria`, créditos em `creditos.md`), com o
+  mesmo tratamento de cor das páginas internas. A definitiva em `Recursos Site/SEÇÕES/` (nomes
+  em `../080 - HS Sindicatura/prompt-imagens-secoes.md`) passa na frente; as provisórias do
+  mockup ficam só de reserva.
 - O fundo da seção legal (biblioteca) só aparece quando `SEÇÕES/08 - FUNDO LEGAL` existir.
 - **Páginas internas:** 8 fotos de banco de imagem livre (Unsplash e Pexels, uso comercial sem
   atribuição) em `Recursos Site/WEB/`, com os créditos em `creditos.md`. Todas recebem o mesmo
