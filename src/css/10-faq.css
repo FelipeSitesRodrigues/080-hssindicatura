@@ -1,0 +1,53 @@
+/* ---------------------------------------------------------------- dúvidas frequentes (clara)
+   Mockup: à esquerda, rótulo, título, uma linha de texto e o botão do WhatsApp (no mockup
+   ele é verde; o briefing guarda o verde só pro flutuante, então aqui é contorno
+   petróleo); à direita, o acordeão num card branco, com a primeira pergunta aberta.
+   A resposta abre pela grade (0fr -> 1fr), sem medir altura em JS e sem height: auto na
+   transição; o "+" gira e vira "x". Botão de verdade, com aria-expanded e aria-controls;
+   a resposta fechada fica inert (fora do Tab e do leitor de tela).                      */
+.faq__grade { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; gap: clamp(36px, 5vw, 80px); }
+.faq__apoio { margin-top: 16px; }
+.faq__zap { margin-top: 26px; }
+.faq__zap .i { width: 20px; height: 20px; }
+.faq__lista { padding: 8px 28px; }
+.faq__item + .faq__item { border-top: 1px solid #E6EAEE; }
+.faq__botao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 64px;
+  padding: 18px 0;
+  color: var(--petroleo);
+  font: 600 16px/1.4 var(--fonte-titulo);
+  text-align: left;
+  transition: color .25s ease;
+}
+.faq__mais { position: relative; flex: none; width: 28px; height: 28px; border-radius: 50%; background: #FBF3E6; transition: background-color .3s ease; }
+.faq__mais::before, .faq__mais::after { content: ''; position: absolute; top: 50%; left: 50%; width: 12px; height: 2px; margin: -1px 0 0 -6px; border-radius: 2px; background: var(--dourado-tinta); transition: transform .45s var(--ease-out); }
+.faq__mais::after { transform: rotate(90deg); }
+/* aberto: o + gira e vira x (giram os traços, não a bolinha, que não passa da caixa) */
+.faq__item--aberto .faq__mais { background: #F6E6CB; }
+.faq__item--aberto .faq__mais::before { transform: rotate(45deg); }
+.faq__item--aberto .faq__mais::after { transform: rotate(135deg); }
+@media (hover: hover) {
+  .faq__botao:hover { color: #0B3A56; }
+  .faq__botao:hover .faq__mais { background: #F6E6CB; }
+}
+.faq__resposta { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .5s var(--ease-out); }
+.js .faq__item:not(.faq__item--aberto) .faq__resposta { grid-template-rows: 0fr; }
+.faq__miolo { min-height: 0; overflow: hidden; }
+.faq__miolo p { padding: 0 44px 22px 0; color: var(--grafite); font-size: 15.5px; line-height: 1.7; transition: opacity .35s ease, transform .45s var(--ease-out); }
+.js .faq__item:not(.faq__item--aberto) .faq__miolo p { opacity: 0; transform: translateY(-6px); }
+.faq__item--aberto .faq__miolo p { transition-delay: .08s; }
+
+@media (max-width: 63.99em) {
+  .faq__grade { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+}
+@media (max-width: 39.99em) {
+  .faq__lista { padding: 4px 18px; }
+  .faq__botao { font-size: 15.5px; }
+  .faq__miolo p { padding-right: 0; font-size: 15px; }
+  .faq__zap { width: 100%; }
+}

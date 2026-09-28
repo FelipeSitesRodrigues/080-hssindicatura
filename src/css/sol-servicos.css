@@ -1,0 +1,88 @@
+/* ---------------------------------------------------------------- as 6 frentes da página Soluções
+   Uma seção por frente, alternando claro e escuro (o ritmo da Home). À esquerda, o número,
+   o ícone e o nome, o "o que é" e os botões: o WhatsApp com a mensagem daquela frente (regra
+   da casa) e o diagnóstico. No computador essa coluna acompanha a leitura (sticky).
+   À direita, o painel: "O que resolve" e "Como funciona" lado a lado e, embaixo, a folha
+   dos entregáveis, branca como o relatório da Home, com o símbolo HS no topo e os itens
+   marcados. No escuro a folha continua branca: é o papel que o conselho recebe.
+   Entrada: os blocos sobem em sequência, os passos crescem e as marcas da folha aparecem
+   uma depois da outra. Tudo em transform e opacity.                                   */
+.servico__grade { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; gap: clamp(36px, 5vw, 80px); }
+.servico__intro { position: sticky; top: calc(var(--altura-topo) + 40px); }
+.servico__num { display: flex; align-items: baseline; gap: 10px; font-family: var(--fonte-titulo); }
+.servico__n { color: var(--cor-destaque); font-size: 15px; font-weight: 700; letter-spacing: .14em; }
+.servico__de { color: var(--cor-texto); font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.servico__cab { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
+.servico__nome { font-size: clamp(24px, .9rem + 1vw, 32px); }
+.servico__oque { max-width: 32em; margin-top: 20px; color: var(--cor-texto); font-size: 16.5px; line-height: 1.7; }
+.servico__oque strong { color: var(--cor-forte); font-weight: 600; }
+.servico__botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+.servico__painel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.servico__bloco { padding: 24px 24px 26px; border-radius: var(--raio-card); }
+.secao--clara .servico__bloco { border: 1px solid #E4E9ED; background: var(--branco); box-shadow: 0 1px 2px rgb(3 25 38 / .04), 0 14px 34px -24px rgb(3 25 38 / .28); }
+.secao--escura .servico__bloco { border: 1px solid var(--vidro-borda); background: linear-gradient(180deg, rgb(255 255 255 / .055), rgb(255 255 255 / .022)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .05), 0 18px 40px -30px rgb(0 0 0 / .8); }
+.servico__sub { display: flex; align-items: center; gap: 10px; color: var(--cor-titulo); font: 700 12.5px/1.3 var(--fonte-titulo); letter-spacing: .12em; text-transform: uppercase; }
+.servico__sub .i { width: 22px; height: 22px; color: var(--cor-icone); }
+.servico__lista { display: grid; gap: 14px; margin-top: 18px; }
+.servico__item, .servico__passo { display: flex; align-items: flex-start; gap: 12px; color: var(--cor-texto); font-size: 15px; line-height: 1.55; }
+.servico__item-i { width: 20px; height: 20px; margin-top: 2px; color: #8C98A2; }
+.secao--escura .servico__item-i { color: rgb(255 255 255 / .42); }
+.servico__passo-n { width: 26px; height: 28px; margin-top: -2px; font-size: 12.5px; }
+
+/* a folha dos entregáveis: sempre papel branco, com as cores do claro */
+.folha {
+  --cor-titulo: var(--petroleo);
+  --cor-texto: var(--grafite);
+  --cor-icone: var(--dourado-tinta);
+  --cor-foco: var(--petroleo);
+  grid-column: 1 / -1;
+  position: relative;
+  padding: 22px 26px 26px;
+  border: 1px solid #E4E9ED;
+  border-top: 3px solid var(--dourado);
+  border-radius: 6px;
+  background: linear-gradient(180deg, #FFFFFF, #FBFCFD);
+  color: var(--grafite);
+  box-shadow: 0 30px 60px -36px rgb(3 25 38 / .55), 0 1px 2px rgb(3 25 38 / .05);
+}
+.secao--escura .servico__bloco.folha { border-color: transparent; border-top-color: var(--dourado); background: linear-gradient(180deg, #FFFFFF, #F7F9FA); box-shadow: 0 34px 70px -34px rgb(0 0 0 / .9); }
+.folha__topo { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #E8ECEF; }
+.folha__logo { width: 28px; }
+.folha__titulo { color: var(--petroleo); font: 700 15px/1.2 var(--fonte-titulo); }
+.folha__tag { margin-left: auto; padding: 4px 10px; border-radius: 999px; background: #F1F4F6; color: #56626C; font: 600 11.5px/1.2 var(--fonte-titulo); white-space: nowrap; }
+.folha__lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 24px; margin-top: 16px; }
+.folha__lista li { display: flex; align-items: flex-start; gap: 10px; color: var(--petroleo); font-size: 14.5px; font-weight: 500; line-height: 1.45; }
+.folha__i { width: 20px; height: 20px; margin-top: 0; color: var(--dourado-tinta); }
+
+@keyframes folha-marca { from { opacity: 0; transform: scale(.4); } }
+@media (prefers-reduced-motion: no-preference) {
+  .js .servico__painel.visivel .servico__passo-n { animation: cresce .55s var(--ease-out) calc(var(--i, 0) * 120ms + 300ms) backwards; }
+  .js .servico__painel.visivel .folha__i { animation: folha-marca .5s var(--ease-out) calc(var(--i, 0) * 110ms + 520ms) backwards; }
+}
+
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .servico__grade { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); }
+  .servico__bloco { padding: 22px 20px 24px; }
+  .folha { padding: 20px 22px 24px; }
+}
+/* tablet e celular: a coluna do nome em cima (sem sticky) e o painel embaixo */
+@media (max-width: 63.99em) {
+  .servico__grade { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .servico__intro { position: static; }
+  .servico__oque { max-width: 40em; }
+}
+@media (max-width: 39.99em) {
+  .servico__cab { gap: 14px; }
+  .servico__icone.icone-bola, .servico__icone.icone-caixa { width: 54px; height: 54px; }
+  .servico__nome { font-size: min(26px, 7.2vw); }
+  .servico__oque { font-size: 16px; }
+  .servico__botoes { display: grid; }
+  .servico__botoes .btn { width: 100%; }
+  .servico__painel { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .servico__bloco { padding: 22px 20px 24px; }
+  .folha { padding: 18px 18px 22px; }
+  .folha__topo { flex-wrap: wrap; }
+  .folha__tag { margin-left: 0; }
+  .folha__lista { grid-template-columns: minmax(0, 1fr); }
+}

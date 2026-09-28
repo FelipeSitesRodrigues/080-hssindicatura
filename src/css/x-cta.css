@@ -1,0 +1,30 @@
+/* ---------------------------------------------------------------- convite final das páginas internas (escura, com foto)
+   As torres do hero bem escurecidas no fundo (a mesma foto do contato da Home), o rótulo,
+   o título com o destaque dourado, uma linha de apoio e os dois botões à direita. O
+   WhatsApp flutuante some aqui (data-zap-some): os botões já levam pra ele.
+   No celular, os botões descem e ocupam a largura toda.                                 */
+.cta-final { overflow: clip; box-shadow: inset 0 1px 0 rgb(201 148 60 / .3); }
+.cta-final__fundo { position: absolute; inset: 0; z-index: -1; }
+.cta-final__fundo picture, .cta-final__fundo img { display: block; width: 100%; height: 100%; max-width: none; }
+.cta-final__fundo img { object-fit: cover; object-position: 50% 40%; }
+.cta-final__fundo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(3 25 38 / .95) 0%, rgb(3 25 38 / .82) 50%, rgb(3 25 38 / .66) 100%),
+    linear-gradient(180deg, var(--petroleo) 0%, rgb(3 25 38 / 0) 24%, rgb(3 25 38 / 0) 76%, var(--petroleo) 100%);
+}
+.cta-final__grade { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 32px clamp(40px, 6vw, 96px); }
+.cta-final__titulo { max-width: 20em; }
+.cta-final__apoio { margin-top: 16px; max-width: 36em; }
+.cta-final__botoes { display: flex; flex-wrap: wrap; gap: 14px; }
+.cta-final__botoes .btn { min-height: 56px; padding-inline: 28px; }
+
+@media (max-width: 63.99em) {
+  .cta-final__grade { grid-template-columns: minmax(0, 1fr); align-items: start; }
+}
+@media (max-width: 39.99em) {
+  .cta-final__botoes { display: grid; }
+  .cta-final__botoes .btn { width: 100%; }
+}

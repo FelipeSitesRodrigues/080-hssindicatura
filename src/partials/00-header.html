@@ -1,0 +1,30 @@
+  <header class="topo" id="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="{{inicio}}" aria-label="HS Sindicatura, voltar ao início">
+        <img data-img="logo-hs" data-img-max="96" sizes="(min-width: 64em) 42px, 36px" alt="" class="marca__simbolo">
+        <span class="marca__nome" aria-hidden="true">Sindicatura</span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul class="menu__lista" role="list">
+          <li><a href="/" data-pag="home">Home</a></li>
+          <li><a href="/solucoes" data-pag="solucoes">Soluções</a></li>
+          <li><a href="/para-condominios" data-pag="condominios">Para Condomínios</a></li>
+          <li><a href="/para-administradoras" data-pag="administradoras">Para Administradoras</a></li>
+          <li><a href="/sobre" data-pag="sobre">Sobre</a></li>
+          <li><a href="/contato" data-pag="contato">Contato</a></li>
+        </ul>
+        <div class="menu__extra">
+          <a class="btn btn--dourado menu__cta" href="{{wa:proposta}}" target="_blank" rel="noopener" data-zap="menu-celular">Solicitar proposta<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+          <a class="menu__fone" href="{{wa:danilo}}" target="_blank" rel="noopener" data-zap="menu-celular-fone"><i data-i="whatsapp-logo" data-w="light"></i>{{cfg.whatsappExibir}}</a>
+          <p class="menu__rodape">Síndico profissional · {{cfg.regiao}}</p>
+        </div>
+      </nav>
+
+      <a class="btn btn--dourado topo__cta" href="{{wa:proposta}}" target="_blank" rel="noopener" data-zap="topo">Solicitar proposta<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+
+      <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span class="topo__menu-linhas" aria-hidden="true"><span></span></span>
+      </button>
+    </div>
+  </header>

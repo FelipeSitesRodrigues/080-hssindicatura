@@ -1,0 +1,141 @@
+/* ---------------------------------------------------------------- desempenho (base do 076 ao 079)
+   content-visibility: o navegador só faz layout e pintura de cada seção abaixo do hero
+   quando ela chega perto da tela. No carregamento o trabalho fica no hero, e o LCP (a foto
+   das torres) não espera a página inteira.
+
+   Fica de fora a seção "Como reportamos" (.provas): a folha do relatório passa da base
+   dela e entra no fundador, e a contenção de pintura do content-visibility recortaria a
+   folha.
+
+   A altura reservada é a do CONTEÚDO: o navegador soma o padding da seção por cima (bug do
+   076). Os números saem do scripts/alturas.mjs (1440, 1100, 800 e 390). Estimativa errada
+   faz a âncora do menu mirar longe; o _base.js desenha tudo no primeiro clique e confere no
+   fim da rolagem. O "auto" faz o navegador guardar a altura de verdade depois da primeira
+   vez. Mudou muito o tamanho de uma seção? Rodar o alturas.mjs e atualizar aqui.        */
+.desafios, .solucoes, .metodo, .publicos, .diferenciais, .antes-depois, .jardim, .legal, .fundador, .faq, .contato, .rodape { content-visibility: auto; }
+/* celular: no primeiro quadro a seção logo abaixo do hero fica pulada de vez (o script do
+   <head> tira a classe na primeira pintura, memória do 079) */
+@media (max-width: 63.99em) {
+  .js-abrindo .desafios { content-visibility: hidden; }
+  /* no celular a folha do relatório não invade a seção seguinte: a seção entra no pulo também */
+  .provas { content-visibility: auto; contain-intrinsic-size: auto 1480px; }
+  .cv-pronto .provas { content-visibility: visible; }
+}
+/* no primeiro clique numa âncora (_base.js) tudo é desenhado de uma vez */
+.cv-pronto :is(.desafios, .solucoes, .metodo, .publicos, .diferenciais, .antes-depois, .jardim, .legal, .fundador, .faq, .contato, .rodape) { content-visibility: visible; }
+
+.desafios { contain-intrinsic-size: auto 530px; }
+.solucoes { contain-intrinsic-size: auto 663px; }
+.metodo { contain-intrinsic-size: auto 510px; }
+.publicos { contain-intrinsic-size: auto 526px; }
+.diferenciais { contain-intrinsic-size: auto 452px; }
+.antes-depois { contain-intrinsic-size: auto 715px; }
+.jardim { contain-intrinsic-size: auto 661px; }
+.legal { contain-intrinsic-size: auto 365px; }
+.fundador { contain-intrinsic-size: auto 1306px; }
+.faq { contain-intrinsic-size: auto 469px; }
+.contato { contain-intrinsic-size: auto 512px; }
+.rodape { contain-intrinsic-size: auto 329px; }
+
+@media (max-width: 79.99em) {
+  .desafios { contain-intrinsic-size: auto 538px; }
+  .solucoes { contain-intrinsic-size: auto 780px; }
+  .metodo { contain-intrinsic-size: auto 561px; }
+  .publicos { contain-intrinsic-size: auto 535px; }
+  .diferenciais { contain-intrinsic-size: auto 533px; }
+  .antes-depois { contain-intrinsic-size: auto 608px; }
+  .jardim { contain-intrinsic-size: auto 567px; }
+  .legal { contain-intrinsic-size: auto 406px; }
+  .fundador { contain-intrinsic-size: auto 1357px; }
+  .faq { contain-intrinsic-size: auto 522px; }
+  .contato { contain-intrinsic-size: auto 512px; }
+  .rodape { contain-intrinsic-size: auto 321px; }
+}
+@media (max-width: 63.99em) {
+  .desafios { contain-intrinsic-size: auto 976px; }
+  .solucoes { contain-intrinsic-size: auto 1087px; }
+  .metodo { contain-intrinsic-size: auto 918px; }
+  .publicos { contain-intrinsic-size: auto 947px; }
+  .diferenciais { contain-intrinsic-size: auto 903px; }
+  .antes-depois { contain-intrinsic-size: auto 559px; }
+  .jardim { contain-intrinsic-size: auto 587px; }
+  .legal { contain-intrinsic-size: auto 684px; }
+  .fundador { contain-intrinsic-size: auto 2111px; }
+  .faq { contain-intrinsic-size: auto 735px; }
+  .contato { contain-intrinsic-size: auto 903px; }
+  .rodape { contain-intrinsic-size: auto 717px; }
+}
+@media (max-width: 39.99em) {
+  .desafios { contain-intrinsic-size: auto 1543px; }
+  .solucoes { contain-intrinsic-size: auto 2073px; }
+  .metodo { contain-intrinsic-size: auto 1182px; }
+  .publicos { contain-intrinsic-size: auto 1910px; }
+  .diferenciais { contain-intrinsic-size: auto 992px; }
+  .antes-depois { contain-intrinsic-size: auto 842px; }
+  .jardim { contain-intrinsic-size: auto 747px; }
+  .legal { contain-intrinsic-size: auto 1036px; }
+  .fundador { contain-intrinsic-size: auto 2828px; }
+  .faq { contain-intrinsic-size: auto 908px; }
+  .contato { contain-intrinsic-size: auto 1236px; }
+  .rodape { contain-intrinsic-size: auto 905px; }
+}
+
+/* ---------------------------------------------------------------- páginas internas
+   O mesmo pulo nas seções abaixo do topo das outras páginas (as mais longas, Soluções e
+   Sobre, passam de 10 mil px no celular). Alturas do scripts/alturas.mjs; nas seções que se
+   repetem (as 6 frentes, os 3 tipos), a média. As dúvidas, a base legal e o rodapé já estão
+   acima, com as medidas da Home, que quase não mudam.                                   */
+.servico, .comeco, .cta-final, .tipo, .conselho, .papeis, .integracao, .quem, .mvvs, .governanca { content-visibility: auto; }
+.cv-pronto :is(.servico, .comeco, .cta-final, .tipo, .conselho, .papeis, .integracao, .quem, .mvvs, .governanca) { content-visibility: visible; }
+
+.servico { contain-intrinsic-size: auto 533px; }
+.comeco { contain-intrinsic-size: auto 428px; }
+.cta-final { contain-intrinsic-size: auto 176px; }
+.tipo { contain-intrinsic-size: auto 660px; }
+.conselho { contain-intrinsic-size: auto 595px; }
+.papeis { contain-intrinsic-size: auto 579px; }
+.integracao { contain-intrinsic-size: auto 765px; }
+.quem { contain-intrinsic-size: auto 614px; }
+.fundador--pagina { contain-intrinsic-size: auto 1107px; }
+.mvvs { contain-intrinsic-size: auto 391px; }
+.governanca { contain-intrinsic-size: auto 647px; }
+
+@media (max-width: 79.99em) {
+  .servico { contain-intrinsic-size: auto 582px; }
+  .comeco { contain-intrinsic-size: auto 460px; }
+  .cta-final { contain-intrinsic-size: auto 180px; }
+  .tipo { contain-intrinsic-size: auto 713px; }
+  .conselho { contain-intrinsic-size: auto 650px; }
+  .papeis { contain-intrinsic-size: auto 558px; }
+  .integracao { contain-intrinsic-size: auto 774px; }
+  .quem { contain-intrinsic-size: auto 609px; }
+  .fundador--pagina { contain-intrinsic-size: auto 1272px; }
+  .mvvs { contain-intrinsic-size: auto 456px; }
+  .governanca { contain-intrinsic-size: auto 696px; }
+}
+@media (max-width: 63.99em) {
+  .servico { contain-intrinsic-size: auto 807px; }
+  .comeco { contain-intrinsic-size: auto 792px; }
+  .cta-final { contain-intrinsic-size: auto 236px; }
+  .tipo { contain-intrinsic-size: auto 1036px; }
+  .conselho { contain-intrinsic-size: auto 958px; }
+  .papeis { contain-intrinsic-size: auto 982px; }
+  .integracao { contain-intrinsic-size: auto 1172px; }
+  .quem { contain-intrinsic-size: auto 974px; }
+  .fundador--pagina { contain-intrinsic-size: auto 1739px; }
+  .mvvs { contain-intrinsic-size: auto 797px; }
+  .governanca { contain-intrinsic-size: auto 1059px; }
+}
+@media (max-width: 39.99em) {
+  .servico { contain-intrinsic-size: auto 1222px; }
+  .comeco { contain-intrinsic-size: auto 1016px; }
+  .cta-final { contain-intrinsic-size: auto 364px; }
+  .tipo { contain-intrinsic-size: auto 1319px; }
+  .conselho { contain-intrinsic-size: auto 1119px; }
+  .papeis { contain-intrinsic-size: auto 1172px; }
+  .integracao { contain-intrinsic-size: auto 1771px; }
+  .quem { contain-intrinsic-size: auto 1398px; }
+  .fundador--pagina { contain-intrinsic-size: auto 2402px; }
+  .mvvs { contain-intrinsic-size: auto 975px; }
+  .governanca { contain-intrinsic-size: auto 1698px; }
+}

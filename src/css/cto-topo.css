@@ -1,0 +1,93 @@
+/* ---------------------------------------------------------------- topo da página Contato (escura, com o formulário)
+   O mesmo fundo do topo das outras páginas. À esquerda, as migalhas, o rótulo, o título,
+   a linha de apoio e os canais (WhatsApp, e-mail, Instagram, região e horário); à direita,
+   o formulário completo do briefing (nome, condomínio, cidade, tipo, unidades, WhatsApp e
+   mensagem), que abre o WhatsApp com tudo escrito (11-contato.js). Em cima dele, a escolha
+   entre agendar o diagnóstico e pedir a proposta: o botão e a mensagem mudam junto.
+   No celular: título, apoio, formulário e depois os canais.                           */
+.ptopo--contato .ptopo__grade {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  grid-template-rows: auto auto auto auto auto 1fr;
+  grid-template-areas:
+    'migalhas migalhas'
+    'rotulo form'
+    'titulo form'
+    'sub form'
+    'canais form'
+    '. form';
+  align-items: start;
+}
+.ptopo--contato::before { top: 56%; left: calc(50% + .24 * min(var(--container), 100% - var(--margem) * 2)); width: min(820px, 62vw); }
+.cto__canais { grid-area: canais; margin-top: 32px; }
+.cto__form { grid-area: form; min-width: 0; }
+/* o lugar do formulário até ele entrar (11-contato.js): a altura dele montado, medida em cada
+   faixa de tela, pra nada pular */
+.cto__form:not(.cto__form--montado) { min-height: 704px; }
+@media (max-width: 63.99em) {
+  .cto__form:not(.cto__form--montado) { min-height: 684px; }
+}
+@media (max-width: 39.99em) {
+  .cto__form:not(.cto__form--montado) { min-height: 699px; }
+}
+@media (max-width: 29.99em) {
+  .cto__form:not(.cto__form--montado) { min-height: 960px; }
+}
+@media (max-width: 21.24em) {
+  .cto__form:not(.cto__form--montado) { min-height: 1003px; }
+}
+
+/* agendar diagnóstico ou solicitar proposta */
+.form__assunto { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-inline-size: 0; margin-top: 16px; padding: 5px; border: 1px solid #DCE3E8; border-radius: 9px; background: #F1F4F6; }
+.assunto { position: relative; display: block; cursor: pointer; }
+.assunto input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.assunto span { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 10px; border-radius: 6px; color: #56626C; font: 600 14px/1.2 var(--fonte-titulo); text-align: center; transition: background-color .25s ease, color .25s ease, box-shadow .25s ease; }
+.assunto input:checked + span { background: var(--branco); color: var(--petroleo); box-shadow: 0 1px 2px rgb(3 25 38 / .08), 0 4px 12px -6px rgb(3 25 38 / .25); }
+.assunto input:focus-visible + span { outline: 2px solid var(--petroleo); outline-offset: 2px; }
+@media (hover: hover) {
+  .assunto:hover input:not(:checked) + span { color: var(--petroleo); }
+}
+
+/* mensagem (a única caixa de texto do site) */
+.campo--largo { grid-column: 1 / -1; }
+.campo__opcional { color: #6B7680; font-weight: 400; }
+.campo textarea {
+  width: 100%;
+  min-height: 96px;
+  padding: 12px 14px;
+  border: 1px solid #CBD4DB;
+  border-radius: 7px;
+  background: #FBFCFD;
+  color: var(--petroleo);
+  font: 400 15.5px/1.5 var(--fonte-texto);
+  resize: vertical;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.campo textarea::placeholder { color: #6B7680; opacity: 1; }
+.campo textarea:focus-visible { outline: none; border-color: var(--petroleo); background: var(--branco); box-shadow: 0 0 0 3px rgb(201 148 60 / .35); }
+@media (hover: hover) {
+  .campo textarea:hover { border-color: #9FAEB9; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cto__canais { animation: topo-sobe .9s var(--ease-suave) .46s backwards; }
+  .cto__form { animation: topo-sobe 1s var(--ease-suave) .3s backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .ptopo--contato .ptopo__grade { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: 'migalhas' 'rotulo' 'titulo' 'sub' 'form' 'canais'; }
+  .ptopo--contato::before { top: 30%; left: 50%; }
+  .ptopo--contato .ptopo__sub { margin-top: 18px; }
+  .cto__form { margin-top: 28px; }
+  .cto__canais { margin-top: 36px; }
+}
+@media (max-width: 63.99em) and (prefers-reduced-motion: no-preference) {
+  .cto__form { animation-duration: .7s; animation-delay: .2s; }
+  .cto__canais { animation-duration: .7s; animation-delay: .3s; }
+}
+@media (min-width: 40em) and (max-width: 63.99em) {
+  .cto__form { max-width: 640px; }
+}
+@media (max-width: 39.99em) {
+  .campo textarea { font-size: 16px; }
+  .assunto span { font-size: 13.5px; }
+}

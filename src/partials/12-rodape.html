@@ -1,0 +1,48 @@
+  <footer class="rodape" id="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca">
+          <a class="marca" href="{{inicio}}" aria-label="HS Sindicatura, voltar ao início">
+            <img data-img="logo-hs" data-img-max="96" sizes="48px" alt="" class="marca__simbolo rodape__simbolo" loading="lazy" decoding="async">
+            <span class="marca__nome" aria-hidden="true"><span class="marca__hs">HS</span> Sindicatura</span>
+          </a>
+          <p class="rodape__frase">Gestão condominial com método, governança e responsabilidade.</p>
+          <a class="rodape__insta" href="{{cfg.instagramUrl}}" target="_blank" rel="noopener" aria-label="Instagram da HS Sindicatura (@{{cfg.instagram}})"><i data-i="instagram-logo" data-w="light"></i></a>
+        </div>
+
+        <nav class="rodape__col" aria-label="Navegação do rodapé">
+          <h2 class="rodape__titulo">Navegação</h2>
+          <ul role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/solucoes">Soluções</a></li>
+            <li><a href="/para-condominios">Para Condomínios</a></li>
+            <li><a href="/para-administradoras">Para Administradoras</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Soluções</h2>
+          <ul role="list">
+              <!-- @solucoes-rodape -->
+          </ul>
+        </div>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Contato</h2>
+          <ul class="rodape__contato" role="list">
+            <li><a href="{{wa:danilo}}" target="_blank" rel="noopener" data-zap="rodape"><i data-i="whatsapp-logo" data-w="light"></i>{{cfg.whatsappExibir}}</a></li>
+            <li><a href="mailto:{{cfg.email}}"><i data-i="envelope-simple" data-w="light"></i>{{cfg.email}}</a></li>
+            <li><a href="{{cfg.instagramUrl}}" target="_blank" rel="noopener"><i data-i="instagram-logo" data-w="light"></i>@{{cfg.instagram}}</a></li>
+            <li><i data-i="map-pin" data-w="light"></i>{{cfg.regiao}}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p class="rodape__copy">© {{ano}} HS Sindicatura · Todos os direitos reservados.</p>
+        <p class="rodape__credito">Site por <a href="{{cfg.credito}}" target="_blank" rel="noopener">Credialta Sites</a></p>
+      </div>
+    </div>
+  </footer>

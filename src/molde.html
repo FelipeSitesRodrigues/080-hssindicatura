@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- @preload-hero -->
+  <script>
+    // js: liga as animações. js-abrindo: no celular a seção logo abaixo do hero só é montada
+    // depois da primeira pintura, pra não disputar a primeira pintura com o hero
+    // (99-desempenho.css, memória do 079). Sai na primeira pintura ou em 2,5 s.
+    (function () {
+      var h = document.documentElement
+      h.classList.add('js', 'js-abrindo')
+      var pronto = function () { h.classList.remove('js-abrindo') }
+      try {
+        new PerformanceObserver(function (l) { if (l.getEntriesByName('first-contentful-paint').length) pronto() }).observe({ type: 'paint', buffered: true })
+      } catch (e) { pronto() }
+      setTimeout(pronto, 2500)
+    })()
+  </script>
+  <title>{{pag.titulo}}</title>
+  <meta name="description" content="{{pag.descricao}}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#031926">
+  <meta name="format-detection" content="telephone=no">
+  <!-- @meta-dominio -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HS Sindicatura">
+  <meta property="og:title" content="{{pag.ogTitulo}}">
+  <meta property="og:description" content="{{pag.ogDescricao}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{pag.ogAlt}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
+  <!-- @head-parciais -->
+  <!-- @css -->
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <!-- @parcial 00-header -->
+
+  <main id="conteudo">
+<!-- @conteudo -->
+  </main>
+
+  <!-- @parcial 12-rodape -->
+
+  <a class="zap-flutuante" href="{{wa:{{pag.zap}}}}" target="_blank" rel="noopener" data-zap="flutuante" aria-label="Falar com a HS Sindicatura pelo WhatsApp"><i data-i="whatsapp-logo" data-w="regular"></i></a>
+
+  <!-- @sprite -->
+  <!-- @schema -->
+  <!-- @js -->
+</body>
+</html>

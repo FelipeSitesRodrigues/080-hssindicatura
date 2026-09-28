@@ -1,0 +1,66 @@
+/* ---------------------------------------------------------------- como começa (clara)
+   As 5 etapas da apresentação comercial da HS (reunião de cerca de 1 hora, visita técnica,
+   proposta em até 48 horas, assembleia e transição assistida de cerca de 30 dias), numa
+   linha ligada por um fio dourado que passa atrás dos hexágonos numerados. Embaixo, a
+   regra do Código Civil sobre a escolha do síndico (art. 1.347).
+   Entrada: o fio se desenha da esquerda pra direita e os hexágonos crescem um depois do
+   outro. No celular, linha do tempo vertical (o fio desce).                           */
+.etapas { --vao: 28px; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--vao); }
+.etapas::before {
+  content: '';
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  /* termina no centro do último hexágono */
+  right: calc((100% - 4 * var(--vao)) / 5 - 20px);
+  height: 1.5px;
+  background: linear-gradient(90deg, rgb(167 118 43 / .75), rgb(167 118 43 / .25));
+  transform-origin: 0 50%;
+}
+.etapa { position: relative; display: grid; align-content: start; justify-items: start; }
+.etapa__hex { width: 40px; height: 44px; font-size: 15px; }
+.etapa__prazo { margin-top: 18px; padding: 5px 10px; border-radius: 999px; background: #FBF3E6; color: #6E4A10; font: 600 11.5px/1.2 var(--fonte-titulo); letter-spacing: .02em; }
+.etapa__nome { margin-top: 12px; color: var(--petroleo); font: 700 16.5px/1.25 var(--fonte-titulo); }
+.etapa__desc { margin-top: 6px; color: var(--texto-2); font-size: 14.5px; line-height: 1.55; }
+
+.comeco__lei {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 60em;
+  margin-top: clamp(32px, 3.4vw, 44px);
+  padding: 16px 20px;
+  border: 1px solid var(--fio-claro);
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  color: var(--grafite);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.comeco__lei-i { width: 24px; height: 24px; color: var(--dourado-tinta); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .etapas.visivel::before { animation: risca-x 1.5s var(--ease-in-out) .15s backwards; }
+  .js .etapas.visivel .etapa__hex { animation: cresce .6s var(--ease-out) calc(var(--i, 0) * 140ms + 150ms) backwards; }
+}
+
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .etapas { --vao: 20px; }
+  .etapa__desc { font-size: 14px; }
+}
+/* tablet e celular: linha do tempo vertical */
+@media (max-width: 63.99em) {
+  .etapas { --vao: 26px; grid-template-columns: minmax(0, 1fr); }
+  /* um trecho de fio por etapa, do hexágono até o próximo */
+  .etapas::before { display: none; }
+  .etapa:not(:last-child)::after { content: ''; position: absolute; top: 48px; bottom: calc(-1 * var(--vao) + 4px); left: 19px; width: 1.5px; background: linear-gradient(180deg, rgb(167 118 43 / .75), rgb(167 118 43 / .3)); transform-origin: 50% 0; }
+  .etapa { grid-template-columns: 40px minmax(0, 1fr); column-gap: 18px; }
+  .etapa__hex { grid-row: 1 / span 3; }
+  .etapa > :not(.etapa__hex) { grid-column: 2; }
+  .etapa__prazo { justify-self: start; margin-top: 2px; }
+  .etapa__nome { margin-top: 8px; font-size: 17px; }
+  .etapa__desc { font-size: 15px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .js .etapas.visivel .etapa::after { animation: risca-y .6s var(--ease-in-out) calc(var(--i, 0) * 140ms + 350ms) backwards; }
+  }
+}

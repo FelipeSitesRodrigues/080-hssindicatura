@@ -1,0 +1,25 @@
+    <!-- Jardim renovado: as fotos reais passando sem parar, de ponta a ponta da tela. Para no
+         hover, no botão de pausa e fora da tela; com "reduzir movimento" (ou sem JS) vira uma
+         faixa que rola com o dedo. -->
+    <section class="secao secao--clara jardim" id="jardim-renovado" aria-labelledby="jardim-titulo">
+      <div class="container cab jardim__cab">
+        <div data-revela>
+          <p class="rotulo">Jardim renovado</p>
+          <h2 class="titulo" id="jardim-titulo">Conservação das áreas comuns, <span class="destaque">na prática.</span></h2>
+        </div>
+        <div class="cab__lado" data-revela style="--i:1">
+          <p class="apoio">Fotos reais do jardim de um condomínio depois que a HS assumiu a gestão. O paisagismo entra na rotina de manutenção, com fornecedor definido e acompanhamento, como qualquer outro serviço do condomínio.</p>
+        </div>
+      </div>
+
+      <div class="jardim__faixa" id="jardim-faixa" role="region" aria-label="Fotos do jardim renovado" data-revela="aparece">
+        <div class="jardim__trilho">
+          <!-- @jardim -->
+        </div>
+      </div>
+
+      <div class="container jardim__pe" data-revela>
+        <a class="btn btn--dourado jardim__cta" href="{{wa:jardim}}" data-zap="jardim">Solicitar proposta<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+        <button class="jardim__pausa" type="button" aria-controls="jardim-faixa" aria-label="Pausar as fotos do jardim"><i data-i="pause" data-w="fill" class="jardim__i-pausa"></i><i data-i="play" data-w="fill" class="jardim__i-toca"></i><span class="jardim__pausa-texto">Pausar</span></button>
+      </div>
+    </section>

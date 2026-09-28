@@ -1,0 +1,49 @@
+/* ---------------------------------------------------------------- missão, visão e valores (Sobre, clara)
+   Na Home eles ficam na coluna ao lado do fundador; aqui ganham seção própria: três cartões
+   brancos com o filete dourado em cima, o hexágono em contorno (o selo do fundador) e, no
+   canto, um hexágono grande em fio fino, cortado pela borda. Os valores viram etiquetas.  */
+.mvvs__grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.mvvs__card {
+  position: relative;
+  overflow: clip;
+  padding: 30px 28px 32px;
+  border: 1px solid #E4E9ED;
+  border-top: 3px solid var(--dourado);
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  box-shadow: 0 1px 2px rgb(3 25 38 / .04), 0 14px 34px -24px rgb(3 25 38 / .28);
+  transition: transform .45s var(--ease-out), box-shadow .45s var(--ease-out);
+}
+.mvvs__card::after {
+  content: '';
+  position: absolute;
+  right: -64px;
+  bottom: -72px;
+  width: 230px;
+  aspect-ratio: 100 / 112;
+  background: rgb(167 118 43 / .3);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 97.6 29.5v53L50 110 2.4 82.5v-53Z' fill='none' stroke='%23000' stroke-width='.8'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 97.6 29.5v53L50 110 2.4 82.5v-53Z' fill='none' stroke='%23000' stroke-width='.8'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+/* o conteúdo passa por cima do fio */
+.mvvs__card > * { position: relative; z-index: 1; }
+.mvvs__hex { width: 48px; height: 52px; color: var(--dourado-tinta); }
+.mvvs__hex::before { background: var(--dourado-tinta); }
+.mvvs__hex .i { width: 22px; height: 22px; }
+.mvvs__nome { margin-top: 18px; color: var(--petroleo); font: 700 14px/1.2 var(--fonte-titulo); letter-spacing: .12em; text-transform: uppercase; }
+.mvvs__texto { margin-top: 12px; color: var(--petroleo); font: 600 18px/1.45 var(--fonte-titulo); }
+.mvvs__valores { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.mvvs__valores li { padding: 6px 12px; border: 1px solid rgb(167 118 43 / .3); border-radius: 999px; background: #FBF3E6; color: #6E4A10; font: 600 13px/1.2 var(--fonte-titulo); }
+@media (hover: hover) {
+  .mvvs__card:hover { transform: translateY(-4px); box-shadow: 0 1px 2px rgb(3 25 38 / .05), 0 22px 40px -24px rgb(3 25 38 / .35); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .mvvs__grade.visivel .mvvs__hex { animation: cresce .7s var(--ease-out) calc(var(--i, 0) * 110ms + 250ms) backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .mvvs__grade { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .mvvs__card { padding: 26px 22px 28px; }
+  .mvvs__texto { font-size: 17px; }
+}

@@ -1,0 +1,94 @@
+    <!-- @usa 20-topo, 11-contato, cto-topo -->
+    <section class="ptopo ptopo--contato" id="inicio" aria-labelledby="ptopo-titulo">
+      <div class="container ptopo__grade">
+        <nav class="migalhas ptopo__migalhas" aria-label="Você está em">
+          <ol role="list"><li><a href="/">Home</a></li><li><span aria-current="page">Contato</span></li></ol>
+        </nav>
+        <p class="rotulo ptopo__rotulo">Contato</p>
+        <h1 class="ptopo__titulo" id="ptopo-titulo">Vamos conversar sobre a gestão <span class="destaque">do seu condomínio.</span></h1>
+        <p class="ptopo__sub">Preencha o formulário para agendar um diagnóstico ou pedir uma proposta. O retorno é feito pelo WhatsApp.</p>
+
+        <ul class="contato__canais cto__canais" role="list">
+          <li><a href="{{wa:danilo}}" data-zap="contato-numero"><span class="contato__i"><i data-i="whatsapp-logo" data-w="light"></i></span>{{cfg.whatsappExibir}}</a></li>
+          <li><a href="mailto:{{cfg.email}}"><span class="contato__i"><i data-i="envelope-simple" data-w="light"></i></span>{{cfg.email}}</a></li>
+          <li><a href="{{cfg.instagramUrl}}" target="_blank" rel="noopener"><span class="contato__i"><i data-i="instagram-logo" data-w="light"></i></span>@{{cfg.instagram}}</a></li>
+          <li><span class="contato__i"><i data-i="map-pin" data-w="light"></i></span>{{cfg.regiao}}</li>
+          <li><span class="contato__i"><i data-i="clock" data-w="light"></i></span>Atendimento de {{cfg.horario}}</li>
+        </ul>
+
+        <!-- O formulário entra logo depois da primeira pintura (11-contato.js): no HTML, os campos e
+             o preenchimento automático do Chrome dobravam o custo do primeiro layout. A altura
+             fica reservada (cto-topo.css), e sem JS vale o WhatsApp (noscript). -->
+        <div class="cto__form" id="formulario" data-zap-depois>
+          <template id="form-molde-contato">
+          <form class="form" id="form-contato" action="https://wa.me/{{cfg.whatsapp}}" method="get" target="_blank" novalidate aria-labelledby="form-titulo" data-origem="pagina-contato">
+            <h2 class="form__titulo" id="form-titulo">Como a HS pode ajudar?</h2>
+            <fieldset class="form__assunto">
+              <legend class="sr-only">O que você precisa</legend>
+              <label class="assunto"><input type="radio" name="assunto" value="diagnostico" checked><span>Agendar diagnóstico</span></label>
+              <label class="assunto"><input type="radio" name="assunto" value="proposta"><span>Solicitar proposta</span></label>
+            </fieldset>
+            <div class="form__campos">
+              <div class="campo">
+                <label for="f-nome">Nome</label>
+                <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Nome completo" required maxlength="80" aria-describedby="f-nome-erro">
+                <p class="campo__erro" id="f-nome-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="f-whatsapp">WhatsApp</label>
+                <input id="f-whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 90000-0000" required maxlength="16" aria-describedby="f-whatsapp-erro">
+                <p class="campo__erro" id="f-whatsapp-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="f-condominio">Condomínio</label>
+                <input id="f-condominio" name="condominio" type="text" autocomplete="organization" placeholder="Nome do condomínio" required maxlength="80" aria-describedby="f-condominio-erro">
+                <p class="campo__erro" id="f-condominio-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="f-cidade">Cidade</label>
+                <input id="f-cidade" name="cidade" type="text" autocomplete="address-level2" placeholder="São Paulo" required maxlength="60" aria-describedby="f-cidade-erro">
+                <p class="campo__erro" id="f-cidade-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="f-tipo">Tipo de condomínio</label>
+                <select id="f-tipo" name="tipo" required aria-describedby="f-tipo-erro">
+                  <option value="" selected disabled>Selecione</option>
+                  <option>Residencial</option>
+                  <option>Misto</option>
+                  <option>Comercial</option>
+                </select>
+                <p class="campo__erro" id="f-tipo-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo">
+                <label for="f-unidades">Número de unidades</label>
+                <input id="f-unidades" name="unidades" type="text" inputmode="numeric" placeholder="Ex.: 120" required maxlength="5" aria-describedby="f-unidades-erro">
+                <p class="campo__erro" id="f-unidades-erro" aria-live="polite"></p>
+              </div>
+              <div class="campo campo--largo">
+                <label for="f-mensagem">Mensagem <span class="campo__opcional">(opcional)</span></label>
+                <textarea id="f-mensagem" name="mensagem" rows="3" maxlength="600" placeholder="Conte um pouco sobre a gestão hoje"></textarea>
+              </div>
+            </div>
+            <div class="campo campo--aceite">
+              <label class="aceite" for="f-aceite">
+                <input id="f-aceite" name="aceite" type="checkbox" required aria-describedby="f-aceite-erro">
+                <span class="aceite__caixa" aria-hidden="true"></span>
+                <span>Autorizo o contato da HS Sindicatura pelo WhatsApp sobre o meu pedido.</span>
+              </label>
+              <p class="campo__erro" id="f-aceite-erro" aria-live="polite"></p>
+            </div>
+            <button class="btn btn--dourado form__enviar" type="submit">
+              <span class="form__rotulo">Agendar diagnóstico</span>
+              <span class="form__carregando" aria-hidden="true">Abrindo o WhatsApp</span>
+            </button>
+            <p class="form__nota">Retorno via WhatsApp.</p>
+            <div class="form__sucesso" role="status" aria-live="polite" tabindex="-1" hidden>
+              <p class="form__sucesso-titulo"><i data-i="check-circle" data-w="regular"></i>Pronto! Sua mensagem está no WhatsApp.</p>
+              <p>Confira os dados e toque em enviar para concluir. Se o WhatsApp não abriu, <a class="form__link" href="{{wa:diagnostico}}" target="_blank" rel="noopener" data-zap="form-reserva">abra a conversa com a HS por aqui</a>.</p>
+            </div>
+          </form>
+          </template>
+          <noscript><p class="contato__sem-js"><a class="btn btn--dourado" href="{{wa:diagnostico}}" target="_blank" rel="noopener">Agendar diagnóstico pelo WhatsApp</a></p></noscript>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,1322 @@
+{
+ "hero-desk-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 40
+ },
+ "hero-desk-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 117
+ },
+ "hero-desk-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "kb": 63
+ },
+ "hero-desk-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "kb": 180
+ },
+ "hero-desk-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 95
+ },
+ "hero-desk-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 255
+ },
+ "hero-cel-480.avif": {
+  "w": 480,
+  "h": 854,
+  "kb": 20
+ },
+ "hero-cel-480.webp": {
+  "w": 480,
+  "h": 854,
+  "kb": 87
+ },
+ "hero-cel-640.avif": {
+  "w": 640,
+  "h": 1138,
+  "kb": 32
+ },
+ "hero-cel-640.webp": {
+  "w": 640,
+  "h": 1138,
+  "kb": 136
+ },
+ "hero-cel-760.avif": {
+  "w": 760,
+  "h": 1352,
+  "kb": 42
+ },
+ "hero-cel-760.webp": {
+  "w": 760,
+  "h": 1352,
+  "kb": 174
+ },
+ "hero-cel-940.avif": {
+  "w": 940,
+  "h": 1672,
+  "kb": 58
+ },
+ "hero-cel-940.webp": {
+  "w": 940,
+  "h": 1672,
+  "kb": 231
+ },
+ "danilo-420.avif": {
+  "w": 420,
+  "h": 591,
+  "kb": 9
+ },
+ "danilo-420.webp": {
+  "w": 420,
+  "h": 591,
+  "kb": 21
+ },
+ "danilo-600.avif": {
+  "w": 600,
+  "h": 844,
+  "kb": 14
+ },
+ "danilo-600.webp": {
+  "w": 600,
+  "h": 844,
+  "kb": 38
+ },
+ "danilo-780.avif": {
+  "w": 780,
+  "h": 1097,
+  "kb": 20
+ },
+ "danilo-780.webp": {
+  "w": 780,
+  "h": 1097,
+  "kb": 73
+ },
+ "danilo-1024.avif": {
+  "w": 1024,
+  "h": 1440,
+  "kb": 35
+ },
+ "danilo-1024.webp": {
+  "w": 1024,
+  "h": 1440,
+  "kb": 140
+ },
+ "logo-hs-64.avif": {
+  "w": 64,
+  "h": 72,
+  "kb": 3
+ },
+ "logo-hs-64.webp": {
+  "w": 64,
+  "h": 72,
+  "kb": 4
+ },
+ "logo-hs-96.avif": {
+  "w": 96,
+  "h": 108,
+  "kb": 4
+ },
+ "logo-hs-96.webp": {
+  "w": 96,
+  "h": 108,
+  "kb": 7
+ },
+ "logo-hs-128.avif": {
+  "w": 128,
+  "h": 143,
+  "kb": 6
+ },
+ "logo-hs-128.webp": {
+  "w": 128,
+  "h": 143,
+  "kb": 9
+ },
+ "logo-hs-192.avif": {
+  "w": 192,
+  "h": 215,
+  "kb": 9
+ },
+ "logo-hs-192.webp": {
+  "w": 192,
+  "h": 215,
+  "kb": 15
+ },
+ "hex-hs-360.avif": {
+  "w": 360,
+  "h": 403,
+  "kb": 12
+ },
+ "hex-hs-360.webp": {
+  "w": 360,
+  "h": 403,
+  "kb": 36
+ },
+ "hex-hs-480.avif": {
+  "w": 480,
+  "h": 538,
+  "kb": 18
+ },
+ "hex-hs-480.webp": {
+  "w": 480,
+  "h": 538,
+  "kb": 53
+ },
+ "hex-hs-640.avif": {
+  "w": 640,
+  "h": 717,
+  "kb": 26
+ },
+ "hex-hs-640.webp": {
+  "w": 640,
+  "h": 717,
+  "kb": 84
+ },
+ "hex-hs-960.avif": {
+  "w": 862,
+  "h": 966,
+  "kb": 32
+ },
+ "hex-hs-960.webp": {
+  "w": 862,
+  "h": 966,
+  "kb": 98
+ },
+ "danilo-foto-400.avif": {
+  "w": 400,
+  "h": 600,
+  "kb": 11
+ },
+ "danilo-foto-400.webp": {
+  "w": 400,
+  "h": 600,
+  "kb": 14
+ },
+ "danilo-foto-600.avif": {
+  "w": 600,
+  "h": 901,
+  "kb": 20
+ },
+ "danilo-foto-600.webp": {
+  "w": 600,
+  "h": 901,
+  "kb": 26
+ },
+ "danilo-foto-800.avif": {
+  "w": 800,
+  "h": 1201,
+  "kb": 35
+ },
+ "danilo-foto-800.webp": {
+  "w": 800,
+  "h": 1201,
+  "kb": 55
+ },
+ "danilo-foto-1066.avif": {
+  "w": 1066,
+  "h": 1600,
+  "kb": 84
+ },
+ "danilo-foto-1066.webp": {
+  "w": 1066,
+  "h": 1600,
+  "kb": 109
+ },
+ "publico-conselho-360.avif": {
+  "w": 360,
+  "h": 203,
+  "kb": 8
+ },
+ "publico-conselho-360.webp": {
+  "w": 360,
+  "h": 203,
+  "kb": 12
+ },
+ "publico-conselho-480.avif": {
+  "w": 480,
+  "h": 270,
+  "kb": 13
+ },
+ "publico-conselho-480.webp": {
+  "w": 480,
+  "h": 270,
+  "kb": 20
+ },
+ "publico-conselho-640.avif": {
+  "w": 640,
+  "h": 360,
+  "kb": 21
+ },
+ "publico-conselho-640.webp": {
+  "w": 640,
+  "h": 360,
+  "kb": 32
+ },
+ "publico-administradoras-360.avif": {
+  "w": 360,
+  "h": 202,
+  "kb": 8
+ },
+ "publico-administradoras-360.webp": {
+  "w": 360,
+  "h": 202,
+  "kb": 13
+ },
+ "publico-administradoras-480.avif": {
+  "w": 480,
+  "h": 270,
+  "kb": 12
+ },
+ "publico-administradoras-480.webp": {
+  "w": 480,
+  "h": 270,
+  "kb": 20
+ },
+ "publico-administradoras-640.avif": {
+  "w": 640,
+  "h": 360,
+  "kb": 20
+ },
+ "publico-administradoras-640.webp": {
+  "w": 640,
+  "h": 360,
+  "kb": 36
+ },
+ "publico-residencial-360.avif": {
+  "w": 360,
+  "h": 202,
+  "kb": 10
+ },
+ "publico-residencial-360.webp": {
+  "w": 360,
+  "h": 202,
+  "kb": 16
+ },
+ "publico-residencial-480.avif": {
+  "w": 480,
+  "h": 270,
+  "kb": 15
+ },
+ "publico-residencial-480.webp": {
+  "w": 480,
+  "h": 270,
+  "kb": 25
+ },
+ "publico-residencial-640.avif": {
+  "w": 640,
+  "h": 360,
+  "kb": 24
+ },
+ "publico-residencial-640.webp": {
+  "w": 640,
+  "h": 360,
+  "kb": 41
+ },
+ "publico-comercial-360.avif": {
+  "w": 360,
+  "h": 202,
+  "kb": 7
+ },
+ "publico-comercial-360.webp": {
+  "w": 360,
+  "h": 202,
+  "kb": 13
+ },
+ "publico-comercial-480.avif": {
+  "w": 480,
+  "h": 270,
+  "kb": 11
+ },
+ "publico-comercial-480.webp": {
+  "w": 480,
+  "h": 270,
+  "kb": 21
+ },
+ "publico-comercial-640.avif": {
+  "w": 640,
+  "h": 360,
+  "kb": 18
+ },
+ "publico-comercial-640.webp": {
+  "w": 640,
+  "h": 360,
+  "kb": 34
+ },
+ "vistoria-480.avif": {
+  "w": 480,
+  "h": 300,
+  "kb": 14
+ },
+ "vistoria-480.webp": {
+  "w": 480,
+  "h": 300,
+  "kb": 22
+ },
+ "vistoria-720.avif": {
+  "w": 720,
+  "h": 450,
+  "kb": 26
+ },
+ "vistoria-720.webp": {
+  "w": 720,
+  "h": 450,
+  "kb": 41
+ },
+ "vistoria-880.avif": {
+  "w": 880,
+  "h": 550,
+  "kb": 36
+ },
+ "vistoria-880.webp": {
+  "w": 880,
+  "h": 550,
+  "kb": 55
+ },
+ "ad-palmeiras-depois-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 28
+ },
+ "ad-palmeiras-depois-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 47
+ },
+ "ad-palmeiras-depois-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 53
+ },
+ "ad-palmeiras-depois-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 84
+ },
+ "ad-palmeiras-depois-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 81
+ },
+ "ad-palmeiras-depois-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 125
+ },
+ "ad-palmeiras-antes-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 27
+ },
+ "ad-palmeiras-antes-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 43
+ },
+ "ad-palmeiras-antes-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 52
+ },
+ "ad-palmeiras-antes-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 81
+ },
+ "ad-palmeiras-antes-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 81
+ },
+ "ad-palmeiras-antes-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 123
+ },
+ "ad-gradil-depois-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 31
+ },
+ "ad-gradil-depois-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 57
+ },
+ "ad-gradil-depois-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 61
+ },
+ "ad-gradil-depois-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 110
+ },
+ "ad-gradil-depois-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 97
+ },
+ "ad-gradil-depois-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 168
+ },
+ "ad-gradil-antes-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 29
+ },
+ "ad-gradil-antes-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 50
+ },
+ "ad-gradil-antes-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 62
+ },
+ "ad-gradil-antes-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 105
+ },
+ "ad-gradil-antes-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 105
+ },
+ "ad-gradil-antes-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 172
+ },
+ "ad-escada-depois-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 24
+ },
+ "ad-escada-depois-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 39
+ },
+ "ad-escada-depois-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 48
+ },
+ "ad-escada-depois-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 77
+ },
+ "ad-escada-depois-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 77
+ },
+ "ad-escada-depois-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 123
+ },
+ "ad-escada-antes-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 21
+ },
+ "ad-escada-antes-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 32
+ },
+ "ad-escada-antes-600.avif": {
+  "w": 600,
+  "h": 750,
+  "kb": 44
+ },
+ "ad-escada-antes-600.webp": {
+  "w": 600,
+  "h": 750,
+  "kb": 65
+ },
+ "ad-escada-antes-800.avif": {
+  "w": 800,
+  "h": 1000,
+  "kb": 73
+ },
+ "ad-escada-antes-800.webp": {
+  "w": 800,
+  "h": 1000,
+  "kb": 103
+ },
+ "jardim-01-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 15
+ },
+ "jardim-01-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 24
+ },
+ "jardim-01-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 34
+ },
+ "jardim-01-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 55
+ },
+ "jardim-01-1120.avif": {
+  "w": 1120,
+  "h": 840,
+  "kb": 65
+ },
+ "jardim-01-1120.webp": {
+  "w": 1120,
+  "h": 840,
+  "kb": 104
+ },
+ "jardim-02-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 20
+ },
+ "jardim-02-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 36
+ },
+ "jardim-02-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 43
+ },
+ "jardim-02-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 76
+ },
+ "jardim-02-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 71
+ },
+ "jardim-02-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 118
+ },
+ "jardim-03-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 15
+ },
+ "jardim-03-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 23
+ },
+ "jardim-03-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 32
+ },
+ "jardim-03-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 52
+ },
+ "jardim-03-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 54
+ },
+ "jardim-03-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 85
+ },
+ "jardim-04-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 19
+ },
+ "jardim-04-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 33
+ },
+ "jardim-04-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 42
+ },
+ "jardim-04-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 74
+ },
+ "jardim-04-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 70
+ },
+ "jardim-04-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 115
+ },
+ "jardim-05-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 20
+ },
+ "jardim-05-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 32
+ },
+ "jardim-05-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 45
+ },
+ "jardim-05-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 71
+ },
+ "jardim-05-1120.avif": {
+  "w": 1120,
+  "h": 840,
+  "kb": 85
+ },
+ "jardim-05-1120.webp": {
+  "w": 1120,
+  "h": 840,
+  "kb": 132
+ },
+ "jardim-06-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 21
+ },
+ "jardim-06-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 35
+ },
+ "jardim-06-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 45
+ },
+ "jardim-06-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 77
+ },
+ "jardim-06-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 75
+ },
+ "jardim-06-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 123
+ },
+ "jardim-07-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 18
+ },
+ "jardim-07-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 33
+ },
+ "jardim-07-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 40
+ },
+ "jardim-07-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 71
+ },
+ "jardim-07-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 64
+ },
+ "jardim-07-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 109
+ },
+ "jardim-08-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 16
+ },
+ "jardim-08-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 28
+ },
+ "jardim-08-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 36
+ },
+ "jardim-08-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 60
+ },
+ "jardim-08-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 59
+ },
+ "jardim-08-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 97
+ },
+ "jardim-09-320.avif": {
+  "w": 320,
+  "h": 427,
+  "kb": 15
+ },
+ "jardim-09-320.webp": {
+  "w": 320,
+  "h": 427,
+  "kb": 25
+ },
+ "jardim-09-480.avif": {
+  "w": 480,
+  "h": 640,
+  "kb": 33
+ },
+ "jardim-09-480.webp": {
+  "w": 480,
+  "h": 640,
+  "kb": 55
+ },
+ "jardim-09-640.avif": {
+  "w": 640,
+  "h": 853,
+  "kb": 56
+ },
+ "jardim-09-640.webp": {
+  "w": 640,
+  "h": 853,
+  "kb": 91
+ },
+ "cta-fundo-800.avif": {
+  "w": 800,
+  "h": 450,
+  "kb": 26
+ },
+ "cta-fundo-800.webp": {
+  "w": 800,
+  "h": 450,
+  "kb": 80
+ },
+ "cta-fundo-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "kb": 56
+ },
+ "cta-fundo-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "kb": 164
+ },
+ "cta-faixa-800.avif": {
+  "w": 800,
+  "h": 267,
+  "kb": 15
+ },
+ "cta-faixa-800.webp": {
+  "w": 800,
+  "h": 267,
+  "kb": 50
+ },
+ "cta-faixa-1280.avif": {
+  "w": 1280,
+  "h": 426,
+  "kb": 33
+ },
+ "cta-faixa-1280.webp": {
+  "w": 1280,
+  "h": 426,
+  "kb": 103
+ },
+ "cta-faixa-1600.avif": {
+  "w": 1600,
+  "h": 533,
+  "kb": 47
+ },
+ "cta-faixa-1600.webp": {
+  "w": 1600,
+  "h": 533,
+  "kb": 137
+ },
+ "topo-solucoes-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 6
+ },
+ "topo-solucoes-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 12
+ },
+ "topo-solucoes-640.avif": {
+  "w": 640,
+  "h": 480,
+  "kb": 9
+ },
+ "topo-solucoes-640.webp": {
+  "w": 640,
+  "h": 480,
+  "kb": 17
+ },
+ "topo-solucoes-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 11
+ },
+ "topo-solucoes-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 22
+ },
+ "topo-solucoes-960.avif": {
+  "w": 960,
+  "h": 720,
+  "kb": 15
+ },
+ "topo-solucoes-960.webp": {
+  "w": 960,
+  "h": 720,
+  "kb": 30
+ },
+ "topo-condominios-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 8
+ },
+ "topo-condominios-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 16
+ },
+ "topo-condominios-640.avif": {
+  "w": 640,
+  "h": 480,
+  "kb": 11
+ },
+ "topo-condominios-640.webp": {
+  "w": 640,
+  "h": 480,
+  "kb": 23
+ },
+ "topo-condominios-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 14
+ },
+ "topo-condominios-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 27
+ },
+ "topo-condominios-960.avif": {
+  "w": 960,
+  "h": 720,
+  "kb": 19
+ },
+ "topo-condominios-960.webp": {
+  "w": 960,
+  "h": 720,
+  "kb": 36
+ },
+ "topo-administradoras-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 7
+ },
+ "topo-administradoras-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 13
+ },
+ "topo-administradoras-640.avif": {
+  "w": 640,
+  "h": 480,
+  "kb": 10
+ },
+ "topo-administradoras-640.webp": {
+  "w": 640,
+  "h": 480,
+  "kb": 19
+ },
+ "topo-administradoras-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 13
+ },
+ "topo-administradoras-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 24
+ },
+ "topo-administradoras-960.avif": {
+  "w": 960,
+  "h": 720,
+  "kb": 17
+ },
+ "topo-administradoras-960.webp": {
+  "w": 960,
+  "h": 720,
+  "kb": 32
+ },
+ "topo-sobre-480.avif": {
+  "w": 480,
+  "h": 360,
+  "kb": 7
+ },
+ "topo-sobre-480.webp": {
+  "w": 480,
+  "h": 360,
+  "kb": 17
+ },
+ "topo-sobre-640.avif": {
+  "w": 640,
+  "h": 480,
+  "kb": 11
+ },
+ "topo-sobre-640.webp": {
+  "w": 640,
+  "h": 480,
+  "kb": 28
+ },
+ "topo-sobre-760.avif": {
+  "w": 760,
+  "h": 570,
+  "kb": 15
+ },
+ "topo-sobre-760.webp": {
+  "w": 760,
+  "h": 570,
+  "kb": 38
+ },
+ "topo-sobre-960.avif": {
+  "w": 960,
+  "h": 720,
+  "kb": 22
+ },
+ "topo-sobre-960.webp": {
+  "w": 960,
+  "h": 720,
+  "kb": 55
+ },
+ "tipo-residencial-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 19
+ },
+ "tipo-residencial-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 35
+ },
+ "tipo-residencial-560.avif": {
+  "w": 560,
+  "h": 700,
+  "kb": 35
+ },
+ "tipo-residencial-560.webp": {
+  "w": 560,
+  "h": 700,
+  "kb": 63
+ },
+ "tipo-residencial-720.avif": {
+  "w": 720,
+  "h": 900,
+  "kb": 52
+ },
+ "tipo-residencial-720.webp": {
+  "w": 720,
+  "h": 900,
+  "kb": 95
+ },
+ "tipo-residencial-920.avif": {
+  "w": 920,
+  "h": 1150,
+  "kb": 78
+ },
+ "tipo-residencial-920.webp": {
+  "w": 920,
+  "h": 1150,
+  "kb": 144
+ },
+ "tipo-residencial-cel-400.avif": {
+  "w": 400,
+  "h": 250,
+  "kb": 12
+ },
+ "tipo-residencial-cel-400.webp": {
+  "w": 400,
+  "h": 250,
+  "kb": 22
+ },
+ "tipo-residencial-cel-640.avif": {
+  "w": 640,
+  "h": 400,
+  "kb": 29
+ },
+ "tipo-residencial-cel-640.webp": {
+  "w": 640,
+  "h": 400,
+  "kb": 52
+ },
+ "tipo-residencial-cel-860.avif": {
+  "w": 860,
+  "h": 538,
+  "kb": 51
+ },
+ "tipo-residencial-cel-860.webp": {
+  "w": 860,
+  "h": 538,
+  "kb": 91
+ },
+ "tipo-misto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 14
+ },
+ "tipo-misto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 19
+ },
+ "tipo-misto-560.avif": {
+  "w": 560,
+  "h": 700,
+  "kb": 24
+ },
+ "tipo-misto-560.webp": {
+  "w": 560,
+  "h": 700,
+  "kb": 34
+ },
+ "tipo-misto-720.avif": {
+  "w": 720,
+  "h": 900,
+  "kb": 37
+ },
+ "tipo-misto-720.webp": {
+  "w": 720,
+  "h": 900,
+  "kb": 50
+ },
+ "tipo-misto-920.avif": {
+  "w": 920,
+  "h": 1150,
+  "kb": 56
+ },
+ "tipo-misto-920.webp": {
+  "w": 920,
+  "h": 1150,
+  "kb": 75
+ },
+ "tipo-misto-cel-400.avif": {
+  "w": 400,
+  "h": 250,
+  "kb": 6
+ },
+ "tipo-misto-cel-400.webp": {
+  "w": 400,
+  "h": 250,
+  "kb": 8
+ },
+ "tipo-misto-cel-640.avif": {
+  "w": 640,
+  "h": 400,
+  "kb": 14
+ },
+ "tipo-misto-cel-640.webp": {
+  "w": 640,
+  "h": 400,
+  "kb": 18
+ },
+ "tipo-misto-cel-860.avif": {
+  "w": 860,
+  "h": 538,
+  "kb": 24
+ },
+ "tipo-misto-cel-860.webp": {
+  "w": 860,
+  "h": 538,
+  "kb": 29
+ },
+ "tipo-comercial-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 14
+ },
+ "tipo-comercial-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 25
+ },
+ "tipo-comercial-560.avif": {
+  "w": 560,
+  "h": 700,
+  "kb": 24
+ },
+ "tipo-comercial-560.webp": {
+  "w": 560,
+  "h": 700,
+  "kb": 42
+ },
+ "tipo-comercial-720.avif": {
+  "w": 720,
+  "h": 900,
+  "kb": 37
+ },
+ "tipo-comercial-720.webp": {
+  "w": 720,
+  "h": 900,
+  "kb": 65
+ },
+ "tipo-comercial-920.avif": {
+  "w": 920,
+  "h": 1150,
+  "kb": 60
+ },
+ "tipo-comercial-920.webp": {
+  "w": 920,
+  "h": 1150,
+  "kb": 106
+ },
+ "tipo-comercial-cel-400.avif": {
+  "w": 400,
+  "h": 250,
+  "kb": 9
+ },
+ "tipo-comercial-cel-400.webp": {
+  "w": 400,
+  "h": 250,
+  "kb": 18
+ },
+ "tipo-comercial-cel-640.avif": {
+  "w": 640,
+  "h": 400,
+  "kb": 20
+ },
+ "tipo-comercial-cel-640.webp": {
+  "w": 640,
+  "h": 400,
+  "kb": 37
+ },
+ "tipo-comercial-cel-860.avif": {
+  "w": 860,
+  "h": 537,
+  "kb": 33
+ },
+ "tipo-comercial-cel-860.webp": {
+  "w": 860,
+  "h": 537,
+  "kb": 60
+ },
+ "conselho-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 8
+ },
+ "conselho-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "conselho-560.avif": {
+  "w": 560,
+  "h": 700,
+  "kb": 13
+ },
+ "conselho-560.webp": {
+  "w": 560,
+  "h": 700,
+  "kb": 21
+ },
+ "conselho-720.avif": {
+  "w": 720,
+  "h": 900,
+  "kb": 18
+ },
+ "conselho-720.webp": {
+  "w": 720,
+  "h": 900,
+  "kb": 30
+ },
+ "conselho-920.avif": {
+  "w": 920,
+  "h": 1150,
+  "kb": 25
+ },
+ "conselho-920.webp": {
+  "w": 920,
+  "h": 1150,
+  "kb": 41
+ },
+ "conselho-cel-400.avif": {
+  "w": 400,
+  "h": 250,
+  "kb": 6
+ },
+ "conselho-cel-400.webp": {
+  "w": 400,
+  "h": 250,
+  "kb": 9
+ },
+ "conselho-cel-640.avif": {
+  "w": 640,
+  "h": 400,
+  "kb": 11
+ },
+ "conselho-cel-640.webp": {
+  "w": 640,
+  "h": 400,
+  "kb": 16
+ },
+ "conselho-cel-860.avif": {
+  "w": 860,
+  "h": 538,
+  "kb": 15
+ },
+ "conselho-cel-860.webp": {
+  "w": 860,
+  "h": 538,
+  "kb": 24
+ }
+}

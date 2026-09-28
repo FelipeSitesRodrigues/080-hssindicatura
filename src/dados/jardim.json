@@ -1,0 +1,14 @@
+{
+  "_sobre": "As fotos do carrossel do jardim renovado (Recursos Site/JARDIM RENOVAD- CARROSEL), na ordem em que passam. Fotos reais do condomínio, sem tratamento de cor. formato: em-pe (3:4) ou deitada (4:3). Ficaram de fora 11.04.47 (4), que é a mesma foto do DEPOIS 1 do comparador, e 11.04.46, o canteiro do gradil de novo, com a rua e um carro atrás da grade.",
+  "itens": [
+    { "id": "jardim-01", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.45.jpeg", "formato": "deitada", "alt": "Canteiro junto à fachada com forração verde, faixa de pedrisco branco, dracenas e cicas, ao lado da escada" },
+    { "id": "jardim-02", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.46 (1).jpeg", "formato": "em-pe", "alt": "Primavera florida em rosa ao lado do caminho de pedra, com a cerca-viva aparada ao fundo" },
+    { "id": "jardim-03", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.47 (2).jpeg", "formato": "em-pe", "alt": "Caminho de placas de pedra entre o gramado e a cerca-viva aparada, ao lado do prédio" },
+    { "id": "jardim-04", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.48 (1).jpeg", "formato": "em-pe", "alt": "Hibisco de flores vermelhas no meio do gramado, com dracenas e pedrisco branco atrás e o deque de madeira à frente" },
+    { "id": "jardim-05", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.47 (3).jpeg", "formato": "deitada", "alt": "Canteiro sob a marquise, entre as colunas, com folhagens, arbustos floridos e forração" },
+    { "id": "jardim-06", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.46 (2).jpeg", "formato": "em-pe", "alt": "Canteiro com forração de grama-preta e uma muda nova, junto à cerca-viva" },
+    { "id": "jardim-07", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.48.jpeg", "formato": "em-pe", "alt": "Duas palmeiras num canteiro quadrado com forração, cercado pelo deque de madeira" },
+    { "id": "jardim-08", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.47.jpeg", "formato": "em-pe", "alt": "Canteiro de folhagens altas e forração junto à grade da piscina" },
+    { "id": "jardim-09", "arquivo": "WhatsApp Image 2026-09-28 at 11.04.47 (1).jpeg", "formato": "em-pe", "alt": "Gramado renovado ao lado do playground, com uma muda de bambu e a área de lazer ao fundo" }
+  ]
+}

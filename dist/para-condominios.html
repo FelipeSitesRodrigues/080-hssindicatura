@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="/assets/img/topo-condominios-480.avif 480w, /assets/img/topo-condominios-640.avif 640w, /assets/img/topo-condominios-760.avif 760w, /assets/img/topo-condominios-960.avif 960w" imagesizes="(min-width: 80em) 480px, (min-width: 64em) 37vw, (min-width: 40em) 620px, calc(100vw - 54px)" fetchpriority="high">
+  <script>
+    // js: liga as animações. js-abrindo: no celular a seção logo abaixo do hero só é montada
+    // depois da primeira pintura, pra não disputar a primeira pintura com o hero
+    // (99-desempenho.css, memória do 079). Sai na primeira pintura ou em 2,5 s.
+    (function () {
+      var h = document.documentElement
+      h.classList.add('js', 'js-abrindo')
+      var pronto = function () { h.classList.remove('js-abrindo') }
+      try {
+        new PerformanceObserver(function (l) { if (l.getEntriesByName('first-contentful-paint').length) pronto() }).observe({ type: 'paint', buffered: true })
+      } catch (e) { pronto() }
+      setTimeout(pronto, 2500)
+    })()
+  </script>
+  <title>Síndico profissional para condomínios | HS Sindicatura</title>
+  <meta name="description" content="Gestão para condomínios residenciais, mistos e comerciais em São Paulo: as dores de cada tipo, como a HS Sindicatura atua e como pedir uma proposta.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#031926">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://www.hssindicatura.com.br/para-condominios">
+  <meta property="og:url" content="https://www.hssindicatura.com.br/para-condominios">
+  <meta property="og:image" content="https://www.hssindicatura.com.br/assets/img/og-hs.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HS Sindicatura">
+  <meta property="og:title" content="Síndico profissional para condomínios em São Paulo | HS Sindicatura">
+  <meta property="og:description" content="Residencial, misto ou comercial: cada condomínio tem uma rotina, um público e um risco. Veja como a HS Sindicatura atua em cada um.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Danilo Ricardo Dias, síndico profissional e fundador da HS Sindicatura, diante de torres de vidro em São Paulo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <style>:root{color-scheme: dark;--petroleo: #031926;--petroleo-2: #07263A;--dourado: #C9943C;--dourado-claro: #E2B866;--dourado-escuro: #A87A31;--dourado-tinta: #A7762B;--grafite: #333333;--metal: #A9A9A9;--gelo: #F4F6F8;--branco: #FFFFFF;--texto-2: #5B6670;--claro-2: rgb(255 255 255 / .76);--fio-claro: #DDE3E8;--fio-escuro: rgb(255 255 255 / .1);--vidro: rgb(255 255 255 / .04);--vidro-borda: rgb(255 255 255 / .1);--fonte-titulo: 'Montserrat','Montserrat fallback','Arial',sans-serif;--fonte-texto: 'Inter','Inter fallback',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--container: 1200px;--margem: clamp(20px,5.4vw,120px);--secao-y: clamp(60px,5.8vw,96px);--altura-topo: 80px;--raio: 6px;--raio-card: 10px;--ease-out: cubic-bezier(.23,1,.32,1);--ease-in-out: cubic-bezier(.65,0,.35,1);--ease-suave: cubic-bezier(.22,.61,.36,1);--hex-contorno: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 22'%3E%3Cpath d='M10 1.6 18.2 6.3v9.4L10 20.4 1.8 15.7V6.3Z' fill='none' stroke='%23000' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E");--hex-cheio: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 22'%3E%3Cpath d='M10 .8 18.9 5.9v10.2L10 21.2 1.1 16.1V5.9Z'/%3E%3C/svg%3E");--cor-titulo: var(--branco);--cor-texto: var(--claro-2);--cor-forte: var(--branco);--cor-rotulo: var(--dourado);--cor-destaque: var(--dourado);--cor-icone: var(--dourado);--cor-linha: var(--fio-escuro);--cor-foco: var(--dourado-claro);--cor-link: var(--dourado)}@media (max-width: 63.99em){:root{--altura-topo: 68px}}*,*::before,*::after{box-sizing: border-box}*{margin: 0}html{-webkit-text-size-adjust: 100%;text-size-adjust: 100%;scroll-behavior: smooth;scroll-padding-top: var(--altura-topo);background: var(--petroleo);scrollbar-color: #2A4556 var(--petroleo)}body{min-height: 100vh;background: var(--petroleo);color: var(--cor-texto);font: 400 16px/1.6 var(--fonte-texto);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;text-rendering: optimizeLegibility;font-kerning: normal;overflow-x: clip}img,picture,svg,video{display: block;max-width: 100%}img{height: auto}button,input,select,textarea{font: inherit;color: inherit}button{cursor: pointer;background: none;border: 0;padding: 0}a{color: inherit;text-decoration: none}ul,ol{list-style: none;padding: 0}h1,h2,h3,h4{font-weight: inherit;font-size: inherit;line-height: inherit}strong{font-weight: 500;color: var(--cor-forte)}figure,blockquote{margin: 0}::selection{background: rgb(201 148 60 / .92);color: var(--petroleo)}:focus-visible{outline: 2px solid var(--cor-foco);outline-offset: 3px;border-radius: 3px}[tabindex='-1']:focus{outline: none}[hidden]{display: none !important}.pular{position: fixed;top: 10px;left: 10px;z-index: 200;padding: 13px 18px;border-radius: var(--raio);background: var(--dourado);color: var(--petroleo);font: 600 13px/1 var(--fonte-titulo);transform: translateY(-160%);transition: transform .2s var(--ease-out)}.pular:focus{transform: none}.sr-only{position: absolute !important;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip-path: inset(50%);white-space: nowrap;border: 0}.container{width: min(var(--container),100% - var(--margem) * 2);margin-inline: auto}.i{width: 24px;height: 24px;flex: none;fill: currentColor}.secao{position: relative;padding-block: var(--secao-y);isolation: isolate}.secao--escura{--cor-titulo: var(--branco);--cor-texto: var(--claro-2);--cor-forte: var(--branco);--cor-rotulo: var(--dourado);--cor-destaque: var(--dourado);--cor-icone: var(--dourado);--cor-linha: var(--fio-escuro);--cor-foco: var(--dourado-claro);--cor-link: var(--dourado);color-scheme: dark;color: var(--cor-texto);background: radial-gradient(60% 70% at 0% 100%,rgb(201 148 60 / .09),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .018) 0 1px,transparent 1px 7px,rgb(255 255 255 / .01) 7px 8px,transparent 8px 23px),linear-gradient(180deg,var(--petroleo) 0%,#041C2B 100%)}.secao--clara{--cor-titulo: var(--petroleo);--cor-texto: var(--grafite);--cor-forte: var(--petroleo);--cor-rotulo: var(--petroleo);--cor-destaque: var(--dourado-tinta);--cor-icone: var(--dourado-tinta);--cor-linha: var(--fio-claro);--cor-foco: var(--petroleo);--cor-link: var(--petroleo);color-scheme: light;color: var(--cor-texto);background: var(--gelo)}.secao--branca{background: var(--branco);box-shadow: inset 0 1px 0 var(--fio-claro)}.secao--clara ::selection{background: var(--petroleo);color: var(--branco)}.rotulo{display: flex;align-items: center;gap: 9px;color: var(--cor-rotulo);font: 600 12.5px/1.3 var(--fonte-titulo);letter-spacing: .14em;text-transform: uppercase}.rotulo::before{content: '';flex: none;width: 11px;height: 12px;background: var(--dourado);-webkit-mask: var(--hex-contorno) center / contain no-repeat;mask: var(--hex-contorno) center / contain no-repeat}.secao--clara .rotulo::before{background: var(--dourado-tinta)}.titulo{color: var(--cor-titulo);font-family: var(--fonte-titulo);font-weight: 700;font-size: clamp(26px,1rem + 1.25vw,36px);line-height: 1.16;letter-spacing: -.012em;text-wrap: balance}@media (max-width: 39.99em){.titulo{font-size: min(30px,8.6vw);line-height: 1.18}}.rotulo + .titulo{margin-top: 14px}.destaque{color: var(--cor-destaque)}.texto{color: var(--cor-texto);font-size: 16px;line-height: 1.7}.texto + .texto{margin-top: 14px}.texto strong,.apoio strong{color: var(--cor-forte);font-weight: 500}.apoio{color: var(--cor-texto);font-size: 15.5px;line-height: 1.65;max-width: 34em}.quebra{display: none}@media (min-width: 64em){.quebra{display: inline}}.cab{display: grid;grid-template-columns: minmax(0,1fr) minmax(0,400px);align-items: end;column-gap: 56px;margin-bottom: clamp(30px,3vw,44px)}.cab__lado .link-seta{margin-top: 6px}@media (max-width: 63.99em){.cab{grid-template-columns: minmax(0,1fr);row-gap: 14px}}.link-seta{display: inline-flex;align-items: center;gap: 8px;min-height: 44px;color: var(--cor-link);font: 600 14.5px/1.3 var(--fonte-titulo);text-decoration: underline;text-decoration-color: transparent;text-underline-offset: 5px;transition: color .25s ease,text-decoration-color .25s ease}.link-seta .i{width: 18px;height: 18px;color: var(--cor-icone);transition: transform .35s var(--ease-out)}@media (hover: hover){.link-seta:hover{text-decoration-color: currentColor}.link-seta:hover .i{transform: translateX(3px)}}.btn{position: relative;display: inline-flex;align-items: center;justify-content: center;gap: 10px;min-height: 52px;padding: 0 26px;border: 1.5px solid transparent;border-radius: var(--raio);font: 600 15px/1.2 var(--fonte-titulo);letter-spacing: .005em;text-align: center;cursor: pointer;transition: transform .35s var(--ease-out),box-shadow .35s var(--ease-out),background-color .25s ease,border-color .25s ease,color .25s ease,filter .25s ease}.btn .i{width: 18px;height: 18px}.btn .i--anda{transition: transform .35s var(--ease-out)}.btn--p{min-height: 44px;padding-inline: 18px;font-size: 14px}.btn--dourado{--cor-foco: var(--dourado-claro);background: linear-gradient(180deg,var(--dourado-claro) 0%,var(--dourado) 52%,var(--dourado-escuro) 100%);color: var(--petroleo);box-shadow: inset 0 1px 0 rgb(255 255 255 / .35),0 10px 24px -14px rgb(201 148 60 / .8)}.btn--contorno{border-color: rgb(255 255 255 / .7);color: var(--branco);background: rgb(3 25 38 / .25)}.btn--contorno-dourado{border-color: rgb(201 148 60 / .85);color: var(--branco);background: transparent}.btn--contorno-dourado .i{color: var(--dourado)}.btn--contorno-petroleo{border-color: var(--petroleo);color: var(--petroleo);background: transparent}.btn:active{transform: scale(.98);transition-duration: .1s}@media (hover: hover){.btn--dourado:hover{filter: brightness(1.06) saturate(1.05);transform: translateY(-1px);box-shadow: inset 0 1px 0 rgb(255 255 255 / .4),0 14px 28px -14px rgb(201 148 60 / .95)}.btn--contorno:hover{border-color: var(--branco);background: rgb(255 255 255 / .08);transform: translateY(-1px)}.btn--contorno-dourado:hover{border-color: var(--dourado);background: rgb(201 148 60 / .1);transform: translateY(-1px)}.btn--contorno-petroleo:hover{background: var(--petroleo);color: var(--branco);transform: translateY(-1px)}.btn:hover .i--anda{transform: translateX(3px)}.btn:active{transform: scale(.98)}}.card-vidro{border: 1px solid var(--vidro-borda);border-radius: var(--raio-card);background: linear-gradient(180deg,rgb(255 255 255 / .055),rgb(255 255 255 / .025));box-shadow: inset 0 1px 0 rgb(255 255 255 / .05),0 18px 40px -30px rgb(0 0 0 / .8)}.card-branco{border: 1px solid #E4E9ED;border-radius: var(--raio-card);background: var(--branco);box-shadow: 0 1px 2px rgb(3 25 38 / .04),0 14px 34px -24px rgb(3 25 38 / .28)}.icone-caixa{display: grid;place-items: center;flex: none;width: 52px;height: 52px;border: 1px solid rgb(201 148 60 / .22);border-radius: 8px;background: rgb(3 25 38 / .55);color: var(--dourado)}.icone-caixa .i{width: 28px;height: 28px}.icone-bola{display: grid;place-items: center;flex: none;width: 64px;height: 64px;border-radius: 50%;background: radial-gradient(circle at 50% 40%,#FBF3E6,#F6EBDA);color: var(--dourado-tinta)}.icone-bola .i{width: 30px;height: 30px}.hex{position: relative;display: grid;place-items: center;flex: none;width: 34px;height: 37px;color: var(--petroleo);font: 700 14px/1 var(--fonte-titulo)}.hex::before{content: '';position: absolute;inset: 0;z-index: -1;background: linear-gradient(180deg,var(--dourado-claro),var(--dourado) 55%,var(--dourado-escuro));-webkit-mask: var(--hex-cheio) center / contain no-repeat;mask: var(--hex-cheio) center / contain no-repeat}.hex{isolation: isolate}.check{width: 22px;height: 22px;color: var(--cor-icone)}.zap-flutuante{position: fixed;right: max(18px,env(safe-area-inset-right));bottom: max(18px,env(safe-area-inset-bottom));z-index: 40;display: grid;place-items: center;width: 58px;height: 58px;border-radius: 50%;background: #25D366;color: var(--branco);box-shadow: 0 14px 30px -10px rgb(0 0 0 / .55),0 6px 18px -8px rgb(37 211 102 / .7);transition: transform .5s var(--ease-out),opacity .4s ease,box-shadow .3s ease}.zap-flutuante .i{width: 32px;height: 32px}.js .zap-flutuante:not(.visivel){opacity: 0;transform: translateY(16px) scale(.7);pointer-events: none}@media (hover: hover){.zap-flutuante:hover{transform: translateY(-2px) scale(1.05);box-shadow: 0 18px 34px -10px rgb(0 0 0 / .6),0 8px 22px -8px rgb(37 211 102 / .8)}}@keyframes sobe{from{opacity: 0;transform: translateY(24px)}}@keyframes aparece{from{opacity: 0}}@keyframes da-esquerda{from{opacity: 0;transform: translateX(-28px)}}@keyframes da-direita{from{opacity: 0;transform: translateX(28px)}}@keyframes cresce{from{opacity: 0;transform: scale(.6)}}@keyframes foto-abre{from{clip-path: inset(0 0 100% 0)}to{clip-path: inset(0 0 0 0)}}@keyframes assenta{from{transform: scale(1.08)}}@keyframes risca-x{from{transform: scaleX(0)}}@keyframes risca-y{from{transform: scaleY(0)}}@media (prefers-reduced-motion: no-preference){.js [data-revela]:not(.visivel){opacity: 0}.js [data-revela].visivel{animation: sobe .9s var(--ease-suave) calc(var(--i,0) * 90ms) backwards}.js [data-revela-lista]:not(.visivel) > *{opacity: 0}.js [data-revela-lista].visivel > *{animation: sobe .8s var(--ease-suave) calc(var(--i,0) * 85ms) backwards}.js [data-revela="aparece"].visivel{animation: aparece 1s ease backwards}.js [data-revela="esquerda"].visivel{animation: da-esquerda 1s var(--ease-suave) backwards}.js [data-revela="direita"].visivel{animation: da-direita 1s var(--ease-suave) backwards}.js [data-revela="foto"].visivel{animation: foto-abre 1.15s var(--ease-in-out) calc(var(--i,0) * 90ms) backwards}.js [data-revela="foto"].visivel img{animation: assenta 1.7s var(--ease-out) calc(var(--i,0) * 90ms) backwards}}@media (prefers-reduced-motion: reduce){html{scroll-behavior: auto}*,*::before,*::after{animation-duration: .01ms !important;animation-iteration-count: 1 !important;transition-duration: .01ms !important;transition-delay: 0ms !important}}@font-face{font-family: 'Montserrat';font-style: normal;font-weight: 600 700;font-display: swap;src: url('/assets/fonts/montserrat-var.woff2') format('woff2')}@font-face{font-family: 'Montserrat fallback';src: local('Arial Bold'),local('Arial-BoldMT'),local('Arial');size-adjust: 110.05%;ascent-override: 87.96%;descent-override: 22.81%;line-gap-override: 0.00%}@font-face{font-family: 'Inter';font-style: normal;font-weight: 400 500;font-display: swap;src: url('/assets/fonts/inter-var.woff2') format('woff2')}@font-face{font-family: 'Inter fallback';src: local('Arial'),local('Helvetica'),local('Roboto');size-adjust: 106.85%;ascent-override: 90.67%;descent-override: 22.57%;line-gap-override: 0.00%}.topo{--topo-h: 78px;position: fixed;inset: 0 0 auto;z-index: 50;height: var(--topo-h);color: var(--branco);background: rgb(3 25 38 / .5);box-shadow: inset 0 -1px 0 rgb(201 148 60 / .32);transition: height .45s var(--ease-out),background-color .45s ease,box-shadow .45s ease}.topo--rolado{--topo-h: 68px;background: rgb(3 25 38 / .94);box-shadow: inset 0 -1px 0 rgb(201 148 60 / .4),0 16px 36px -24px rgb(0 0 0 / .9)}@media (min-width: 64em){@supports (backdrop-filter: blur(1px)){.topo--rolado{background: rgb(3 25 38 / .8);backdrop-filter: blur(14px) saturate(1.2)}}}.topo__barra{display: flex;align-items: center;gap: clamp(20px,2.4vw,40px);height: 100%}.marca{display: flex;align-items: center;gap: 11px;flex: none}.marca__simbolo{width: 42px;transform-origin: 0 50%;transition: transform .45s var(--ease-out)}.marca__nome{color: var(--branco);font: 700 18px/1 var(--fonte-titulo);letter-spacing: .01em;text-transform: uppercase;white-space: nowrap}.marca__hs{color: var(--dourado)}.topo--rolado .marca__simbolo{transform: scale(.88)}.menu{margin-inline: auto}.menu__lista{display: flex;align-items: center;gap: clamp(18px,2.3vw,36px)}.menu__lista a{position: relative;display: block;padding: 10px 0;color: rgb(255 255 255 / .86);font: 500 14.5px/1 var(--fonte-texto);white-space: nowrap;transition: color .25s ease}.menu__lista a::after{content: '';position: absolute;left: 0;right: 0;bottom: 1px;height: 2px;border-radius: 2px;background: var(--dourado);transform: scaleX(0);transform-origin: 100% 50%;transition: transform .4s var(--ease-out)}.menu__lista a[aria-current='page']{color: var(--branco)}.menu__lista a[aria-current='page']::after{transform: scaleX(1);transform-origin: 0 50%}@media (hover: hover){.menu__lista a:hover{color: var(--branco)}.menu__lista a:hover::after{transform: scaleX(1);transform-origin: 0 50%}}.menu__extra{display: none}.topo__cta{flex: none;min-height: 44px;padding-inline: 20px;font-size: 14px}.topo__menu{display: none}@keyframes topo-entra{from{opacity: 0;transform: translateY(-12px)}}@media (prefers-reduced-motion: no-preference){.topo__barra{animation: topo-entra .8s var(--ease-suave) .1s backwards}}@media (min-width: 64em) and (max-width: 79.99em){.marca__nome{font-size: 16px}.marca__simbolo{width: 38px}.menu__lista a{font-size: 13.5px}.topo__cta{padding-inline: 16px;font-size: 13.5px}.topo__cta .i{display: none}}@media (max-width: 63.99em){.topo{--topo-h: 68px;background: rgb(3 25 38 / .72)}.topo--rolado{--topo-h: 62px;background: rgb(3 25 38 / .97)}.marca{gap: 9px}.marca__simbolo{width: 36px}.marca__nome{font-size: 15.5px}.topo__cta{display: none}.topo__barra{justify-content: space-between}.topo__menu{position: relative;z-index: 2;display: grid;place-items: center;width: 48px;height: 48px;margin-right: -10px;border-radius: 50%}.topo__menu-linhas,.topo__menu-linhas::before,.topo__menu-linhas::after,.topo__menu-linhas span{display: block;width: 24px;height: 2px;border-radius: 2px;background: var(--branco)}.topo__menu-linhas{position: relative;background: none}.topo__menu-linhas::before,.topo__menu-linhas::after{content: '';position: absolute;left: 0;transition: transform .4s var(--ease-out),top .25s ease .15s}.topo__menu-linhas::before{top: -7px}.topo__menu-linhas::after{top: 7px}.topo__menu-linhas span{transition: opacity .2s ease}.topo--aberto .topo__menu-linhas::before,.topo--aberto .topo__menu-linhas::after{top: 0;transition: top .2s ease,transform .4s var(--ease-out) .15s}.topo--aberto .topo__menu-linhas::before{transform: rotate(45deg)}.topo--aberto .topo__menu-linhas::after{transform: rotate(-45deg)}.topo--aberto .topo__menu-linhas span{opacity: 0}.menu{position: fixed;inset: 0;z-index: 1;display: flex;flex-direction: column;justify-content: space-between;gap: 32px;margin: 0;padding: calc(var(--topo-h) + 24px) var(--margem) max(28px,env(safe-area-inset-bottom));background: radial-gradient(70% 50% at 0% 100%,rgb(201 148 60 / .12),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .02) 0 1px,transparent 1px 22px),var(--petroleo);overflow-y: auto;visibility: hidden;opacity: 0;transform: translateY(-10px);transition: opacity .35s ease,transform .45s var(--ease-out),visibility 0s linear .45s}.topo--aberto .menu{visibility: visible;opacity: 1;transform: none;transition: opacity .35s ease,transform .45s var(--ease-out),visibility 0s}.topo--aberto{background: var(--petroleo)}.menu__lista{flex-direction: column;align-items: stretch;gap: 0}.menu__lista li{border-bottom: 1px solid var(--fio-escuro)}.menu__lista a{padding: 17px 0;color: var(--branco);font: 600 21px/1.15 var(--fonte-titulo)}.menu__lista a::after{display: none}.menu__lista a[aria-current='page']{color: var(--dourado)}.menu__extra{display: grid;gap: 14px}.menu__cta{width: 100%}.menu__fone{display: inline-flex;align-items: center;justify-content: center;gap: 10px;min-height: 52px;border: 1.5px solid rgb(255 255 255 / .4);border-radius: var(--raio);color: var(--branco);font: 600 16px/1 var(--fonte-titulo)}.menu__fone .i{color: var(--dourado)}.menu__rodape{color: rgb(255 255 255 / .6);font-size: 13.5px;text-align: center}@media (prefers-reduced-motion: no-preference){.topo--aberto .menu__lista li{animation: sobe .6s var(--ease-suave) backwards}.topo--aberto .menu__lista li:nth-child(2){animation-delay: 40ms}.topo--aberto .menu__lista li:nth-child(3){animation-delay: 80ms}.topo--aberto .menu__lista li:nth-child(4){animation-delay: 120ms}.topo--aberto .menu__lista li:nth-child(5){animation-delay: 160ms}.topo--aberto .menu__lista li:nth-child(6){animation-delay: 200ms}.topo--aberto .menu__extra{animation: aparece .6s ease .2s backwards}}}.faq__grade{display: grid;grid-template-columns: minmax(0,5fr) minmax(0,7fr);align-items: start;gap: clamp(36px,5vw,80px)}.faq__apoio{margin-top: 16px}.faq__zap{margin-top: 26px}.faq__zap .i{width: 20px;height: 20px}.faq__lista{padding: 8px 28px}.faq__item + .faq__item{border-top: 1px solid #E6EAEE}.faq__botao{display: flex;align-items: center;justify-content: space-between;gap: 20px;width: 100%;min-height: 64px;padding: 18px 0;color: var(--petroleo);font: 600 16px/1.4 var(--fonte-titulo);text-align: left;transition: color .25s ease}.faq__mais{position: relative;flex: none;width: 28px;height: 28px;border-radius: 50%;background: #FBF3E6;transition: background-color .3s ease}.faq__mais::before,.faq__mais::after{content: '';position: absolute;top: 50%;left: 50%;width: 12px;height: 2px;margin: -1px 0 0 -6px;border-radius: 2px;background: var(--dourado-tinta);transition: transform .45s var(--ease-out)}.faq__mais::after{transform: rotate(90deg)}.faq__item--aberto .faq__mais{background: #F6E6CB}.faq__item--aberto .faq__mais::before{transform: rotate(45deg)}.faq__item--aberto .faq__mais::after{transform: rotate(135deg)}@media (hover: hover){.faq__botao:hover{color: #0B3A56}.faq__botao:hover .faq__mais{background: #F6E6CB}}.faq__resposta{display: grid;grid-template-rows: 1fr;transition: grid-template-rows .5s var(--ease-out)}.js .faq__item:not(.faq__item--aberto) .faq__resposta{grid-template-rows: 0fr}.faq__miolo{min-height: 0;overflow: hidden}.faq__miolo p{padding: 0 44px 22px 0;color: var(--grafite);font-size: 15.5px;line-height: 1.7;transition: opacity .35s ease,transform .45s var(--ease-out)}.js .faq__item:not(.faq__item--aberto) .faq__miolo p{opacity: 0;transform: translateY(-6px)}.faq__item--aberto .faq__miolo p{transition-delay: .08s}@media (max-width: 63.99em){.faq__grade{grid-template-columns: minmax(0,1fr);gap: 30px}}@media (max-width: 39.99em){.faq__lista{padding: 4px 18px}.faq__botao{font-size: 15.5px}.faq__miolo p{padding-right: 0;font-size: 15px}.faq__zap{width: 100%}}.rodape{position: relative;padding: clamp(48px,5vw,72px) 0 max(24px,env(safe-area-inset-bottom));background: radial-gradient(50% 90% at 100% 0%,rgb(201 148 60 / .06),transparent 70%),#021420;box-shadow: inset 0 1px 0 rgb(201 148 60 / .5);color: var(--claro-2)}.rodape__grade{display: grid;grid-template-columns: minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap: clamp(28px,4vw,64px)}.rodape__simbolo{width: 48px}.rodape__marca .marca__nome{font-size: 18px}.rodape__frase{max-width: 22em;margin-top: 16px;color: var(--claro-2);font-size: 14.5px;line-height: 1.6}.rodape__insta{display: inline-grid;place-items: center;width: 42px;height: 42px;margin-top: 18px;border: 1px solid rgb(201 148 60 / .5);border-radius: 50%;color: var(--dourado);transition: background-color .3s ease,transform .4s var(--ease-out)}.rodape__insta .i{width: 21px;height: 21px}.rodape__titulo{color: var(--branco);font: 600 14px/1.3 var(--fonte-titulo);letter-spacing: .06em;text-transform: uppercase}.rodape__col ul{display: grid;gap: 4px;margin-top: 14px}.rodape__col a,.rodape__col li{display: inline-flex;align-items: center;gap: 10px;min-height: 30px;color: var(--claro-2);font-size: 14.5px;line-height: 1.4;transition: color .25s ease}.rodape__contato .i{width: 19px;height: 19px;color: var(--dourado)}@media (hover: hover){.rodape__col a:hover,.rodape__credito a:hover{color: var(--dourado-claro)}.rodape__insta:hover{background: rgb(201 148 60 / .12);transform: translateY(-2px)}}.rodape__base{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;gap: 10px 24px;margin-top: clamp(36px,4vw,52px);padding-top: 22px;border-top: 1px solid rgb(255 255 255 / .1)}.rodape__copy,.rodape__credito{color: rgb(255 255 255 / .62);font-size: 13.5px}.rodape__credito a{color: rgb(255 255 255 / .82);text-decoration: underline;text-underline-offset: 3px;text-decoration-color: rgb(201 148 60 / .6);transition: color .25s ease}@media (max-width: 63.99em){.rodape__grade{grid-template-columns: repeat(2,minmax(0,1fr))}.rodape__marca{grid-column: 1 / -1}}@media (max-width: 39.99em){.rodape__grade{grid-template-columns: minmax(0,1fr);gap: 30px}.rodape__col:first-of-type ul{grid-template-columns: repeat(2,minmax(0,1fr));column-gap: 16px}.rodape__base{flex-direction: column-reverse;align-items: flex-start}}.ptopo{--hex-fio: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 97.6 29.5v53L50 110 2.4 82.5v-53Z' fill='none' stroke='%23000' stroke-width='.3'/%3E%3C/svg%3E");position: relative;isolation: isolate;overflow: clip;padding: calc(var(--altura-topo) + clamp(26px,3vw,46px)) 0 clamp(56px,5.6vw,88px);background: radial-gradient(36% 52% at 76% 44%,rgb(201 148 60 / .14),transparent 72%),radial-gradient(55% 70% at 0% 100%,rgb(201 148 60 / .07),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .018) 0 1px,transparent 1px 7px,rgb(255 255 255 / .01) 7px 8px,transparent 8px 23px),linear-gradient(180deg,#021420 0%,var(--petroleo) 55%,#041C2B 100%);color: var(--claro-2)}.ptopo::before{content: '';position: absolute;z-index: -1;top: 50%;left: calc(50% + .27 * min(var(--container),100% - var(--margem) * 2));width: min(780px,60vw);aspect-ratio: 100 / 112;translate: -50% -52%;background: linear-gradient(165deg,rgb(226 184 102 / .6),rgb(201 148 60 / .2) 55%,rgb(201 148 60 / .06));-webkit-mask: var(--hex-fio) center / contain no-repeat;mask: var(--hex-fio) center / contain no-repeat;pointer-events: none}.ptopo__grade{display: grid;grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows: auto 1fr auto auto auto auto 1fr;grid-template-areas: 'migalhas migalhas' '. figura' 'rotulo figura' 'titulo figura' 'sub figura' 'botoes figura' '. figura';column-gap: clamp(40px,5.4vw,96px)}.ptopo__migalhas{grid-area: migalhas;margin-bottom: clamp(20px,2.4vw,36px)}.ptopo__rotulo{grid-area: rotulo}.ptopo__titulo{grid-area: titulo;margin-top: 16px;color: var(--branco);font: 700 clamp(30px,.95rem + 1.9vw,46px)/1.1 var(--fonte-titulo);letter-spacing: -.016em;text-wrap: balance}.ptopo__titulo .destaque{color: var(--dourado)}.ptopo__sub{grid-area: sub;max-width: 33em;margin-top: 20px;color: rgb(255 255 255 / .8);font-size: 16.5px;line-height: 1.62}.ptopo__botoes{grid-area: botoes;display: flex;flex-wrap: wrap;gap: 14px;margin-top: 30px}.ptopo__botoes .btn{min-height: 54px;padding-inline: 26px}.migalhas ol{display: flex;flex-wrap: wrap;align-items: center;gap: 6px 12px;color: rgb(255 255 255 / .62);font-size: 13.5px;line-height: 1.3}.migalhas li{display: inline-flex;align-items: center;gap: 12px}.migalhas li + li::before{content: '';width: 6px;height: 6px;border-top: 1.5px solid rgb(201 148 60 / .8);border-right: 1.5px solid rgb(201 148 60 / .8);transform: rotate(45deg)}.migalhas a{display: inline-flex;align-items: center;min-height: 32px;color: rgb(255 255 255 / .72);transition: color .25s ease}.migalhas [aria-current]{color: var(--branco)}@media (hover: hover){.migalhas a:hover{color: var(--dourado-claro)}}.ptopo__figura{grid-area: figura;position: relative;align-self: center;margin: 8px 18px 18px 0}.ptopo__moldura{position: absolute;inset: 18px -18px -18px 18px;border: 1.5px solid rgb(201 148 60 / .72);border-radius: 12px;pointer-events: none}.ptopo__quadro{position: relative;z-index: 1;overflow: clip;border-radius: 12px;background: #0A2A3E;box-shadow: 0 40px 80px -40px rgb(0 0 0 / .95),0 0 0 1px rgb(255 255 255 / .06)}.ptopo__foto,.ptopo__foto img{display: block;width: 100%;max-width: none}.ptopo__foto img{aspect-ratio: 4 / 3;object-fit: cover}.ptopo__quadro::after{content: '';position: absolute;inset: 0;background: linear-gradient(0deg,rgb(3 25 38 / .6),rgb(3 25 38 / 0) 46%),linear-gradient(90deg,rgb(3 25 38 / .3),rgb(3 25 38 / 0) 42%);pointer-events: none}.ptopo__cortina{position: absolute;inset: 0;z-index: 2;background: var(--petroleo);opacity: 0;pointer-events: none}.ptopo__cartao{position: absolute;z-index: 3;left: -26px;bottom: 30px;display: grid;gap: 5px;max-width: min(330px,82%);padding: 14px 18px;border: 1px solid rgb(201 148 60 / .38);border-radius: 8px;background: rgb(3 25 38 / .88);box-shadow: inset 0 1px 0 rgb(255 255 255 / .06),0 20px 40px -20px rgb(0 0 0 / .9)}.ptopo__cartao strong{color: var(--branco);font: 600 15px/1.25 var(--fonte-titulo)}.ptopo__cartao span{color: var(--metal);font-size: 12.5px;line-height: 1.4}.indice{position: relative;z-index: 2;margin-top: clamp(40px,4.4vw,64px)}.indice__lista{display: grid;grid-template-columns: repeat(var(--n,6),minmax(0,1fr));gap: 1px;overflow: clip;border: 1px solid rgb(255 255 255 / .12);border-top-color: rgb(201 148 60 / .45);border-radius: var(--raio-card);background: rgb(255 255 255 / .09);box-shadow: 0 24px 50px -30px rgb(0 0 0 / .9)}.indice__lista li{background: linear-gradient(180deg,#0A2435,#04192A)}.indice__lista a{display: flex;align-items: center;gap: 12px;height: 100%;min-height: 62px;padding: 14px 20px;color: rgb(255 255 255 / .9);font: 600 14.5px/1.25 var(--fonte-titulo);transition: background-color .3s ease,color .25s ease}.indice__n{color: var(--dourado);font-size: 12.5px;letter-spacing: .1em}@media (hover: hover){.indice__lista a:hover{background-color: rgb(201 148 60 / .1);color: var(--branco)}}@keyframes topo-sobe{from{opacity: 0;transform: translateY(24px)}}@keyframes topo-entra{from{opacity: 0;transform: translateX(-14px)}}@keyframes topo-cortina{from{opacity: 1}to{opacity: 0}}@keyframes topo-foto{from{transform: scale(1.08)}}@keyframes topo-moldura{from{opacity: 0;transform: translate(-18px,-18px)}}@keyframes topo-hex{from{opacity: 0;transform: scale(.94)}}@media (prefers-reduced-motion: no-preference){.ptopo::before{animation: topo-hex 1.8s var(--ease-out) .15s backwards}.ptopo__migalhas{animation: topo-entra .7s var(--ease-suave) .05s backwards}.ptopo__rotulo{animation: topo-entra .8s var(--ease-suave) .12s backwards}.ptopo__titulo{animation: topo-sobe .9s var(--ease-suave) .2s backwards}.ptopo__cortina{animation: topo-cortina 1s var(--ease-in-out) .05s backwards}.ptopo__foto img{animation: topo-foto 2.2s var(--ease-out) both}.ptopo__moldura{animation: topo-moldura 1.1s var(--ease-out) .5s backwards}.ptopo__cartao{animation: topo-sobe .8s var(--ease-suave) .85s backwards}.ptopo__sub{animation: topo-sobe .9s var(--ease-suave) .34s backwards}.ptopo__botoes{animation: topo-sobe .9s var(--ease-suave) .46s backwards}.indice{animation: topo-sobe 1s var(--ease-suave) .6s backwards}}@media (min-width: 64em) and (max-width: 79.99em){.ptopo__grade{grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr)}.ptopo__cartao{left: -18px;bottom: 22px}.indice__lista a{padding: 12px 14px;font-size: 13.5px}}@media (max-width: 63.99em){.ptopo{padding: calc(var(--altura-topo) + 20px) 0 52px}.ptopo::before{top: 40%;left: 50%;width: max(560px,140vw);opacity: .8}.ptopo__grade{grid-template-columns: minmax(0,1fr);grid-template-rows: none;grid-template-areas: 'migalhas' 'rotulo' 'titulo' 'figura' 'sub' 'botoes'}.ptopo__migalhas{margin-bottom: 18px}.ptopo__rotulo{font-size: 12px}.ptopo__titulo{margin-top: 12px;font-size: min(32px,8.4vw);line-height: 1.14}.ptopo__figura{margin: 26px 12px 12px 0}.ptopo__moldura{inset: 12px -12px -12px 12px}.ptopo__foto img{aspect-ratio: 16 / 11}.ptopo__cartao{left: 12px;bottom: 12px;max-width: calc(100% - 24px);padding: 11px 14px}.ptopo__cartao strong{font-size: 14.5px}.ptopo__cartao span{font-size: 12px}.ptopo__sub{margin-top: 30px;font-size: 16px}.ptopo__botoes{display: grid;gap: 12px;margin-top: 26px}.ptopo__botoes .btn{width: 100%}.indice{margin-top: 40px}.indice__lista{grid-template-columns: repeat(2,minmax(0,1fr))}.indice__lista a{min-height: 56px;padding: 12px 16px;font-size: 14px}}@media (min-width: 40em) and (max-width: 63.99em){.ptopo__titulo{font-size: 42px}.ptopo__figura{width: min(100% - 12px,620px)}.ptopo__sub{max-width: 560px}.ptopo__botoes{grid-template-columns: repeat(2,minmax(0,1fr));max-width: 560px}.indice__lista{grid-template-columns: repeat(3,minmax(0,1fr))}}@media (max-width: 63.99em) and (prefers-reduced-motion: no-preference){.ptopo::before{animation-duration: .9s;animation-delay: 0s}.ptopo__migalhas,.ptopo__rotulo{animation-duration: .6s;animation-delay: 0s}.ptopo__titulo{animation-duration: .7s;animation-delay: .08s}.ptopo__cortina{animation-duration: .7s;animation-delay: 0s}.ptopo__foto img{animation-duration: 1.1s}.ptopo__moldura{animation-duration: .7s;animation-delay: .3s}.ptopo__sub{animation-duration: .7s;animation-delay: .22s}.ptopo__botoes{animation-duration: .7s;animation-delay: .3s}.ptopo__cartao{animation-duration: .6s;animation-delay: .45s}.indice{animation-duration: .7s;animation-delay: .4s}}.conselho__grade{display: grid;grid-template-columns: minmax(0,7fr) minmax(0,5fr);grid-template-rows: auto 1fr;grid-template-areas: 'cab foto' 'corpo foto';column-gap: clamp(40px,5vw,80px);align-items: start}.conselho__cab{grid-area: cab}.conselho__corpo{grid-area: corpo}.conselho__apoio{max-width: 36em;margin-top: 18px}.conselho__foto{grid-area: foto;position: relative;align-self: center;margin: 0 16px 16px 0}.conselho__foto picture,.conselho__foto img{position: relative;display: block;width: 100%;max-width: none;border-radius: 12px}.conselho__foto picture{z-index: 1}.conselho__foto img{aspect-ratio: 4 / 5;object-fit: cover;box-shadow: 0 34px 70px -34px rgb(0 0 0 / .95)}.conselho__moldura{position: absolute;inset: 16px -16px -16px 16px;border: 1.5px solid rgb(201 148 60 / .7);border-radius: 12px;pointer-events: none}.conselho__lista{display: grid;grid-template-columns: repeat(2,minmax(0,1fr));gap: 14px;margin-top: 28px}.conselho__item{display: flex;align-items: flex-start;gap: 16px;padding: 20px;border: 1px solid var(--vidro-borda);border-radius: var(--raio-card);background: linear-gradient(180deg,rgb(255 255 255 / .055),rgb(255 255 255 / .022));box-shadow: inset 0 1px 0 rgb(255 255 255 / .05),0 18px 40px -30px rgb(0 0 0 / .8);transition: transform .45s var(--ease-out),border-color .35s ease}.conselho__icone{width: 48px;height: 48px}.conselho__icone .i{width: 26px;height: 26px}.conselho__nome{color: var(--branco);font: 600 16px/1.3 var(--fonte-titulo)}.conselho__desc{margin-top: 5px;color: var(--claro-2);font-size: 14.5px;line-height: 1.55}.conselho__cta{margin-top: 28px}@media (hover: hover){.conselho__item:hover{transform: translateY(-3px);border-color: rgb(201 148 60 / .35)}}@media (prefers-reduced-motion: no-preference){.js .conselho__lista.visivel .conselho__icone .i{animation: cresce .7s var(--ease-out) calc(var(--i,0) * 90ms + 250ms) backwards}}@media (max-width: 63.99em){.conselho__grade{grid-template-columns: minmax(0,1fr);grid-template-rows: none;grid-template-areas: 'cab' 'foto' 'corpo'}.conselho__foto{width: min(100% - 12px,620px);margin: 26px 12px 12px 0}.conselho__foto img{aspect-ratio: 16 / 10}.conselho__moldura{inset: 12px -12px -12px 12px}}@media (max-width: 39.99em){.conselho__lista{grid-template-columns: minmax(0,1fr);gap: 12px}.conselho__item{padding: 18px}.conselho__cta{width: 100%}}.tipo__grade{display: grid;grid-template-columns: minmax(0,5fr) minmax(0,7fr);grid-template-rows: auto 1fr;grid-template-areas: 'foto cab' 'foto corpo';column-gap: clamp(40px,5vw,80px);align-items: start}.tipo--inverso .tipo__grade{grid-template-columns: minmax(0,7fr) minmax(0,5fr);grid-template-areas: 'cab foto' 'corpo foto'}.tipo__cab{grid-area: cab}.tipo__corpo{grid-area: corpo}.tipo__foto{grid-area: foto;position: relative;align-self: center;margin: 0 16px 16px 0}.tipo__foto picture,.tipo__foto img{position: relative;display: block;width: 100%;max-width: none;border-radius: 12px}.tipo__foto picture{z-index: 1}.tipo__foto img{aspect-ratio: 4 / 5;object-fit: cover;box-shadow: 0 34px 70px -40px rgb(3 25 38 / .7)}.secao--escura .tipo__foto img{box-shadow: 0 34px 70px -34px rgb(0 0 0 / .95)}.tipo__moldura{position: absolute;inset: 16px -16px -16px 16px;border: 1.5px solid rgb(201 148 60 / .7);border-radius: 12px;pointer-events: none}.secao--clara .tipo__moldura{border-color: rgb(167 118 43 / .55)}.tipo__intro{max-width: 38em;margin-top: 18px;font-size: 16px}.tipo__colunas{display: grid;grid-template-columns: repeat(2,minmax(0,1fr));gap: 16px;margin-top: 26px}.tipo__col{padding: 22px 22px 24px;border-radius: var(--raio-card)}.secao--clara .tipo__col{border: 1px solid #E4E9ED;background: var(--branco);box-shadow: 0 1px 2px rgb(3 25 38 / .04),0 14px 34px -24px rgb(3 25 38 / .28)}.secao--escura .tipo__col{border: 1px solid var(--vidro-borda);background: linear-gradient(180deg,rgb(255 255 255 / .055),rgb(255 255 255 / .022));box-shadow: inset 0 1px 0 rgb(255 255 255 / .05),0 18px 40px -30px rgb(0 0 0 / .8)}.tipo__sub{display: flex;align-items: center;gap: 10px;color: var(--cor-titulo);font: 700 12.5px/1.3 var(--fonte-titulo);letter-spacing: .12em;text-transform: uppercase}.tipo__sub .i{width: 22px;height: 22px;color: var(--cor-icone)}.tipo__lista{display: grid;gap: 12px;margin-top: 16px}.tipo__lista li{display: flex;align-items: flex-start;gap: 11px;color: var(--cor-texto);font-size: 15px;line-height: 1.5}.tipo__i{width: 20px;height: 20px;margin-top: 1px;color: var(--cor-icone)}.tipo__i--dor{color: #8C98A2}.secao--escura .tipo__i--dor{color: rgb(255 255 255 / .42)}.tipo__cta{margin-top: 26px}@media (min-width: 64em) and (max-width: 79.99em){.tipo__col{padding: 20px 18px 22px}.tipo__lista li{font-size: 14.5px}}@media (max-width: 63.99em){.tipo__grade,.tipo--inverso .tipo__grade{grid-template-columns: minmax(0,1fr);grid-template-rows: none;grid-template-areas: 'cab' 'foto' 'corpo'}.tipo__foto{width: min(100% - 12px,620px);margin: 26px 12px 12px 0}.tipo__foto img{aspect-ratio: 16 / 10}.tipo__moldura{inset: 12px -12px -12px 12px}.tipo__intro{margin-top: 30px}}@media (max-width: 39.99em){.tipo__colunas{grid-template-columns: minmax(0,1fr);gap: 14px}.tipo__col{padding: 20px 18px 22px}.tipo__cta{width: 100%}}.etapas{--vao: 28px;position: relative;display: grid;grid-template-columns: repeat(5,minmax(0,1fr));gap: var(--vao)}.etapas::before{content: '';position: absolute;top: 21px;left: 20px;right: calc((100% - 4 * var(--vao)) / 5 - 20px);height: 1.5px;background: linear-gradient(90deg,rgb(167 118 43 / .75),rgb(167 118 43 / .25));transform-origin: 0 50%}.etapa{position: relative;display: grid;align-content: start;justify-items: start}.etapa__hex{width: 40px;height: 44px;font-size: 15px}.etapa__prazo{margin-top: 18px;padding: 5px 10px;border-radius: 999px;background: #FBF3E6;color: #6E4A10;font: 600 11.5px/1.2 var(--fonte-titulo);letter-spacing: .02em}.etapa__nome{margin-top: 12px;color: var(--petroleo);font: 700 16.5px/1.25 var(--fonte-titulo)}.etapa__desc{margin-top: 6px;color: var(--texto-2);font-size: 14.5px;line-height: 1.55}.comeco__lei{display: flex;align-items: flex-start;gap: 12px;max-width: 60em;margin-top: clamp(32px,3.4vw,44px);padding: 16px 20px;border: 1px solid var(--fio-claro);border-radius: var(--raio-card);background: var(--branco);color: var(--grafite);font-size: 14.5px;line-height: 1.55}.comeco__lei-i{width: 24px;height: 24px;color: var(--dourado-tinta)}@media (prefers-reduced-motion: no-preference){.js .etapas.visivel::before{animation: risca-x 1.5s var(--ease-in-out) .15s backwards}.js .etapas.visivel .etapa__hex{animation: cresce .6s var(--ease-out) calc(var(--i,0) * 140ms + 150ms) backwards}}@media (min-width: 64em) and (max-width: 79.99em){.etapas{--vao: 20px}.etapa__desc{font-size: 14px}}@media (max-width: 63.99em){.etapas{--vao: 26px;grid-template-columns: minmax(0,1fr)}.etapas::before{display: none}.etapa:not(:last-child)::after{content: '';position: absolute;top: 48px;bottom: calc(-1 * var(--vao) + 4px);left: 19px;width: 1.5px;background: linear-gradient(180deg,rgb(167 118 43 / .75),rgb(167 118 43 / .3));transform-origin: 50% 0}.etapa{grid-template-columns: 40px minmax(0,1fr);column-gap: 18px}.etapa__hex{grid-row: 1 / span 3}.etapa > :not(.etapa__hex){grid-column: 2}.etapa__prazo{justify-self: start;margin-top: 2px}.etapa__nome{margin-top: 8px;font-size: 17px}.etapa__desc{font-size: 15px}@media (prefers-reduced-motion: no-preference){.js .etapas.visivel .etapa::after{animation: risca-y .6s var(--ease-in-out) calc(var(--i,0) * 140ms + 350ms) backwards}}}.cta-final{overflow: clip;box-shadow: inset 0 1px 0 rgb(201 148 60 / .3)}.cta-final__fundo{position: absolute;inset: 0;z-index: -1}.cta-final__fundo picture,.cta-final__fundo img{display: block;width: 100%;height: 100%;max-width: none}.cta-final__fundo img{object-fit: cover;object-position: 50% 40%}.cta-final__fundo::after{content: '';position: absolute;inset: 0;background: linear-gradient(90deg,rgb(3 25 38 / .95) 0%,rgb(3 25 38 / .82) 50%,rgb(3 25 38 / .66) 100%),linear-gradient(180deg,var(--petroleo) 0%,rgb(3 25 38 / 0) 24%,rgb(3 25 38 / 0) 76%,var(--petroleo) 100%)}.cta-final__grade{display: grid;grid-template-columns: minmax(0,1fr) auto;align-items: end;gap: 32px clamp(40px,6vw,96px)}.cta-final__titulo{max-width: 20em}.cta-final__apoio{margin-top: 16px;max-width: 36em}.cta-final__botoes{display: flex;flex-wrap: wrap;gap: 14px}.cta-final__botoes .btn{min-height: 56px;padding-inline: 28px}@media (max-width: 63.99em){.cta-final__grade{grid-template-columns: minmax(0,1fr);align-items: start}}@media (max-width: 39.99em){.cta-final__botoes{display: grid}.cta-final__botoes .btn{width: 100%}}.desafios,.solucoes,.metodo,.publicos,.diferenciais,.antes-depois,.jardim,.legal,.fundador,.faq,.contato,.rodape{content-visibility: auto}@media (max-width: 63.99em){.js-abrindo .desafios{content-visibility: hidden}.provas{content-visibility: auto;contain-intrinsic-size: auto 1480px}.cv-pronto .provas{content-visibility: visible}}.cv-pronto :is(.desafios,.solucoes,.metodo,.publicos,.diferenciais,.antes-depois,.jardim,.legal,.fundador,.faq,.contato,.rodape){content-visibility: visible}.desafios{contain-intrinsic-size: auto 530px}.solucoes{contain-intrinsic-size: auto 663px}.metodo{contain-intrinsic-size: auto 510px}.publicos{contain-intrinsic-size: auto 526px}.diferenciais{contain-intrinsic-size: auto 452px}.antes-depois{contain-intrinsic-size: auto 715px}.jardim{contain-intrinsic-size: auto 661px}.legal{contain-intrinsic-size: auto 365px}.fundador{contain-intrinsic-size: auto 1306px}.faq{contain-intrinsic-size: auto 469px}.contato{contain-intrinsic-size: auto 512px}.rodape{contain-intrinsic-size: auto 329px}@media (max-width: 79.99em){.desafios{contain-intrinsic-size: auto 538px}.solucoes{contain-intrinsic-size: auto 780px}.metodo{contain-intrinsic-size: auto 561px}.publicos{contain-intrinsic-size: auto 535px}.diferenciais{contain-intrinsic-size: auto 533px}.antes-depois{contain-intrinsic-size: auto 608px}.jardim{contain-intrinsic-size: auto 567px}.legal{contain-intrinsic-size: auto 406px}.fundador{contain-intrinsic-size: auto 1357px}.faq{contain-intrinsic-size: auto 522px}.contato{contain-intrinsic-size: auto 512px}.rodape{contain-intrinsic-size: auto 321px}}@media (max-width: 63.99em){.desafios{contain-intrinsic-size: auto 976px}.solucoes{contain-intrinsic-size: auto 1087px}.metodo{contain-intrinsic-size: auto 918px}.publicos{contain-intrinsic-size: auto 947px}.diferenciais{contain-intrinsic-size: auto 903px}.antes-depois{contain-intrinsic-size: auto 559px}.jardim{contain-intrinsic-size: auto 587px}.legal{contain-intrinsic-size: auto 684px}.fundador{contain-intrinsic-size: auto 2111px}.faq{contain-intrinsic-size: auto 735px}.contato{contain-intrinsic-size: auto 903px}.rodape{contain-intrinsic-size: auto 717px}}@media (max-width: 39.99em){.desafios{contain-intrinsic-size: auto 1543px}.solucoes{contain-intrinsic-size: auto 2073px}.metodo{contain-intrinsic-size: auto 1182px}.publicos{contain-intrinsic-size: auto 1910px}.diferenciais{contain-intrinsic-size: auto 992px}.antes-depois{contain-intrinsic-size: auto 842px}.jardim{contain-intrinsic-size: auto 747px}.legal{contain-intrinsic-size: auto 1036px}.fundador{contain-intrinsic-size: auto 2828px}.faq{contain-intrinsic-size: auto 908px}.contato{contain-intrinsic-size: auto 1236px}.rodape{contain-intrinsic-size: auto 905px}}.servico,.comeco,.cta-final,.tipo,.conselho,.papeis,.integracao,.quem,.mvvs,.governanca{content-visibility: auto}.cv-pronto :is(.servico,.comeco,.cta-final,.tipo,.conselho,.papeis,.integracao,.quem,.mvvs,.governanca){content-visibility: visible}.servico{contain-intrinsic-size: auto 533px}.comeco{contain-intrinsic-size: auto 428px}.cta-final{contain-intrinsic-size: auto 176px}.tipo{contain-intrinsic-size: auto 660px}.conselho{contain-intrinsic-size: auto 595px}.papeis{contain-intrinsic-size: auto 579px}.integracao{contain-intrinsic-size: auto 765px}.quem{contain-intrinsic-size: auto 614px}.fundador--pagina{contain-intrinsic-size: auto 1107px}.mvvs{contain-intrinsic-size: auto 391px}.governanca{contain-intrinsic-size: auto 647px}@media (max-width: 79.99em){.servico{contain-intrinsic-size: auto 582px}.comeco{contain-intrinsic-size: auto 460px}.cta-final{contain-intrinsic-size: auto 180px}.tipo{contain-intrinsic-size: auto 713px}.conselho{contain-intrinsic-size: auto 650px}.papeis{contain-intrinsic-size: auto 558px}.integracao{contain-intrinsic-size: auto 774px}.quem{contain-intrinsic-size: auto 609px}.fundador--pagina{contain-intrinsic-size: auto 1272px}.mvvs{contain-intrinsic-size: auto 456px}.governanca{contain-intrinsic-size: auto 696px}}@media (max-width: 63.99em){.servico{contain-intrinsic-size: auto 807px}.comeco{contain-intrinsic-size: auto 792px}.cta-final{contain-intrinsic-size: auto 236px}.tipo{contain-intrinsic-size: auto 1036px}.conselho{contain-intrinsic-size: auto 958px}.papeis{contain-intrinsic-size: auto 982px}.integracao{contain-intrinsic-size: auto 1172px}.quem{contain-intrinsic-size: auto 974px}.fundador--pagina{contain-intrinsic-size: auto 1739px}.mvvs{contain-intrinsic-size: auto 797px}.governanca{contain-intrinsic-size: auto 1059px}}@media (max-width: 39.99em){.servico{contain-intrinsic-size: auto 1222px}.comeco{contain-intrinsic-size: auto 1016px}.cta-final{contain-intrinsic-size: auto 364px}.tipo{contain-intrinsic-size: auto 1319px}.conselho{contain-intrinsic-size: auto 1119px}.papeis{contain-intrinsic-size: auto 1172px}.integracao{contain-intrinsic-size: auto 1771px}.quem{contain-intrinsic-size: auto 1398px}.fundador--pagina{contain-intrinsic-size: auto 2402px}.mvvs{contain-intrinsic-size: auto 975px}.governanca{contain-intrinsic-size: auto 1698px}}</style>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="topo" id="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="/" aria-label="HS Sindicatura, voltar ao início">
+        <picture><source type="image/avif" srcset="/assets/img/logo-hs-64.avif 64w, /assets/img/logo-hs-96.avif 96w, /assets/img/logo-hs-128.avif 128w, /assets/img/logo-hs-192.avif 192w" sizes="(min-width: 64em) 42px, 36px"><img src="/assets/img/logo-hs-96.webp" srcset="/assets/img/logo-hs-64.webp 64w, /assets/img/logo-hs-96.webp 96w, /assets/img/logo-hs-128.webp 128w, /assets/img/logo-hs-192.webp 192w" sizes="(min-width: 64em) 42px, 36px" width="96" height="108" alt="" class="marca__simbolo"></picture>
+        <span class="marca__nome" aria-hidden="true">Sindicatura</span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul class="menu__lista" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/solucoes">Soluções</a></li>
+          <li><a href="/para-condominios" aria-current="page">Para Condomínios</a></li>
+          <li><a href="/para-administradoras">Para Administradoras</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+        <div class="menu__extra">
+          <a class="btn btn--dourado menu__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="menu-celular">Solicitar proposta<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a class="menu__fone" href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20Danilo!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="menu-celular-fone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-light"/></svg>(11) 93382-5442</a>
+          <p class="menu__rodape">Síndico profissional · São Paulo e Grande São Paulo</p>
+        </div>
+      </nav>
+
+      <a class="btn btn--dourado topo__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="topo">Solicitar proposta<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+
+      <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span class="topo__menu-linhas" aria-hidden="true"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+    <section class="ptopo" id="inicio" aria-labelledby="ptopo-titulo">
+      <div class="container ptopo__grade">
+        <nav class="migalhas ptopo__migalhas" aria-label="Você está em">
+          <ol role="list"><li><a href="/">Home</a></li><li><span aria-current="page">Para Condomínios</span></li></ol>
+        </nav>
+        <p class="rotulo ptopo__rotulo">Para condomínios</p>
+        <h1 class="ptopo__titulo" id="ptopo-titulo">Síndico profissional para condomínios <span class="destaque">residenciais, mistos e comerciais.</span></h1>
+        <div class="ptopo__figura">
+          <span class="ptopo__moldura" aria-hidden="true"></span>
+          <div class="ptopo__quadro">
+            <picture class="ptopo__foto"><source type="image/avif" srcset="/assets/img/topo-condominios-480.avif 480w, /assets/img/topo-condominios-640.avif 640w, /assets/img/topo-condominios-760.avif 760w, /assets/img/topo-condominios-960.avif 960w" sizes="(min-width: 80em) 480px, (min-width: 64em) 37vw, (min-width: 40em) 620px, calc(100vw - 54px)"><img src="/assets/img/topo-condominios-760.webp" srcset="/assets/img/topo-condominios-480.webp 480w, /assets/img/topo-condominios-640.webp 640w, /assets/img/topo-condominios-760.webp 760w, /assets/img/topo-condominios-960.webp 960w" sizes="(min-width: 80em) 480px, (min-width: 64em) 37vw, (min-width: 40em) 620px, calc(100vw - 54px)" width="760" height="570" alt="Torres residenciais com varandas e janelas acesas ao anoitecer (imagem ilustrativa)" fetchpriority="high" decoding="async"></picture>
+            <span class="ptopo__cortina" aria-hidden="true"></span>
+          </div>
+          <p class="ptopo__cartao"><strong>Residencial · Misto · Comercial</strong><span>Em São Paulo e na Grande São Paulo.</span></p>
+        </div>
+        <p class="ptopo__sub">Cada tipo de condomínio tem uma rotina, um público e um risco. A HS Sindicatura ajusta a gestão ao que o seu condomínio precisa, com método e presença.</p>
+        <div class="ptopo__botoes">
+          <a class="btn btn--dourado" href="/contato">Agendar diagnóstico<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a target="_blank" rel="noopener" class="btn btn--contorno" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20o%20meu%20condom%C3%ADnio." data-zap="topo-pagina">Solicitar proposta</a>
+        </div>
+      </div>
+      <div class="container">
+        <nav class="indice" aria-label="Tipos de condomínio">
+          <ol class="indice__lista" role="list" style="--n:4">
+            <li><a href="#residencial"><span class="indice__n">01</span><span>Residencial</span></a></li>
+            <li><a href="#misto"><span class="indice__n">02</span><span>Misto</span></a></li>
+            <li><a href="#comercial"><span class="indice__n">03</span><span>Comercial</span></a></li>
+            <li><a href="#conselho"><span class="indice__n">04</span><span>Para o conselho</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    
+    <section class="secao secao--clara tipo" id="residencial" aria-labelledby="tipo-residencial">
+      <div class="container tipo__grade">
+        <div class="tipo__cab" data-revela>
+          <p class="rotulo">Residencial</p>
+          <h2 class="titulo" id="tipo-residencial">Condomínio residencial: <span class="destaque">convivência, áreas comuns e contas claras.</span></h2>
+        </div>
+        <figure class="tipo__foto" data-revela="esquerda">
+          <span class="tipo__moldura" aria-hidden="true"></span>
+          <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/tipo-residencial-400.avif 400w, /assets/img/tipo-residencial-560.avif 560w, /assets/img/tipo-residencial-720.avif 720w, /assets/img/tipo-residencial-920.avif 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/tipo-residencial-400.webp 400w, /assets/img/tipo-residencial-560.webp 560w, /assets/img/tipo-residencial-720.webp 720w, /assets/img/tipo-residencial-920.webp 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source type="image/avif" srcset="/assets/img/tipo-residencial-cel-400.avif 400w, /assets/img/tipo-residencial-cel-640.avif 640w, /assets/img/tipo-residencial-cel-860.avif 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)"><img src="/assets/img/tipo-residencial-cel-640.webp" srcset="/assets/img/tipo-residencial-cel-400.webp 400w, /assets/img/tipo-residencial-cel-640.webp 640w, /assets/img/tipo-residencial-cel-860.webp 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)" width="640" height="400" alt="Área de lazer de um condomínio em São Paulo, com piscina, deck e espreguiçadeiras (imagem ilustrativa)" loading="lazy" decoding="async"></picture>
+        </figure>
+        <div class="tipo__corpo">
+          <p class="apoio tipo__intro" data-revela>Onde as famílias moram, a gestão cuida do dia a dia de quem está ali: as áreas comuns em ordem, as regras aplicadas para todos e uma taxa condominial que o morador consegue entender.</p>
+          <div class="tipo__colunas" data-revela-lista>
+            <div class="tipo__col" style="--i:0">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-warning-circle-light"/></svg>Dores mais comuns</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Áreas comuns e equipamentos sem manutenção preventiva.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Conflitos de convivência: barulho, vagas, animais e uso do lazer.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Taxa condominial que sobe sem explicação clara.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Morador sem saber o que está sendo feito.</span></li></ul>
+            </div>
+            <div class="tipo__col" style="--i:1">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-seal-check-light"/></svg>Como a HS atua</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Calendário de manutenção das áreas comuns, da piscina aos elevadores.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Regimento aplicado com critério e mediação imparcial dos conflitos.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Previsão orçamentária e prestação de contas que o morador entende.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Comunicados claros e um canal oficial para as solicitações.</span></li></ul>
+            </div>
+          </div>
+          <a class="btn btn--dourado tipo__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20um%20condom%C3%ADnio%20residencial." target="_blank" rel="noopener" data-zap="tipo-residencial" data-servico="Condomínio residencial" data-revela>Solicitar proposta para condomínio residencial<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--escura tipo tipo--inverso" id="misto" aria-labelledby="tipo-misto">
+      <div class="container tipo__grade">
+        <div class="tipo__cab" data-revela>
+          <p class="rotulo">Misto</p>
+          <h2 class="titulo" id="tipo-misto">Condomínio misto: <span class="destaque">regras claras para quem mora e para quem trabalha.</span></h2>
+        </div>
+        <figure class="tipo__foto" data-revela="direita">
+          <span class="tipo__moldura" aria-hidden="true"></span>
+          <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/tipo-misto-400.avif 400w, /assets/img/tipo-misto-560.avif 560w, /assets/img/tipo-misto-720.avif 720w, /assets/img/tipo-misto-920.avif 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/tipo-misto-400.webp 400w, /assets/img/tipo-misto-560.webp 560w, /assets/img/tipo-misto-720.webp 720w, /assets/img/tipo-misto-920.webp 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source type="image/avif" srcset="/assets/img/tipo-misto-cel-400.avif 400w, /assets/img/tipo-misto-cel-640.avif 640w, /assets/img/tipo-misto-cel-860.avif 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)"><img src="/assets/img/tipo-misto-cel-640.webp" srcset="/assets/img/tipo-misto-cel-400.webp 400w, /assets/img/tipo-misto-cel-640.webp 640w, /assets/img/tipo-misto-cel-860.webp 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)" width="640" height="400" alt="Rua de São Paulo ao pôr do sol, com comércio no térreo e apartamentos nos andares de cima (imagem ilustrativa)" loading="lazy" decoding="async"></picture>
+        </figure>
+        <div class="tipo__corpo">
+          <p class="apoio tipo__intro" data-revela>Moradia, lojas e escritórios no mesmo prédio. São dois públicos com horários, usos e expectativas diferentes, e a convenção precisa valer para os dois.</p>
+          <div class="tipo__colunas" data-revela-lista>
+            <div class="tipo__col" style="--i:0">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-warning-circle-light"/></svg>Dores mais comuns</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Rateio de despesas entre lojas e apartamentos que vira discussão.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Horários, acessos e segurança diferentes para moradores, lojistas e clientes.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Convenção que não deixa claro o que cabe a cada parte.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Fluxo de clientes e entregas nas áreas comuns.</span></li></ul>
+            </div>
+            <div class="tipo__col" style="--i:1">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-seal-check-light"/></svg>Como a HS atua</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Rateio aplicado conforme a convenção, com contas claras para as duas partes.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Regras de acesso e horários pensadas para os dois públicos.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Contratos de limpeza, segurança e manutenção dimensionados para o uso real do prédio.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Comunicação separada por público quando o assunto é de um só.</span></li></ul>
+            </div>
+          </div>
+          <a class="btn btn--dourado tipo__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20um%20condom%C3%ADnio%20misto." target="_blank" rel="noopener" data-zap="tipo-misto" data-servico="Condomínio misto" data-revela>Solicitar proposta para condomínio misto<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--clara tipo" id="comercial" aria-labelledby="tipo-comercial">
+      <div class="container tipo__grade">
+        <div class="tipo__cab" data-revela>
+          <p class="rotulo">Comercial</p>
+          <h2 class="titulo" id="tipo-comercial">Condomínio comercial: <span class="destaque">contratos, segurança e operação sem interrupção.</span></h2>
+        </div>
+        <figure class="tipo__foto" data-revela="esquerda">
+          <span class="tipo__moldura" aria-hidden="true"></span>
+          <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/tipo-comercial-400.avif 400w, /assets/img/tipo-comercial-560.avif 560w, /assets/img/tipo-comercial-720.avif 720w, /assets/img/tipo-comercial-920.avif 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/tipo-comercial-400.webp 400w, /assets/img/tipo-comercial-560.webp 560w, /assets/img/tipo-comercial-720.webp 720w, /assets/img/tipo-comercial-920.webp 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source type="image/avif" srcset="/assets/img/tipo-comercial-cel-400.avif 400w, /assets/img/tipo-comercial-cel-640.avif 640w, /assets/img/tipo-comercial-cel-860.avif 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)"><img src="/assets/img/tipo-comercial-cel-640.webp" srcset="/assets/img/tipo-comercial-cel-400.webp 400w, /assets/img/tipo-comercial-cel-640.webp 640w, /assets/img/tipo-comercial-cel-860.webp 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)" width="640" height="400" alt="Torres de escritórios em São Paulo vistas de baixo, contra o céu azul (imagem ilustrativa)" loading="lazy" decoding="async"></picture>
+        </figure>
+        <div class="tipo__corpo">
+          <p class="apoio tipo__intro" data-revela>Em edifícios corporativos e centros comerciais, a gestão protege a operação das empresas que trabalham e atendem ali.</p>
+          <div class="tipo__colunas" data-revela-lista>
+            <div class="tipo__col" style="--i:0">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-warning-circle-light"/></svg>Dores mais comuns</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Contratos grandes de elevadores, climatização e segurança sem acompanhamento técnico.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Falha de manutenção que para a rotina das empresas.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Controle de acesso de funcionários, visitantes e prestadores.</span></li><li><svg class="i tipo__i tipo__i--dor" aria-hidden="true" focusable="false"><use href="#i-x-circle-light"/></svg><span>Laudos, licenças e documentos obrigatórios com prazo.</span></li></ul>
+            </div>
+            <div class="tipo__col" style="--i:1">
+              <h3 class="tipo__sub"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-seal-check-light"/></svg>Como a HS atua</h3>
+              <ul class="tipo__lista" role="list"><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Contratos técnicos fiscalizados, com controle de vencimentos.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Manutenção preventiva programada para não parar a rotina do prédio.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Regras de acesso e segurança alinhadas com a portaria e os condôminos.</span></li><li><svg class="i tipo__i" aria-hidden="true" focusable="false"><use href="#i-check-circle-light"/></svg><span>Controle de laudos, inspeções e documentos obrigatórios.</span></li></ul>
+            </div>
+          </div>
+          <a class="btn btn--dourado tipo__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20um%20condom%C3%ADnio%20comercial." target="_blank" rel="noopener" data-zap="tipo-comercial" data-servico="Condomínio comercial" data-revela>Solicitar proposta para condomínio comercial<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--escura conselho" id="conselho" aria-labelledby="conselho-titulo">
+      <div class="container conselho__grade">
+        <div class="conselho__cab" data-revela>
+          <p class="rotulo">Conselho e assembleias</p>
+          <h2 class="titulo" id="conselho-titulo">O conselho decide. <span class="destaque">A HS organiza a informação para ele decidir bem.</span></h2>
+          <p class="apoio conselho__apoio">O conselho acompanha a gestão em nome dos condôminos e responde a eles. Com a HS, ele recebe a informação organizada e no prazo, e participa das decisões com segurança.</p>
+        </div>
+
+        <figure class="conselho__foto" data-revela="direita">
+          <span class="conselho__moldura" aria-hidden="true"></span>
+          <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/conselho-400.avif 400w, /assets/img/conselho-560.avif 560w, /assets/img/conselho-720.avif 720w, /assets/img/conselho-920.avif 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/conselho-400.webp 400w, /assets/img/conselho-560.webp 560w, /assets/img/conselho-720.webp 720w, /assets/img/conselho-920.webp 920w" sizes="(min-width: 80em) 460px, 36vw" width="920" height="1150"><source type="image/avif" srcset="/assets/img/conselho-cel-400.avif 400w, /assets/img/conselho-cel-640.avif 640w, /assets/img/conselho-cel-860.avif 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)"><img src="/assets/img/conselho-cel-640.webp" srcset="/assets/img/conselho-cel-400.webp 400w, /assets/img/conselho-cel-640.webp 640w, /assets/img/conselho-cel-860.webp 860w" sizes="(min-width: 40em) 620px, calc(100vw - 54px)" width="640" height="400" alt="Reunião de conselho: adultos em volta de uma mesa com documentos, numa sala com vista para a cidade (imagem ilustrativa)" loading="lazy" decoding="async"></picture>
+        </figure>
+
+        <div class="conselho__corpo">
+          <ul class="conselho__lista" role="list" data-revela-lista>
+            <li class="conselho__item" style="--i:0">
+              <span class="icone-caixa conselho__icone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-calendar-check-light"/></svg></span>
+              <div><h3 class="conselho__nome">Reuniões periódicas</h3><p class="conselho__desc">Com pauta definida e registro do que foi decidido.</p></div>
+            </li>
+            <li class="conselho__item" style="--i:1">
+              <span class="icone-caixa conselho__icone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-presentation-chart-light"/></svg></span>
+              <div><h3 class="conselho__nome">Relatório mensal de gestão</h3><p class="conselho__desc">Finanças, contratos e manutenções num só documento.</p></div>
+            </li>
+            <li class="conselho__item" style="--i:2">
+              <span class="icone-caixa conselho__icone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-gavel-light"/></svg></span>
+              <div><h3 class="conselho__nome">Assembleias preparadas</h3><p class="conselho__desc">Edital, pauta e documentos prontos com antecedência.</p></div>
+            </li>
+            <li class="conselho__item" style="--i:3">
+              <span class="icone-caixa conselho__icone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-folder-open-light"/></svg></span>
+              <div><h3 class="conselho__nome">Contas documentadas</h3><p class="conselho__desc">Documentos organizados para o parecer sobre as contas.</p></div>
+            </li>
+          </ul>
+          <a target="_blank" rel="noopener" class="btn btn--dourado conselho__cta" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Sou%20do%20conselho%20de%20um%20condom%C3%ADnio%20e%20vim%20pelo%20site%20da%20HS%20Sindicatura.%20Gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20nosso%20condom%C3%ADnio." data-zap="conselho" data-revela>Sou do conselho<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--clara comeco" id="como-comeca" aria-labelledby="comeco-titulo">
+      <div class="container">
+        <div class="cab">
+          <div data-revela>
+            <p class="rotulo">Como começa</p>
+            <h2 class="titulo" id="comeco-titulo">Do primeiro contato <span class="destaque">ao início da gestão.</span></h2>
+          </div>
+          <p class="apoio" data-revela style="--i:1">Cinco etapas, com prazo conhecido, para o condomínio mudar de gestão de forma organizada.</p>
+        </div>
+
+        <ol class="etapas" role="list" data-revela-lista>
+          <li class="etapa" style="--i:0">
+            <span class="hex etapa__hex" aria-hidden="true">1</span>
+            <span class="etapa__prazo">cerca de 1 hora</span>
+            <h3 class="etapa__nome"><span class="sr-only">Etapa 1: </span>Conversa inicial</h3>
+            <p class="etapa__desc">Para entender o condomínio, o momento da gestão e o que precisa mudar.</p>
+          </li>
+          <li class="etapa" style="--i:1">
+            <span class="hex etapa__hex" aria-hidden="true">2</span>
+            <span class="etapa__prazo">no condomínio</span>
+            <h3 class="etapa__nome"><span class="sr-only">Etapa 2: </span>Visita técnica</h3>
+            <p class="etapa__desc">O diagnóstico no local: contratos, finanças, manutenção e documentação.</p>
+          </li>
+          <li class="etapa" style="--i:2">
+            <span class="hex etapa__hex" aria-hidden="true">3</span>
+            <span class="etapa__prazo">até 48 horas</span>
+            <h3 class="etapa__nome"><span class="sr-only">Etapa 3: </span>Proposta</h3>
+            <p class="etapa__desc">A proposta personalizada chega em até 48 horas depois da visita.</p>
+          </li>
+          <li class="etapa" style="--i:3">
+            <span class="hex etapa__hex" aria-hidden="true">4</span>
+            <span class="etapa__prazo">decisão dos condôminos</span>
+            <h3 class="etapa__nome"><span class="sr-only">Etapa 4: </span>Assembleia</h3>
+            <p class="etapa__desc">A proposta vai para a assembleia, que escolhe o síndico.</p>
+          </li>
+          <li class="etapa" style="--i:4">
+            <span class="hex etapa__hex" aria-hidden="true">5</span>
+            <span class="etapa__prazo">cerca de 30 dias</span>
+            <h3 class="etapa__nome"><span class="sr-only">Etapa 5: </span>Transição e início</h3>
+            <p class="etapa__desc">Transição assistida, e a gestão começa com rotina, calendário e relatórios.</p>
+          </li>
+        </ol>
+
+        <p class="comeco__lei" data-revela><svg class="i comeco__lei-i" aria-hidden="true" focusable="false"><use href="#i-scales-light"/></svg><span>O síndico não precisa ser morador do condomínio. Ele é escolhido pela assembleia, com mandato de até dois anos, que pode ser renovado (Código Civil, art. 1.347).</span></p>
+      </div>
+    </section>
+
+    <section class="secao secao--clara secao--branca faq" id="duvidas" aria-labelledby="faq-titulo">
+      <div class="container faq__grade">
+        <div class="faq__cab" data-revela>
+          <p class="rotulo">Dúvidas frequentes</p>
+          <h2 class="titulo" id="faq-titulo">O que perguntam antes de contratar um síndico profissional.</h2>
+          <p class="apoio faq__apoio">Se a sua dúvida não estiver aqui, fale direto com o Danilo pelo WhatsApp.</p>
+          <a target="_blank" rel="noopener" class="btn btn--contorno-petroleo faq__zap" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20a%20sindicatura%20profissional." data-zap="faq"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-regular"/></svg>Falar no WhatsApp</a>
+        </div>
+
+        <div class="faq__lista card-branco" data-revela style="--i:1">
+          
+            <div class="faq__item faq__item--aberto">
+              <h3 class="faq__pergunta">
+                <button class="faq__botao" type="button" id="faq-b1" aria-expanded="true" aria-controls="faq-r1"><span>O síndico profissional precisa morar no condomínio?</span><span class="faq__mais" aria-hidden="true"></span></button>
+              </h3>
+              <div class="faq__resposta" id="faq-r1" role="region" aria-labelledby="faq-b1">
+                <div class="faq__miolo"><p>Não. O Código Civil (art. 1.347) permite que a assembleia escolha um síndico que não seja condômino, com mandato de até dois anos, que pode ser renovado.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3 class="faq__pergunta">
+                <button class="faq__botao" type="button" id="faq-b2" aria-expanded="false" aria-controls="faq-r2"><span>Condomínio pequeno pode ter síndico profissional?</span><span class="faq__mais" aria-hidden="true"></span></button>
+              </h3>
+              <div class="faq__resposta" id="faq-r2" role="region" aria-labelledby="faq-b2">
+                <div class="faq__miolo"><p>Pode. A HS atende condomínios de portes diferentes, e a proposta leva em conta o número de unidades, a rotina do prédio e a frequência de visitas que ele precisa.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3 class="faq__pergunta">
+                <button class="faq__botao" type="button" id="faq-b3" aria-expanded="false" aria-controls="faq-r3"><span>Quanto custa um síndico profissional?</span><span class="faq__mais" aria-hidden="true"></span></button>
+              </h3>
+              <div class="faq__resposta" id="faq-r3" role="region" aria-labelledby="faq-b3">
+                <div class="faq__miolo"><p>Depende do porte do condomínio, da rotina e da frequência de visitas. O valor vem na proposta, que a HS envia em até 48 horas depois da visita técnica.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3 class="faq__pergunta">
+                <button class="faq__botao" type="button" id="faq-b4" aria-expanded="false" aria-controls="faq-r4"><span>Como é a troca do síndico atual pela HS?</span><span class="faq__mais" aria-hidden="true"></span></button>
+              </h3>
+              <div class="faq__resposta" id="faq-r4" role="region" aria-labelledby="faq-b4">
+                <div class="faq__miolo"><p>Com a proposta aprovada em assembleia, começa uma transição assistida de cerca de 30 dias: a HS recebe documentos, contratos e pendências, conhece a equipe e os prestadores e só então assume a rotina.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <h3 class="faq__pergunta">
+                <button class="faq__botao" type="button" id="faq-b5" aria-expanded="false" aria-controls="faq-r5"><span>A HS atende fora da capital?</span><span class="faq__mais" aria-hidden="true"></span></button>
+              </h3>
+              <div class="faq__resposta" id="faq-r5" role="region" aria-labelledby="faq-b5">
+                <div class="faq__miolo"><p>Sim. A HS atende condomínios residenciais, mistos e comerciais na cidade de São Paulo e na Grande São Paulo.</p></div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="secao secao--escura cta-final" id="proximo-passo" aria-labelledby="cta-titulo" data-zap-some>
+      <div class="cta-final__fundo" aria-hidden="true">
+        <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/cta-faixa-800.avif 800w, /assets/img/cta-faixa-1280.avif 1280w, /assets/img/cta-faixa-1600.avif 1600w" sizes="100vw" width="1600" height="533"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/cta-faixa-800.webp 800w, /assets/img/cta-faixa-1280.webp 1280w, /assets/img/cta-faixa-1600.webp 1600w" sizes="100vw" width="1600" height="533"><source type="image/avif" srcset="/assets/img/cta-fundo-800.avif 800w, /assets/img/cta-fundo-1280.avif 1280w" sizes="100vw"><img src="/assets/img/cta-fundo-800.webp" srcset="/assets/img/cta-fundo-800.webp 800w, /assets/img/cta-fundo-1280.webp 1280w" sizes="100vw" width="800" height="450" alt="" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="container cta-final__grade">
+        <div data-revela>
+          <p class="rotulo">Proposta</p>
+          <h2 class="titulo cta-final__titulo" id="cta-titulo">Quer uma proposta <span class="destaque">para o seu condomínio?</span></h2>
+          <p class="apoio cta-final__apoio">Conte o tipo e o tamanho do condomínio. Depois da visita técnica, a proposta chega em até 48 horas.</p>
+        </div>
+        <div class="cta-final__botoes" data-revela style="--i:1">
+          <a target="_blank" rel="noopener" class="btn btn--dourado" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20o%20meu%20condom%C3%ADnio." data-zap="fim-principal">Solicitar proposta<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a class="btn btn--contorno" href="/contato" data-zap="fim-secundario">Agendar diagnóstico</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+    <footer class="rodape" id="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca">
+          <a class="marca" href="/" aria-label="HS Sindicatura, voltar ao início">
+            <picture><source type="image/avif" srcset="/assets/img/logo-hs-64.avif 64w, /assets/img/logo-hs-96.avif 96w, /assets/img/logo-hs-128.avif 128w, /assets/img/logo-hs-192.avif 192w" sizes="48px"><img src="/assets/img/logo-hs-96.webp" srcset="/assets/img/logo-hs-64.webp 64w, /assets/img/logo-hs-96.webp 96w, /assets/img/logo-hs-128.webp 128w, /assets/img/logo-hs-192.webp 192w" sizes="48px" width="96" height="108" alt="" class="marca__simbolo rodape__simbolo" loading="lazy" decoding="async"></picture>
+            <span class="marca__nome" aria-hidden="true"><span class="marca__hs">HS</span> Sindicatura</span>
+          </a>
+          <p class="rodape__frase">Gestão condominial com método, governança e responsabilidade.</p>
+          <a class="rodape__insta" href="https://www.instagram.com/hssindicatura/" target="_blank" rel="noopener" aria-label="Instagram da HS Sindicatura (@hssindicatura)"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-instagram-logo-light"/></svg></a>
+        </div>
+
+        <nav class="rodape__col" aria-label="Navegação do rodapé">
+          <h2 class="rodape__titulo">Navegação</h2>
+          <ul role="list">
+            <li><a href="/">Home</a></li>
+            <li><a href="/solucoes">Soluções</a></li>
+            <li><a href="/para-condominios">Para Condomínios</a></li>
+            <li><a href="/para-administradoras">Para Administradoras</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Soluções</h2>
+          <ul role="list">
+              <li><a href="/solucoes#financeira">Gestão financeira</a></li>
+              <li><a href="/solucoes#contratos">Contratos e fornecedores</a></li>
+              <li><a href="/solucoes#governanca">Governança administrativa</a></li>
+              <li><a href="/solucoes#operacional">Operação e manutenção</a></li>
+              <li><a href="/solucoes#comunicacao">Comunicação estruturada</a></li>
+              <li><a href="/solucoes#conselho">Apoio ao conselho</a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Contato</h2>
+          <ul class="rodape__contato" role="list">
+            <li><a href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20Danilo!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="rodape"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-light"/></svg>(11) 93382-5442</a></li>
+            <li><a href="mailto:hssindicatura@gmail.com"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-envelope-simple-light"/></svg>hssindicatura@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/hssindicatura/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-instagram-logo-light"/></svg>@hssindicatura</a></li>
+            <li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-map-pin-light"/></svg>São Paulo e Grande São Paulo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p class="rodape__copy">© 2026 HS Sindicatura · Todos os direitos reservados.</p>
+        <p class="rodape__credito">Site por <a href="https://www.instagram.com/credialta.sites/" target="_blank" rel="noopener">Credialta Sites</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <a class="zap-flutuante" href="https://wa.me/5511933825442?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20HS%20Sindicatura%20e%20gostaria%20de%20solicitar%20uma%20proposta%20de%20sindicatura%20para%20o%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="flutuante" aria-label="Falar com a HS Sindicatura pelo WhatsApp"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-regular"/></svg></a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden"><symbol id="i-warning-circle-light" viewBox="0 0 256 256"><path d="M128,26A102,102,0,1,0,230,128,102.12,102.12,0,0,0,128,26Zm0,192a90,90,0,1,1,90-90A90.1,90.1,0,0,1,128,218Zm-6-82V80a6,6,0,0,1,12,0v56a6,6,0,0,1-12,0Zm16,36a10,10,0,1,1-10-10A10,10,0,0,1,138,172Z"/></symbol><symbol id="i-x-circle-light" viewBox="0 0 256 256"><path d="M164.24,100.24,136.48,128l27.76,27.76a6,6,0,1,1-8.48,8.48L128,136.48l-27.76,27.76a6,6,0,0,1-8.48-8.48L119.52,128,91.76,100.24a6,6,0,0,1,8.48-8.48L128,119.52l27.76-27.76a6,6,0,0,1,8.48,8.48ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/></symbol><symbol id="i-seal-check-light" viewBox="0 0 256 256"><path d="M224.42,104.2c-3.9-4.07-7.93-8.27-9.55-12.18-1.5-3.63-1.58-9-1.67-14.68-.14-9.38-.3-20-7.42-27.12S188,42.94,178.66,42.8c-5.68-.09-11-.17-14.68-1.67-3.91-1.62-8.11-5.65-12.18-9.55C145.16,25.22,137.64,18,128,18s-17.16,7.22-23.8,13.58c-4.07,3.9-8.27,7.93-12.18,9.55-3.63,1.5-9,1.58-14.68,1.67-9.38.14-20,.3-27.12,7.42S42.94,68,42.8,77.34c-.09,5.68-.17,11-1.67,14.68-1.62,3.91-5.65,8.11-9.55,12.18C25.22,110.84,18,118.36,18,128s7.22,17.16,13.58,23.8c3.9,4.07,7.93,8.27,9.55,12.18,1.5,3.63,1.58,9,1.67,14.68.14,9.38.3,20,7.42,27.12S68,213.06,77.34,213.2c5.68.09,11,.17,14.68,1.67,3.91,1.62,8.11,5.65,12.18,9.55C110.84,230.78,118.36,238,128,238s17.16-7.22,23.8-13.58c4.07-3.9,8.27-7.93,12.18-9.55,3.63-1.5,9-1.58,14.68-1.67,9.38-.14,20-.3,27.12-7.42s7.28-17.74,7.42-27.12c.09-5.68.17-11,1.67-14.68,1.62-3.91,5.65-8.11,9.55-12.18C230.78,145.16,238,137.64,238,128S230.78,110.84,224.42,104.2Zm-8.66,39.3c-4.67,4.86-9.5,9.9-12,15.9-2.38,5.74-2.48,12.52-2.58,19.08-.11,7.44-.23,15.14-3.9,18.82s-11.38,3.79-18.82,3.9c-6.56.1-13.34.2-19.08,2.58-6,2.48-11,7.31-15.91,12-5.25,5-10.68,10.24-15.49,10.24s-10.24-5.21-15.5-10.24c-4.86-4.67-9.9-9.5-15.9-12-5.74-2.38-12.52-2.48-19.08-2.58-7.44-.11-15.14-.23-18.82-3.9s-3.79-11.38-3.9-18.82c-.1-6.56-.2-13.34-2.58-19.08-2.48-6-7.31-11-12-15.91C35.21,138.24,30,132.81,30,128s5.21-10.24,10.24-15.5c4.67-4.86,9.5-9.9,12-15.9,2.38-5.74,2.48-12.52,2.58-19.08.11-7.44.23-15.14,3.9-18.82s11.38-3.79,18.82-3.9c6.56-.1,13.34-.2,19.08-2.58,6-2.48,11-7.31,15.91-12C117.76,35.21,123.19,30,128,30s10.24,5.21,15.5,10.24c4.86,4.67,9.9,9.5,15.9,12,5.74,2.38,12.52,2.48,19.08,2.58,7.44.11,15.14.23,18.82,3.9s3.79,11.38,3.9,18.82c.1,6.56.2,13.34,2.58,19.08,2.48,6,7.31,11,12,15.91,5,5.25,10.24,10.68,10.24,15.49S220.79,138.24,215.76,143.5ZM172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76Z"/></symbol><symbol id="i-check-circle-light" viewBox="0 0 256 256"><path d="M172.24,99.76a6,6,0,0,1,0,8.48l-56,56a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L112,151.51l51.76-51.75A6,6,0,0,1,172.24,99.76ZM230,128A102,102,0,1,1,128,26,102.12,102.12,0,0,1,230,128Zm-12,0a90,90,0,1,0-90,90A90.1,90.1,0,0,0,218,128Z"/></symbol><symbol id="i-arrow-right-regular" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-whatsapp-logo-light" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol><symbol id="i-calendar-check-light" viewBox="0 0 256 256"><path d="M208,34H182V24a6,6,0,0,0-12,0V34H86V24a6,6,0,0,0-12,0V34H48A14,14,0,0,0,34,48V208a14,14,0,0,0,14,14H208a14,14,0,0,0,14-14V48A14,14,0,0,0,208,34ZM48,46H74V56a6,6,0,0,0,12,0V46h84V56a6,6,0,0,0,12,0V46h26a2,2,0,0,1,2,2V82H46V48A2,2,0,0,1,48,46ZM208,210H48a2,2,0,0,1-2-2V94H210V208A2,2,0,0,1,208,210Zm-39.76-86.24a6,6,0,0,1,0,8.48l-48,48a6,6,0,0,1-8.48,0l-24-24a6,6,0,0,1,8.48-8.48L116,167.51l43.76-43.75A6,6,0,0,1,168.24,123.76Z"/></symbol><symbol id="i-presentation-chart-light" viewBox="0 0 256 256"><path d="M216,42H134V24a6,6,0,0,0-12,0V42H40A14,14,0,0,0,26,56V176a14,14,0,0,0,14,14H83.52L59.31,220.25a6,6,0,0,0,9.38,7.5L98.88,190h58.24l30.19,37.75a6,6,0,0,0,9.38-7.5L172.48,190H216a14,14,0,0,0,14-14V56A14,14,0,0,0,216,42Zm2,134a2,2,0,0,1-2,2H40a2,2,0,0,1-2-2V56a2,2,0,0,1,2-2H216a2,2,0,0,1,2,2ZM102,120v24a6,6,0,0,1-12,0V120a6,6,0,0,1,12,0Zm32-16v40a6,6,0,0,1-12,0V104a6,6,0,0,1,12,0Zm32-16v56a6,6,0,0,1-12,0V88a6,6,0,0,1,12,0Z"/></symbol><symbol id="i-gavel-light" viewBox="0 0 256 256"><path d="M241.91,118.1l-16-16a14,14,0,0,0-19.55-.23L154.13,49.64a14,14,0,0,0-.23-19.55l-16-16a14,14,0,0,0-19.8,0l-64,64a14,14,0,0,0,0,19.8l16,16a14,14,0,0,0,19.55.23L99.52,124,32.73,190.79a23,23,0,0,0,32.48,32.49L132,156.49l9.87,9.87a14,14,0,0,0,.23,19.55l16,16a14,14,0,0,0,19.8,0l64-64A14,14,0,0,0,241.91,118.1Zm-91.56,39.76-52.21-52.2,47.52-47.52,52.2,52.2ZM78.59,105.41l-16-16a2,2,0,0,1,0-2.83l64-64a2,2,0,0,1,2.83,0l16,16a2,2,0,0,1,0,2.83l-64,64A2,2,0,0,1,78.59,105.41ZM56.73,214.8a11,11,0,0,1-15.52-15.52L108,132.49,123.52,148Zm176.69-85.38-64,64a2,2,0,0,1-2.83,0l-16-16a2,2,0,0,1,0-2.83l64-64a2,2,0,0,1,2.83,0l16,16A2,2,0,0,1,233.42,129.42Z"/></symbol><symbol id="i-folder-open-light" viewBox="0 0 256 256"><path d="M243.36,111.81A14,14,0,0,0,232,106H214V88a14,14,0,0,0-14-14H130L101.74,52.8a14.06,14.06,0,0,0-8.4-2.8H40A14,14,0,0,0,26,64V208a6,6,0,0,0,6,6H211.1a6,6,0,0,0,5.69-4.1l28.49-85.47A14,14,0,0,0,243.36,111.81ZM40,62H93.34a2,2,0,0,1,1.2.4L124.4,84.8A6,6,0,0,0,128,86h72a2,2,0,0,1,2,2v18H69.77a14,14,0,0,0-13.28,9.57L38,171V64A2,2,0,0,1,40,62Zm193.9,58.63L206.78,202H40.33l27.54-82.63a2,2,0,0,1,1.9-1.37H232a2,2,0,0,1,1.9,2.63Z"/></symbol><symbol id="i-scales-light" viewBox="0 0 256 256"><path d="M237.57,133.77l-32-80h0a6,6,0,0,0-6.86-3.63L134,64.52V40a6,6,0,0,0-12,0V67.19l-67.3,15a6,6,0,0,0-4.27,3.63h0v0l-32,80A6.1,6.1,0,0,0,18,168c0,21.86,23.31,30,38,30s38-8.14,38-30a6.1,6.1,0,0,0-.43-2.23L64.19,92.33,122,79.48V210H104a6,6,0,0,0,0,12h48a6,6,0,0,0,0-12H134V76.81l56.21-12.49-27.78,69.45A6.1,6.1,0,0,0,162,136c0,21.86,23.31,30,38,30s38-8.14,38-30A6.1,6.1,0,0,0,237.57,133.77ZM56,186a36.89,36.89,0,0,1-17.48-4.56c-5.37-3.13-8.15-7.18-8.49-12.37l26-64.91,26,64.91C81.06,182.85,62.58,186,56,186Zm144-32a36.89,36.89,0,0,1-17.48-4.56c-5.37-3.13-8.15-7.18-8.49-12.37l26-64.91,26,64.91C225.06,150.85,206.58,154,200,154Z"/></symbol><symbol id="i-whatsapp-logo-regular" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol><symbol id="i-instagram-logo-light" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol><symbol id="i-envelope-simple-light" viewBox="0 0 256 256"><path d="M224,50H32a6,6,0,0,0-6,6V192a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V56A6,6,0,0,0,224,50ZM208.58,62,128,135.86,47.42,62ZM216,194H40a2,2,0,0,1-2-2V69.64l86,78.78a6,6,0,0,0,8.1,0L218,69.64V192A2,2,0,0,1,216,194Z"/></symbol><symbol id="i-map-pin-light" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol></svg>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","ProfessionalService"],"@id":"https://www.hssindicatura.com.br/#negocio","name":"HS Sindicatura","description":"A HS Sindicatura é uma empresa de sindicatura profissional e gestão condominial em São Paulo. O fundador, Danilo Ricardo Dias, atua como síndico profissional em condomínios residenciais, mistos e comerciais da capital e da Grande São Paulo, com foco em organização administrativa, controle financeiro, gestão de contratos e comunicação clara entre conselho, moradores e administradora.","slogan":"Gestão condominial com método, governança e responsabilidade.","url":"https://www.hssindicatura.com.br/","image":"https://www.hssindicatura.com.br/assets/img/og-hs.jpg","logo":"https://www.hssindicatura.com.br/icon-512.png","telephone":"+55 11 93382-5442","email":"hssindicatura@gmail.com","founder":{"@id":"https://www.hssindicatura.com.br/#danilo"},"areaServed":[{"@type":"City","name":"São Paulo"},{"@type":"AdministrativeArea","name":"Grande São Paulo"}],"address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+55 11 93382-5442","email":"hssindicatura@gmail.com","areaServed":"BR","availableLanguage":"Portuguese"},"sameAs":["https://www.instagram.com/hssindicatura/"],"knowsAbout":["síndico profissional","sindicatura profissional","gestão condominial","administração de condomínio","prestação de contas de condomínio","gestão de contratos e fornecedores","assembleia de condomínio","manutenção predial preventiva","Código Civil, art. 1.348"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestão financeira estruturada","description":"A organização do dinheiro do condomínio: previsão orçamentária, controle de receitas e despesas, acompanhamento da inadimplência e prestação de contas ao conselho todo mês.","url":"https://www.hssindicatura.com.br/solucoes#financeira","areaServed":"São Paulo e Grande São Paulo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestão de contratos e fornecedores","description":"O controle de tudo o que o condomínio contrata, da limpeza e da portaria aos elevadores, ao seguro e às obras. Cada contrato com escopo, prazo, preço e responsável conhecidos.","url":"https://www.hssindicatura.com.br/solucoes#contratos","areaServed":"São Paulo e Grande São Paulo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Governança administrativa","description":"As regras e os registros que sustentam as decisões: assembleias bem preparadas, atas em dia, convenção e regimento cumpridos e cada deliberação acompanhada até ser executada.","url":"https://www.hssindicatura.com.br/solucoes#governanca","areaServed":"São Paulo e Grande São Paulo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestão operacional e manutenção","description":"O cuidado com o prédio no dia a dia: manutenção preventiva das áreas comuns e dos equipamentos, vistorias periódicas e acompanhamento dos prestadores e das obras.","url":"https://www.hssindicatura.com.br/solucoes#operacional","areaServed":"São Paulo e Grande São Paulo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Comunicação estruturada","description":"A forma como a informação circula entre síndico, conselho, moradores e administradora: canais oficiais, comunicados claros e retorno registrado para cada solicitação.","url":"https://www.hssindicatura.com.br/solucoes#comunicacao","areaServed":"São Paulo e Grande São Paulo"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Apoio ao conselho","description":"O conselho decide com a informação na mão: reuniões periódicas, relatório de gestão e documentos organizados para responder aos condôminos com segurança.","url":"https://www.hssindicatura.com.br/solucoes#conselho","areaServed":"São Paulo e Grande São Paulo"}}]},{"@type":"WebSite","@id":"https://www.hssindicatura.com.br/#site","name":"HS Sindicatura","url":"https://www.hssindicatura.com.br/","inLanguage":"pt-BR","publisher":{"@id":"https://www.hssindicatura.com.br/#negocio"}},{"@type":"WebPage","@id":"https://www.hssindicatura.com.br/para-condominios#pagina","url":"https://www.hssindicatura.com.br/para-condominios","name":"Síndico profissional para condomínios | HS Sindicatura","description":"Gestão para condomínios residenciais, mistos e comerciais em São Paulo: as dores de cada tipo, como a HS Sindicatura atua e como pedir uma proposta.","inLanguage":"pt-BR","isPartOf":{"@id":"https://www.hssindicatura.com.br/#site"},"about":{"@id":"https://www.hssindicatura.com.br/#negocio"},"breadcrumb":{"@id":"https://www.hssindicatura.com.br/para-condominios#migalhas"}},{"@type":"BreadcrumbList","@id":"https://www.hssindicatura.com.br/para-condominios#migalhas","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.hssindicatura.com.br/"},{"@type":"ListItem","position":2,"name":"Para Condomínios","item":"https://www.hssindicatura.com.br/para-condominios"}]},{"@type":"FAQPage","@id":"https://www.hssindicatura.com.br/para-condominios#duvidas","mainEntity":[{"@type":"Question","name":"O síndico profissional precisa morar no condomínio?","acceptedAnswer":{"@type":"Answer","text":"Não. O Código Civil (art. 1.347) permite que a assembleia escolha um síndico que não seja condômino, com mandato de até dois anos, que pode ser renovado."}},{"@type":"Question","name":"Condomínio pequeno pode ter síndico profissional?","acceptedAnswer":{"@type":"Answer","text":"Pode. A HS atende condomínios de portes diferentes, e a proposta leva em conta o número de unidades, a rotina do prédio e a frequência de visitas que ele precisa."}},{"@type":"Question","name":"Quanto custa um síndico profissional?","acceptedAnswer":{"@type":"Answer","text":"Depende do porte do condomínio, da rotina e da frequência de visitas. O valor vem na proposta, que a HS envia em até 48 horas depois da visita técnica."}},{"@type":"Question","name":"Como é a troca do síndico atual pela HS?","acceptedAnswer":{"@type":"Answer","text":"Com a proposta aprovada em assembleia, começa uma transição assistida de cerca de 30 dias: a HS recebe documentos, contratos e pendências, conhece a equipe e os prestadores e só então assume a rotina."}},{"@type":"Question","name":"A HS atende fora da capital?","acceptedAnswer":{"@type":"Answer","text":"Sim. A HS atende condomínios residenciais, mistos e comerciais na cidade de São Paulo e na Grande São Paulo."}}]}]}</script>
+  <script>;(() => {
+const temIO = 'IntersectionObserver' in window
+const alvos = document.querySelectorAll('[data-revela], [data-revela-lista]')
+if (!temIO) {
+alvos.forEach((el) => el.classList.add('visivel'))
+} else {
+const io = new IntersectionObserver(
+(entradas) => {
+for (const e of entradas) {
+if (!e.isIntersecting) continue
+e.target.classList.add('visivel')
+io.unobserve(e.target)
+}
+},
+{ rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+)
+alvos.forEach((el) => io.observe(el))
+}
+const adiadas = document.querySelectorAll('picture[data-adiada]')
+let lcpPintou = false
+let carregou = document.readyState === 'complete'
+let feito = false
+const tentarAdiadas = () => {
+if (feito || !lcpPintou || !carregou) return
+feito = true
+carregarAdiadas()
+}
+if (!(window.PerformanceObserver && PerformanceObserver.supportedEntryTypes?.includes('largest-contentful-paint'))) lcpPintou = true
+else
+new PerformanceObserver((l) => {
+if (!l.getEntries().length) return
+lcpPintou = true
+tentarAdiadas()
+}).observe({ type: 'largest-contentful-paint', buffered: true })
+setTimeout(() => {
+lcpPintou = true
+tentarAdiadas()
+}, 1500)
+if (!carregou)
+addEventListener(
+'load',
+() => {
+carregou = true
+tentarAdiadas()
+},
+{ once: true },
+)
+const carregarAdiadas = () =>
+adiadas.forEach((pic) => {
+const img = pic.querySelector('img')
+if (!img) return
+img.addEventListener('load', () => pic.classList.add('adiada--pronta'), { once: true })
+pic.querySelectorAll('[data-srcset]').forEach((el) => {
+el.srcset = el.dataset.srcset
+el.removeAttribute('data-srcset')
+})
+if (img.dataset.src) {
+img.src = img.dataset.src
+img.removeAttribute('data-src')
+}
+if (img.complete && img.naturalWidth) pic.classList.add('adiada--pronta')
+})
+tentarAdiadas()
+const topo = document.getElementById('topo')
+const hero = document.getElementById('inicio')
+const zap = document.querySelector('.zap-flutuante')
+const botoesHero = hero?.querySelector('.hero__botoes, .ptopo__botoes, [data-zap-depois]')
+const fim = document.querySelector('[data-zap-some]') || document.getElementById('contato') || document.getElementById('rodape')
+if (temIO && hero) {
+const sentinela = document.createElement('div')
+sentinela.setAttribute('aria-hidden', 'true')
+sentinela.style.cssText = 'position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none'
+hero.prepend(sentinela)
+new IntersectionObserver(([e]) => topo?.classList.toggle('topo--rolado', !e.isIntersecting)).observe(sentinela)
+let botoesFora = false
+let noFim = false
+const zapVisivel = () => zap?.classList.toggle('visivel', botoesFora && !noFim)
+new IntersectionObserver(([e]) => {
+botoesFora = !e.isIntersecting && e.boundingClientRect.top < 0
+zapVisivel()
+}).observe(botoesHero || hero)
+if (fim)
+new IntersectionObserver(
+([e]) => {
+noFim = e.isIntersecting || e.boundingClientRect.top < 0
+zapVisivel()
+},
+{ rootMargin: '0px 0px -35% 0px' },
+).observe(fim)
+} else {
+zap?.classList.add('visivel')
+}
+const desenharTudo = () => document.documentElement.classList.add('cv-pronto')
+const folga = () => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
+const alvoDe = (hash) => {
+try {
+return hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null
+} catch {
+return null
+}
+}
+const chegada = alvoDe(location.hash)
+if (chegada) {
+desenharTudo()
+const conferir = () =>
+requestAnimationFrame(() => {
+const dif = chegada.getBoundingClientRect().top - folga()
+if (Math.abs(dif) > 3) scrollBy({ top: dif, behavior: 'instant' })
+})
+if (document.readyState === 'complete') conferir()
+else addEventListener('load', conferir, { once: true })
+}
+let pendente = null
+const acertar = () => {
+if (!pendente || Date.now() > pendente.ate) return (pendente = null)
+const alvo = pendente.alvo
+pendente = null
+const dif = alvo.getBoundingClientRect().top - folga()
+if (Math.abs(dif) > 3) scrollBy({ top: dif, behavior: 'instant' })
+}
+if ('onscrollend' in window) addEventListener('scrollend', acertar)
+document.addEventListener('click', (e) => {
+const a = e.target.closest('a[href*="#"]')
+if (!a || e.defaultPrevented) return
+const destino = new URL(a.href, location.href)
+if (destino.origin !== location.origin || destino.pathname !== location.pathname) return
+const alvo = alvoDe(destino.hash)
+if (!alvo) return
+const id = alvo.id
+e.preventDefault()
+desenharTudo()
+requestAnimationFrame(() => {
+pendente = { alvo, ate: Date.now() + 4000 }
+alvo.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+if (!('onscrollend' in window)) setTimeout(acertar, 1400)
+history.pushState(null, '', '#' + id)
+if (!alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1')
+alvo.focus({ preventScroll: true })
+if (id === 'contato' && matchMedia('(hover: hover) and (pointer: fine)').matches) setTimeout(() => document.getElementById('f-nome')?.focus({ preventScroll: true }), 900)
+})
+})
+document.addEventListener('click', (e) => {
+const a = e.target.closest('a[href^="https://wa.me/"]')
+if (!a) return
+const origem = a.dataset.zap || a.closest('section, header, footer')?.id || 'pagina'
+const servico = a.dataset.servico
+;(window.dataLayer = window.dataLayer || []).push({ event: 'whatsapp_clique', origem, servico, pagina: location.pathname })
+if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { origem, servico })
+})
+})()
+;
+;(() => {
+const topo = document.getElementById('topo')
+const botao = topo?.querySelector('.topo__menu')
+const menu = document.getElementById('menu')
+if (!topo || !botao || !menu) return
+const fundo = [document.querySelector('main'), document.querySelector('.rodape'), document.querySelector('.zap-flutuante'), topo.querySelector('.marca')].filter(Boolean)
+const aberto = () => topo.classList.contains('topo--aberto')
+const abrir = (sim) => {
+topo.classList.toggle('topo--aberto', sim)
+botao.setAttribute('aria-expanded', String(sim))
+botao.setAttribute('aria-label', sim ? 'Fechar menu' : 'Abrir menu')
+document.documentElement.style.overflow = sim ? 'hidden' : ''
+fundo.forEach((el) => (el.inert = sim))
+if (sim) menu.querySelector('a')?.focus({ preventScroll: true })
+}
+botao.addEventListener('click', () => abrir(!aberto()))
+menu.addEventListener('click', (e) => {
+if (e.target.closest('a')) abrir(false)
+})
+document.addEventListener('keydown', (e) => {
+if (!aberto()) return
+if (e.key === 'Escape') {
+abrir(false)
+botao.focus()
+return
+}
+if (e.key !== 'Tab') return
+const lista = [botao, ...menu.querySelectorAll('a[href]')]
+const i = lista.indexOf(document.activeElement)
+if (e.shiftKey && i <= 0) {
+e.preventDefault()
+lista[lista.length - 1].focus()
+} else if (!e.shiftKey && i === lista.length - 1) {
+e.preventDefault()
+lista[0].focus()
+}
+})
+matchMedia('(min-width: 64em)').addEventListener('change', (m) => m.matches && abrir(false))
+})()
+;
+;(() => {
+const itens = document.querySelectorAll('.faq__item')
+itens.forEach((item) => {
+const botao = item.querySelector('.faq__botao')
+const resposta = item.querySelector('.faq__resposta')
+if (!botao || !resposta) return
+resposta.inert = botao.getAttribute('aria-expanded') !== 'true'
+botao.addEventListener('click', () => {
+const abrir = botao.getAttribute('aria-expanded') !== 'true'
+botao.setAttribute('aria-expanded', String(abrir))
+item.classList.toggle('faq__item--aberto', abrir)
+resposta.inert = !abrir
+})
+})
+})()</script>
+</body>
+</html>

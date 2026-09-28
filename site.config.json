@@ -1,0 +1,33 @@
+{
+  "dominio": "https://www.hssindicatura.com.br",
+  "nome": "HS Sindicatura",
+  "dono": "Danilo Ricardo Dias",
+  "whatsapp": "5511933825442",
+  "whatsappExibir": "(11) 93382-5442",
+  "telefone": "+55 11 93382-5442",
+  "email": "hssindicatura@gmail.com",
+  "instagram": "hssindicatura",
+  "instagramUrl": "https://www.instagram.com/hssindicatura/",
+  "regiao": "São Paulo e Grande São Paulo",
+  "credito": "https://www.instagram.com/credialta.sites/",
+  "mensagens": {
+    "proposta": "Olá! Vim pelo site da HS Sindicatura e gostaria de solicitar uma proposta de sindicatura para o meu condomínio.",
+    "diagnostico": "Olá! Vim pelo site da HS Sindicatura e gostaria de agendar um diagnóstico da gestão do meu condomínio.",
+    "danilo": "Olá, Danilo! Vim pelo site da HS Sindicatura e gostaria de conversar sobre a gestão do meu condomínio.",
+    "duvida": "Olá! Vim pelo site da HS Sindicatura e tenho uma dúvida sobre a sindicatura profissional.",
+    "servico": "Olá! Vim pelo site da HS Sindicatura e gostaria de uma proposta de *{servico}* para o meu condomínio.",
+    "parceria": "Olá! Sou de uma administradora de condomínios e vim pelo site da HS Sindicatura. Gostaria de conversar sobre uma parceria.",
+    "jardim": "Olá! Vim pelo site da HS Sindicatura, vi o antes e depois do jardim e gostaria de uma proposta de sindicatura para o meu condomínio.",
+    "conselho": "Olá! Sou do conselho de um condomínio e vim pelo site da HS Sindicatura. Gostaria de conversar sobre a gestão do nosso condomínio."
+  },
+  "pendencias": [
+    "fotos de Para quem atuamos (4) e da vistoria: de banco de imagem livre (Recursos Site/WEB/publico-*.jpg e vistoria.jpg, créditos em creditos.md), no lugar das provisórias borradas do mockup. Foto real ou definitiva em Recursos Site/SEÇÕES passa na frente (npm run imagens)",
+    "fundo da seção Responsabilidades legais (biblioteca): sem imagem, a seção fica sem foto até chegar Recursos Site/SEÇÕES/08 - FUNDO LEGAL",
+    "domínio: o site novo vai no hssindicatura.com.br (hoje outro site)? canonical, sitemap e og:image já apontam pra www.hssindicatura.com.br",
+    "logo: o nome do logo oficial está escrito SÍNDICATURA, com acento; no site o nome vai digitado (HS SINDICATURA) ao lado do símbolo",
+    "páginas internas: as fotos vêm de banco de imagem livre (Recursos Site/WEB, créditos em creditos.md). Trocar pelas fotos reais do Danilo quando chegarem",
+    "horário de atendimento (segunda a sexta, das 9h às 18h) e transição assistida de 30 dias: tirados da proposta do Piazza e da apresentação. Confirmar com o Danilo",
+    "páginas internas: a copy (detalhe das 6 frentes, dores e atuação por tipo de condomínio, papéis com a administradora) foi escrita a partir do briefing, da apresentação e da proposta do Piazza. Danilo revisa"
+  ],
+  "horario": "segunda a sexta, das 9h às 18h"
+}

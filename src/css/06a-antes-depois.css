@@ -1,0 +1,220 @@
+/* ---------------------------------------------------------------- antes e depois (escura)
+   Três canteiros reais, cada um com a linha de arrastar (base do 069 Paraíso do Gesso). As
+   fotos são em pé, por isso o palco é 4:5 e, no computador, os três ficam lado a lado.
+   Tablet: texto e abas à esquerda, um palco à direita. Celular: texto, abas e um palco.
+   Sem JS, os três aparecem (empilhados no celular), sem abas.
+   O comparador: a foto de DEPOIS por cima, recortada com clip-path a partir de --pos (0 a
+   100, a posição da linha em %). A linha e o botão andam com transform.               */
+.ad__grade { display: grid; grid-template-columns: minmax(0, 1fr); }
+.ad__abas { display: none; }
+.ad__palcos { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; }
+.ad__par { display: flex; flex-direction: column; min-width: 0; }
+
+/* ---------------------------------------------------------------- o palco */
+.ad__palco {
+  --pos: 50;
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--raio-card);
+  background: #0A2A3E;
+  box-shadow: 0 30px 60px -34px rgb(0 0 0 / .9), 0 12px 24px -18px rgb(0 0 0 / .6);
+  cursor: ew-resize;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+/* fio de luz na borda: o mesmo acabamento dos cartões de vidro */
+.ad__palco::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .12), inset 0 1px 0 rgb(201 148 60 / .3);
+  pointer-events: none;
+}
+.ad__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.ad__img--depois { clip-path: inset(0 0 0 calc(var(--pos) * 1%)); }
+
+/* o range fica invisível no meio do palco: é ele que dá o teclado e o leitor de tela */
+.ad__range {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  clip-path: inset(50%);
+}
+
+.ad__etiqueta {
+  position: absolute;
+  top: 14px;
+  z-index: 1;
+  padding: 8px 11px 7px;
+  border-radius: 4px;
+  font: 600 11.5px/1 var(--fonte-titulo);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: opacity .3s ease, transform .35s var(--ease-out);
+}
+.ad__etiqueta--antes { left: 14px; background: rgb(3 25 38 / .84); color: var(--branco); }
+.ad__etiqueta--depois { right: 14px; background: linear-gradient(180deg, var(--dourado-claro), var(--dourado)); color: var(--petroleo); box-shadow: 0 6px 16px -8px rgb(0 0 0 / .6); }
+.ad__etiqueta--oculta { opacity: 0; transform: translateY(-6px); }
+
+.ad__cursor {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+  transform: translate3d(calc(var(--pos) * 1%), 0, 0);
+}
+.ad__linha {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px;
+  width: 2px;
+  background: var(--branco);
+  box-shadow: 0 0 0 .5px rgb(3 25 38 / .25), 0 0 18px rgb(0 0 0 / .4);
+}
+/* o botão da linha: o dourado do botão principal, com as duas setas em petróleo */
+.ad__botao {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: -24px 0 0 -24px;
+  border: 2.5px solid var(--branco);
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--dourado-claro) 0%, var(--dourado) 55%, var(--dourado-escuro) 100%);
+  color: var(--petroleo);
+  box-shadow: 0 10px 24px -8px rgb(0 0 0 / .65), 0 0 0 5px rgb(255 255 255 / .14);
+  transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);
+}
+.ad__botao .i { width: 15px; height: 15px; }
+.ad__botao .i + .i { margin-left: 1px; }
+.ad__range:focus-visible ~ .ad__cursor .ad__botao { outline: 2px solid var(--dourado-claro); outline-offset: 4px; }
+@media (hover: hover) {
+  .ad__palco:hover .ad__botao { transform: scale(1.07); box-shadow: 0 12px 28px -8px rgb(0 0 0 / .7), 0 0 0 7px rgb(255 255 255 / .18); }
+}
+.ad__palco--pegando { cursor: grabbing; }
+.ad__palco--pegando .ad__botao { transform: scale(.94); transition-duration: .15s; }
+
+/* ---------------------------------------------------------------- legenda */
+.ad__legenda { display: grid; gap: 4px; padding: 16px 2px 0; }
+.ad__legenda-nome { color: var(--branco); font: 600 16px/1.3 var(--fonte-titulo); }
+.ad__legenda-linha { color: var(--claro-2); font-size: 14.5px; line-height: 1.55; }
+
+/* ---------------------------------------------------------------- tablet pra cima: três lado a lado (computador, e sem JS) */
+@media (min-width: 40em) {
+  .ad__palcos { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2vw, 28px); }
+}
+
+/* ---------------------------------------------------------------- abas e um palco (celular e tablet, com JS) */
+@media (max-width: 63.99em) {
+  .js .ad__abas {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 18px;
+    padding: 4px;
+    border: 1px solid var(--vidro-borda);
+    border-radius: 10px;
+    background: rgb(255 255 255 / .035);
+  }
+  .ad__aba {
+    position: relative;
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 0;
+    min-height: 46px;
+    padding: 8px 6px;
+    border-radius: 7px;
+    color: var(--claro-2);
+    font: 600 14px/1.2 var(--fonte-titulo);
+    transition: background-color .3s ease, color .3s ease, box-shadow .3s ease;
+  }
+  .ad__aba-num { display: none; color: var(--metal); font-size: 12px; letter-spacing: .08em; transition: color .3s ease; }
+  .ad__aba[aria-selected="true"] { background: rgb(201 148 60 / .14); color: var(--branco); box-shadow: inset 0 0 0 1px rgb(201 148 60 / .5); }
+  .ad__aba[aria-selected="true"] .ad__aba-num { color: var(--dourado); }
+
+  /* os três pares na mesma célula da grade; o ativo aparece por cima */
+  .js .ad__palcos { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .js .ad__par { grid-area: 1 / 1; transition: opacity .55s var(--ease-out), visibility 0s linear 0s; }
+  .js .ad__par:not(.ad__par--ativo) { opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
+  .js .ad__palco { transition: transform .8s var(--ease-out); }
+  .js .ad__par:not(.ad__par--ativo) .ad__palco { transform: scale(1.02); }
+}
+@media (hover: hover) and (max-width: 63.99em) {
+  .ad__aba:hover { color: var(--branco); }
+}
+@media (max-width: 22.49em) {
+  .ad__aba { font-size: 13px; }
+}
+
+/* tablet: texto e abas (em coluna, com o filete dourado na ativa) à esquerda, palco à direita */
+@media (min-width: 40em) and (max-width: 63.99em) {
+  .js .ad__grade {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "cab palcos" "abas palcos";
+    column-gap: 32px;
+    align-items: start;
+  }
+  .js .ad__cab { grid-area: cab; }
+  .js .ad__palcos { grid-area: palcos; }
+  .js .ad__abas { grid-area: abas; flex-direction: column; gap: 0; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; }
+  .ad__aba {
+    flex: none;
+    justify-content: flex-start;
+    gap: 14px;
+    min-height: 56px;
+    padding: 14px 0 14px 18px;
+    border-radius: 0;
+    border-top: 1px solid var(--fio-escuro);
+    font-size: 15px;
+  }
+  .ad__aba:last-child { border-bottom: 1px solid var(--fio-escuro); }
+  .ad__aba-num { display: inline; }
+  .ad__aba::before {
+    content: '';
+    position: absolute;
+    top: 14px;
+    bottom: 14px;
+    left: -1px;
+    width: 2px;
+    background: var(--dourado);
+    transform: scaleY(0);
+    transition: transform .45s var(--ease-out);
+  }
+  .ad__aba[aria-selected="true"] { background: none; box-shadow: none; }
+  .ad__aba[aria-selected="true"]::before { transform: none; }
+}
+
+@media (min-width: 64em) {
+  .ad__botao { width: 50px; height: 50px; margin: -25px 0 0 -25px; }
+}

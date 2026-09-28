@@ -1,0 +1,50 @@
+/* ---------------------------------------------------------------- quem somos (Sobre, clara)
+   O texto institucional à esquerda e os 3 pilares da gestão HS (saúde, segurança e sossego)
+   em cartões brancos à direita, com o ícone no círculo dourado claro. Embaixo, depois de um
+   fio, os 4 princípios de trabalho da proposta comercial da HS.                      */
+.quem__grade { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
+.quem__paragrafos { max-width: 38em; margin-top: 22px; }
+.pilares-quem { display: grid; gap: 14px; }
+.pilar-quem {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid #E4E9ED;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  box-shadow: 0 1px 2px rgb(3 25 38 / .04), 0 14px 34px -24px rgb(3 25 38 / .28);
+  transition: transform .45s var(--ease-out), border-color .3s ease;
+}
+.pilar-quem__icone { width: 58px; height: 58px; }
+.pilar-quem__icone .i { width: 28px; height: 28px; }
+.pilar-quem__nome { color: var(--petroleo); font: 700 14px/1.2 var(--fonte-titulo); letter-spacing: .1em; text-transform: uppercase; }
+.pilar-quem__desc { margin-top: 5px; color: var(--texto-2); font-size: 15px; line-height: 1.5; }
+@media (hover: hover) {
+  .pilar-quem:hover { transform: translateX(4px); border-color: rgb(167 118 43 / .35); }
+}
+
+.principios { margin-top: clamp(48px, 5vw, 72px); }
+.principios__titulo { display: flex; align-items: center; gap: 14px; color: var(--petroleo); font: 600 18px/1.3 var(--fonte-titulo); }
+.principios__titulo::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgb(167 118 43 / .5), rgb(167 118 43 / 0)); }
+.principios__lista { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-top: 24px; }
+.principio { display: flex; align-items: flex-start; gap: 14px; }
+.principio__i { width: 34px; height: 34px; margin-top: -2px; color: var(--dourado-tinta); }
+.principio__nome { color: var(--petroleo); font: 600 16px/1.3 var(--fonte-titulo); }
+.principio__desc { margin-top: 4px; color: var(--texto-2); font-size: 14.5px; line-height: 1.55; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .pilares-quem.visivel .pilar-quem__icone .i { animation: cresce .7s var(--ease-out) calc(var(--i, 0) * 110ms + 250ms) backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .quem__grade { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .principios__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+}
+@media (max-width: 39.99em) {
+  .principios__titulo { font-size: 19px; }
+  .principios__titulo::after { display: none; }
+  .principios__lista { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .principio__nome { font-size: 16.5px; }
+  .principio__desc { font-size: 15px; }
+}

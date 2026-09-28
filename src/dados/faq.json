@@ -1,0 +1,25 @@
+{
+  "_sobre": "Dúvidas frequentes (briefing 12.12). As perguntas são do briefing; as respostas saíram do prompt-mockup.md e da apresentação comercial da HS (reunião de descoberta, visita técnica, proposta em até 48 h, relatório mensal). Também vira o FAQPage do schema.",
+  "itens": [
+    {
+      "pergunta": "A HS substitui a administradora?",
+      "resposta": "Não. A administradora cuida da rotina contábil e burocrática, como boletos, folha de pagamento e balancetes. O síndico profissional representa o condomínio e conduz a gestão. A HS trabalha junto com a administradora, com rotina alinhada e comunicação organizada."
+    },
+    {
+      "pergunta": "Como funciona a prestação de contas?",
+      "resposta": "Todo mês o conselho recebe o relatório de gestão, com receitas e despesas, contratos acompanhados e manutenções do período, e os documentos ficam organizados e à disposição. Na assembleia, a prestação de contas segue o que pedem a convenção e o Código Civil."
+    },
+    {
+      "pergunta": "Como funciona a atuação presencial?",
+      "resposta": "O Danilo acompanha a rotina de perto: visitas ao condomínio, vistoria das áreas comuns e acompanhamento de obras e prestadores. A frequência das visitas é combinada em contrato, conforme o porte e a necessidade de cada condomínio."
+    },
+    {
+      "pergunta": "Como funciona o diagnóstico inicial?",
+      "resposta": "Começa com uma conversa de cerca de uma hora e uma visita técnica ao condomínio, para levantar contratos, situação financeira, manutenção e documentação. Com o diagnóstico feito, a HS envia a proposta em até 48 horas após a visita."
+    },
+    {
+      "pergunta": "A HS atende condomínios comerciais?",
+      "resposta": "Sim. A HS atende condomínios residenciais, mistos e comerciais em São Paulo e na Grande São Paulo. No edifício comercial, a atenção maior vai para contratos, segurança e rotina operacional."
+    }
+  ]
+}

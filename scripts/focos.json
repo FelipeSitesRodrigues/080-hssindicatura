@@ -1,0 +1,49 @@
+{
+  "_sobre": "Onde o recorte de cada foto das páginas internas centra: [vertical, horizontal, zoom], de 0 a 1 (0,5 é o meio); o zoom (opcional, maior que 1) fecha o recorte. A chave -cel vale pro recorte deitado do celular. Ajustar olhando a foto escolhida (scripts/processar-imagens.mjs).",
+  "topo-solucoes": [
+    0.45,
+    0.5
+  ],
+  "topo-condominios": [
+    0.5,
+    0.5
+  ],
+  "topo-administradoras": [
+    0.5,
+    0.5
+  ],
+  "topo-sobre": [
+    0.5,
+    0.55
+  ],
+  "residencial": [
+    0.5,
+    0.42
+  ],
+  "residencial-cel": [
+    0.55,
+    0.5
+  ],
+  "misto": [
+    0.5,
+    0.5
+  ],
+  "comercial": [
+    0.43,
+    0.55,
+    1.1
+  ],
+  "conselho": [
+    0.5,
+    0.6
+  ],
+  "comercial-cel": [
+    0.42,
+    0.5,
+    1.12
+  ],
+  "publico-residencial": [
+    0.56,
+    0.5
+  ]
+}

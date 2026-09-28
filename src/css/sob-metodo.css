@@ -1,0 +1,45 @@
+/* ---------------------------------------------------------------- método e governança (Sobre, clara)
+   Os 4 passos do método (os mesmos da Home, com a seta entre eles e a linha do tempo no
+   celular) e, embaixo, a governança na prática: as 6 peças da metodologia da HS (plano
+   diretor, ritos de decisão, alçadas, registros, indicadores mensais e revisões
+   trimestrais) em cartões brancos, 3 por linha.                                        */
+.governanca {
+  --seta: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 14'%3E%3Cpath d='M1 7h22M17 1.5 23.5 7 17 12.5' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.gov { margin-top: clamp(44px, 4.6vw, 64px); }
+.gov__cab { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; }
+.gov__titulo { display: flex; align-items: center; gap: 9px; color: var(--petroleo); font: 700 14px/1.3 var(--fonte-titulo); letter-spacing: .08em; text-transform: uppercase; }
+.gov__titulo::before { content: ''; width: 11px; height: 12px; background: var(--dourado-tinta); -webkit-mask: var(--hex-cheio) center / contain no-repeat; mask: var(--hex-cheio) center / contain no-repeat; }
+.gov__sub { color: var(--texto-2); font-size: 14.5px; }
+.gov__grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 22px; }
+.gov__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 22px 24px;
+  border: 1px solid #E4E9ED;
+  border-radius: var(--raio-card);
+  background: var(--branco);
+  box-shadow: 0 1px 2px rgb(3 25 38 / .04), 0 14px 34px -24px rgb(3 25 38 / .28);
+  transition: transform .45s var(--ease-out), border-color .3s ease;
+}
+.gov__icone { width: 52px; height: 52px; }
+.gov__icone .i { width: 26px; height: 26px; }
+.gov__nome { color: var(--petroleo); font: 600 16px/1.3 var(--fonte-titulo); }
+.gov__desc { margin-top: 5px; color: var(--texto-2); font-size: 14.5px; line-height: 1.55; }
+@media (hover: hover) {
+  .gov__item:hover { transform: translateY(-3px); border-color: rgb(167 118 43 / .35); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .gov__grade.visivel .gov__icone .i { animation: cresce .7s var(--ease-out) calc(var(--i, 0) * 90ms + 250ms) backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .gov__grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 39.99em) {
+  .gov__grade { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .gov__item { padding: 20px 18px 22px; }
+  .gov__nome { font-size: 16.5px; }
+  .gov__desc { font-size: 15px; }
+}

@@ -1,0 +1,35 @@
+{
+  "_sobre": "Os 3 pares do comparador de antes e depois (Recursos Site/ANTES X DEPOIS, ANTES n.jpg e DEPOIS n.jpg), fotos reais de um condomínio atendido pela HS. aba: o nome curto nas abas do celular e do tablet. alinhamento: as fotos de antes e de depois não foram tiradas do mesmo ponto; o processar-imagens.mjs recorta as duas no mesmo quadro 4:5 pra linha do meio passar pelo mesmo canteiro. escala = pixels do antes por pixel do depois; antes e depois = o mesmo ponto nas duas fotos (em pixel); quadro = x, y e largura do recorte na foto de depois.",
+  "itens": [
+    {
+      "id": "palmeiras",
+      "arquivo": 1,
+      "aba": "Palmeiras",
+      "nome": "Canteiro das palmeiras",
+      "linha": "Palmeiras-ráfis podadas, argila expandida sobre a terra e borda de pedrisco branco.",
+      "altAntes": "Antes: canteiro de palmeiras-ráfis sem poda, com as folhas fechando o canteiro e a terra exposta",
+      "altDepois": "Depois: o mesmo canteiro com as palmeiras podadas, argila expandida sobre a terra e borda de pedrisco branco",
+      "alinhamento": { "escala": 1.156, "antes": [427, 1060], "depois": [566, 1059], "quadro": [197, 300, 763] }
+    },
+    {
+      "id": "gradil",
+      "arquivo": 2,
+      "aba": "Gradil",
+      "nome": "Canteiro junto ao gradil",
+      "linha": "Grama falhada e terra exposta deram lugar a dracenas, cicas, forração e pedrisco.",
+      "altAntes": "Antes: canteiro junto ao gradil com grama falhada, terra exposta e mato",
+      "altDepois": "Depois: o mesmo canteiro com dracenas vermelhas, cicas, forração verde e pedrisco branco",
+      "alinhamento": { "escala": 1.25, "antes": [864, 480], "depois": [758, 384], "quadro": [70, 100, 880] }
+    },
+    {
+      "id": "escada",
+      "arquivo": 3,
+      "aba": "Escada",
+      "nome": "Canteiro da escada",
+      "linha": "Canteiro redesenhado: forração nova, faixa de pedrisco branco, dracenas e cicas.",
+      "altAntes": "Antes: canteiro ao lado da escada tomado por touceiras altas de folhagem",
+      "altDepois": "Depois: o mesmo canteiro com forração verde, uma faixa curva de pedrisco branco, dracenas e cicas",
+      "alinhamento": { "escala": 1.35, "antes": [120, 800], "depois": [58, 627], "quadro": [0, 150, 850] }
+    }
+  ]
+}
