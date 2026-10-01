@@ -1,0 +1,10 @@
+/* ---------------------------------------------------------------- indicadores do case (escura)
+   Os três números grandes e, embaixo, os dois gráficos lado a lado (saldo em caixa e
+   despesas por categoria), as peças de x-case.css. No tablet e no celular, um embaixo do
+   outro. */
+.indicadores-case .indicadores { margin-top: 0; }
+.graficos-case { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; gap: clamp(20px, 2.4vw, 32px); margin-top: clamp(40px, 4.4vw, 60px); }
+
+@media (max-width: 63.99em) {
+  .graficos-case { grid-template-columns: minmax(0, 1fr); }
+}

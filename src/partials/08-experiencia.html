@@ -1,0 +1,33 @@
+    <!-- @usa 08a-antes-depois, 08b-jardim -->
+    <!-- Bloco 8 do briefing final (experiência real): fotos reais de um condomínio atendido
+         pela HS. Os três canteiros com a linha de arrastar (mouse, toque e teclado, como no
+         069 Paraíso do Gesso) e, embaixo, o jardim passando sem parar, de ponta a ponta da
+         tela: para no hover, no botão de pausa e fora da tela; com "reduzir movimento" (ou
+         sem JS) vira uma faixa que rola com o dedo. O briefing guarda o jardim como prova de
+         conservação, não como a prova principal (que é o Sunset View, no bloco 5). -->
+    <section class="secao secao--clara experiencia" id="experiencia-real" aria-labelledby="exp-titulo">
+      <div class="container ad__grade" id="antes-e-depois">
+        <div class="cab ad__cab">
+          <div data-revela>
+            <p class="rotulo">Experiência real</p>
+            <h2 class="titulo" id="exp-titulo">Gestão que aparece <span class="destaque">nas áreas comuns.</span></h2>
+          </div>
+          <div class="cab__lado" data-revela style="--i:1">
+            <p class="apoio">Fotos reais de um condomínio atendido pela HS: os mesmos canteiros antes e depois da revitalização do paisagismo. Arraste a linha para comparar.</p>
+          </div>
+        </div>
+        <!-- @antes-depois -->
+      </div>
+
+      <div class="jardim" id="jardim-renovado">
+        <div class="container jardim__cab" data-revela>
+          <h3 class="jardim__titulo">O jardim inteiro, depois da revitalização</h3>
+          <button class="jardim__pausa" type="button" aria-controls="jardim-faixa" aria-label="Pausar as fotos do jardim"><i data-i="pause" data-w="fill" class="jardim__i-pausa"></i><i data-i="play" data-w="fill" class="jardim__i-toca"></i><span class="jardim__pausa-texto">Pausar</span></button>
+        </div>
+        <div class="jardim__faixa" id="jardim-faixa" role="region" aria-label="Fotos do jardim renovado" tabindex="0" data-revela="aparece">
+          <div class="jardim__trilho">
+            <!-- @jardim -->
+          </div>
+        </div>
+      </div>
+    </section>

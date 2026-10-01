@@ -1,6 +1,7 @@
 /* ---------------------------------------------------------------- rodapé
-   Mockup: petróleo com um filete dourado fino na borda de cima; 4 colunas: o símbolo com
-   HS SINDICATURA, a frase e o Instagram; Navegação; Soluções; Contato. Embaixo, a linha
+   Mockup: petróleo com um filete dourado fino na borda de cima; 4 colunas: o símbolo
+   sozinho (o nome escrito do lado saiu a pedido do Danilo em 2026-09-30: o símbolo já diz
+   HS), a frase e o Instagram; Navegação; Soluções; Contato. Embaixo, a linha
    do copyright à esquerda e "Site por Credialta Sites" à direita. É a última coisa da
    página. No celular, as colunas empilham e a navegação vira duas colunas curtas.      */
 .rodape {
@@ -13,9 +14,9 @@
   color: var(--claro-2);
 }
 .rodape__grade { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)); gap: clamp(28px, 4vw, 64px); }
-.rodape__simbolo { width: 48px; }
-.rodape__marca .marca__nome { font-size: 18px; }
-.rodape__frase { max-width: 22em; margin-top: 16px; color: var(--claro-2); font-size: 14.5px; line-height: 1.6; }
+.rodape__logo { display: inline-block; }
+.rodape__simbolo { width: 64px; }
+.rodape__frase { max-width: 22em; margin-top: 18px; color: var(--claro-2); font-size: 14.5px; line-height: 1.6; }
 .rodape__insta { display: inline-grid; place-items: center; width: 42px; height: 42px; margin-top: 18px; border: 1px solid rgb(201 148 60 / .5); border-radius: 50%; color: var(--dourado); transition: background-color .3s ease, transform .4s var(--ease-out); }
 .rodape__insta .i { width: 21px; height: 21px; }
 .rodape__titulo { color: var(--branco); font: 600 14px/1.3 var(--fonte-titulo); letter-spacing: .06em; text-transform: uppercase; }

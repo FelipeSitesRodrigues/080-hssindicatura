@@ -1,7 +1,9 @@
-/* ---------------------------------------------------------------- as 6 frentes da página Soluções
-   Uma seção por frente, alternando claro e escuro (o ritmo da Home). À esquerda, o número,
-   o ícone e o nome, o "o que é" e os botões: o WhatsApp com a mensagem daquela frente (regra
-   da casa) e o diagnóstico. No computador essa coluna acompanha a leitura (sticky).
+/* ---------------------------------------------------------------- as 3 soluções da página Soluções
+   As três do briefing final (implantação, gestão condominial e síndico profissional), uma
+   seção por solução, alternando claro e escuro (o ritmo da Home). À esquerda, a foto (a
+   mesma do cartão da Home), o número, o nome, o "o que é" e os botões: a conversa e o
+   WhatsApp com a mensagem daquela solução (regra da casa). No computador essa coluna
+   acompanha a leitura (sticky).
    À direita, o painel: "O que resolve" e "Como funciona" lado a lado e, embaixo, a folha
    dos entregáveis, branca como o relatório da Home, com o símbolo HS no topo e os itens
    marcados. No escuro a folha continua branca: é o papel que o conselho recebe.
@@ -9,14 +11,21 @@
    uma depois da outra. Tudo em transform e opacity.                                   */
 .servico__grade { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; gap: clamp(36px, 5vw, 80px); }
 .servico__intro { position: sticky; top: calc(var(--altura-topo) + 40px); }
+.servico__foto { position: relative; display: block; overflow: clip; margin-bottom: 26px; border-radius: var(--raio-card); background: #0A2A3E; box-shadow: 0 26px 50px -32px rgb(3 25 38 / .7); }
+.secao--escura .servico__foto { box-shadow: 0 30px 60px -30px rgb(0 0 0 / .95), 0 0 0 1px rgb(255 255 255 / .06); }
+.servico__foto picture, .servico__foto img { display: block; width: 100%; max-width: none; }
+.servico__foto img { aspect-ratio: 16 / 10; object-fit: cover; }
 .servico__num { display: flex; align-items: baseline; gap: 10px; font-family: var(--fonte-titulo); }
 .servico__n { color: var(--cor-destaque); font-size: 15px; font-weight: 700; letter-spacing: .14em; }
+.secao--clara .servico__n { color: var(--dourado-texto); }
 .servico__de { color: var(--cor-texto); font-size: 12.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
-.servico__cab { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
-.servico__nome { font-size: clamp(24px, .9rem + 1vw, 32px); }
+.servico__nome { margin-top: 12px; font-size: clamp(24px, .9rem + 1vw, 32px); }
 .servico__oque { max-width: 32em; margin-top: 20px; color: var(--cor-texto); font-size: 16.5px; line-height: 1.7; }
 .servico__oque strong { color: var(--cor-forte); font-weight: 600; }
 .servico__botoes { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.servico__botoes .btn .i:not(.i--anda) { width: 20px; height: 20px; }
+/* "Como começa" logo depois da última solução (clara): em branco, pra não emendar no gelo */
+.servico.secao--clara + .comeco { background: var(--branco); box-shadow: inset 0 1px 0 var(--fio-claro); }
 
 .servico__painel { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .servico__bloco { padding: 24px 24px 26px; border-radius: var(--raio-card); }
@@ -71,10 +80,9 @@
   .servico__grade { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .servico__intro { position: static; }
   .servico__oque { max-width: 40em; }
+  .servico__foto { max-width: 620px; }
 }
 @media (max-width: 39.99em) {
-  .servico__cab { gap: 14px; }
-  .servico__icone.icone-bola, .servico__icone.icone-caixa { width: 54px; height: 54px; }
   .servico__nome { font-size: min(26px, 7.2vw); }
   .servico__oque { font-size: 16px; }
   .servico__botoes { display: grid; }

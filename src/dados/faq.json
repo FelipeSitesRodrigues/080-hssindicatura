@@ -1,6 +1,10 @@
 {
-  "_sobre": "Dúvidas frequentes (briefing 12.12). As perguntas são do briefing; as respostas saíram do prompt-mockup.md e da apresentação comercial da HS (reunião de descoberta, visita técnica, proposta em até 48 h, relatório mensal). Também vira o FAQPage do schema.",
+  "_sobre": "Dúvidas frequentes da página Soluções (e o FAQPage do schema). O briefing final pede conteúdo que responda dúvidas reais de quem contrata (seção 10). As respostas saíram da apresentação comercial (reunião de descoberta, visita técnica, proposta em até 48 h, relatório mensal) e do Código Civil (arts. 1.347 e 1.348, conferidos no Planalto). Preço não entra: depende do condomínio.",
   "itens": [
+    {
+      "pergunta": "O síndico profissional precisa morar no condomínio?",
+      "resposta": "Não. O Código Civil permite que o síndico seja pessoa de fora do condomínio (art. 1.347). Ele é eleito pela assembleia, com mandato de até dois anos, que pode ser renovado."
+    },
     {
       "pergunta": "A HS substitui a administradora?",
       "resposta": "Não. A administradora cuida da rotina contábil e burocrática, como boletos, folha de pagamento e balancetes. O síndico profissional representa o condomínio e conduz a gestão. A HS trabalha junto com a administradora, com rotina alinhada e comunicação organizada."
@@ -10,16 +14,12 @@
       "resposta": "Todo mês o conselho recebe o relatório de gestão, com receitas e despesas, contratos acompanhados e manutenções do período, e os documentos ficam organizados e à disposição. Na assembleia, a prestação de contas segue o que pedem a convenção e o Código Civil."
     },
     {
-      "pergunta": "Como funciona a atuação presencial?",
-      "resposta": "O Danilo acompanha a rotina de perto: visitas ao condomínio, vistoria das áreas comuns e acompanhamento de obras e prestadores. A frequência das visitas é combinada em contrato, conforme o porte e a necessidade de cada condomínio."
+      "pergunta": "Quanto custa um síndico profissional?",
+      "resposta": "Depende do porte do condomínio, do número de unidades e do que entra no escopo. Por isso a HS faz primeiro uma conversa e uma visita técnica: a proposta chega em até 48 horas depois da visita."
     },
     {
-      "pergunta": "Como funciona o diagnóstico inicial?",
-      "resposta": "Começa com uma conversa de cerca de uma hora e uma visita técnica ao condomínio, para levantar contratos, situação financeira, manutenção e documentação. Com o diagnóstico feito, a HS envia a proposta em até 48 horas após a visita."
-    },
-    {
-      "pergunta": "A HS atende condomínios comerciais?",
-      "resposta": "Sim. A HS atende condomínios residenciais, mistos e comerciais em São Paulo e na Grande São Paulo. No edifício comercial, a atenção maior vai para contratos, segurança e rotina operacional."
+      "pergunta": "A HS atende fora de São Paulo?",
+      "resposta": "Sim. A sede é em São Paulo, capital, e a HS tem disponibilidade para atuar em todo o Brasil. A rotina de visitas e o acompanhamento são combinados na proposta de cada condomínio."
     }
   ]
 }

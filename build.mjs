@@ -1,6 +1,6 @@
 /**
  * Build do site da HS Sindicatura. HTML, CSS e JS estático em dist/ (base do 079).
- * Seis páginas: Home, Soluções, Para Condomínios, Para Administradoras, Sobre e Contato.
+ * Cinco páginas (briefing final, 2026-10-01): Início, A HS, Soluções, Cases e Contato.
  *
  *   node build.mjs                          todas as páginas em dist/ (index.html, solucoes.html...)
  *   node build.mjs --preview 03-solucoes    só aquela seção, em dist/preview/03-solucoes.html
@@ -20,12 +20,15 @@
  *   99-*.css por último. Entra minificado num <style>: cada página leva só o que usa.
  * - JS: mesma regra, em src/js, num <script> no fim do <body>. Cada arquivo é um IIFE.
  * - Dados em src/dados/*.json viram HTML no build (sai tudo no HTML, pro Google ler):
- *   <!-- @solucoes --> os 6 cartões da Home, cada um com o WhatsApp do próprio serviço;
- *   <!-- @solucoes-detalhe --> as 6 frentes da página Soluções (o que é, o que resolve, como
- *   funciona e entregáveis); <!-- @solucoes-rodape --> a lista do rodapé; <!-- @publicos -->
- *   os 4 perfis da Home; <!-- @tipos --> residencial, misto e comercial; <!-- @faq --> e
- *   <!-- @faq nome --> o acordeão (faq.json ou faq-nome.json, e o FAQPage do schema);
- *   <!-- @antes-depois --> os 3 comparadores e as abas; <!-- @jardim --> a faixa de fotos.
+ *   <!-- @solucoes --> os 3 cartões com foto da Home, que levam à página Soluções;
+ *   <!-- @solucoes-detalhe --> as 3 soluções da página Soluções (foto, o que é, o que
+ *   resolve, como funciona e entregáveis, com o WhatsApp do próprio serviço);
+ *   <!-- @solucoes-indice --> e <!-- @solucoes-rodape --> o índice e a lista do rodapé;
+ *   <!-- @faq --> e <!-- @faq nome --> o acordeão (faq.json ou faq-nome.json, e o FAQPage do
+ *   schema); <!-- @antes-depois --> os 3 comparadores e as abas; <!-- @jardim --> a faixa de
+ *   fotos. Do case Sunset View (sunset-view.json): <!-- @indicadores N --> os N primeiros
+ *   números grandes, <!-- @grafico-saldo --> e <!-- @grafico-despesas --> os dois gráficos, e
+ *   {{sv.campo}} um valor (unidades, meses).
  * - {{wa:chave}} vira o link do WhatsApp com a mensagem mensagens.chave do config (todo link
  *   de WhatsApp abre em outra aba). {{cfg.caminho}} puxa qualquer valor do config; {{ano}}
  *   é o ano atual.
@@ -56,8 +59,7 @@ const cfg = JSON.parse(readFileSync(P('site.config.json'), 'utf8'))
 const ler = (arq) => JSON.parse(readFileSync(arq, 'utf8')).itens
 const dados = (nome) => ler(P('src/dados', `${nome}.json`))
 const solucoes = dados('solucoes')
-const publicos = dados('publicos')
-const tipos = dados('tipos')
+const sv = JSON.parse(readFileSync(P('src/dados/sunset-view.json'), 'utf8'))
 const antesDepois = dados('antes-depois')
 const jardim = dados('jardim')
 const paginas = ler(P('src/paginas.json'))
@@ -263,23 +265,27 @@ function linksPreload(lista) {
 }
 
 // ---------------------------------------------------------------- soluções (src/dados/solucoes.json)
-// Home: cada cartão tem o botão "Solicitar proposta" com o WhatsApp daquele serviço (regra da casa).
+// Home (bloco 3 do briefing final): três cartões visuais, foto, nome e uma frase. O cartão
+// leva ao bloco da solução na página Soluções (o link é o nome, esticado pelo cartão); o
+// WhatsApp de cada serviço fica lá (regra da casa), pra Home não ter chamadas competindo.
+const TAM_SOL = '(min-width: 80em) 384px, (min-width: 64em) calc(33vw - 44px), (min-width: 40em) 40vw, calc(100vw - 40px)'
 const cardSolucao = (s, i) => `
           <li class="sol" style="--i:${i}">
-            <span class="sol__icone">${icone(s.icone, 'light')}</span>
+            <span class="sol__foto"><img data-img="${s.foto}" data-img-max="600" sizes="${TAM_SOL}" alt="${esc(s.alt)}" loading="lazy" decoding="async"></span>
             <div class="sol__corpo">
-              <h3 class="sol__nome">${esc(s.nome)}</h3>
+              <span class="sol__n" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+              <h3 class="sol__nome"><a class="sol__link" href="/solucoes#${s.id}">${esc(s.nome)}</a></h3>
               <p class="sol__desc">${esc(s.descricao)}</p>
-              <a class="btn btn--contorno-dourado btn--p sol__zap" href="${esc(waServico(s))}" target="_blank" rel="noopener" data-zap="solucao-${s.id}" data-servico="${esc(s.nome)}" aria-label="Solicitar proposta de ${esc(s.nome.toLowerCase())} pelo WhatsApp">Solicitar proposta${icone('arrow-right', 'regular', 'i--anda')}</a>
+              <span class="sol__mais" aria-hidden="true">Ver a solução${icone('arrow-right', 'regular')}</span>
             </div>
           </li>`
 const htmlSolucoes = () => `<ul class="sols" role="list" data-revela-lista>${solucoes.map(cardSolucao).join('')}
         </ul>`
 const htmlSolucoesRodape = () => solucoes.map((s) => `<li><a href="/solucoes#${s.id}">${esc(s.rodape || s.nome)}</a></li>`).join('\n              ')
 
-// Página Soluções: uma seção por frente, alternando claro e escuro. À esquerda o número, o
-// nome, o que é e os botões (o WhatsApp do serviço e o diagnóstico); à direita o painel com o
-// que resolve, como funciona e a folha dos entregáveis.
+// Página Soluções: uma seção por solução, alternando claro e escuro. À esquerda a foto, o
+// número, o nome, o que é e os botões (a conversa e o WhatsApp com a mensagem do serviço,
+// regra da casa); à direita o painel com o que resolve, como funciona e a folha dos entregáveis.
 const blocoServico = (s, i) => {
   const clara = i % 2 === 0
   const n = String(i + 1).padStart(2, '0')
@@ -288,15 +294,13 @@ const blocoServico = (s, i) => {
     <section class="secao ${clara ? 'secao--clara' : 'secao--escura'} servico" id="${s.id}" aria-labelledby="servico-${s.id}">
       <div class="container servico__grade">
         <div class="servico__intro" data-revela>
-          <p class="servico__num"><span class="servico__n">${n}</span><span class="servico__de">de 06</span></p>
-          <div class="servico__cab">
-            <span class="${clara ? 'icone-bola' : 'icone-caixa'} servico__icone">${icone(s.icone, 'light')}</span>
-            <h2 class="titulo servico__nome" id="servico-${s.id}">${esc(s.nome)}</h2>
-          </div>
+          <span class="servico__foto"><img data-img="${s.foto}" data-img-max="600" sizes="(min-width: 80em) 476px, (min-width: 64em) 37vw, (min-width: 40em) 620px, calc(100vw - 40px)" alt="${esc(s.alt)}" loading="lazy" decoding="async"></span>
+          <p class="servico__num"><span class="servico__n">${n}</span><span class="servico__de">de ${String(solucoes.length).padStart(2, '0')}</span></p>
+          <h2 class="titulo servico__nome" id="servico-${s.id}">${esc(s.nome)}</h2>
           <p class="servico__oque"><strong>O que é.</strong> ${esc(s.oQueE)}</p>
           <div class="servico__botoes">
-            <a class="btn btn--dourado" href="${esc(waServico(s))}" target="_blank" rel="noopener" data-zap="solucao-${s.id}" data-servico="${esc(s.nome)}" aria-label="Solicitar proposta de ${esc(s.nome.toLowerCase())} pelo WhatsApp">Solicitar proposta${icone('arrow-right', 'regular', 'i--anda')}</a>
-            <a class="btn ${clara ? 'btn--contorno-petroleo' : 'btn--contorno'}" href="/contato">Agendar diagnóstico</a>
+            <a class="btn btn--dourado" href="/contato">Agendar uma conversa${icone('arrow-right', 'regular', 'i--anda')}</a>
+            <a class="btn ${clara ? 'btn--contorno-petroleo' : 'btn--contorno'}" href="${esc(waServico(s))}" target="_blank" rel="noopener" data-zap="solucao-${s.id}" data-servico="${esc(s.nome)}" aria-label="Conversar sobre ${esc(s.nome.toLowerCase())} pelo WhatsApp">${icone('whatsapp-logo', 'regular')}WhatsApp</a>
           </div>
         </div>
         <div class="servico__painel" data-revela-lista>
@@ -326,55 +330,116 @@ const htmlSolucoesDetalhe = () => solucoes.map(blocoServico).join('\n')
 const htmlIndiceSolucoes = () =>
   solucoes.map((s, i) => `<li><a href="#${s.id}"><span class="indice__n">${String(i + 1).padStart(2, '0')}</span><span>${esc(s.curto || s.rodape || s.nome)}</span></a></li>`).join('\n            ')
 
-// ---------------------------------------------------------------- públicos (src/dados/publicos.json)
-// Quatro perfis, cada um com a foto, o texto e o botão com a frase dele ("Sou do conselho").
-// O botão abre o WhatsApp com a mensagem daquele perfil.
-const cardPublico = (p, i) => `
-          <li class="pub" id="${p.ancora || `publico-${p.id}`}" style="--i:${i}">
-            <span class="pub__foto"><img data-img="publico-${p.id}" data-img-max="640" sizes="(min-width: 80em) 285px, (min-width: 64em) 22vw, (min-width: 40em) 45vw, 92vw" alt="${esc(p.alt)}" loading="lazy" decoding="async"></span>
-            <div class="pub__corpo">
-              <h3 class="pub__nome">${esc(p.nome)}</h3>
-              <p class="pub__desc">${esc(p.descricao)}</p>
-              <a class="btn btn--dourado btn--p pub__cta" href="${esc(wa(p.mensagem))}" target="_blank" rel="noopener" data-zap="publico-${p.id}" data-servico="${esc(p.nome)}"><span>${esc(p.cta)}</span>${icone('arrow-right', 'regular', 'i--anda')}</a>
-            </div>
-          </li>`
-const htmlPublicos = () => `<ul class="pubs" role="list" data-revela-lista>${publicos.map(cardPublico).join('')}
-        </ul>`
+// ---------------------------------------------------------------- case Sunset View (src/dados/sunset-view.json)
+// Os números grandes: os N primeiros indicadores (a Home mostra 2, a página Cases os 3).
+const htmlIndicadores = (n) => `<ul class="indicadores" role="list" data-revela-lista>${sv.indicadores
+  .slice(0, n)
+  .map(
+    (x, i) => `
+            <li class="indicador" style="--i:${i}"><strong class="indicador__numero">${esc(x.numero)}</strong><span class="indicador__rotulo">${esc(x.rotulo)}</span><span class="indicador__detalhe">${esc(x.detalhe)}</span></li>`,
+  )
+  .join('')}
+          </ul>`
 
-// ---------------------------------------------------------------- tipos de condomínio (src/dados/tipos.json)
-// Página Para Condomínios: residencial, misto e comercial, cada um com a foto, as dores
-// específicas, como a HS atua e o "Solicitar proposta" com a mensagem daquele tipo.
-const blocoTipo = (t, i) => {
-  const clara = i % 2 === 0
-  return `
-    <section class="secao ${clara ? 'secao--clara' : 'secao--escura'} tipo${i % 2 ? ' tipo--inverso' : ''}" id="${t.id}" aria-labelledby="tipo-${t.id}">
-      <div class="container tipo__grade">
-        <div class="tipo__cab" data-revela>
-          <p class="rotulo">${esc(t.rotulo)}</p>
-          <h2 class="titulo" id="tipo-${t.id}">${esc(t.titulo)} <span class="destaque">${esc(t.destaque)}</span></h2>
-        </div>
-        <figure class="tipo__foto" data-revela="${i % 2 ? 'direita' : 'esquerda'}">
-          <span class="tipo__moldura" aria-hidden="true"></span>
-          <img data-img="tipo-${t.id}-cel" data-desk="tipo-${t.id}" data-desk-sizes="(min-width: 80em) 460px, 36vw" data-img-max="640" sizes="(min-width: 40em) 620px, calc(100vw - 54px)" alt="${esc(t.alt)}" loading="lazy" decoding="async">
-        </figure>
-        <div class="tipo__corpo">
-          <p class="apoio tipo__intro" data-revela>${esc(t.intro)}</p>
-          <div class="tipo__colunas" data-revela-lista>
-            <div class="tipo__col" style="--i:0">
-              <h3 class="tipo__sub">${icone('warning-circle', 'light')}Dores mais comuns</h3>
-              <ul class="tipo__lista" role="list">${t.dores.map((d) => `<li>${icone('x-circle', 'light', 'tipo__i tipo__i--dor')}<span>${esc(d)}</span></li>`).join('')}</ul>
-            </div>
-            <div class="tipo__col" style="--i:1">
-              <h3 class="tipo__sub">${icone('seal-check', 'light')}Como a HS atua</h3>
-              <ul class="tipo__lista" role="list">${t.atuacao.map((d) => `<li>${icone('check-circle', 'light', 'tipo__i')}<span>${esc(d)}</span></li>`).join('')}</ul>
-            </div>
-          </div>
-          <a class="btn btn--dourado tipo__cta" href="${esc(wa(t.mensagem))}" target="_blank" rel="noopener" data-zap="tipo-${t.id}" data-servico="${esc(t.nome)}" data-revela>${esc(t.cta)}${icone('arrow-right', 'regular', 'i--anda')}</a>
-        </div>
-      </div>
-    </section>`
+const mil = (v) => `${v < 0 ? '−' : ''}R$ ${String(Math.abs(v)).replace('.', ',')} mil`
+const num = (v) => Number(v.toFixed(3))
+
+// Curva suave que não passa do ponto (cúbica monótona, Fritsch-Carlson): a linha do saldo
+// não pode inventar um vale ou um pico que os números não têm.
+function curva(p) {
+  const n = p.length
+  const f = (v) => v.toFixed(1)
+  const dx = []
+  const m = []
+  for (let i = 0; i < n - 1; i++) {
+    dx[i] = p[i + 1][0] - p[i][0]
+    m[i] = (p[i + 1][1] - p[i][1]) / dx[i]
+  }
+  const t = [m[0]]
+  for (let i = 1; i < n - 1; i++) t[i] = m[i - 1] * m[i] <= 0 ? 0 : (m[i - 1] + m[i]) / 2
+  t[n - 1] = m[n - 2]
+  for (let i = 0; i < n - 1; i++) {
+    if (m[i] === 0) {
+      t[i] = t[i + 1] = 0
+      continue
+    }
+    const a = t[i] / m[i]
+    const b = t[i + 1] / m[i]
+    const s = a * a + b * b
+    if (s > 9) {
+      const k = 3 / Math.sqrt(s)
+      t[i] = k * a * m[i]
+      t[i + 1] = k * b * m[i]
+    }
+  }
+  let d = `M${f(p[0][0])} ${f(p[0][1])}`
+  for (let i = 0; i < n - 1; i++) {
+    const h = dx[i] / 3
+    d += ` C${f(p[i][0] + h)} ${f(p[i][1] + t[i] * h)} ${f(p[i + 1][0] - h)} ${f(p[i + 1][1] - t[i + 1] * h)} ${f(p[i + 1][0])} ${f(p[i + 1][1])}`
+  }
+  return d
 }
-const htmlTipos = () => tipos.map(blocoTipo).join('\n')
+
+// Saldo em caixa mês a mês: a curva e a área num SVG de 1000 x 400 esticado no quadro; a
+// grade, os pontos e os rótulos em HTML, posicionados em % (não distorcem). O desenho é
+// aria-hidden: quem lê é o resumo e a tabela escondidos (a tabela dentro de um div: tabela
+// ignora width 1px e estourava a página no celular).
+function htmlGraficoSaldo() {
+  const { titulo, unidade, eixo, valores } = sv.saldo
+  const topo = eixo[eixo.length - 1]
+  const faixa = topo - eixo[0]
+  const n = valores.length
+  const ult = n - 1
+  const xp = (i) => (i / ult) * 100
+  const yp = (v) => ((topo - v) / faixa) * 100
+  const d = curva(valores.map((v, i) => [xp(i) * 10, yp(v) * 4]))
+  const pontos = valores.map((v, i) => `<span class="gs__ponto${i === ult ? ' gs__ponto--fim' : ''}" style="--x:${num(xp(i))};--y:${num(yp(v))};--i:${i}"></span>`).join('')
+  const resumo = `O saldo em caixa do ${sv.nome} sai de ${mil(valores[0])} no 1º mês de gestão HS e chega a ${mil(valores[ult])} no ${n}º mês, subindo todos os meses.`
+  return `<figure class="gs" data-revela style="--i:1">
+          <figcaption class="gs__cab"><span class="gs__titulo">${esc(titulo)}</span><span class="gs__sub">${esc(sv.nome)} · ${esc(unidade)} · meses de gestão HS</span></figcaption>
+          <div class="gs__grafico" aria-hidden="true">
+            <div class="gs__plano">
+              <ul class="gs__grade" role="list">${eixo.map((v) => `<li${v === 0 ? ' class="gs__zero"' : ''} style="--y:${num(yp(v))}"><span>${v < 0 ? '−' + Math.abs(v) : v}</span></li>`).join('')}</ul>
+              <svg class="gs__svg" viewBox="0 0 1000 400" preserveAspectRatio="none" focusable="false">
+                <defs>
+                  <linearGradient id="gs-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9943C" stop-opacity=".36"/><stop offset="1" stop-color="#C9943C" stop-opacity="0"/></linearGradient>
+                  <clipPath id="gs-recorte"><rect class="gs__revela" width="1000" height="400"/></clipPath>
+                </defs>
+                <g clip-path="url(#gs-recorte)">
+                  <path d="${d} L1000 400 L0 400 Z" fill="url(#gs-area)"/>
+                  <path class="gs__linha" d="${d}" vector-effect="non-scaling-stroke"/>
+                </g>
+              </svg>
+              ${pontos}
+              <span class="gs__valor gs__valor--ini" style="--x:0;--y:${num(yp(valores[0]))}">${mil(valores[0])}</span>
+              <span class="gs__valor gs__valor--fim" style="--x:100;--y:${num(yp(valores[ult]))}">${mil(valores[ult])}</span>
+            </div>
+            <ol class="gs__meses" role="list">${valores.map((_, i) => `<li style="--x:${num(xp(i))}">${i + 1}</li>`).join('')}</ol>
+          </div>
+          <p class="sr-only">${esc(resumo)}</p>
+          <div class="sr-only"><table><caption>${esc(titulo)} do ${esc(sv.nome)}, mês a mês</caption><thead><tr><th scope="col">Mês de gestão</th><th scope="col">Saldo</th></tr></thead><tbody>${valores.map((v, i) => `<tr><td>${i + 1}º</td><td>${mil(v)}</td></tr>`).join('')}</tbody></table></div>
+        </figure>`
+}
+
+// Despesas por categoria, antes e com a gestão HS: barras em HTML, todas na mesma escala
+function htmlGraficoDespesas() {
+  const { titulo, itens } = sv.despesas
+  const maior = Math.max(...itens.flatMap((x) => [x.antes, x.depois]))
+  const reais = (v) => mil(v / 1000)
+  const barra = (classe, v) => `<div class="gd__barra gd__barra--${classe}"><span class="gd__fill" style="--v:${num(v / maior)}"></span><span class="gd__num">${reais(v)}</span></div>`
+  return `<figure class="gd" data-revela style="--i:1">
+          <figcaption class="gd__cab"><span class="gd__titulo">${esc(titulo)}</span><span class="gd__sub">${esc(sv.nome)} · antes e com a gestão HS</span></figcaption>
+          <ul class="gd__legenda" role="list" aria-hidden="true"><li class="gd__leg-antes">Antes</li><li class="gd__leg-hs">Gestão HS</li></ul>
+          <div class="gd__lista" aria-hidden="true">${itens
+            .map(
+              (x, k) => `
+            <div class="gd__item" style="--i:${k}"><p class="gd__nome">${esc(x.nome)}</p>${barra('antes', x.antes)}${barra('hs', x.depois)}</div>`,
+            )
+            .join('')}
+          </div>
+          <div class="sr-only"><table><caption>${esc(titulo)} do ${esc(sv.nome)}, antes e com a gestão HS</caption><thead><tr><th scope="col">Categoria</th><th scope="col">Antes</th><th scope="col">Com a gestão HS</th></tr></thead><tbody>${itens.map((x) => `<tr><th scope="row">${esc(x.nome)}</th><td>${reais(x.antes)}</td><td>${reais(x.depois)}</td></tr>`).join('')}</tbody></table></div>
+        </figure>`
+}
 
 // ---------------------------------------------------------------- antes e depois (src/dados/antes-depois.json)
 // Três comparadores de arrastar (base do 069). No computador, lado a lado; no celular e no
@@ -454,8 +519,8 @@ function schema(pag, faqItens) {
     '@id': id('negocio'),
     name: cfg.nome,
     description:
-      'A HS Sindicatura é uma empresa de sindicatura profissional e gestão condominial em São Paulo. O fundador, Danilo Ricardo Dias, atua como síndico profissional em condomínios residenciais, mistos e comerciais da capital e da Grande São Paulo, com foco em organização administrativa, controle financeiro, gestão de contratos e comunicação clara entre conselho, moradores e administradora.',
-    slogan: 'Gestão condominial com método, governança e responsabilidade.',
+      'A HS Sindicatura é especializada em gestão condominial, síndico profissional e implantação de novos empreendimentos. Tem sede em São Paulo, capital, e disponibilidade para atuar em todo o Brasil. O fundador, Danilo Ricardo Dias, administrador de empresas com carreira em auditoria e compliance, finanças e excelência operacional, aplica a gestão corporativa ao condomínio: método, controle financeiro, governança e acompanhamento por indicadores.',
+    slogan: 'Gestão condominial com método, controle e resultado.',
     url: url('/'),
     image: url('/assets/img/og-hs.jpg'),
     logo: url('/icon-512.png'),
@@ -464,25 +529,25 @@ function schema(pag, faqItens) {
     founder: { '@id': id('danilo') },
     areaServed: [
       { '@type': 'City', name: 'São Paulo' },
-      { '@type': 'AdministrativeArea', name: 'Grande São Paulo' },
+      { '@type': 'Country', name: 'Brasil' },
     ],
     address: { '@type': 'PostalAddress', addressLocality: 'São Paulo', addressRegion: 'SP', addressCountry: 'BR' },
     contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', telephone: cfg.telefone, email: cfg.email, areaServed: 'BR', availableLanguage: 'Portuguese' },
     sameAs: [cfg.instagramUrl],
-    knowsAbout: ['síndico profissional', 'sindicatura profissional', 'gestão condominial', 'administração de condomínio', 'prestação de contas de condomínio', 'gestão de contratos e fornecedores', 'assembleia de condomínio', 'manutenção predial preventiva', 'Código Civil, art. 1.348'],
-    makesOffer: solucoes.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.nome, description: s.oQueE || s.descricao, url: url(`/solucoes#${s.id}`), areaServed: 'São Paulo e Grande São Paulo' } })),
+    knowsAbout: ['síndico profissional', 'sindicatura profissional', 'gestão condominial', 'implantação de condomínios', 'administração de condomínio', 'prestação de contas de condomínio', 'gestão de contratos e fornecedores', 'assembleia de condomínio', 'manutenção predial preventiva', 'Código Civil, art. 1.348'],
+    makesOffer: solucoes.map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.nome, description: s.oQueE || s.descricao, url: url(`/solucoes#${s.id}`), areaServed: 'Brasil' } })),
   }
   const danilo = {
     '@type': 'Person',
     '@id': id('danilo'),
     name: cfg.dono,
     jobTitle: 'Síndico profissional e fundador da HS Sindicatura',
-    description: 'Administrador e empresário, fundador da HS Sindicatura. Atua como síndico profissional em condomínios residenciais, mistos e comerciais de São Paulo.',
+    description: 'Administrador de empresas e fundador da HS Sindicatura, com carreira em auditoria e compliance, finanças e excelência operacional em empresas nacionais e multinacionais. Atua como síndico profissional.',
     worksFor: { '@id': id('negocio') },
     image: url('/assets/img/og-hs.jpg'),
-    url: url('/sobre#fundador'),
+    url: url('/a-hs#fundador'),
     alumniOf: ['Exame e Saint Paul Escola de Negócios', 'FIA Business School'],
-    knowsAbout: ['gestão condominial', 'governança', 'gestão financeira', 'negociação', 'organização de processos'],
+    knowsAbout: ['gestão condominial', 'governança', 'auditoria e compliance', 'gestão financeira', 'excelência operacional'],
   }
   const site = { '@type': 'WebSite', '@id': id('site'), name: cfg.nome, url: url('/'), inLanguage: 'pt-BR', publisher: { '@id': id('negocio') } }
   const endereco = url(pag.rota)
@@ -502,7 +567,7 @@ function schema(pag, faqItens) {
       '@type': 'BreadcrumbList',
       '@id': `${endereco}#migalhas`,
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: url('/') },
+        { '@type': 'ListItem', position: 1, name: 'Início', item: url('/') },
         { '@type': 'ListItem', position: 2, name: pag.nome, item: endereco },
       ],
     }
@@ -554,9 +619,10 @@ function montar(pag, preview = null) {
     .replace('<!-- @solucoes-detalhe -->', htmlSolucoesDetalhe)
     .replace('<!-- @solucoes-indice -->', htmlIndiceSolucoes)
     .replace('<!-- @solucoes-rodape -->', htmlSolucoesRodape)
-    .replace('<!-- @publicos -->', htmlPublicos)
-    .replace('<!-- @tipos -->', htmlTipos)
     .replace('<!-- @antes-depois -->', htmlAntesDepois)
+    .replace(/<!--\s*@indicadores\s+(\d+)\s*-->/g, (_, n) => htmlIndicadores(Number(n)))
+    .replace('<!-- @grafico-saldo -->', htmlGraficoSaldo)
+    .replace('<!-- @grafico-despesas -->', htmlGraficoDespesas)
     .replace('<!-- @jardim -->', htmlJardim)
     .replace(/<!--\s*@faq(?:\s+([\w-]+))?\s*-->/g, (_, nome) => {
       faqItens = dados(nome ? `faq-${nome}` : 'faq')
@@ -564,14 +630,11 @@ function montar(pag, preview = null) {
     })
   // <!-- @se-img nome --> ... <!-- /@se-img -->: só fica se a imagem existir (foto opcional)
   html = html.replace(/<!--\s*@se-img\s+([\w-]+)\s*-->([\s\S]*?)<!--\s*\/@se-img\s*-->/g, (_, nome, dentro) => (versoes(nome, 'webp').length ? dentro : ''))
-  // o relatório de exemplo é sempre do mês que acabou de fechar
-  const MESES = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-  const ref = new Date()
-  ref.setDate(1)
-  ref.setMonth(ref.getMonth() - 1)
-  const mesRel = `${MESES[ref.getMonth()][0].toUpperCase()}${MESES[ref.getMonth()].slice(1)} de ${ref.getFullYear()}`
-  const ultimos = Array.from({ length: 6 }, (_, k) => MESES[(ref.getMonth() - 5 + k + 12) % 12].slice(0, 3))
-  html = html.replace(/\{\{mes-relatorio\}\}/g, mesRel).replace(/\{\{mes-(\d)\}\}/g, (_, k) => ultimos[Number(k)])
+  // valores do case Sunset View ({{sv.unidades}}, {{sv.meses}})
+  html = html.replace(/\{\{sv\.([\w-]+)\}\}/g, (_, k) => {
+    if (sv[k] === undefined) avisos.push(`[${pag.id}] sunset-view.json sem o campo ${k}`)
+    return esc(sv[k] ?? '')
+  })
   const cabeca = []
   html = html.replace(/<!--\s*@head\s*-->([\s\S]*?)<!--\s*\/@head\s*-->/g, (_, c) => {
     cabeca.push(c.trim())
@@ -587,8 +650,6 @@ function montar(pag, preview = null) {
     return esc(pag[k] ?? '')
   })
   html = html.replace(/\{\{inicio\}\}/g, pag.rota === '/' ? '#inicio' : '/')
-  // o diagnóstico: na Home é o formulário no fim da própria página; nas outras, a página Contato
-  html = html.replace(/\{\{diagnostico\}\}/g, pag.rota === '/' ? '#contato' : '/contato')
   html = html.replace(/\{\{wa:([\w-]+)\}\}/g, (_, chave) => esc(linkWa(chave)))
   html = html.replace(/\{\{cfg\.([\w.]+)\}\}/g, (_, c) => esc(valor(c)))
   html = html.replace(/\{\{ano\}\}/g, String(new Date().getFullYear()))
@@ -683,7 +744,7 @@ if (!argPreview) {
   if (process.argv.includes('--publicar')) rmSync(path.join(DIST, 'preview'), { recursive: true, force: true })
 } else {
   const nome = argPreview.join('+')
-  const pag = { id: 'preview', nome: 'Preview', rota: '/preview/', titulo: 'Preview', descricao: '', ogTitulo: 'Preview', ogDescricao: '', ogAlt: '', zap: 'proposta', secoes: [] }
+  const pag = { id: 'preview', nome: 'Preview', rota: '/preview/', titulo: 'Preview', descricao: '', ogTitulo: 'Preview', ogDescricao: '', ogAlt: '', zap: 'conversa', secoes: [] }
   const html = montar(pag, argPreview)
   verificar(html, pag)
   gravar(path.join(DIST, `preview/${nome}.html`), html)

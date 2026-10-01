@@ -13,15 +13,13 @@
  *   azul-marinho de dentro fica translúcido, pra cidade aparecer por trás, como no mockup.
  *   O mesmo símbolo, inteiro, é o logo do header e do rodapé e os favicons. O arquivo tem
  *   uma franja vermelha na borda e um acento solto embaixo: saem aqui.
- * - Fundador: a foto do Danilo no corredor de vidro (02 - IMAGEM DANILO.jpg).
- * - Para quem atuamos, vistoria e fundo da seção legal: as definitivas entram em
- *   SEÇÕES/ (06 - CONSELHO E ASSEMBLEIAS, 06 - ADMINISTRADORAS, 06 - RESIDENCIAL E MISTO,
- *   06 - COMERCIAL, 07 - VISTORIA, 08 - FUNDO LEGAL; png, jpg ou webp). Enquanto não
- *   chegam, valem as fotos de banco de imagem de WEB/ (publico-conselho, publico-
- *   administradoras, publico-residencial, publico-comercial e vistoria; créditos em
- *   WEB/creditos.md) e, sem elas, as provisórias de SEÇÕES/PROVISÓRIAS, ampliadas do mockup
- *   por IA (Swin2SR 4x), que ficavam borradas. O fundo legal não tem provisória: sem ele a
- *   seção fica sem foto.
+ * - Fundador: a foto do Danilo no corredor de vidro (02 - IMAGEM DANILO.jpg), no bloco
+ *   Liderança da Home e na página A HS.
+ * - As 3 soluções (cartões da Home e blocos da página Soluções) e o topo das páginas
+ *   Soluções e A HS: foto real com o nome do site em PÁGINAS/ (sol-implantacao, sol-gestao,
+ *   sol-sindico, topo-solucoes, topo-sobre) passa na frente; senão, banco de imagem de WEB/
+ *   (créditos em WEB/creditos.md); senão, um recorte das provisórias do mockup.
+ * - Case Sunset View: a foto real do condomínio, opcional, em CASES/sunset-view.
  * - Antes e depois (ANTES X DEPOIS/ANTES n e DEPOIS n) e jardim renovado (JARDIM RENOVAD-
  *   CARROSEL): fotos reais do condomínio, sem tratamento de cor. Os pares saem alinhados no
  *   mesmo quadro 4:5 (src/dados/antes-depois.json); as fotos do jardim, na ordem de
@@ -53,21 +51,6 @@ function achar(relativo, obrigatorio = true) {
     atual = path.join(atual, nome)
   }
   return atual
-}
-// a imagem definitiva de uma seção, em qualquer extensão; senão a foto de banco de imagem
-// (Recursos Site/WEB/<web>.jpg, créditos em creditos.md); senão a provisória do mockup
-function daSecao(nome, web) {
-  for (const ext of ['png', 'jpg', 'jpeg', 'webp']) {
-    const a = achar(`SEÇÕES/${nome}.${ext}`, false)
-    if (a) return { arq: a, provisoria: false }
-  }
-  const w = web && achar(`WEB/${web}.jpg`, false)
-  if (w) return { arq: w, provisoria: 'web' }
-  for (const ext of ['png', 'jpg', 'jpeg', 'webp']) {
-    const a = achar(`SEÇÕES/PROVISÓRIAS/${nome}.${ext}`, false)
-    if (a) return { arq: a, provisoria: true }
-  }
-  return null
 }
 
 // esvazia a pasta; fica a imagem de compartilhamento (og.mjs)
@@ -211,33 +194,6 @@ await variantes(achar('MOBILE/IMAGEM HERO MOBILE.png'), 'hero-cel', [480, 640, 7
 // ---------------------------------------------------------------- fundador
 await variantes(achar('02 - IMAGEM DANILO.jpg'), 'danilo-foto', [400, 600, 800, 1066], { q: 76 })
 
-// ---------------------------------------------------------------- para quem atuamos (4 perfis)
-{
-  const perfis = { conselho: '06 - CONSELHO E ASSEMBLEIAS', administradoras: '06 - ADMINISTRADORAS', residencial: '06 - RESIDENCIAL E MISTO', comercial: '06 - COMERCIAL' }
-  for (const [id, nome] of Object.entries(perfis)) {
-    const s = daSecao(nome, `publico-${id}`)
-    if (!s) throw new Error(`falta a imagem de ${nome} (nem definitiva, nem de banco de imagem, nem provisória)`)
-    if (s.provisoria) provisorias.push(s.provisoria === 'web' ? `WEB/publico-${id}` : nome)
-    // 16:9, o foco um pouco acima do meio (o topo dos prédios); a de banco de imagem leva o
-    // tratamento de cor das páginas internas
-    let buf = await sharp(s.arq).rotate().toBuffer()
-    if (s.provisoria === 'web') buf = await tratar(buf)
-    buf = await proporcao(buf, 16 / 9, ...(FOCO[`publico-${id}`] || [0.46, 0.5]))
-    await variantes(buf, `publico-${id}`, [360, 480, 640], { q: 74 })
-  }
-}
-
-// ---------------------------------------------------------------- diferenciais: a vistoria
-{
-  const s = daSecao('07 - VISTORIA', 'vistoria')
-  if (!s) throw new Error('falta a imagem 07 - VISTORIA (nem definitiva, nem de banco de imagem, nem provisória)')
-  if (s.provisoria) provisorias.push(s.provisoria === 'web' ? 'WEB/vistoria' : '07 - VISTORIA')
-  let buf = await sharp(s.arq).rotate().toBuffer()
-  if (s.provisoria === 'web') buf = await tratar(buf)
-  buf = await proporcao(buf, 1.6, ...(FOCO.vistoria || [0.5, 0.5]))
-  await variantes(buf, 'vistoria', [480, 720, 880], { q: 74 })
-}
-
 // ---------------------------------------------------------------- antes e depois (3 pares, fotos reais)
 // As duas fotos de cada par não foram tiradas do mesmo ponto nem com o mesmo zoom. Cada par
 // sai recortado no mesmo quadro 4:5, alinhado por um ponto em comum (o canto do canteiro, a
@@ -273,13 +229,6 @@ await variantes(achar('02 - IMAGEM DANILO.jpg'), 'danilo-foto', [400, 600, 800, 
   }
 }
 
-// ---------------------------------------------------------------- responsabilidades legais: fundo (opcional)
-{
-  const s = daSecao('08 - FUNDO LEGAL')
-  if (s) await variantes(await sharp(s.arq).rotate().toBuffer(), 'legal-fundo', [720, 1080], { q: 64 })
-  else console.log('sem 08 - FUNDO LEGAL: a seção de responsabilidades legais fica sem foto')
-}
-
 // ---------------------------------------------------------------- CTA final: as torres do hero, leves
 await variantes(achar('DESKTOP/IMAGEM FUNDO HERO DESKTOP.png'), 'cta-fundo', [800, 1280], { q: 58, avif: { quality: 34, effort: 8, chromaSubsampling: '4:2:0' } })
 
@@ -287,18 +236,18 @@ await variantes(achar('DESKTOP/IMAGEM FUNDO HERO DESKTOP.png'), 'cta-fundo', [80
 // (a foto inteira ia com o dobro da altura que aparece)
 await variantes(await proporcao(await sharp(achar('DESKTOP/IMAGEM FUNDO HERO DESKTOP.png')).toBuffer(), 3, 0.42), 'cta-faixa', [800, 1280, 1600], { q: 56, avif: { quality: 32, effort: 8, chromaSubsampling: '4:2:0' } })
 
-// ---------------------------------------------------------------- páginas internas
+// ---------------------------------------------------------------- páginas internas e soluções
 // Fotos de banco de imagem livre (Unsplash e Pexels, licença de uso comercial; créditos em
 // Recursos Site/WEB/creditos.md) até chegarem as fotos reais do Danilo: ficam em
-// Recursos Site/WEB/<nome>.jpg. Foto real com o mesmo nome em Recursos Site/PÁGINAS/ passa
-// na frente. Todas recebem o mesmo tratamento de cor: um pouco menos saturadas e com um véu
-// petróleo bem leve, pra conversarem com o site.
-// Sem nenhuma das duas, entra um recorte provisório das imagens do mockup (só pra montar).
-function daPagina(nome) {
-  for (const pasta of ['PÁGINAS', 'WEB'])
+// Recursos Site/WEB/<arquivo>.jpg. Foto real com o NOME DO SITE em Recursos Site/PÁGINAS/
+// passa na frente (PÁGINAS/sol-gestao.jpg, PÁGINAS/topo-sobre.jpg...). Todas recebem o mesmo
+// tratamento de cor: um pouco menos saturadas e com um véu petróleo bem leve, pra conversarem
+// com o site. Sem nenhuma das duas, entra um recorte provisório do mockup (só pra montar).
+function daPagina(site, web = site) {
+  for (const [pasta, nome] of [['PÁGINAS', site], ['WEB', web]])
     for (const ext of ['jpg', 'jpeg', 'png', 'webp']) {
       const a = achar(`${pasta}/${nome}.${ext}`, false)
-      if (a) return { arq: a, provisoria: pasta === 'WEB' ? 'web' : false }
+      if (a) return { arq: a, provisoria: pasta === 'WEB' ? 'web' : false, nome }
     }
   return null
 }
@@ -309,44 +258,45 @@ async function tratar(buf) {
 }
 const RESERVA = {
   'topo-solucoes': ['DESKTOP/IMAGEM FUNDO HERO DESKTOP.png', 0.45, 0.7],
-  'topo-condominios': ['SEÇÕES/PROVISÓRIAS/06 - RESIDENCIAL E MISTO.png', 0.45, 0.5],
-  'topo-administradoras': ['SEÇÕES/PROVISÓRIAS/06 - ADMINISTRADORAS.png', 0.45, 0.5],
   'topo-sobre': ['DESKTOP/IMAGEM FUNDO HERO DESKTOP.png', 0.4, 0.82],
-  residencial: ['SEÇÕES/PROVISÓRIAS/06 - RESIDENCIAL E MISTO.png', 0.45, 0.5],
-  misto: ['SEÇÕES/PROVISÓRIAS/06 - CONSELHO E ASSEMBLEIAS.png', 0.45, 0.5],
-  comercial: ['SEÇÕES/PROVISÓRIAS/06 - COMERCIAL.png', 0.45, 0.5],
-  conselho: ['SEÇÕES/PROVISÓRIAS/06 - ADMINISTRADORAS.png', 0.45, 0.5],
+  'sol-implantacao': ['SEÇÕES/PROVISÓRIAS/06 - RESIDENCIAL E MISTO.png', 0.45, 0.5],
+  'sol-gestao': ['SEÇÕES/PROVISÓRIAS/07 - VISTORIA.png', 0.5, 0.5],
+  'sol-sindico': ['SEÇÕES/PROVISÓRIAS/06 - CONSELHO E ASSEMBLEIAS.png', 0.45, 0.5],
 }
 const reservas = []
-async function daPaginaBuf(nome, foco) {
-  const s = daPagina(nome)
+async function daPaginaBuf(site, web, foco) {
+  const s = daPagina(site, web)
   if (s) {
-    if (s.provisoria) provisorias.push(`WEB/${nome}`)
+    if (s.provisoria) provisorias.push(`WEB/${s.nome}`)
     return { buf: await tratar(await sharp(s.arq).rotate().toBuffer()), foco: foco ?? [0.5, 0.5] }
   }
-  const [arq, fy, fx] = RESERVA[nome]
-  reservas.push(nome)
+  const [arq, fy, fx] = RESERVA[site]
+  reservas.push(site)
   return { buf: await sharp(achar(arq)).rotate().toBuffer(), foco: [fy, fx] }
 }
-// [nome no site, nome do arquivo, foco vertical e horizontal do recorte]
-const TOPOS = [
-  ['topo-solucoes', 'topo-solucoes'],
-  ['topo-condominios', 'topo-condominios'],
-  ['topo-administradoras', 'topo-administradoras'],
-  ['topo-sobre', 'topo-sobre'],
-]
-for (const [site, arq] of TOPOS) {
-  const { buf, foco } = await daPaginaBuf(arq, FOCO[arq])
-  // 4:3 no computador; no celular a mesma foto aparece em 16:11 (o cover corta pouco)
+// topo das páginas Soluções e A HS: 4:3 no computador; no celular a mesma foto aparece em
+// 16:11 (o cover corta pouco). Cases e Contato não têm foto no topo.
+for (const site of ['topo-solucoes', 'topo-sobre']) {
+  const { buf, foco } = await daPaginaBuf(site, site, FOCO[site])
   await variantes(await proporcao(buf, 4 / 3, ...foco), site, [480, 640, 760, 960], { q: 70, avif: { quality: 40, effort: 8, chromaSubsampling: '4:2:0' } })
 }
-// tipos de condomínio e conselho: em pé no computador (4:5) e deitada no celular (16:10)
-for (const [site, arq] of [['tipo-residencial', 'residencial'], ['tipo-misto', 'misto'], ['tipo-comercial', 'comercial'], ['conselho', 'conselho']]) {
-  const { buf, foco } = await daPaginaBuf(arq, FOCO[arq])
-  await variantes(await proporcao(buf, 4 / 5, ...foco), site, [400, 560, 720, 920], { q: 72 })
-  await variantes(await proporcao(buf, 16 / 10, ...(FOCO[`${arq}-cel`] || foco)), `${site}-cel`, [400, 640, 860], { q: 72 })
+// as 3 soluções: a mesma foto no cartão da Home e no bloco da página Soluções, 4:3
+// [nome no site, arquivo em WEB]
+for (const [site, web] of [['sol-implantacao', 'publico-conselho'], ['sol-gestao', 'vistoria'], ['sol-sindico', 'conselho']]) {
+  const { buf, foco } = await daPaginaBuf(site, web, FOCO[site])
+  await variantes(await proporcao(buf, 4 / 3, ...foco), site, [400, 600, 800], { q: 72 })
 }
 if (reservas.length) console.log(`RECORTE PROVISÓRIO (faltam as fotos em Recursos Site/WEB): ${reservas.join(', ')}`)
+
+// ---------------------------------------------------------------- case Sunset View: a foto real (opcional)
+// Recursos Site/CASES/sunset-view.(jpg|png|webp). Sem ela, a página Cases fica sem a foto do
+// condomínio (o briefing pede foto real; banco de imagem aqui seria mentira).
+{
+  let a = null
+  for (const ext of ['jpg', 'jpeg', 'png', 'webp']) a = a || achar(`CASES/sunset-view.${ext}`, false)
+  if (a) await variantes(await proporcao(await sharp(a).rotate().toBuffer(), 4 / 3, ...(FOCO['sunset-view'] || [0.5, 0.5])), 'sunset-view', [480, 760, 960], { q: 72 })
+  else console.log('sem CASES/sunset-view: o case Sunset View fica sem a foto do condomínio')
+}
 
 writeFileSync(path.join(OUT, 'manifesto.json'), JSON.stringify(manifesto, null, 1))
 const total = Object.values(manifesto).reduce((s, m) => s + m.kb, 0)

@@ -1,0 +1,5 @@
+/* ---------------------------------------------------------------- experiência real (clara)
+   Bloco 8 do briefing final: o antes e depois (08a-antes-depois.css) e o jardim renovado
+   (08b-jardim.css), as duas partes com fotos reais. A faixa do jardim termina com 40 px de
+   respiro pra sombra das fotos: a seção desconta isso do padding de baixo. */
+.experiencia { padding-bottom: max(24px, calc(var(--secao-y) - 32px)); }

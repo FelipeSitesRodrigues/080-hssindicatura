@@ -229,156 +229,6 @@
   "h": 1600,
   "kb": 109
  },
- "publico-conselho-360.avif": {
-  "w": 360,
-  "h": 203,
-  "kb": 8
- },
- "publico-conselho-360.webp": {
-  "w": 360,
-  "h": 203,
-  "kb": 12
- },
- "publico-conselho-480.avif": {
-  "w": 480,
-  "h": 270,
-  "kb": 13
- },
- "publico-conselho-480.webp": {
-  "w": 480,
-  "h": 270,
-  "kb": 20
- },
- "publico-conselho-640.avif": {
-  "w": 640,
-  "h": 360,
-  "kb": 21
- },
- "publico-conselho-640.webp": {
-  "w": 640,
-  "h": 360,
-  "kb": 32
- },
- "publico-administradoras-360.avif": {
-  "w": 360,
-  "h": 202,
-  "kb": 8
- },
- "publico-administradoras-360.webp": {
-  "w": 360,
-  "h": 202,
-  "kb": 13
- },
- "publico-administradoras-480.avif": {
-  "w": 480,
-  "h": 270,
-  "kb": 12
- },
- "publico-administradoras-480.webp": {
-  "w": 480,
-  "h": 270,
-  "kb": 20
- },
- "publico-administradoras-640.avif": {
-  "w": 640,
-  "h": 360,
-  "kb": 20
- },
- "publico-administradoras-640.webp": {
-  "w": 640,
-  "h": 360,
-  "kb": 36
- },
- "publico-residencial-360.avif": {
-  "w": 360,
-  "h": 202,
-  "kb": 10
- },
- "publico-residencial-360.webp": {
-  "w": 360,
-  "h": 202,
-  "kb": 16
- },
- "publico-residencial-480.avif": {
-  "w": 480,
-  "h": 270,
-  "kb": 15
- },
- "publico-residencial-480.webp": {
-  "w": 480,
-  "h": 270,
-  "kb": 25
- },
- "publico-residencial-640.avif": {
-  "w": 640,
-  "h": 360,
-  "kb": 24
- },
- "publico-residencial-640.webp": {
-  "w": 640,
-  "h": 360,
-  "kb": 41
- },
- "publico-comercial-360.avif": {
-  "w": 360,
-  "h": 202,
-  "kb": 7
- },
- "publico-comercial-360.webp": {
-  "w": 360,
-  "h": 202,
-  "kb": 13
- },
- "publico-comercial-480.avif": {
-  "w": 480,
-  "h": 270,
-  "kb": 11
- },
- "publico-comercial-480.webp": {
-  "w": 480,
-  "h": 270,
-  "kb": 21
- },
- "publico-comercial-640.avif": {
-  "w": 640,
-  "h": 360,
-  "kb": 18
- },
- "publico-comercial-640.webp": {
-  "w": 640,
-  "h": 360,
-  "kb": 34
- },
- "vistoria-480.avif": {
-  "w": 480,
-  "h": 300,
-  "kb": 14
- },
- "vistoria-480.webp": {
-  "w": 480,
-  "h": 300,
-  "kb": 22
- },
- "vistoria-720.avif": {
-  "w": 720,
-  "h": 450,
-  "kb": 26
- },
- "vistoria-720.webp": {
-  "w": 720,
-  "h": 450,
-  "kb": 41
- },
- "vistoria-880.avif": {
-  "w": 880,
-  "h": 550,
-  "kb": 36
- },
- "vistoria-880.webp": {
-  "w": 880,
-  "h": 550,
-  "kb": 55
- },
  "ad-palmeiras-depois-400.avif": {
   "w": 400,
   "h": 500,
@@ -919,86 +769,6 @@
   "h": 720,
   "kb": 30
  },
- "topo-condominios-480.avif": {
-  "w": 480,
-  "h": 360,
-  "kb": 8
- },
- "topo-condominios-480.webp": {
-  "w": 480,
-  "h": 360,
-  "kb": 16
- },
- "topo-condominios-640.avif": {
-  "w": 640,
-  "h": 480,
-  "kb": 11
- },
- "topo-condominios-640.webp": {
-  "w": 640,
-  "h": 480,
-  "kb": 23
- },
- "topo-condominios-760.avif": {
-  "w": 760,
-  "h": 570,
-  "kb": 14
- },
- "topo-condominios-760.webp": {
-  "w": 760,
-  "h": 570,
-  "kb": 27
- },
- "topo-condominios-960.avif": {
-  "w": 960,
-  "h": 720,
-  "kb": 19
- },
- "topo-condominios-960.webp": {
-  "w": 960,
-  "h": 720,
-  "kb": 36
- },
- "topo-administradoras-480.avif": {
-  "w": 480,
-  "h": 360,
-  "kb": 7
- },
- "topo-administradoras-480.webp": {
-  "w": 480,
-  "h": 360,
-  "kb": 13
- },
- "topo-administradoras-640.avif": {
-  "w": 640,
-  "h": 480,
-  "kb": 10
- },
- "topo-administradoras-640.webp": {
-  "w": 640,
-  "h": 480,
-  "kb": 19
- },
- "topo-administradoras-760.avif": {
-  "w": 760,
-  "h": 570,
-  "kb": 13
- },
- "topo-administradoras-760.webp": {
-  "w": 760,
-  "h": 570,
-  "kb": 24
- },
- "topo-administradoras-960.avif": {
-  "w": 960,
-  "h": 720,
-  "kb": 17
- },
- "topo-administradoras-960.webp": {
-  "w": 960,
-  "h": 720,
-  "kb": 32
- },
  "topo-sobre-480.avif": {
   "w": 480,
   "h": 360,
@@ -1039,284 +809,94 @@
   "h": 720,
   "kb": 55
  },
- "tipo-residencial-400.avif": {
+ "sol-implantacao-400.avif": {
   "w": 400,
-  "h": 500,
-  "kb": 19
- },
- "tipo-residencial-400.webp": {
-  "w": 400,
-  "h": 500,
-  "kb": 35
- },
- "tipo-residencial-560.avif": {
-  "w": 560,
-  "h": 700,
-  "kb": 35
- },
- "tipo-residencial-560.webp": {
-  "w": 560,
-  "h": 700,
-  "kb": 63
- },
- "tipo-residencial-720.avif": {
-  "w": 720,
-  "h": 900,
-  "kb": 52
- },
- "tipo-residencial-720.webp": {
-  "w": 720,
-  "h": 900,
-  "kb": 95
- },
- "tipo-residencial-920.avif": {
-  "w": 920,
-  "h": 1150,
-  "kb": 78
- },
- "tipo-residencial-920.webp": {
-  "w": 920,
-  "h": 1150,
-  "kb": 144
- },
- "tipo-residencial-cel-400.avif": {
-  "w": 400,
-  "h": 250,
-  "kb": 12
- },
- "tipo-residencial-cel-400.webp": {
-  "w": 400,
-  "h": 250,
-  "kb": 22
- },
- "tipo-residencial-cel-640.avif": {
-  "w": 640,
-  "h": 400,
-  "kb": 29
- },
- "tipo-residencial-cel-640.webp": {
-  "w": 640,
-  "h": 400,
-  "kb": 52
- },
- "tipo-residencial-cel-860.avif": {
-  "w": 860,
-  "h": 538,
-  "kb": 51
- },
- "tipo-residencial-cel-860.webp": {
-  "w": 860,
-  "h": 538,
-  "kb": 91
- },
- "tipo-misto-400.avif": {
-  "w": 400,
-  "h": 500,
-  "kb": 14
- },
- "tipo-misto-400.webp": {
-  "w": 400,
-  "h": 500,
-  "kb": 19
- },
- "tipo-misto-560.avif": {
-  "w": 560,
-  "h": 700,
-  "kb": 24
- },
- "tipo-misto-560.webp": {
-  "w": 560,
-  "h": 700,
-  "kb": 34
- },
- "tipo-misto-720.avif": {
-  "w": 720,
-  "h": 900,
-  "kb": 37
- },
- "tipo-misto-720.webp": {
-  "w": 720,
-  "h": 900,
-  "kb": 50
- },
- "tipo-misto-920.avif": {
-  "w": 920,
-  "h": 1150,
-  "kb": 56
- },
- "tipo-misto-920.webp": {
-  "w": 920,
-  "h": 1150,
-  "kb": 75
- },
- "tipo-misto-cel-400.avif": {
-  "w": 400,
-  "h": 250,
-  "kb": 6
- },
- "tipo-misto-cel-400.webp": {
-  "w": 400,
-  "h": 250,
-  "kb": 8
- },
- "tipo-misto-cel-640.avif": {
-  "w": 640,
-  "h": 400,
-  "kb": 14
- },
- "tipo-misto-cel-640.webp": {
-  "w": 640,
-  "h": 400,
-  "kb": 18
- },
- "tipo-misto-cel-860.avif": {
-  "w": 860,
-  "h": 538,
-  "kb": 24
- },
- "tipo-misto-cel-860.webp": {
-  "w": 860,
-  "h": 538,
-  "kb": 29
- },
- "tipo-comercial-400.avif": {
-  "w": 400,
-  "h": 500,
-  "kb": 14
- },
- "tipo-comercial-400.webp": {
-  "w": 400,
-  "h": 500,
-  "kb": 25
- },
- "tipo-comercial-560.avif": {
-  "w": 560,
-  "h": 700,
-  "kb": 24
- },
- "tipo-comercial-560.webp": {
-  "w": 560,
-  "h": 700,
-  "kb": 42
- },
- "tipo-comercial-720.avif": {
-  "w": 720,
-  "h": 900,
-  "kb": 37
- },
- "tipo-comercial-720.webp": {
-  "w": 720,
-  "h": 900,
-  "kb": 65
- },
- "tipo-comercial-920.avif": {
-  "w": 920,
-  "h": 1150,
-  "kb": 60
- },
- "tipo-comercial-920.webp": {
-  "w": 920,
-  "h": 1150,
-  "kb": 106
- },
- "tipo-comercial-cel-400.avif": {
-  "w": 400,
-  "h": 250,
-  "kb": 9
- },
- "tipo-comercial-cel-400.webp": {
-  "w": 400,
-  "h": 250,
-  "kb": 18
- },
- "tipo-comercial-cel-640.avif": {
-  "w": 640,
-  "h": 400,
-  "kb": 20
- },
- "tipo-comercial-cel-640.webp": {
-  "w": 640,
-  "h": 400,
-  "kb": 37
- },
- "tipo-comercial-cel-860.avif": {
-  "w": 860,
-  "h": 537,
-  "kb": 33
- },
- "tipo-comercial-cel-860.webp": {
-  "w": 860,
-  "h": 537,
-  "kb": 60
- },
- "conselho-400.avif": {
-  "w": 400,
-  "h": 500,
-  "kb": 8
- },
- "conselho-400.webp": {
-  "w": 400,
-  "h": 500,
-  "kb": 13
- },
- "conselho-560.avif": {
-  "w": 560,
-  "h": 700,
-  "kb": 13
- },
- "conselho-560.webp": {
-  "w": 560,
-  "h": 700,
-  "kb": 21
- },
- "conselho-720.avif": {
-  "w": 720,
-  "h": 900,
-  "kb": 18
- },
- "conselho-720.webp": {
-  "w": 720,
-  "h": 900,
-  "kb": 30
- },
- "conselho-920.avif": {
-  "w": 920,
-  "h": 1150,
-  "kb": 25
- },
- "conselho-920.webp": {
-  "w": 920,
-  "h": 1150,
-  "kb": 41
- },
- "conselho-cel-400.avif": {
-  "w": 400,
-  "h": 250,
-  "kb": 6
- },
- "conselho-cel-400.webp": {
-  "w": 400,
-  "h": 250,
-  "kb": 9
- },
- "conselho-cel-640.avif": {
-  "w": 640,
-  "h": 400,
+  "h": 300,
   "kb": 11
  },
- "conselho-cel-640.webp": {
-  "w": 640,
-  "h": 400,
+ "sol-implantacao-400.webp": {
+  "w": 400,
+  "h": 300,
+  "kb": 18
+ },
+ "sol-implantacao-600.avif": {
+  "w": 600,
+  "h": 450,
+  "kb": 24
+ },
+ "sol-implantacao-600.webp": {
+  "w": 600,
+  "h": 450,
+  "kb": 38
+ },
+ "sol-implantacao-800.avif": {
+  "w": 800,
+  "h": 600,
+  "kb": 38
+ },
+ "sol-implantacao-800.webp": {
+  "w": 800,
+  "h": 600,
+  "kb": 61
+ },
+ "sol-gestao-400.avif": {
+  "w": 400,
+  "h": 300,
+  "kb": 12
+ },
+ "sol-gestao-400.webp": {
+  "w": 400,
+  "h": 300,
+  "kb": 20
+ },
+ "sol-gestao-600.avif": {
+  "w": 600,
+  "h": 450,
+  "kb": 23
+ },
+ "sol-gestao-600.webp": {
+  "w": 600,
+  "h": 450,
+  "kb": 36
+ },
+ "sol-gestao-800.avif": {
+  "w": 800,
+  "h": 600,
+  "kb": 35
+ },
+ "sol-gestao-800.webp": {
+  "w": 800,
+  "h": 600,
+  "kb": 56
+ },
+ "sol-sindico-400.avif": {
+  "w": 400,
+  "h": 300,
+  "kb": 6
+ },
+ "sol-sindico-400.webp": {
+  "w": 400,
+  "h": 300,
+  "kb": 10
+ },
+ "sol-sindico-600.avif": {
+  "w": 600,
+  "h": 450,
+  "kb": 11
+ },
+ "sol-sindico-600.webp": {
+  "w": 600,
+  "h": 450,
+  "kb": 17
+ },
+ "sol-sindico-800.avif": {
+  "w": 800,
+  "h": 600,
   "kb": 16
  },
- "conselho-cel-860.avif": {
-  "w": 860,
-  "h": 538,
-  "kb": 15
- },
- "conselho-cel-860.webp": {
-  "w": 860,
-  "h": 538,
-  "kb": 24
+ "sol-sindico-800.webp": {
+  "w": 800,
+  "h": 600,
+  "kb": 25
  }
 }

@@ -1,8 +1,8 @@
 /* ---------------------------------------------------------------- como começa (clara)
    As 5 etapas da apresentação comercial da HS (reunião de cerca de 1 hora, visita técnica,
    proposta em até 48 horas, assembleia e transição assistida de cerca de 30 dias), numa
-   linha ligada por um fio dourado que passa atrás dos hexágonos numerados. Embaixo, a
-   regra do Código Civil sobre a escolha do síndico (art. 1.347).
+   linha ligada por um fio dourado que passa atrás dos hexágonos numerados. (A regra do
+   Código Civil sobre a escolha do síndico, art. 1.347, foi pras dúvidas da página Soluções.)
    Entrada: o fio se desenha da esquerda pra direita e os hexágonos crescem um depois do
    outro. No celular, linha do tempo vertical (o fio desce).                           */
 .etapas { --vao: 28px; position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--vao); }
@@ -23,21 +23,6 @@
 .etapa__nome { margin-top: 12px; color: var(--petroleo); font: 700 16.5px/1.25 var(--fonte-titulo); }
 .etapa__desc { margin-top: 6px; color: var(--texto-2); font-size: 14.5px; line-height: 1.55; }
 
-.comeco__lei {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  max-width: 60em;
-  margin-top: clamp(32px, 3.4vw, 44px);
-  padding: 16px 20px;
-  border: 1px solid var(--fio-claro);
-  border-radius: var(--raio-card);
-  background: var(--branco);
-  color: var(--grafite);
-  font-size: 14.5px;
-  line-height: 1.55;
-}
-.comeco__lei-i { width: 24px; height: 24px; color: var(--dourado-tinta); }
 
 @media (prefers-reduced-motion: no-preference) {
   .js .etapas.visivel::before { animation: risca-x 1.5s var(--ease-in-out) .15s backwards; }

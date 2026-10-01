@@ -28,3 +28,7 @@
   .cta-final__botoes { display: grid; }
   .cta-final__botoes .btn { width: 100%; }
 }
+
+/* Home (bloco 9 do briefing final): o convite que encerra a página, com mais respiro */
+.cta-final--home { padding-block: clamp(80px, 8vw, 128px); }
+.cta-final__botoes .btn .i:first-child:not(.i--anda) { width: 20px; height: 20px; }

@@ -1,0 +1,41 @@
+/* ---------------------------------------------------------------- quem somos (clara)
+   Bloco 2 do briefing final: uma frase curta e as quatro palavras-chave (Governança,
+   Controle, Transparência, Resultado). Sem cartões e sem ícones: as quatro palavras em
+   tipografia grande, numa faixa dividida por fios, com o número em dourado.
+   Entrada: as palavras sobem uma depois da outra e o fio de cima se desenha (transform). */
+.quem-home__cab { margin-bottom: clamp(36px, 4vw, 56px); }
+.quem-home__frase { font-size: 17px; line-height: 1.65; }
+
+.chaves { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--fio-claro); border-bottom: 1px solid var(--fio-claro); }
+.chave {
+  display: grid;
+  gap: 10px;
+  padding: clamp(24px, 2.6vw, 36px) clamp(16px, 2vw, 28px);
+  color: var(--petroleo);
+  font: 700 clamp(19px, .8rem + .9vw, 26px)/1.15 var(--fonte-titulo);
+  letter-spacing: -.01em;
+}
+.chave + .chave { border-left: 1px solid var(--fio-claro); }
+.chave:first-child { padding-left: 0; }
+.chave__n { color: var(--dourado-texto); font-size: 13px; letter-spacing: .14em; }
+/* o fio dourado curto em cima de cada palavra */
+.chave::before { content: ''; display: block; width: 28px; height: 2px; margin-bottom: 4px; background: var(--dourado); transform-origin: 0 50%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .chaves.visivel .chave::before { animation: risca-x .8s var(--ease-out) calc(var(--i, 0) * 110ms + 250ms) backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .chaves { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .chave:nth-child(3) { border-left: 0; padding-left: 0; }
+  .chave:nth-child(n + 3) { border-top: 1px solid var(--fio-claro); }
+}
+/* celular: uma palavra por linha, o número à esquerda (em duas colunas "Transparência" não cabe) */
+@media (max-width: 39.99em) {
+  .quem-home__frase { font-size: 16px; }
+  .chaves { grid-template-columns: minmax(0, 1fr); }
+  .chave, .chave:first-child, .chave:nth-child(3) { display: flex; align-items: baseline; gap: 16px; padding: 18px 0; border-left: 0; font-size: 21px; }
+  .chave + .chave { border-top: 1px solid var(--fio-claro); }
+  .chave::before { display: none; }
+  .chave__n { flex: none; width: 24px; }
+}

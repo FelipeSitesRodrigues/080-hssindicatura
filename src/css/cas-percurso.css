@@ -1,0 +1,29 @@
+/* ---------------------------------------------------------------- o percurso do case (clara)
+   Cenário, diagnóstico, estratégia e ações, em quatro colunas ligadas por um fio dourado
+   (os indicadores e o resultado vêm na seção seguinte). Cada etapa: o hexágono com o
+   número, o nome e itens curtos. No celular, linha do tempo vertical.
+   Entrada: as etapas sobem em sequência e o fio se desenha da esquerda (transform).      */
+.etapas-case { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.4vw, 36px); }
+.etapas-case::before { content: ''; position: absolute; top: 18px; left: 17px; right: 0; height: 1.5px; background: linear-gradient(90deg, rgb(167 118 43 / .7), rgb(167 118 43 / .15)); transform-origin: 0 50%; }
+.etapa-case { position: relative; display: grid; align-content: start; gap: 14px; }
+.etapa-case__hex { width: 36px; height: 39px; font-size: 15px; }
+.etapa-case__nome { color: var(--petroleo); font: 700 19px/1.25 var(--fonte-titulo); }
+.etapa-case__lista { display: grid; gap: 10px; }
+.etapa-case__lista li { position: relative; padding-left: 16px; color: var(--grafite); font-size: 15px; line-height: 1.55; }
+.etapa-case__lista li::before { content: ''; position: absolute; left: 0; top: .62em; width: 6px; height: 6px; border-radius: 50%; background: var(--dourado-tinta); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .etapas-case:not(.visivel)::before { transform: scaleX(0); }
+  .js .etapas-case.visivel::before { animation: risca-x 1.4s var(--ease-in-out) .2s backwards; }
+}
+
+@media (max-width: 63.99em) {
+  .etapas-case { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+  .etapas-case::before { display: none; }
+}
+@media (max-width: 39.99em) {
+  .etapas-case { grid-template-columns: minmax(0, 1fr); row-gap: 30px; }
+  .etapa-case { grid-template-columns: auto minmax(0, 1fr); column-gap: 16px; }
+  .etapa-case__hex { grid-row: span 2; }
+  .etapa-case__nome { align-self: center; }
+}

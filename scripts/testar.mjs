@@ -1,22 +1,23 @@
 /**
  * Teste de cliques e de layout do site, no Chrome da máquina (puppeteer-core).
- * Base do 079, adaptado à HS Sindicatura e às seis páginas (src/paginas.json).
+ * Base do 079, adaptado à HS Sindicatura e às cinco páginas do briefing final (src/paginas.json).
  *
  * - Estouro horizontal e texto maior que a caixa: a Home em 15 larguras, de 320 a 1920, e
  *   as outras páginas em 9.
- * - Abertura: na Home a cortina some e o Danilo e o hexágono aparecem; nas outras, a cortina
- *   da foto do topo some e a foto certa pra tela carrega.
+ * - Abertura: na Home a cortina some e o hexágono, o título e a linha geográfica aparecem;
+ *   nas outras, a cortina da foto do topo some e a foto certa pra tela carrega.
  * - Revelação no scroll em todas as páginas: rola na roda do mouse, como gente de verdade, e
- *   todo [data-revela] e [data-revela-lista] precisa ganhar .visivel (bug do 067). Na Home,
- *   o relatório termina com as barras cheias.
+ *   todo [data-revela] e [data-revela-lista] precisa ganhar .visivel (bug do 067). Os
+ *   gráficos do Sunset View (Home e Cases) terminam desenhados: a curva inteira, os 12
+ *   pontos acesos e as 8 barras cheias.
  * - Topo: fica opaco depois de rolar; o WhatsApp flutuante aparece no meio da página e some
- *   no fim (contato da Home, convite final das outras, rodapé).
+ *   no fim (convite final de cada página, rodapé).
  * - Menu do celular: abre, marca aria-expanded, põe o foco dentro, deixa o resto inerte,
  *   fecha no Esc (foco volta pro botão) e leva pra página certa, que fica acesa no menu.
- * - Âncoras: o índice do topo das páginas, o "Agendar diagnóstico" da Home e o endereço com
- *   # vindo de outra página param com a seção logo abaixo do header.
- * - Dúvidas: o botão abre e fecha a resposta (aria-expanded, inert e altura), também pelo
- *   teclado, nas três páginas que têm.
+ * - Âncoras: o índice da página Soluções, o "Ver os números" de Cases e o endereço com # vindo
+ *   de outra página (cartões da Home, rodapé) param com a seção logo abaixo do header.
+ * - Dúvidas (página Soluções): o botão abre e fecha a resposta (aria-expanded, inert e
+ *   altura), também pelo teclado.
  * - Antes e depois: no computador os três comparadores lado a lado; a linha anda arrastando
  *   com o mouse e com o dedo, no clique e no teclado (range com aria-valuetext), e a etiqueta
  *   some quando a linha passa por ela. No celular e no tablet, abas (clique e setas) trocam o
@@ -24,11 +25,10 @@
  * - Jardim renovado: as 18 fotos (9 e a cópia do loop) carregam quando a seção chega; a faixa
  *   anda sozinha, para no mouse e no botão, volta no botão; com "reduzir movimento" fica
  *   parada e rola de lado.
- * - Formulários: vazio mostra os erros e põe o foco no primeiro; preenchido abre o WhatsApp
- *   com todos os dados e mostra o sucesso. Na página Contato, "Solicitar proposta" troca o
- *   botão e a mensagem, e a mensagem opcional vai junto.
+ * - Formulário (página Contato): vazio mostra os erros e põe o foco no primeiro; preenchido
+ *   abre o WhatsApp com todos os dados (e a mensagem opcional) e mostra o sucesso.
  * - Todo link de WhatsApp: número certo, nova aba e mensagem; os das soluções com o nome do
- *   serviço, os dos perfis e dos tipos de condomínio com a mensagem deles (regra da casa).
+ *   serviço (regra da casa).
  * - Links entre páginas respondem 200. Imagens: nenhuma quebrada, todas com alt, nenhuma
  *   esticada. Um h1 por página. Console limpo.
  *
@@ -42,8 +42,6 @@ const BASE = process.env.BASE_URL ?? 'http://localhost:3080'
 const ler = (arq) => JSON.parse(readFileSync(new URL(arq, import.meta.url), 'utf8'))
 const cfg = ler('../site.config.json')
 const solucoes = ler('../src/dados/solucoes.json').itens
-const publicos = ler('../src/dados/publicos.json').itens
-const tipos = ler('../src/dados/tipos.json').itens
 const PAGINAS = ler('../src/paginas.json').itens
 const NAVEGADOR = ['C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'].find((p) => existsSync(p))
 
@@ -108,7 +106,7 @@ try {
         const estouram = [...document.querySelectorAll('h1, h2, h3, h4, p, a, li, span, strong, button, label')]
           .filter((el) => {
             const cs = getComputedStyle(el)
-            if (cs.display === 'inline' || !el.clientWidth || el.closest('.relatorio__pilha, .sr-only')) return false
+            if (cs.display === 'inline' || !el.clientWidth || el.closest('.sr-only')) return false
             const caixa = el.getBoundingClientRect()
             const esq = caixa.left + parseFloat(cs.paddingLeft) - 1
             const dir = caixa.right - parseFloat(cs.paddingRight) + 1
@@ -137,9 +135,9 @@ try {
         const h = await page.evaluate(() => {
           const op = (s) => Number(getComputedStyle(document.querySelector(s)).opacity)
           const foto = document.querySelector('.hero__foto img')
-          return { cortina: op('.hero__cortina'), hex: op('.hero__hex-pic img'), titulo: op('.hero__titulo .hero__linha'), pilares: op('.pilares'), foto: foto.complete && foto.naturalWidth > 0, atual: foto.currentSrc.split('/').pop() }
+          return { cortina: op('.hero__cortina'), hex: op('.hero__hex-pic img'), titulo: op('.hero__titulo .hero__linha'), geo: op('.hero__geo'), foto: foto.complete && foto.naturalWidth > 0, atual: foto.currentSrc.split('/').pop() }
         })
-        ok(h.cortina === 0 && h.hex === 1 && h.titulo === 1 && h.pilares === 1, `home ${w}px: cortina some e hexágono, título e pilares ficam visíveis (cortina ${h.cortina}, hexágono ${h.hex})`)
+        ok(h.cortina === 0 && h.hex === 1 && h.titulo === 1 && h.geo === 1, `home ${w}px: cortina some e hexágono, título e linha geográfica ficam visíveis (cortina ${h.cortina}, hexágono ${h.hex})`)
         ok(h.foto && (w < 1024 ? /hero-cel/.test(h.atual) : /hero-desk/.test(h.atual)), `home ${w}px: foto do hero certa pra tela (${h.atual})`)
       } else {
         const h = await page.evaluate(() => {
@@ -148,7 +146,7 @@ try {
           return { cortina: document.querySelector('.ptopo__cortina') ? op('.ptopo__cortina') : 0, titulo: op('.ptopo__titulo'), botoes: op('.ptopo__botoes, .cto__form'), foto: foto ? foto.complete && foto.naturalWidth > 0 : null, atual: foto?.currentSrc.split('/').pop() }
         })
         ok(h.cortina === 0 && h.titulo === 1 && h.botoes === 1, `${pag.id} ${w}px: a cortina some e o título e os botões ficam visíveis`)
-        if (h.foto !== null) ok(h.foto && /^topo-/.test(h.atual), `${pag.id} ${w}px: foto do topo carregada (${h.atual})`)
+        if (h.foto !== null) ok(h.foto && /^(topo-|sunset-view)/.test(h.atual), `${pag.id} ${w}px: foto do topo carregada (${h.atual})`)
       }
     }
   }
@@ -173,18 +171,24 @@ try {
       ok(presos.length === 0, `${pag.id} ${w}px: todo elemento animado aparece${presos.length ? ` (presos: ${presos.join(', ')})` : ''}`)
       const fim = await page.evaluate(() => ({ rolado: document.getElementById('topo').classList.contains('topo--rolado'), zap: document.querySelector('.zap-flutuante').classList.contains('visivel') }))
       ok(fim.rolado, `${pag.id} ${w}px: depois de rolar, header opaco`)
-      ok(viuZap && !fim.zap, `${pag.id} ${w}px: WhatsApp flutuante aparece no meio da página e some no fim`)
-      if (pag.rota === '/') {
+      // a página Contato, no computador, é curta: o formulário só sai de cima quando o rodapé
+      // (que tem o número) já chegou, então o flutuante não chega a aparecer, e não precisa
+      const curta = pag.id === 'contato' && w >= 1024
+      ok((viuZap || curta) && !fim.zap, `${pag.id} ${w}px: WhatsApp flutuante ${curta ? 'não atrapalha na página curta' : 'aparece no meio da página'} e some no fim`)
+      if (pag.rota === '/' || pag.rota === '/cases') {
         // fora da tela o content-visibility pausa a animação (volta quando a seção reaparece):
-        // confere as barras com o relatório na tela
-        await irPara('como-reportamos')
-        await espera(2300)
-        const rel = await page.evaluate(() => {
-          const escala = (el) => new DOMMatrix(getComputedStyle(el).transform === 'none' ? '' : getComputedStyle(el).transform).d
-          const barras = [...document.querySelectorAll('.grafico__r, .grafico__d')]
-          return { barras: barras.length, cheias: barras.filter((b) => Math.abs(escala(b) - 1) < 0.01).length, visivel: document.querySelector('.provas__relatorio').classList.contains('visivel') }
+        // confere os gráficos com eles na tela
+        await irPara(pag.rota === '/' ? 'resultado' : 'indicadores')
+        await espera(2800)
+        const g = await page.evaluate(() => {
+          const m = (el) => new DOMMatrix(getComputedStyle(el).transform === 'none' ? '' : getComputedStyle(el).transform)
+          const recorte = document.querySelector('.gs__revela')
+          const pontos = [...document.querySelectorAll('.gs__ponto')]
+          const barras = [...document.querySelectorAll('.gd__fill')]
+          return { visivel: document.querySelector('.gs').classList.contains('visivel'), curva: m(recorte).a, pontos: pontos.length, acesos: pontos.filter((p) => Number(getComputedStyle(p).opacity) === 1).length, barras: barras.length, cheias: barras.filter((b) => Math.abs(m(b).a - 1) < 0.01).length }
         })
-        ok(rel.visivel && rel.barras === 12 && rel.cheias === 12, `home ${w}px: relatório entra e as 12 barras terminam cheias (${rel.cheias}/${rel.barras})`)
+        ok(g.visivel && Math.abs(g.curva - 1) < 0.01 && g.pontos === 12 && g.acesos === 12, `${pag.id} ${w}px: o gráfico do saldo termina desenhado, com os 12 pontos acesos (curva ${g.curva}, ${g.acesos}/${g.pontos})`)
+        if (pag.rota === '/cases') ok(g.barras === 8 && g.cheias === 8, `cases ${w}px: as 8 barras das despesas terminam cheias (${g.cheias}/${g.barras})`)
       }
     }
   }
@@ -202,7 +206,7 @@ try {
   ok(e.aria === 'true' && e.visivel && e.alt > 700, `abre em tela cheia e marca aria-expanded=true (painel ${e.alt}px)`)
   ok(e.focoDentro, 'foco vai pra dentro do menu')
   ok(e.inerte, 'o resto da página fica inerte enquanto o menu está aberto')
-  ok(e.atual === '/', `na Home, "Home" fica aceso no menu (${e.atual})`)
+  ok(e.atual === '/', `na Home, "Início" fica aceso no menu (${e.atual})`)
   await page.keyboard.press('Escape')
   await espera(400)
   e = await page.evaluate(() => ({ aria: document.querySelector('.topo__menu').getAttribute('aria-expanded'), foco: document.activeElement?.matches('.topo__menu'), inerte: document.querySelector('main').inert }))
@@ -219,13 +223,13 @@ try {
   console.log('\nÂncoras')
   for (const w of [1440, 390]) {
     await page.setViewport(tela(w))
-    // o "Agendar diagnóstico" do hero da Home desce pro formulário
-    await abrir('/')
-    await page.evaluate(() => document.querySelector('.hero__cta').click())
-    await pararDeRolar('contato')
-    ok(debaixoDoHeader(await posicao('contato')), `home ${w}px: "Agendar diagnóstico" para no formulário, logo abaixo do header`)
-    // o índice do topo das páginas
-    for (const [rota, alvos] of [['/solucoes', solucoes.map((s) => s.id)], ['/para-condominios', ['residencial', 'misto', 'comercial', 'conselho']], ['/para-administradoras', ['integracao']]]) {
+    // o "Ver os números" do topo de Cases desce pros indicadores
+    await abrir('/cases')
+    await page.evaluate(() => document.querySelector('#inicio a[href="#indicadores"]').click())
+    await pararDeRolar('indicadores')
+    ok(debaixoDoHeader(await posicao('indicadores')), `cases ${w}px: "Ver os números" para nos indicadores, logo abaixo do header`)
+    // o índice do topo da página Soluções
+    for (const [rota, alvos] of [['/solucoes', solucoes.map((s) => s.id)]]) {
       for (const alvo of alvos) {
         await abrir(rota)
         await page.evaluate((a) => document.querySelector(`#inicio a[href="#${a}"]`).click(), alvo)
@@ -235,7 +239,7 @@ try {
       }
     }
     // chegando de outra página com # no endereço (os links do rodapé)
-    for (const destino of ['/solucoes#contratos', '/solucoes#conselho', '/para-condominios#comercial']) {
+    for (const destino of ['/solucoes#gestao', '/solucoes#sindico-profissional', '/cases#indicadores']) {
       await abrir(destino)
       await pararDeRolar(destino.split('#')[1])
       const r = await posicao(destino.split('#')[1])
@@ -245,7 +249,7 @@ try {
 
   console.log('\nDúvidas (acordeão)')
   await page.setViewport(tela(1440))
-  for (const rota of ['/', '/para-condominios', '/para-administradoras']) {
+  for (const rota of ['/solucoes']) {
     await abrir(rota)
     await irPara('duvidas')
     const estado = (i) =>
@@ -391,14 +395,13 @@ try {
   ok(e.anim === 'none' && e.copia === 'none' && e.rola && !e.botao, `com "reduzir movimento" a faixa para e rola de lado, sem a cópia e sem o botão (animação: ${e.anim})`)
   await page.emulateMediaFeatures([{ name: 'prefers-reduced-motion', value: 'no-preference' }])
 
-  console.log('\nFormulários')
-  for (const [rota, form] of [['/', '#form-diagnostico'], ['/contato', '#form-contato']]) {
+  console.log('\nFormulário')
+  for (const [rota, form] of [['/contato', '#form-contato']]) {
     await abrir(rota)
     await page.evaluate(() => {
       window.__abriu = []
       window.open = (u) => (window.__abriu.push(u), { opener: 1 })
     })
-    if (rota === '/') await irPara('contato')
     await page.click(`${form} .form__enviar`)
     await espera(300)
     e = await page.evaluate((f) => ({ invalidos: document.querySelectorAll(`${f} [aria-invalid="true"]`).length, foco: document.activeElement?.id, erro: document.getElementById('f-nome-erro').textContent, abriu: window.__abriu.length }), form)
@@ -410,12 +413,7 @@ try {
     await page.select('#f-tipo', 'Misto')
     await page.type('#f-unidades', '120')
     await page.click(`${form} .aceite`)
-    if (rota === '/contato') {
-      await page.type('#f-mensagem', 'Queremos trocar de síndico no fim do ano.')
-      await page.click(`${form} .assunto:nth-of-type(2)`)
-      const botao = await page.evaluate(() => document.querySelector('#form-contato .form__rotulo').textContent)
-      ok(botao === 'Solicitar proposta', `${rota}: escolher "Solicitar proposta" troca o botão ("${botao}")`)
-    }
+    await page.type('#f-mensagem', 'Queremos trocar de síndico no fim do ano.')
     e = await page.evaluate((f) => ({ zap: document.getElementById('f-whatsapp').value, invalidos: document.querySelectorAll(`${f} [aria-invalid="true"]`).length }), form)
     ok(e.zap === '(11) 98765-4321' && e.invalidos === 0, `${rota}: máscara do WhatsApp (${e.zap}) e os erros somem ao corrigir`)
     await page.click(`${form} .form__enviar`)
@@ -423,14 +421,10 @@ try {
     e = await page.evaluate((f) => ({ abriu: window.__abriu, sucesso: !document.querySelector(`${f} .form__sucesso`).hidden }), form)
     const msg = e.abriu[0] ? decodeURIComponent(new URL(e.abriu[0]).searchParams.get('text') || '') : ''
     const dados = /Maria Teste/.test(msg) && /\(11\) 98765-4321/.test(msg) && /Edifício Aurora/.test(msg) && /Misto/.test(msg) && /\*Unidades:\* 120/.test(msg)
-    const extra = rota === '/contato' ? /solicitar uma proposta/.test(msg) && /\*Mensagem:\* Queremos trocar/.test(msg) : /agendar um diagnóstico/.test(msg)
-    ok(e.abriu.length === 1 && e.abriu[0].startsWith(`https://wa.me/${cfg.whatsapp}?text=`) && dados && extra, `${rota}: preenchido, abre o WhatsApp da HS com os dados${rota === '/contato' ? ', o pedido de proposta e a mensagem' : ''}`)
+    const extra = /agendar uma conversa/.test(msg) && /\*Mensagem:\* Queremos trocar/.test(msg)
+    ok(e.abriu.length === 1 && e.abriu[0].startsWith(`https://wa.me/${cfg.whatsapp}?text=`) && dados && extra, `${rota}: preenchido, abre o WhatsApp da HS com o pedido de conversa, os dados e a mensagem`)
     ok(e.sucesso, `${rota}: mostra a mensagem de sucesso`)
   }
-  // ?assunto=proposta já chega escolhido
-  await abrir('/contato?assunto=proposta')
-  e = await page.evaluate(() => ({ marcado: document.querySelector('#form-contato input[name="assunto"]:checked')?.value, botao: document.querySelector('#form-contato .form__rotulo').textContent }))
-  ok(e.marcado === 'proposta' && e.botao === 'Solicitar proposta', `/contato?assunto=proposta já chega com a proposta escolhida (${e.marcado})`)
 
   console.log('\nLinks de WhatsApp')
   for (const pag of PAGINAS) {
@@ -440,18 +434,14 @@ try {
     )
     const origens = links.map((l) => l.origem)
     ok(new Set(origens).size === origens.length && !origens.includes(''), `${pag.id}: todo link tem data-zap único${new Set(origens).size !== origens.length ? ': repetidos ' + origens.filter((o, i) => origens.indexOf(o) !== i).join(', ') : ''}`)
-    if (pag.id === 'home' || pag.id === 'solucoes') ok(links.filter((l) => l.origem.startsWith('solucao-')).length === solucoes.length, `${pag.id}: ${solucoes.length} soluções com WhatsApp próprio`)
-    if (pag.id === 'home') ok(links.filter((l) => l.origem.startsWith('publico-')).length === publicos.length, `home: ${publicos.length} perfis com WhatsApp próprio`)
-    if (pag.id === 'condominios') ok(links.filter((l) => l.origem.startsWith('tipo-')).length === tipos.length, `condominios: ${tipos.length} tipos de condomínio com WhatsApp próprio`)
+    if (pag.id === 'solucoes') ok(links.filter((l) => l.origem.startsWith('solucao-')).length === solucoes.length, `${pag.id}: ${solucoes.length} soluções com WhatsApp próprio`)
     let ruins = 0
     for (const l of links) {
       const u = new URL(l.href)
       const numero = u.pathname.replace(/\//g, '')
       const m = u.searchParams.get('text') || ''
       const s = solucoes.find((x) => x.nome === l.servico)
-      const p = publicos.find((x) => x.nome === l.servico)
-      const t = tipos.find((x) => x.nome === l.servico)
-      const proprio = !l.servico || (s && m.includes(`*${s.mensagem}*`)) || (p && m === p.mensagem) || (t && m === t.mensagem)
+      const proprio = !l.servico || (s && m.includes(`*${s.mensagem}*`))
       if (!(numero === cfg.whatsapp && l.alvo === '_blank' && m && proprio)) {
         ruins++
         ok(false, `${pag.id} ${l.origem} "${l.texto.slice(0, 28)}" -> ${m.slice(0, 70)}`)

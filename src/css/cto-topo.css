@@ -1,9 +1,9 @@
 /* ---------------------------------------------------------------- topo da página Contato (escura, com o formulário)
    O mesmo fundo do topo das outras páginas. À esquerda, as migalhas, o rótulo, o título,
    a linha de apoio e os canais (WhatsApp, e-mail, Instagram, região e horário); à direita,
-   o formulário completo do briefing (nome, condomínio, cidade, tipo, unidades, WhatsApp e
-   mensagem), que abre o WhatsApp com tudo escrito (11-contato.js). Em cima dele, a escolha
-   entre agendar o diagnóstico e pedir a proposta: o botão e a mensagem mudam junto.
+   o formulário (nome, condomínio, cidade, tipo, unidades, WhatsApp e mensagem), que abre o
+   WhatsApp com tudo escrito (11-contato.js). Um pedido só, "Agendar uma conversa" (o CTA do
+   briefing final): a escolha entre diagnóstico e proposta saiu em 2026-10-01.
    No celular: título, apoio, formulário e depois os canais.                           */
 .ptopo--contato .ptopo__grade {
   grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
@@ -21,31 +21,21 @@
 .cto__canais { grid-area: canais; margin-top: 32px; }
 .cto__form { grid-area: form; min-width: 0; }
 /* o lugar do formulário até ele entrar (11-contato.js): a altura dele montado, medida em cada
-   faixa de tela, pra nada pular */
-.cto__form:not(.cto__form--montado) { min-height: 704px; }
+   faixa de tela, pra nada pular (medida de novo em 2026-10-01, sem a escolha de assunto) */
+.cto__form:not(.cto__form--montado) { min-height: 632px; }
 @media (max-width: 63.99em) {
-  .cto__form:not(.cto__form--montado) { min-height: 684px; }
+  .cto__form:not(.cto__form--montado) { min-height: 612px; }
 }
 @media (max-width: 39.99em) {
-  .cto__form:not(.cto__form--montado) { min-height: 699px; }
+  .cto__form:not(.cto__form--montado) { min-height: 627px; }
 }
 @media (max-width: 29.99em) {
-  .cto__form:not(.cto__form--montado) { min-height: 960px; }
+  .cto__form:not(.cto__form--montado) { min-height: 884px; }
 }
 @media (max-width: 21.24em) {
-  .cto__form:not(.cto__form--montado) { min-height: 1003px; }
+  .cto__form:not(.cto__form--montado) { min-height: 927px; }
 }
 
-/* agendar diagnóstico ou solicitar proposta */
-.form__assunto { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; min-inline-size: 0; margin-top: 16px; padding: 5px; border: 1px solid #DCE3E8; border-radius: 9px; background: #F1F4F6; }
-.assunto { position: relative; display: block; cursor: pointer; }
-.assunto input { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
-.assunto span { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 10px; border-radius: 6px; color: #56626C; font: 600 14px/1.2 var(--fonte-titulo); text-align: center; transition: background-color .25s ease, color .25s ease, box-shadow .25s ease; }
-.assunto input:checked + span { background: var(--branco); color: var(--petroleo); box-shadow: 0 1px 2px rgb(3 25 38 / .08), 0 4px 12px -6px rgb(3 25 38 / .25); }
-.assunto input:focus-visible + span { outline: 2px solid var(--petroleo); outline-offset: 2px; }
-@media (hover: hover) {
-  .assunto:hover input:not(:checked) + span { color: var(--petroleo); }
-}
 
 /* mensagem (a única caixa de texto do site) */
 .campo--largo { grid-column: 1 / -1; }
@@ -89,5 +79,4 @@
 }
 @media (max-width: 39.99em) {
   .campo textarea { font-size: 16px; }
-  .assunto span { font-size: 13.5px; }
 }

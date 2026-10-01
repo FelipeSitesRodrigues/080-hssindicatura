@@ -1,0 +1,94 @@
+/* ---------------------------------------------------------------- case Sunset View: indicadores e gráficos
+   Peças do case que se repetem (Home, bloco 5, e página Cases). O build monta tudo a partir
+   de src/dados/sunset-view.json: os números grandes (<!-- @indicadores N -->), o gráfico
+   do saldo em caixa (<!-- @grafico-saldo -->) e o das despesas por categoria
+   (<!-- @grafico-despesas -->).
+   Os gráficos são folhas brancas, o papel que o conselho recebe, com o filete dourado em
+   cima. São HTML e SVG, não imagem: escalam com a tela, o texto fica nítido e uma tabela
+   escondida leva os valores pro leitor de tela (e pro Google e as IAs).
+   - Saldo: a curva e a área num SVG esticado (preserveAspectRatio none, a linha com
+     vector-effect pra não engrossar); a grade, os pontos e os valores são HTML posicionado
+     em %, pra não distorcer.
+   - Despesas: barras em HTML, o "antes" em cinza e a "gestão HS" em dourado.
+   Entrada: a curva se desenha da esquerda (um retângulo de recorte que cresce em
+   transform), os pontos acendem na passagem dela, as barras crescem (scaleX).           */
+
+/* ---------------------------------------------------------------- indicadores */
+.indicadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 1fr)); gap: 0 28px; margin-top: 30px; }
+.indicador { display: grid; align-content: start; gap: 6px; padding-top: 20px; border-top: 1px solid var(--cor-linha); }
+.secao--escura .indicador { border-top-color: rgb(255 255 255 / .14); }
+.indicador__numero { color: var(--cor-destaque); font: 700 clamp(40px, 1rem + 2.8vw, 60px)/1 var(--fonte-titulo); letter-spacing: -.025em; white-space: nowrap; }
+.indicador__rotulo { margin-top: 6px; color: var(--cor-titulo); font: 600 16px/1.3 var(--fonte-titulo); }
+.indicador__detalhe { color: var(--cor-texto); font-size: 14px; line-height: 1.5; }
+.secao--escura .indicador__detalhe { color: var(--metal); }
+
+/* ---------------------------------------------------------------- folha dos gráficos */
+.gs, .gd {
+  position: relative;
+  min-width: 0;
+  padding: 24px clamp(18px, 2.2vw, 30px) 22px;
+  border-top: 3px solid var(--dourado);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #FFFFFF, #F7F9FA);
+  box-shadow: 0 34px 70px -34px rgb(0 0 0 / .9), 0 1px 2px rgb(3 25 38 / .08);
+  color: var(--grafite);
+}
+.secao--clara :is(.gs, .gd) { border: 1px solid #E4E9ED; border-top: 3px solid var(--dourado); box-shadow: 0 30px 60px -36px rgb(3 25 38 / .5); }
+.gs__cab, .gd__cab { display: grid; gap: 4px; padding-bottom: 14px; border-bottom: 1px solid #E8ECEF; }
+.gs__titulo, .gd__titulo { color: var(--petroleo); font: 700 16px/1.3 var(--fonte-titulo); }
+.gs__sub, .gd__sub { color: #5B6670; font-size: 13px; line-height: 1.4; }
+
+/* ---------------------------------------------------------------- saldo em caixa (linha) */
+.gs__grafico { margin-top: 26px; padding-left: 30px; }
+.gs__plano { position: relative; height: clamp(200px, 20vw, 290px); }
+.gs__grade li { position: absolute; left: 0; right: 0; top: calc(var(--y) * 1%); border-top: 1px dashed #E1E6EA; }
+.gs__grade li.gs__zero { border-top: 1px solid #AEB9C2; }
+.gs__grade span { position: absolute; right: calc(100% + 8px); top: -.72em; color: #6B7680; font: 500 11.5px/1.4 var(--fonte-texto); font-variant-numeric: tabular-nums; }
+.gs__svg { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; overflow: visible; }
+.gs__linha { fill: none; stroke: var(--petroleo); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.gs__revela { transform-origin: 0 0; }
+.gs__ponto { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%; background: var(--petroleo); box-shadow: 0 0 0 2px #FFFFFF; }
+.gs__ponto--fim { width: 15px; height: 15px; margin: -7.5px 0 0 -7.5px; background: var(--dourado); box-shadow: 0 0 0 3px #FFFFFF, 0 0 0 4px rgb(201 148 60 / .45); }
+.gs__valor { position: absolute; left: calc(var(--x) * 1%); top: calc(var(--y) * 1%); padding: 5px 9px; border-radius: 5px; color: var(--petroleo); font: 700 13px/1 var(--fonte-titulo); white-space: nowrap; }
+.gs__valor--fim { translate: calc(-100% - 12px) -50%; background: var(--petroleo); color: var(--branco); }
+.gs__valor--ini { translate: 10px 6px; background: #EEF1F4; }
+.gs__meses { position: relative; height: 16px; margin-top: 12px; }
+.gs__meses li { position: absolute; left: calc(var(--x) * 1%); translate: -50% 0; color: #6B7680; font: 500 11.5px/1.4 var(--fonte-texto); font-variant-numeric: tabular-nums; }
+
+/* ---------------------------------------------------------------- despesas por categoria (barras) */
+.gd__legenda { display: flex; flex-wrap: wrap; gap: 6px 20px; margin-top: 16px; color: #56626C; font: 500 13px/1.3 var(--fonte-texto); }
+.gd__legenda li { display: inline-flex; align-items: center; gap: 8px; }
+.gd__legenda li::before { content: ''; width: 14px; height: 10px; border-radius: 2px; }
+.gd__leg-antes::before { background: #D3DAE0; }
+.gd__leg-hs::before { background: var(--dourado); }
+.gd__lista { display: grid; gap: 18px; margin-top: 20px; }
+.gd__nome { margin-bottom: 7px; color: var(--petroleo); font: 600 14px/1.3 var(--fonte-titulo); }
+.gd__barra { display: flex; align-items: center; gap: 10px; min-height: 20px; }
+.gd__barra + .gd__barra { margin-top: 5px; }
+.gd__fill { flex: none; width: calc(var(--v) * (100% - 86px)); height: 14px; border-radius: 0 4px 4px 0; background: #D3DAE0; transform-origin: 0 50%; }
+.gd__barra--hs .gd__fill { background: linear-gradient(90deg, var(--dourado-escuro), var(--dourado) 70%, var(--dourado-claro)); }
+.gd__num { color: #6B7680; font: 500 13px/1 var(--fonte-texto); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.gd__barra--hs .gd__num { color: var(--petroleo); font: 700 13.5px/1 var(--fonte-titulo); }
+
+/* ---------------------------------------------------------------- entrada (só transform e opacity) */
+@keyframes gs-revela { from { transform: scaleX(0); } }
+@keyframes gs-ponto { from { opacity: 0; transform: scale(.3); } }
+@keyframes gd-cresce { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .js .gs.visivel .gs__revela { animation: gs-revela 1.7s var(--ease-in-out) .35s backwards; }
+  .js .gs.visivel .gs__ponto { animation: gs-ponto .45s var(--ease-out) calc(var(--i, 0) * 138ms + 420ms) backwards; }
+  .js .gs.visivel .gs__valor--ini { animation: aparece .6s ease .7s backwards; }
+  .js .gs.visivel .gs__valor--fim { animation: aparece .6s ease 2s backwards; }
+  .js .gd.visivel .gd__fill { animation: gd-cresce 1.1s var(--ease-out) calc(var(--i, 0) * 120ms + 300ms) backwards; }
+  .js .gd.visivel .gd__barra--hs .gd__fill { animation-delay: calc(var(--i, 0) * 120ms + 520ms); }
+  .js .gd.visivel .gd__num { animation: aparece .5s ease calc(var(--i, 0) * 120ms + 900ms) backwards; }
+}
+
+@media (max-width: 39.99em) {
+  .indicadores { gap: 0 20px; }
+  .indicador__numero { font-size: min(44px, 12vw); }
+  .gs, .gd { padding: 20px 16px 18px; }
+  .gs__grafico { padding-left: 26px; }
+  .gs__plano { height: 210px; }
+  .gs__meses li:nth-child(even) { visibility: hidden; }
+}

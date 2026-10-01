@@ -2,14 +2,14 @@
     <section class="ptopo ptopo--contato" id="inicio" aria-labelledby="ptopo-titulo">
       <div class="container ptopo__grade">
         <nav class="migalhas ptopo__migalhas" aria-label="Você está em">
-          <ol role="list"><li><a href="/">Home</a></li><li><span aria-current="page">Contato</span></li></ol>
+          <ol role="list"><li><a href="/">Início</a></li><li><span aria-current="page">Contato</span></li></ol>
         </nav>
         <p class="rotulo ptopo__rotulo">Contato</p>
-        <h1 class="ptopo__titulo" id="ptopo-titulo">Vamos conversar sobre a gestão <span class="destaque">do seu condomínio.</span></h1>
-        <p class="ptopo__sub">Preencha o formulário para agendar um diagnóstico ou pedir uma proposta. O retorno é feito pelo WhatsApp.</p>
+        <h1 class="ptopo__titulo" id="ptopo-titulo">Agende uma conversa sobre a gestão <span class="destaque">do seu condomínio.</span></h1>
+        <p class="ptopo__sub">Conte como está o condomínio hoje. O retorno é feito pelo WhatsApp, para marcar a conversa.</p>
 
         <ul class="contato__canais cto__canais" role="list">
-          <li><a href="{{wa:danilo}}" data-zap="contato-numero"><span class="contato__i"><i data-i="whatsapp-logo" data-w="light"></i></span>{{cfg.whatsappExibir}}</a></li>
+          <li><a href="{{wa:conversa}}" data-zap="contato-numero"><span class="contato__i"><i data-i="whatsapp-logo" data-w="light"></i></span>{{cfg.whatsappExibir}}</a></li>
           <li><a href="mailto:{{cfg.email}}"><span class="contato__i"><i data-i="envelope-simple" data-w="light"></i></span>{{cfg.email}}</a></li>
           <li><a href="{{cfg.instagramUrl}}" target="_blank" rel="noopener"><span class="contato__i"><i data-i="instagram-logo" data-w="light"></i></span>@{{cfg.instagram}}</a></li>
           <li><span class="contato__i"><i data-i="map-pin" data-w="light"></i></span>{{cfg.regiao}}</li>
@@ -22,12 +22,7 @@
         <div class="cto__form" id="formulario" data-zap-depois>
           <template id="form-molde-contato">
           <form class="form" id="form-contato" action="https://wa.me/{{cfg.whatsapp}}" method="get" target="_blank" novalidate aria-labelledby="form-titulo" data-origem="pagina-contato">
-            <h2 class="form__titulo" id="form-titulo">Como a HS pode ajudar?</h2>
-            <fieldset class="form__assunto">
-              <legend class="sr-only">O que você precisa</legend>
-              <label class="assunto"><input type="radio" name="assunto" value="diagnostico" checked><span>Agendar diagnóstico</span></label>
-              <label class="assunto"><input type="radio" name="assunto" value="proposta"><span>Solicitar proposta</span></label>
-            </fieldset>
+            <h2 class="form__titulo" id="form-titulo">Agendar uma conversa</h2>
             <div class="form__campos">
               <div class="campo">
                 <label for="f-nome">Nome</label>
@@ -73,22 +68,22 @@
               <label class="aceite" for="f-aceite">
                 <input id="f-aceite" name="aceite" type="checkbox" required aria-describedby="f-aceite-erro">
                 <span class="aceite__caixa" aria-hidden="true"></span>
-                <span>Autorizo o contato da HS Sindicatura pelo WhatsApp sobre o meu pedido.</span>
+                <span>Autorizo o contato da HS Sindicatura pelo WhatsApp para marcar a conversa.</span>
               </label>
               <p class="campo__erro" id="f-aceite-erro" aria-live="polite"></p>
             </div>
             <button class="btn btn--dourado form__enviar" type="submit">
-              <span class="form__rotulo">Agendar diagnóstico</span>
+              <span class="form__rotulo">Agendar uma conversa</span>
               <span class="form__carregando" aria-hidden="true">Abrindo o WhatsApp</span>
             </button>
             <p class="form__nota">Retorno via WhatsApp.</p>
             <div class="form__sucesso" role="status" aria-live="polite" tabindex="-1" hidden>
               <p class="form__sucesso-titulo"><i data-i="check-circle" data-w="regular"></i>Pronto! Sua mensagem está no WhatsApp.</p>
-              <p>Confira os dados e toque em enviar para concluir. Se o WhatsApp não abriu, <a class="form__link" href="{{wa:diagnostico}}" target="_blank" rel="noopener" data-zap="form-reserva">abra a conversa com a HS por aqui</a>.</p>
+              <p>Confira os dados e toque em enviar para concluir. Se o WhatsApp não abriu, <a class="form__link" href="{{wa:conversa}}" target="_blank" rel="noopener" data-zap="form-reserva">abra a conversa com a HS por aqui</a>.</p>
             </div>
           </form>
           </template>
-          <noscript><p class="contato__sem-js"><a class="btn btn--dourado" href="{{wa:diagnostico}}" target="_blank" rel="noopener">Agendar diagnóstico pelo WhatsApp</a></p></noscript>
+          <noscript><p class="contato__sem-js"><a class="btn btn--dourado" href="{{wa:conversa}}" target="_blank" rel="noopener">Agendar uma conversa pelo WhatsApp</a></p></noscript>
         </div>
       </div>
     </section>

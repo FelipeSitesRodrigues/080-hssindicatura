@@ -1,160 +1,91 @@
 {
-  "_sobre": "As 6 frentes de 'O que entregamos na prática' (briefing 12.4, texto do cartão no prompt-mockup.md) e o detalhe da página Soluções (briefing 13: o que é, o que resolve, como funciona em 2 a 3 passos, entregáveis e o botão de cada uma). Os fatos vêm do briefing, da apresentação comercial e da proposta do Piazza (fiscalização, cotação com critério técnico, calendário de preventivas, prestação de contas, mediação), e as obrigações do síndico, do Código Civil (art. 1.348: orçamento anual, prestação de contas, seguro, conservação). mensagem: o que entra no WhatsApp do botão (regra da casa: cada serviço com a sua). rodape: nome curto no rodapé. curto: nome no índice do topo da página Soluções.",
+  "_sobre": "As três soluções do briefing final (seção 3), na ordem dele. A frase do cartão da Home (descricao) é a do briefing; o resto foi escrito a partir dele e da apresentação comercial (Danilo revisa). Gera os 3 cartões da Home (foto, nome e frase, levando à página Soluções), os 3 blocos da página Soluções (o que é, o que resolve, como funciona e entregáveis, com o WhatsApp de cada uma: regra da casa), o índice e a lista do rodapé. foto: a imagem do cartão e do bloco (scripts/processar-imagens.mjs). mensagem: o nome que vai no WhatsApp.",
   "itens": [
     {
-      "id": "financeira",
-      "icone": "chart-bar",
-      "nome": "Gestão financeira estruturada",
-      "descricao": "Previsão orçamentária, controle de receitas e despesas e prestação de contas mensal, clara e documentada.",
-      "mensagem": "gestão financeira",
-      "rodape": "Gestão financeira",
-      "curto": "Financeira",
-      "oQueE": "A organização do dinheiro do condomínio: previsão orçamentária, controle de receitas e despesas, acompanhamento da inadimplência e prestação de contas ao conselho todo mês.",
+      "id": "implantacao",
+      "nome": "Implantação de novos empreendimentos",
+      "curto": "Implantação",
+      "rodape": "Implantação de novos empreendimentos",
+      "mensagem": "implantação de um novo empreendimento",
+      "foto": "sol-implantacao",
+      "alt": "Fachada branca de um edifício residencial novo, com sacadas e jardim na entrada (imagem ilustrativa)",
+      "descricao": "Estruturação desde o início: apoio à implantação administrativa e operacional de novos condomínios.",
+      "oQueE": "Apoio à implantação administrativa e operacional de condomínios recém-entregues, para o empreendimento começar com regras, contratos e rotina definidos desde o primeiro dia.",
       "resolve": [
-        "Contas difíceis de entender e prestação de contas que gera mais dúvida do que resposta.",
-        "Rateio extra por falta de planejamento.",
-        "Despesas que crescem sem ninguém perceber a tempo."
+        "Condomínio novo sem rotina, sem contratos e sem histórico de despesas",
+        "Pendências de obra e garantias da construtora sem acompanhamento",
+        "Fornecedores contratados às pressas, sem comparação",
+        "Primeiro orçamento feito no escuro"
       ],
       "comoFunciona": [
-        "Previsão orçamentária do ano, feita a partir do histórico e dos contratos em vigor.",
-        "Conferência mensal de receitas, despesas e inadimplência, junto com a administradora.",
-        "Prestação de contas ao conselho todo mês e à assembleia no fechamento do ano."
+        "Levantamento da documentação e do que a construtora entrega",
+        "Vistoria das áreas comuns e registro das pendências de obra",
+        "Orçamento do primeiro ano e contratação dos fornecedores essenciais",
+        "Rotinas, calendário de manutenção e canais de comunicação em funcionamento"
       ],
       "entregaveis": [
-        "Previsão orçamentária anual",
-        "Relatório mensal de receitas e despesas",
-        "Acompanhamento da inadimplência",
-        "Prestação de contas para a assembleia"
+        "Relatório de vistoria das áreas comuns",
+        "Pendências e garantias acompanhadas",
+        "Previsão orçamentária do primeiro ano",
+        "Calendário de manutenção preventiva"
       ]
     },
     {
-      "id": "contratos",
-      "icone": "clipboard-text",
-      "nome": "Gestão de contratos e fornecedores",
-      "descricao": "Cotação com critério técnico, conferência do que foi contratado e controle de prazo e vencimento de cada contrato.",
-      "mensagem": "gestão de contratos e fornecedores",
-      "rodape": "Contratos e fornecedores",
-      "curto": "Contratos",
-      "oQueE": "O controle de tudo o que o condomínio contrata, da limpeza e da portaria aos elevadores, ao seguro e às obras. Cada contrato com escopo, prazo, preço e responsável conhecidos.",
+      "id": "gestao",
+      "nome": "Gestão condominial",
+      "curto": "Gestão condominial",
+      "rodape": "Gestão condominial",
+      "mensagem": "gestão condominial",
+      "foto": "sol-gestao",
+      "alt": "Técnico de capacete e colete conferindo a tubulação vermelha da casa de bombas de incêndio de um prédio (imagem ilustrativa)",
+      "descricao": "Planejamento, organização e controle: operação, finanças, fornecedores, manutenção, processos e relacionamento.",
+      "oQueE": "Gestão integrada de operação, finanças, fornecedores, manutenção, processos e relacionamento, com indicadores acompanhados todo mês.",
       "resolve": [
-        "Contratos renovados no automático, sem conferir escopo e preço.",
-        "Serviço pago que não é entregue do jeito combinado.",
-        "Vencimento que pega o condomínio de surpresa."
+        "Prestação de contas difícil de entender",
+        "Contratos renovados no automático, sem conferir preço e escopo",
+        "Manutenção só quando quebra, com custo maior",
+        "Avisos desencontrados entre conselho, moradores e administradora"
       ],
       "comoFunciona": [
-        "Levantamento de todos os contratos, com escopo, reajuste e vencimento.",
-        "Cotações comparadas com critério técnico antes de contratar ou renovar.",
-        "Fiscalização do serviço prestado e aviso antes de cada vencimento."
-      ],
-      "entregaveis": [
-        "Mapa dos contratos com vencimentos",
-        "Quadro comparativo das cotações",
-        "Registro das fiscalizações",
-        "Aviso prévio de cada renovação"
-      ]
-    },
-    {
-      "id": "governanca",
-      "icone": "gear-six",
-      "nome": "Governança administrativa",
-      "descricao": "Assembleias preparadas com pauta e documentação, atas registradas e decisões acompanhadas até a execução.",
-      "mensagem": "governança administrativa",
-      "rodape": "Governança administrativa",
-      "curto": "Governança",
-      "oQueE": "As regras e os registros que sustentam as decisões: assembleias bem preparadas, atas em dia, convenção e regimento cumpridos e cada deliberação acompanhada até ser executada.",
-      "resolve": [
-        "Assembleia longa, sem pauta clara e sem decisão.",
-        "Decisão aprovada que fica no papel.",
-        "Ata e documento que ninguém encontra quando precisa."
-      ],
-      "comoFunciona": [
-        "Pauta e documentos da assembleia preparados com antecedência, junto com o conselho.",
-        "Condução da assembleia e registro das decisões em ata.",
-        "Cada deliberação com responsável e prazo, acompanhada até a execução."
-      ],
-      "entregaveis": [
-        "Edital de convocação e pauta",
-        "Atas registradas",
-        "Quadro das deliberações e prazos",
-        "Arquivo organizado de documentos"
-      ]
-    },
-    {
-      "id": "operacional",
-      "icone": "wrench",
-      "nome": "Gestão operacional e manutenção",
-      "descricao": "Calendário de manutenção preventiva, vistorias periódicas e acompanhamento dos prestadores nas áreas comuns.",
-      "mensagem": "gestão operacional e manutenção",
-      "rodape": "Operação e manutenção",
-      "curto": "Operação",
-      "oQueE": "O cuidado com o prédio no dia a dia: manutenção preventiva das áreas comuns e dos equipamentos, vistorias periódicas e acompanhamento dos prestadores e das obras.",
-      "resolve": [
-        "Manutenção só quando quebra, com custo maior e decisão às pressas.",
-        "Laudo e inspeção obrigatória com prazo vencido.",
-        "Obra sem acompanhamento técnico."
-      ],
-      "comoFunciona": [
-        "Calendário anual de manutenção preventiva, por equipamento e por área comum.",
-        "Vistorias periódicas no condomínio, com registro do que foi visto e do que precisa ser feito.",
-        "Acompanhamento dos prestadores e das obras, do orçamento à entrega."
-      ],
-      "entregaveis": [
-        "Calendário de manutenção preventiva",
-        "Checklist de vistoria",
-        "Registro de ocorrências e reparos",
-        "Controle de laudos e inspeções"
-      ]
-    },
-    {
-      "id": "comunicacao",
-      "icone": "chats-circle",
-      "nome": "Comunicação estruturada",
-      "descricao": "Canais oficiais, comunicados padronizados e retorno registrado para conselho, moradores e administradora.",
-      "mensagem": "comunicação estruturada",
-      "rodape": "Comunicação estruturada",
-      "curto": "Comunicação",
-      "oQueE": "A forma como a informação circula entre síndico, conselho, moradores e administradora: canais oficiais, comunicados claros e retorno registrado para cada solicitação.",
-      "resolve": [
-        "Aviso desencontrado e informação que chega pela metade.",
-        "Solicitação de morador sem resposta.",
-        "Conflito que cresce por falta de canal e de mediação."
-      ],
-      "comoFunciona": [
-        "Definição dos canais oficiais do condomínio e do que passa por cada um.",
-        "Comunicados padronizados, objetivos e com data.",
-        "Registro de cada solicitação e do retorno dado, com mediação imparcial quando há conflito."
-      ],
-      "entregaveis": [
-        "Canais oficiais definidos",
-        "Modelos de comunicado",
-        "Registro de solicitações e respostas",
-        "Histórico das comunicações importantes"
-      ]
-    },
-    {
-      "id": "conselho",
-      "icone": "users-three",
-      "nome": "Apoio ao conselho",
-      "descricao": "Reuniões periódicas, relatórios de gestão e informação organizada para o conselho decidir com segurança.",
-      "mensagem": "apoio ao conselho",
-      "rodape": "Apoio ao conselho",
-      "curto": "Conselho",
-      "oQueE": "O conselho decide com a informação na mão: reuniões periódicas, relatório de gestão e documentos organizados para responder aos condôminos com segurança.",
-      "resolve": [
-        "Conselho que só fica sabendo do problema depois.",
-        "Decisão tomada sem dados.",
-        "Dificuldade para explicar as contas e as escolhas aos condôminos."
-      ],
-      "comoFunciona": [
-        "Reuniões periódicas com o conselho, com pauta e registro.",
-        "Relatório mensal de gestão, com finanças, contratos e manutenções.",
-        "Apoio na preparação das assembleias e na prestação de contas aos condôminos."
+        "Previsão orçamentária e controle mensal de receitas e despesas",
+        "Cotação com critério técnico e acompanhamento de cada contrato",
+        "Calendário de manutenção preventiva e vistorias periódicas",
+        "Canais oficiais e retorno registrado para cada solicitação"
       ],
       "entregaveis": [
         "Relatório mensal de gestão",
-        "Atas das reuniões com o conselho",
-        "Indicadores do condomínio",
-        "Documentos à disposição para consulta"
+        "Mapa de contratos e vencimentos",
+        "Calendário de manutenção",
+        "Registro de decisões e comunicados"
+      ]
+    },
+    {
+      "id": "sindico-profissional",
+      "nome": "Síndico profissional",
+      "curto": "Síndico profissional",
+      "rodape": "Síndico profissional",
+      "mensagem": "síndico profissional",
+      "foto": "sol-sindico",
+      "alt": "Reunião de conselho numa sala com janelas de vidro: duas mulheres conversam diante de papéis e xícaras de café (imagem ilustrativa)",
+      "descricao": "Liderança profissional para decisões responsáveis, com método, governança, transparência e acompanhamento.",
+      "oQueE": "Condução executiva do condomínio por um síndico profissional eleito em assembleia, com método, governança, transparência e acompanhamento. O síndico é o representante legal do condomínio (Código Civil, art. 1.348).",
+      "resolve": [
+        "Nenhum morador com tempo para assumir a função",
+        "Decisões tomadas sem informação ou sem registro",
+        "Conflitos entre vizinhos sem mediação imparcial",
+        "Riscos legais e trabalhistas sem acompanhamento"
+      ],
+      "comoFunciona": [
+        "Plano diretor com metas de curto, médio e longo prazo",
+        "Ritos de decisão e alçadas de aprovação definidos com o conselho",
+        "Assembleias preparadas com pauta e documentação",
+        "Revisão trimestral dos resultados e ajuste de rota"
+      ],
+      "entregaveis": [
+        "Plano diretor do condomínio",
+        "Atas e decisões registradas",
+        "Relatório mensal ao conselho",
+        "Revisão trimestral de resultados"
       ]
     }
   ]

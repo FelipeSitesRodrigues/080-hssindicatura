@@ -2,7 +2,8 @@
  * Imagem de compartilhamento (1200 x 630), a prévia que aparece quando alguém manda o link
  * no WhatsApp, Instagram ou Facebook. Montada em HTML com as fontes, as torres do hero, o
  * hexágono HS e o Danilo recortado do próprio site, fotografada pelo Chrome e gravada em
- * src/assets/img/og-hs.jpg (o build copia pra dist). Base do 079.
+ * src/assets/img/og-hs.jpg (o build copia pra dist). Base do 079. Texto do hero do briefing
+ * final; ao lado do símbolo só "SINDICATURA", como no topo do site (o símbolo já diz HS).
  *
  * Precisa do build feito e do servidor: node scripts/serve.mjs
  * Uso: node scripts/og.mjs
@@ -26,7 +27,7 @@ body{width:1200px;height:630px;overflow:hidden;background:#031926;position:relat
 .marca img{width:46px}
 .marca b{font:700 21px/1 M;color:#fff;letter-spacing:.01em}
 .marca b span{color:#C9943C}
-.rot{margin-top:44px;font:600 15px/1.3 M;letter-spacing:.14em;text-transform:uppercase;color:#C9943C}
+.rot{margin-top:44px;font:600 14px/1.3 M;letter-spacing:.12em;text-transform:uppercase;color:#C9943C}
 h1{margin-top:16px;font:700 50px/1.08 M;letter-spacing:-.018em;color:#fff}
 h1 span{color:#C9943C}
 .pe{display:flex;gap:26px;margin-top:30px;font:500 18px/1.3 I;color:rgb(255 255 255/.86)}
@@ -38,9 +39,9 @@ h1 span{color:#C9943C}
 <img class="hex" src="/assets/img/hex-hs-640.webp" alt="">
 <img class="dan" src="/assets/img/danilo-780.webp" alt="">
 <div class="txt">
-  <div class="marca"><img src="/assets/img/logo-hs-96.webp" alt=""><b><span>HS</span> SINDICATURA</b></div>
-  <p class="rot">Síndico profissional em São Paulo</p>
-  <h1>Síndico profissional<br>com gestão estratégica,<br><span>transparência e presença.</span></h1>
+  <div class="marca"><img src="/assets/img/logo-hs-96.webp" alt=""><b>SINDICATURA</b></div>
+  <p class="rot">Gestão condominial · Síndico profissional · Implantação</p>
+  <h1>Gestão condominial<br>com método, controle<br><span>e resultado.</span></h1>
   <p class="pe"><b>Saúde</b><b>Segurança</b><b>Sossego</b></p>
 </div>
 <div class="faixa"></div>

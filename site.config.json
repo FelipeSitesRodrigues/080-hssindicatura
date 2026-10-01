@@ -8,26 +8,23 @@
   "email": "hssindicatura@gmail.com",
   "instagram": "hssindicatura",
   "instagramUrl": "https://www.instagram.com/hssindicatura/",
-  "regiao": "São Paulo e Grande São Paulo",
+  "regiao": "Sede em São Paulo · Atuação em todo o Brasil",
   "credito": "https://www.instagram.com/credialta.sites/",
   "mensagens": {
-    "proposta": "Olá! Vim pelo site da HS Sindicatura e gostaria de solicitar uma proposta de sindicatura para o meu condomínio.",
-    "diagnostico": "Olá! Vim pelo site da HS Sindicatura e gostaria de agendar um diagnóstico da gestão do meu condomínio.",
-    "danilo": "Olá, Danilo! Vim pelo site da HS Sindicatura e gostaria de conversar sobre a gestão do meu condomínio.",
-    "duvida": "Olá! Vim pelo site da HS Sindicatura e tenho uma dúvida sobre a sindicatura profissional.",
-    "servico": "Olá! Vim pelo site da HS Sindicatura e gostaria de uma proposta de *{servico}* para o meu condomínio.",
-    "parceria": "Olá! Sou de uma administradora de condomínios e vim pelo site da HS Sindicatura. Gostaria de conversar sobre uma parceria.",
-    "jardim": "Olá! Vim pelo site da HS Sindicatura, vi o antes e depois do jardim e gostaria de uma proposta de sindicatura para o meu condomínio.",
-    "conselho": "Olá! Sou do conselho de um condomínio e vim pelo site da HS Sindicatura. Gostaria de conversar sobre a gestão do nosso condomínio."
+    "conversa": "Olá, conheci a HS Sindicatura pelo site e gostaria de conversar sobre a gestão do meu condomínio.",
+    "danilo": "Olá, Danilo! Conheci a HS Sindicatura pelo site e gostaria de conversar sobre a gestão do meu condomínio.",
+    "duvida": "Olá, conheci a HS Sindicatura pelo site e tenho uma dúvida sobre a gestão do meu condomínio.",
+    "servico": "Olá, conheci a HS Sindicatura pelo site e gostaria de conversar sobre *{servico}* para o meu condomínio.",
+    "case": "Olá, conheci a HS Sindicatura pelo site, vi o case do Sunset View e gostaria de conversar sobre a gestão do meu condomínio."
   },
   "pendencias": [
-    "fotos de Para quem atuamos (4) e da vistoria: de banco de imagem livre (Recursos Site/WEB/publico-*.jpg e vistoria.jpg, créditos em creditos.md), no lugar das provisórias borradas do mockup. Foto real ou definitiva em Recursos Site/SEÇÕES passa na frente (npm run imagens)",
-    "fundo da seção Responsabilidades legais (biblioteca): sem imagem, a seção fica sem foto até chegar Recursos Site/SEÇÕES/08 - FUNDO LEGAL",
+    "case Sunset View: os números (+450% no fundo de reserva, -22% nos custos fixos, saldo de -R$ 5 mil a R$ 78 mil e as despesas por categoria) saíram da apresentação comercial (slides 10 e 11). O briefing final pede validação nos balancetes antes de publicar. Danilo confirma, e confirma que pode citar o nome do condomínio",
+    "case Sunset View: 112 unidades (briefing final e proposta do Piazza) ou 122 (apresentação)? O site usa 112. Falta também a foto real do condomínio (Recursos Site/CASES/sunset-view.jpg; npm run imagens)",
+    "fotos: os 3 cartões de solução e o topo das páginas internas usam banco de imagem livre (Recursos Site/WEB, créditos em creditos.md). O briefing pede foto real da operação (seção 5, ensaio fotográfico). Foto real com o mesmo nome em Recursos Site/PÁGINAS passa na frente",
     "domínio: o site novo vai no hssindicatura.com.br (hoje outro site)? canonical, sitemap e og:image já apontam pra www.hssindicatura.com.br",
-    "logo: o nome do logo oficial está escrito SÍNDICATURA, com acento; no site o nome vai digitado (HS SINDICATURA) ao lado do símbolo",
-    "páginas internas: as fotos vêm de banco de imagem livre (Recursos Site/WEB, créditos em creditos.md). Trocar pelas fotos reais do Danilo quando chegarem",
-    "horário de atendimento (segunda a sexta, das 9h às 18h) e transição assistida de 30 dias: tirados da proposta do Piazza e da apresentação. Confirmar com o Danilo",
-    "páginas internas: a copy (detalhe das 6 frentes, dores e atuação por tipo de condomínio, papéis com a administradora) foi escrita a partir do briefing, da apresentação e da proposta do Piazza. Danilo revisa"
+    "logo: o nome do logo oficial está escrito SÍNDICATURA, com acento; no site vai só o símbolo (e SINDICATURA digitado no topo)",
+    "soluções: o detalhe das 3 soluções (o que resolve, como funciona, entregáveis) foi escrito a partir do briefing e da apresentação. Danilo revisa, principalmente a Implantação, que é nova no site",
+    "horário de atendimento (segunda a sexta, das 9h às 18h) e transição assistida de 30 dias: tirados da proposta do Piazza e da apresentação. Confirmar com o Danilo"
   ],
   "horario": "segunda a sexta, das 9h às 18h"
 }

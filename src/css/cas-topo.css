@@ -1,0 +1,35 @@
+/* ---------------------------------------------------------------- topo da página Cases (escura)
+   O mesmo topo das páginas internas (20-topo.css). No lugar da foto, a ficha do case numa
+   folha branca (o papel do relatório), com o símbolo HS: condomínio, tipo, unidades, cidade
+   e período. Quando a foto real do Sunset View chegar (Recursos Site/CASES/sunset-view),
+   ela entra em cima da ficha. Sem foto, o LCP é o título: abre rápido. */
+.ficha-case { display: grid; gap: 0; }
+.ficha-case__foto { position: relative; z-index: 1; overflow: clip; border-radius: 12px 12px 0 0; background: #0A2A3E; }
+.ficha-case__foto picture, .ficha-case__foto img { display: block; width: 100%; max-width: none; }
+.ficha-case__foto img { aspect-ratio: 16 / 10; object-fit: cover; }
+.ficha-case__folha {
+  position: relative;
+  z-index: 1;
+  padding: 24px clamp(20px, 2.4vw, 32px) 18px;
+  border-top: 3px solid var(--dourado);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #FFFFFF, #F7F9FA);
+  box-shadow: 0 40px 80px -40px rgb(0 0 0 / .95);
+}
+.ficha-case__foto + .ficha-case__folha { border-radius: 0 0 8px 8px; }
+.ficha-case__titulo { display: flex; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #E8ECEF; color: var(--petroleo); font: 700 16px/1.2 var(--fonte-titulo); }
+.ficha-case__logo { width: 28px; height: auto; }
+.ficha-case__dados div { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block: 13px; border-bottom: 1px dashed #E1E6EA; }
+.ficha-case__dados div:last-child { border-bottom: 0; }
+.ficha-case__dados dt { color: #5B6670; font-size: 14px; }
+.ficha-case__dados dd { margin: 0; color: var(--petroleo); font: 600 15px/1.3 var(--fonte-titulo); text-align: right; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ficha-case__folha { animation: topo-sobe 1s var(--ease-suave) .3s backwards; }
+}
+@media (max-width: 63.99em) and (prefers-reduced-motion: no-preference) {
+  .ficha-case__folha { animation-duration: .7s; animation-delay: .15s; }
+}
+@media (min-width: 40em) and (max-width: 63.99em) {
+  .ficha-case { max-width: 560px; }
+}

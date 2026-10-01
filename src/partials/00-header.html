@@ -7,21 +7,20 @@
 
       <nav class="menu" id="menu" aria-label="Principal">
         <ul class="menu__lista" role="list">
-          <li><a href="/" data-pag="home">Home</a></li>
+          <li><a href="/" data-pag="home">Início</a></li>
+          <li><a href="/a-hs" data-pag="a-hs">A HS</a></li>
           <li><a href="/solucoes" data-pag="solucoes">Soluções</a></li>
-          <li><a href="/para-condominios" data-pag="condominios">Para Condomínios</a></li>
-          <li><a href="/para-administradoras" data-pag="administradoras">Para Administradoras</a></li>
-          <li><a href="/sobre" data-pag="sobre">Sobre</a></li>
+          <li><a href="/cases" data-pag="cases">Cases</a></li>
           <li><a href="/contato" data-pag="contato">Contato</a></li>
         </ul>
         <div class="menu__extra">
-          <a class="btn btn--dourado menu__cta" href="{{wa:proposta}}" target="_blank" rel="noopener" data-zap="menu-celular">Solicitar proposta<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
-          <a class="menu__fone" href="{{wa:danilo}}" target="_blank" rel="noopener" data-zap="menu-celular-fone"><i data-i="whatsapp-logo" data-w="light"></i>{{cfg.whatsappExibir}}</a>
-          <p class="menu__rodape">Síndico profissional · {{cfg.regiao}}</p>
+          <a class="btn btn--dourado menu__cta" href="/contato">Agendar uma conversa<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+          <a class="menu__fone" href="{{wa:conversa}}" target="_blank" rel="noopener" data-zap="menu-celular-fone"><i data-i="whatsapp-logo" data-w="light"></i>{{cfg.whatsappExibir}}</a>
+          <p class="menu__rodape">{{cfg.regiao}}</p>
         </div>
       </nav>
 
-      <a class="btn btn--dourado topo__cta" href="{{wa:proposta}}" target="_blank" rel="noopener" data-zap="topo">Solicitar proposta<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+      <a class="btn btn--dourado topo__cta" href="/contato">Agendar uma conversa<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
 
       <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
         <span class="topo__menu-linhas" aria-hidden="true"><span></span></span>

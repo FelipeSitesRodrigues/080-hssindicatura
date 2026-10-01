@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <script>
+    // js: liga as animações. js-abrindo: no celular a seção logo abaixo do hero só é montada
+    // depois da primeira pintura, pra não disputar a primeira pintura com o hero
+    // (99-desempenho.css, memória do 079). Sai na primeira pintura ou em 2,5 s.
+    (function () {
+      var h = document.documentElement
+      h.classList.add('js', 'js-abrindo')
+      var pronto = function () { h.classList.remove('js-abrindo') }
+      try {
+        new PerformanceObserver(function (l) { if (l.getEntriesByName('first-contentful-paint').length) pronto() }).observe({ type: 'paint', buffered: true })
+      } catch (e) { pronto() }
+      setTimeout(pronto, 2500)
+    })()
+  </script>
+  <title>Case Sunset View: resultados da gestão condominial | HS Sindicatura</title>
+  <meta name="description" content="Como a HS Sindicatura levou o condomínio Sunset View, em São Paulo, de saldo negativo a R$ 78 mil em caixa em 12 meses, com o fundo de reserva 450% maior e os custos fixos 22% menores.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#031926">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://www.hssindicatura.com.br/cases">
+  <meta property="og:url" content="https://www.hssindicatura.com.br/cases">
+  <meta property="og:image" content="https://www.hssindicatura.com.br/assets/img/og-hs.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HS Sindicatura">
+  <meta property="og:title" content="Case Sunset View | HS Sindicatura">
+  <meta property="og:description" content="12 meses de gestão HS: fundo de reserva 450% maior e custos fixos 22% menores. Cenário, diagnóstico, estratégia, ações e indicadores.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Danilo Ricardo Dias, síndico profissional e fundador da HS Sindicatura, diante de torres de vidro em São Paulo">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/montserrat-var.woff2" as="font" type="font/woff2" crossorigin>
+  
+  <style>:root{color-scheme: dark;--petroleo: #031926;--petroleo-2: #07263A;--dourado: #C9943C;--dourado-claro: #E2B866;--dourado-escuro: #A87A31;--dourado-tinta: #A7762B;--dourado-texto: #87601F;--grafite: #333333;--metal: #A9A9A9;--gelo: #F4F6F8;--branco: #FFFFFF;--texto-2: #5B6670;--claro-2: rgb(255 255 255 / .76);--fio-claro: #DDE3E8;--fio-escuro: rgb(255 255 255 / .1);--vidro: rgb(255 255 255 / .04);--vidro-borda: rgb(255 255 255 / .1);--fonte-titulo: 'Montserrat','Montserrat fallback','Arial',sans-serif;--fonte-texto: 'Inter','Inter fallback',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;--container: 1200px;--margem: clamp(20px,5.4vw,120px);--secao-y: clamp(60px,5.8vw,96px);--altura-topo: 80px;--raio: 6px;--raio-card: 10px;--ease-out: cubic-bezier(.23,1,.32,1);--ease-in-out: cubic-bezier(.65,0,.35,1);--ease-suave: cubic-bezier(.22,.61,.36,1);--hex-contorno: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 22'%3E%3Cpath d='M10 1.6 18.2 6.3v9.4L10 20.4 1.8 15.7V6.3Z' fill='none' stroke='%23000' stroke-width='2.2' stroke-linejoin='round'/%3E%3C/svg%3E");--hex-cheio: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 22'%3E%3Cpath d='M10 .8 18.9 5.9v10.2L10 21.2 1.1 16.1V5.9Z'/%3E%3C/svg%3E");--cor-titulo: var(--branco);--cor-texto: var(--claro-2);--cor-forte: var(--branco);--cor-rotulo: var(--dourado);--cor-destaque: var(--dourado);--cor-icone: var(--dourado);--cor-linha: var(--fio-escuro);--cor-foco: var(--dourado-claro);--cor-link: var(--dourado)}@media (max-width: 63.99em){:root{--altura-topo: 68px}}*,*::before,*::after{box-sizing: border-box}*{margin: 0}html{-webkit-text-size-adjust: 100%;text-size-adjust: 100%;scroll-behavior: smooth;scroll-padding-top: var(--altura-topo);background: var(--petroleo);scrollbar-color: #2A4556 var(--petroleo)}body{min-height: 100vh;background: var(--petroleo);color: var(--cor-texto);font: 400 16px/1.6 var(--fonte-texto);-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;text-rendering: optimizeLegibility;font-kerning: normal;overflow-x: clip}img,picture,svg,video{display: block;max-width: 100%}img{height: auto}button,input,select,textarea{font: inherit;color: inherit}button{cursor: pointer;background: none;border: 0;padding: 0}a{color: inherit;text-decoration: none}ul,ol{list-style: none;padding: 0}h1,h2,h3,h4{font-weight: inherit;font-size: inherit;line-height: inherit}strong{font-weight: 500;color: var(--cor-forte)}figure,blockquote{margin: 0}::selection{background: rgb(201 148 60 / .92);color: var(--petroleo)}:focus-visible{outline: 2px solid var(--cor-foco);outline-offset: 3px;border-radius: 3px}[tabindex='-1']:focus{outline: none}[hidden]{display: none !important}.pular{position: fixed;top: 10px;left: 10px;z-index: 200;padding: 13px 18px;border-radius: var(--raio);background: var(--dourado);color: var(--petroleo);font: 600 13px/1 var(--fonte-titulo);transform: translateY(-160%);transition: transform .2s var(--ease-out)}.pular:focus{transform: none}.sr-only{position: absolute !important;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip-path: inset(50%);white-space: nowrap;border: 0}.container{width: min(var(--container),100% - var(--margem) * 2);margin-inline: auto}.i{width: 24px;height: 24px;flex: none;fill: currentColor}.secao{position: relative;padding-block: var(--secao-y);isolation: isolate}.secao--escura{--cor-titulo: var(--branco);--cor-texto: var(--claro-2);--cor-forte: var(--branco);--cor-rotulo: var(--dourado);--cor-destaque: var(--dourado);--cor-icone: var(--dourado);--cor-linha: var(--fio-escuro);--cor-foco: var(--dourado-claro);--cor-link: var(--dourado);color-scheme: dark;color: var(--cor-texto);background: radial-gradient(60% 70% at 0% 100%,rgb(201 148 60 / .09),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .018) 0 1px,transparent 1px 7px,rgb(255 255 255 / .01) 7px 8px,transparent 8px 23px),linear-gradient(180deg,var(--petroleo) 0%,#041C2B 100%)}.secao--clara{--cor-titulo: var(--petroleo);--cor-texto: var(--grafite);--cor-forte: var(--petroleo);--cor-rotulo: var(--petroleo);--cor-destaque: var(--dourado-tinta);--cor-icone: var(--dourado-tinta);--cor-linha: var(--fio-claro);--cor-foco: var(--petroleo);--cor-link: var(--petroleo);color-scheme: light;color: var(--cor-texto);background: var(--gelo)}.secao--branca{background: var(--branco);box-shadow: inset 0 1px 0 var(--fio-claro)}.secao--clara ::selection{background: var(--petroleo);color: var(--branco)}.rotulo{display: flex;align-items: center;gap: 9px;color: var(--cor-rotulo);font: 600 12.5px/1.3 var(--fonte-titulo);letter-spacing: .14em;text-transform: uppercase}.rotulo::before{content: '';flex: none;width: 11px;height: 12px;background: var(--dourado);-webkit-mask: var(--hex-contorno) center / contain no-repeat;mask: var(--hex-contorno) center / contain no-repeat}.secao--clara .rotulo::before{background: var(--dourado-tinta)}.titulo{color: var(--cor-titulo);font-family: var(--fonte-titulo);font-weight: 700;font-size: clamp(26px,1rem + 1.25vw,36px);line-height: 1.16;letter-spacing: -.012em;text-wrap: balance}@media (max-width: 39.99em){.titulo{font-size: min(30px,8.6vw);line-height: 1.18}}.rotulo + .titulo{margin-top: 14px}.destaque{color: var(--cor-destaque)}.texto{color: var(--cor-texto);font-size: 16px;line-height: 1.7}.texto + .texto{margin-top: 14px}.texto strong,.apoio strong{color: var(--cor-forte);font-weight: 500}.apoio{color: var(--cor-texto);font-size: 15.5px;line-height: 1.65;max-width: 34em}.quebra{display: none}@media (min-width: 64em){.quebra{display: inline}}.cab{display: grid;grid-template-columns: minmax(0,1fr) minmax(0,400px);align-items: end;column-gap: 56px;margin-bottom: clamp(30px,3vw,44px)}.cab__lado .link-seta{margin-top: 6px}@media (max-width: 63.99em){.cab{grid-template-columns: minmax(0,1fr);row-gap: 14px}}.link-seta{display: inline-flex;align-items: center;gap: 8px;min-height: 44px;color: var(--cor-link);font: 600 14.5px/1.3 var(--fonte-titulo);text-decoration: underline;text-decoration-color: transparent;text-underline-offset: 5px;transition: color .25s ease,text-decoration-color .25s ease}.link-seta .i{width: 18px;height: 18px;color: var(--cor-icone);transition: transform .35s var(--ease-out)}@media (hover: hover){.link-seta:hover{text-decoration-color: currentColor}.link-seta:hover .i{transform: translateX(3px)}}.btn{position: relative;display: inline-flex;align-items: center;justify-content: center;gap: 10px;min-height: 52px;padding: 0 26px;border: 1.5px solid transparent;border-radius: var(--raio);font: 600 15px/1.2 var(--fonte-titulo);letter-spacing: .005em;text-align: center;cursor: pointer;transition: transform .35s var(--ease-out),box-shadow .35s var(--ease-out),background-color .25s ease,border-color .25s ease,color .25s ease,filter .25s ease}.btn .i{width: 18px;height: 18px}.btn .i--anda{transition: transform .35s var(--ease-out)}.btn--p{min-height: 44px;padding-inline: 18px;font-size: 14px}.btn--dourado{--cor-foco: var(--dourado-claro);background: linear-gradient(180deg,var(--dourado-claro) 0%,var(--dourado) 52%,var(--dourado-escuro) 100%);color: var(--petroleo);box-shadow: inset 0 1px 0 rgb(255 255 255 / .35),0 10px 24px -14px rgb(201 148 60 / .8)}.btn--contorno{border-color: rgb(255 255 255 / .7);color: var(--branco);background: rgb(3 25 38 / .25)}.btn--contorno-dourado{border-color: rgb(201 148 60 / .85);color: var(--branco);background: transparent}.btn--contorno-dourado .i{color: var(--dourado)}.btn--contorno-petroleo{border-color: var(--petroleo);color: var(--petroleo);background: transparent}.btn:active{transform: scale(.98);transition-duration: .1s}@media (hover: hover){.btn--dourado:hover{filter: brightness(1.06) saturate(1.05);transform: translateY(-1px);box-shadow: inset 0 1px 0 rgb(255 255 255 / .4),0 14px 28px -14px rgb(201 148 60 / .95)}.btn--contorno:hover{border-color: var(--branco);background: rgb(255 255 255 / .08);transform: translateY(-1px)}.btn--contorno-dourado:hover{border-color: var(--dourado);background: rgb(201 148 60 / .1);transform: translateY(-1px)}.btn--contorno-petroleo:hover{background: var(--petroleo);color: var(--branco);transform: translateY(-1px)}.btn:hover .i--anda{transform: translateX(3px)}.btn:active{transform: scale(.98)}}.card-vidro{border: 1px solid var(--vidro-borda);border-radius: var(--raio-card);background: linear-gradient(180deg,rgb(255 255 255 / .055),rgb(255 255 255 / .025));box-shadow: inset 0 1px 0 rgb(255 255 255 / .05),0 18px 40px -30px rgb(0 0 0 / .8)}.card-branco{border: 1px solid #E4E9ED;border-radius: var(--raio-card);background: var(--branco);box-shadow: 0 1px 2px rgb(3 25 38 / .04),0 14px 34px -24px rgb(3 25 38 / .28)}.icone-caixa{display: grid;place-items: center;flex: none;width: 52px;height: 52px;border: 1px solid rgb(201 148 60 / .22);border-radius: 8px;background: rgb(3 25 38 / .55);color: var(--dourado)}.icone-caixa .i{width: 28px;height: 28px}.icone-bola{display: grid;place-items: center;flex: none;width: 64px;height: 64px;border-radius: 50%;background: radial-gradient(circle at 50% 40%,#FBF3E6,#F6EBDA);color: var(--dourado-tinta)}.icone-bola .i{width: 30px;height: 30px}.hex{position: relative;display: grid;place-items: center;flex: none;width: 34px;height: 37px;color: var(--petroleo);font: 700 14px/1 var(--fonte-titulo)}.hex::before{content: '';position: absolute;inset: 0;z-index: -1;background: linear-gradient(180deg,var(--dourado-claro),var(--dourado) 55%,var(--dourado-escuro));-webkit-mask: var(--hex-cheio) center / contain no-repeat;mask: var(--hex-cheio) center / contain no-repeat}.hex{isolation: isolate}.trajetoria{display: flex;flex-wrap: wrap;gap: 8px;margin-top: 28px}.trajetoria li{padding: 9px 14px;border: 1px solid rgb(201 148 60 / .45);border-radius: 999px;background: rgb(255 255 255 / .03);color: rgb(255 255 255 / .9);font: 500 14px/1.2 var(--fonte-texto)}@media (max-width: 39.99em){.trajetoria li{font-size: 13.5px}}.zap-flutuante{position: fixed;right: max(18px,env(safe-area-inset-right));bottom: max(18px,env(safe-area-inset-bottom));z-index: 40;display: grid;place-items: center;width: 58px;height: 58px;border-radius: 50%;background: #25D366;color: var(--branco);box-shadow: 0 14px 30px -10px rgb(0 0 0 / .55),0 6px 18px -8px rgb(37 211 102 / .7);transition: transform .5s var(--ease-out),opacity .4s ease,box-shadow .3s ease}.zap-flutuante .i{width: 32px;height: 32px}.js .zap-flutuante:not(.visivel){opacity: 0;transform: translateY(16px) scale(.7);pointer-events: none}@media (hover: hover){.zap-flutuante:hover{transform: translateY(-2px) scale(1.05);box-shadow: 0 18px 34px -10px rgb(0 0 0 / .6),0 8px 22px -8px rgb(37 211 102 / .8)}}@keyframes sobe{from{opacity: 0;transform: translateY(24px)}}@keyframes aparece{from{opacity: 0}}@keyframes da-esquerda{from{opacity: 0;transform: translateX(-28px)}}@keyframes da-direita{from{opacity: 0;transform: translateX(28px)}}@keyframes cresce{from{opacity: 0;transform: scale(.6)}}@keyframes foto-abre{from{clip-path: inset(0 0 100% 0)}to{clip-path: inset(0 0 0 0)}}@keyframes assenta{from{transform: scale(1.08)}}@keyframes risca-x{from{transform: scaleX(0)}}@keyframes risca-y{from{transform: scaleY(0)}}@media (prefers-reduced-motion: no-preference){.js [data-revela]:not(.visivel){opacity: 0}.js [data-revela].visivel{animation: sobe .9s var(--ease-suave) calc(var(--i,0) * 90ms) backwards}.js [data-revela-lista]:not(.visivel) > *{opacity: 0}.js [data-revela-lista].visivel > *{animation: sobe .8s var(--ease-suave) calc(var(--i,0) * 85ms) backwards}.js [data-revela="aparece"].visivel{animation: aparece 1s ease backwards}.js [data-revela="esquerda"].visivel{animation: da-esquerda 1s var(--ease-suave) backwards}.js [data-revela="direita"].visivel{animation: da-direita 1s var(--ease-suave) backwards}.js [data-revela="foto"].visivel{animation: foto-abre 1.15s var(--ease-in-out) calc(var(--i,0) * 90ms) backwards}.js [data-revela="foto"].visivel img{animation: assenta 1.7s var(--ease-out) calc(var(--i,0) * 90ms) backwards}}@media (prefers-reduced-motion: reduce){html{scroll-behavior: auto}*,*::before,*::after{animation-duration: .01ms !important;animation-iteration-count: 1 !important;transition-duration: .01ms !important;transition-delay: 0ms !important}}@font-face{font-family: 'Montserrat';font-style: normal;font-weight: 600 700;font-display: swap;src: url('/assets/fonts/montserrat-var.woff2') format('woff2')}@font-face{font-family: 'Montserrat fallback';src: local('Arial Bold'),local('Arial-BoldMT'),local('Arial');size-adjust: 110.05%;ascent-override: 87.96%;descent-override: 22.81%;line-gap-override: 0.00%}@font-face{font-family: 'Inter';font-style: normal;font-weight: 400 500;font-display: swap;src: url('/assets/fonts/inter-var.woff2') format('woff2')}@font-face{font-family: 'Inter fallback';src: local('Arial'),local('Helvetica'),local('Roboto');size-adjust: 106.85%;ascent-override: 90.67%;descent-override: 22.57%;line-gap-override: 0.00%}.topo{--topo-h: 78px;position: fixed;inset: 0 0 auto;z-index: 50;height: var(--topo-h);color: var(--branco);background: rgb(3 25 38 / .5);box-shadow: inset 0 -1px 0 rgb(201 148 60 / .32);transition: height .45s var(--ease-out),background-color .45s ease,box-shadow .45s ease}.topo--rolado{--topo-h: 68px;background: rgb(3 25 38 / .94);box-shadow: inset 0 -1px 0 rgb(201 148 60 / .4),0 16px 36px -24px rgb(0 0 0 / .9)}@media (min-width: 64em){@supports (backdrop-filter: blur(1px)){.topo--rolado{background: rgb(3 25 38 / .8);backdrop-filter: blur(14px) saturate(1.2)}}}.topo__barra{display: flex;align-items: center;gap: clamp(20px,2.4vw,40px);height: 100%}.marca{display: flex;align-items: center;gap: 11px;flex: none}.marca__simbolo{width: 42px;transform-origin: 0 50%;transition: transform .45s var(--ease-out)}.marca__nome{color: var(--branco);font: 700 18px/1 var(--fonte-titulo);letter-spacing: .01em;text-transform: uppercase;white-space: nowrap}.topo--rolado .marca__simbolo{transform: scale(.88)}.menu{margin-inline: auto}.menu__lista{display: flex;align-items: center;gap: clamp(18px,2.3vw,36px)}.menu__lista a{position: relative;display: block;padding: 10px 0;color: rgb(255 255 255 / .86);font: 500 14.5px/1 var(--fonte-texto);white-space: nowrap;transition: color .25s ease}.menu__lista a::after{content: '';position: absolute;left: 0;right: 0;bottom: 1px;height: 2px;border-radius: 2px;background: var(--dourado);transform: scaleX(0);transform-origin: 100% 50%;transition: transform .4s var(--ease-out)}.menu__lista a[aria-current='page']{color: var(--branco)}.menu__lista a[aria-current='page']::after{transform: scaleX(1);transform-origin: 0 50%}@media (hover: hover){.menu__lista a:hover{color: var(--branco)}.menu__lista a:hover::after{transform: scaleX(1);transform-origin: 0 50%}}.menu__extra{display: none}.topo__cta{flex: none;min-height: 44px;padding-inline: 20px;font-size: 14px}.topo__menu{display: none}@keyframes topo-entra{from{opacity: 0;transform: translateY(-12px)}}@media (prefers-reduced-motion: no-preference){.topo__barra{animation: topo-entra .8s var(--ease-suave) .1s backwards}}@media (min-width: 64em) and (max-width: 79.99em){.marca__nome{font-size: 16px}.marca__simbolo{width: 38px}.menu__lista a{font-size: 13.5px}.topo__cta{padding-inline: 16px;font-size: 13.5px}.topo__cta .i{display: none}}@media (max-width: 63.99em){.topo{--topo-h: 68px;background: rgb(3 25 38 / .72)}.topo--rolado{--topo-h: 62px;background: rgb(3 25 38 / .97)}.marca{gap: 9px}.marca__simbolo{width: 36px}.marca__nome{font-size: 15.5px}.topo__cta{display: none}.topo__barra{justify-content: space-between}.topo__menu{position: relative;z-index: 2;display: grid;place-items: center;width: 48px;height: 48px;margin-right: -10px;border-radius: 50%}.topo__menu-linhas,.topo__menu-linhas::before,.topo__menu-linhas::after,.topo__menu-linhas span{display: block;width: 24px;height: 2px;border-radius: 2px;background: var(--branco)}.topo__menu-linhas{position: relative;background: none}.topo__menu-linhas::before,.topo__menu-linhas::after{content: '';position: absolute;left: 0;transition: transform .4s var(--ease-out),top .25s ease .15s}.topo__menu-linhas::before{top: -7px}.topo__menu-linhas::after{top: 7px}.topo__menu-linhas span{transition: opacity .2s ease}.topo--aberto .topo__menu-linhas::before,.topo--aberto .topo__menu-linhas::after{top: 0;transition: top .2s ease,transform .4s var(--ease-out) .15s}.topo--aberto .topo__menu-linhas::before{transform: rotate(45deg)}.topo--aberto .topo__menu-linhas::after{transform: rotate(-45deg)}.topo--aberto .topo__menu-linhas span{opacity: 0}.menu{position: fixed;inset: 0;z-index: 1;display: flex;flex-direction: column;justify-content: space-between;gap: 32px;margin: 0;padding: calc(var(--topo-h) + 24px) var(--margem) max(28px,env(safe-area-inset-bottom));background: radial-gradient(70% 50% at 0% 100%,rgb(201 148 60 / .12),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .02) 0 1px,transparent 1px 22px),var(--petroleo);overflow-y: auto;visibility: hidden;opacity: 0;transform: translateY(-10px);transition: opacity .35s ease,transform .45s var(--ease-out),visibility 0s linear .45s}.topo--aberto .menu{visibility: visible;opacity: 1;transform: none;transition: opacity .35s ease,transform .45s var(--ease-out),visibility 0s}.topo--aberto{background: var(--petroleo)}.menu__lista{flex-direction: column;align-items: stretch;gap: 0}.menu__lista li{border-bottom: 1px solid var(--fio-escuro)}.menu__lista a{padding: 17px 0;color: var(--branco);font: 600 21px/1.15 var(--fonte-titulo)}.menu__lista a::after{display: none}.menu__lista a[aria-current='page']{color: var(--dourado)}.menu__extra{display: grid;gap: 14px}.menu__cta{width: 100%}.menu__fone{display: inline-flex;align-items: center;justify-content: center;gap: 10px;min-height: 52px;border: 1.5px solid rgb(255 255 255 / .4);border-radius: var(--raio);color: var(--branco);font: 600 16px/1 var(--fonte-titulo)}.menu__fone .i{color: var(--dourado)}.menu__rodape{color: rgb(255 255 255 / .6);font-size: 13.5px;text-align: center}@media (prefers-reduced-motion: no-preference){.topo--aberto .menu__lista li{animation: sobe .6s var(--ease-suave) backwards}.topo--aberto .menu__lista li:nth-child(2){animation-delay: 40ms}.topo--aberto .menu__lista li:nth-child(3){animation-delay: 80ms}.topo--aberto .menu__lista li:nth-child(4){animation-delay: 120ms}.topo--aberto .menu__lista li:nth-child(5){animation-delay: 160ms}.topo--aberto .menu__extra{animation: aparece .6s ease .2s backwards}}}.rodape{position: relative;padding: clamp(48px,5vw,72px) 0 max(24px,env(safe-area-inset-bottom));background: radial-gradient(50% 90% at 100% 0%,rgb(201 148 60 / .06),transparent 70%),#021420;box-shadow: inset 0 1px 0 rgb(201 148 60 / .5);color: var(--claro-2)}.rodape__grade{display: grid;grid-template-columns: minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap: clamp(28px,4vw,64px)}.rodape__logo{display: inline-block}.rodape__simbolo{width: 64px}.rodape__frase{max-width: 22em;margin-top: 18px;color: var(--claro-2);font-size: 14.5px;line-height: 1.6}.rodape__insta{display: inline-grid;place-items: center;width: 42px;height: 42px;margin-top: 18px;border: 1px solid rgb(201 148 60 / .5);border-radius: 50%;color: var(--dourado);transition: background-color .3s ease,transform .4s var(--ease-out)}.rodape__insta .i{width: 21px;height: 21px}.rodape__titulo{color: var(--branco);font: 600 14px/1.3 var(--fonte-titulo);letter-spacing: .06em;text-transform: uppercase}.rodape__col ul{display: grid;gap: 4px;margin-top: 14px}.rodape__col a,.rodape__col li{display: inline-flex;align-items: center;gap: 10px;min-height: 30px;color: var(--claro-2);font-size: 14.5px;line-height: 1.4;transition: color .25s ease}.rodape__contato .i{width: 19px;height: 19px;color: var(--dourado)}@media (hover: hover){.rodape__col a:hover,.rodape__credito a:hover{color: var(--dourado-claro)}.rodape__insta:hover{background: rgb(201 148 60 / .12);transform: translateY(-2px)}}.rodape__base{display: flex;flex-wrap: wrap;align-items: center;justify-content: space-between;gap: 10px 24px;margin-top: clamp(36px,4vw,52px);padding-top: 22px;border-top: 1px solid rgb(255 255 255 / .1)}.rodape__copy,.rodape__credito{color: rgb(255 255 255 / .62);font-size: 13.5px}.rodape__credito a{color: rgb(255 255 255 / .82);text-decoration: underline;text-underline-offset: 3px;text-decoration-color: rgb(201 148 60 / .6);transition: color .25s ease}@media (max-width: 63.99em){.rodape__grade{grid-template-columns: repeat(2,minmax(0,1fr))}.rodape__marca{grid-column: 1 / -1}}@media (max-width: 39.99em){.rodape__grade{grid-template-columns: minmax(0,1fr);gap: 30px}.rodape__col:first-of-type ul{grid-template-columns: repeat(2,minmax(0,1fr));column-gap: 16px}.rodape__base{flex-direction: column-reverse;align-items: flex-start}}.ptopo{--hex-fio: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 112'%3E%3Cpath d='M50 2 97.6 29.5v53L50 110 2.4 82.5v-53Z' fill='none' stroke='%23000' stroke-width='.3'/%3E%3C/svg%3E");position: relative;isolation: isolate;overflow: clip;padding: calc(var(--altura-topo) + clamp(26px,3vw,46px)) 0 clamp(56px,5.6vw,88px);background: radial-gradient(36% 52% at 76% 44%,rgb(201 148 60 / .14),transparent 72%),radial-gradient(55% 70% at 0% 100%,rgb(201 148 60 / .07),transparent 70%),repeating-linear-gradient(90deg,rgb(255 255 255 / .018) 0 1px,transparent 1px 7px,rgb(255 255 255 / .01) 7px 8px,transparent 8px 23px),linear-gradient(180deg,#021420 0%,var(--petroleo) 55%,#041C2B 100%);color: var(--claro-2)}.ptopo::before{content: '';position: absolute;z-index: -1;top: 50%;left: calc(50% + .27 * min(var(--container),100% - var(--margem) * 2));width: min(780px,60vw);aspect-ratio: 100 / 112;translate: -50% -52%;background: linear-gradient(165deg,rgb(226 184 102 / .6),rgb(201 148 60 / .2) 55%,rgb(201 148 60 / .06));-webkit-mask: var(--hex-fio) center / contain no-repeat;mask: var(--hex-fio) center / contain no-repeat;pointer-events: none}.ptopo__grade{display: grid;grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows: auto 1fr auto auto auto auto 1fr;grid-template-areas: 'migalhas migalhas' '. figura' 'rotulo figura' 'titulo figura' 'sub figura' 'botoes figura' '. figura';column-gap: clamp(40px,5.4vw,96px)}.ptopo__migalhas{grid-area: migalhas;margin-bottom: clamp(20px,2.4vw,36px)}.ptopo__rotulo{grid-area: rotulo}.ptopo__titulo{grid-area: titulo;margin-top: 16px;color: var(--branco);font: 700 clamp(30px,.95rem + 1.9vw,46px)/1.1 var(--fonte-titulo);letter-spacing: -.016em;text-wrap: balance}.ptopo__titulo .destaque{color: var(--dourado)}.ptopo__sub{grid-area: sub;max-width: 33em;margin-top: 20px;color: rgb(255 255 255 / .8);font-size: 16.5px;line-height: 1.62}.ptopo__botoes{grid-area: botoes;display: flex;flex-wrap: wrap;gap: 14px;margin-top: 30px}.ptopo__botoes .btn{min-height: 54px;padding-inline: 26px}.migalhas ol{display: flex;flex-wrap: wrap;align-items: center;gap: 6px 12px;color: rgb(255 255 255 / .62);font-size: 13.5px;line-height: 1.3}.migalhas li{display: inline-flex;align-items: center;gap: 12px}.migalhas li + li::before{content: '';width: 6px;height: 6px;border-top: 1.5px solid rgb(201 148 60 / .8);border-right: 1.5px solid rgb(201 148 60 / .8);transform: rotate(45deg)}.migalhas a{display: inline-flex;align-items: center;min-height: 32px;color: rgb(255 255 255 / .72);transition: color .25s ease}.migalhas [aria-current]{color: var(--branco)}@media (hover: hover){.migalhas a:hover{color: var(--dourado-claro)}}.ptopo__figura{grid-area: figura;position: relative;align-self: center;margin: 8px 18px 18px 0}.ptopo__moldura{position: absolute;inset: 18px -18px -18px 18px;border: 1.5px solid rgb(201 148 60 / .72);border-radius: 12px;pointer-events: none}.ptopo__quadro{position: relative;z-index: 1;overflow: clip;border-radius: 12px;background: #0A2A3E;box-shadow: 0 40px 80px -40px rgb(0 0 0 / .95),0 0 0 1px rgb(255 255 255 / .06)}.ptopo__foto,.ptopo__foto img{display: block;width: 100%;max-width: none}.ptopo__foto img{aspect-ratio: 4 / 3;object-fit: cover}.ptopo__quadro::after{content: '';position: absolute;inset: 0;background: linear-gradient(0deg,rgb(3 25 38 / .6),rgb(3 25 38 / 0) 46%),linear-gradient(90deg,rgb(3 25 38 / .3),rgb(3 25 38 / 0) 42%);pointer-events: none}.ptopo__cortina{position: absolute;inset: 0;z-index: 2;background: var(--petroleo);opacity: 0;pointer-events: none}.ptopo__cartao{position: absolute;z-index: 3;left: -26px;bottom: 30px;display: grid;gap: 5px;max-width: min(330px,82%);padding: 14px 18px;border: 1px solid rgb(201 148 60 / .38);border-radius: 8px;background: rgb(3 25 38 / .88);box-shadow: inset 0 1px 0 rgb(255 255 255 / .06),0 20px 40px -20px rgb(0 0 0 / .9)}.ptopo__cartao strong{color: var(--branco);font: 600 15px/1.25 var(--fonte-titulo)}.ptopo__cartao span{color: var(--metal);font-size: 12.5px;line-height: 1.4}.indice{position: relative;z-index: 2;margin-top: clamp(40px,4.4vw,64px)}.indice__lista{display: grid;grid-template-columns: repeat(var(--n,6),minmax(0,1fr));gap: 1px;overflow: clip;border: 1px solid rgb(255 255 255 / .12);border-top-color: rgb(201 148 60 / .45);border-radius: var(--raio-card);background: rgb(255 255 255 / .09);box-shadow: 0 24px 50px -30px rgb(0 0 0 / .9)}.indice__lista li{background: linear-gradient(180deg,#0A2435,#04192A)}.indice__lista a{display: flex;align-items: center;gap: 12px;height: 100%;min-height: 62px;padding: 14px 20px;color: rgb(255 255 255 / .9);font: 600 14.5px/1.25 var(--fonte-titulo);transition: background-color .3s ease,color .25s ease}.indice__n{color: var(--dourado);font-size: 12.5px;letter-spacing: .1em}@media (hover: hover){.indice__lista a:hover{background-color: rgb(201 148 60 / .1);color: var(--branco)}}@keyframes topo-sobe{from{opacity: 0;transform: translateY(24px)}}@keyframes topo-entra{from{opacity: 0;transform: translateX(-14px)}}@keyframes topo-cortina{from{opacity: 1}to{opacity: 0}}@keyframes topo-foto{from{transform: scale(1.08)}}@keyframes topo-moldura{from{opacity: 0;transform: translate(-18px,-18px)}}@keyframes topo-hex{from{opacity: 0;transform: scale(.94)}}@media (prefers-reduced-motion: no-preference){.ptopo::before{animation: topo-hex 1.8s var(--ease-out) .15s backwards}.ptopo__migalhas{animation: topo-entra .7s var(--ease-suave) .05s backwards}.ptopo__rotulo{animation: topo-entra .8s var(--ease-suave) .12s backwards}.ptopo__titulo{animation: topo-sobe .9s var(--ease-suave) .2s backwards}.ptopo__cortina{animation: topo-cortina 1s var(--ease-in-out) .05s backwards}.ptopo__foto img{animation: topo-foto 2.2s var(--ease-out) both}.ptopo__moldura{animation: topo-moldura 1.1s var(--ease-out) .5s backwards}.ptopo__cartao{animation: topo-sobe .8s var(--ease-suave) .85s backwards}.ptopo__sub{animation: topo-sobe .9s var(--ease-suave) .34s backwards}.ptopo__botoes{animation: topo-sobe .9s var(--ease-suave) .46s backwards}.indice{animation: topo-sobe 1s var(--ease-suave) .6s backwards}}@media (min-width: 64em) and (max-width: 79.99em){.ptopo__grade{grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr)}.ptopo__cartao{left: -18px;bottom: 22px}.indice__lista a{padding: 12px 14px;font-size: 13.5px}}@media (max-width: 63.99em){.ptopo{padding: calc(var(--altura-topo) + 20px) 0 52px}.ptopo::before{top: 40%;left: 50%;width: max(560px,140vw);opacity: .8}.ptopo__grade{grid-template-columns: minmax(0,1fr);grid-template-rows: none;grid-template-areas: 'migalhas' 'rotulo' 'titulo' 'figura' 'sub' 'botoes'}.ptopo__migalhas{margin-bottom: 18px}.ptopo__rotulo{font-size: 12px}.ptopo__titulo{margin-top: 12px;font-size: min(32px,8.4vw);line-height: 1.14}.ptopo__figura{margin: 26px 12px 12px 0}.ptopo__moldura{inset: 12px -12px -12px 12px}.ptopo__foto img{aspect-ratio: 16 / 11}.ptopo__cartao{left: 12px;bottom: 12px;max-width: calc(100% - 24px);padding: 11px 14px}.ptopo__cartao strong{font-size: 14.5px}.ptopo__cartao span{font-size: 12px}.ptopo__sub{margin-top: 30px;font-size: 16px}.ptopo__botoes{display: grid;gap: 12px;margin-top: 26px}.ptopo__botoes .btn{width: 100%}.indice{margin-top: 40px}.indice__lista{grid-template-columns: minmax(0,1fr)}.indice__lista a{min-height: 52px;padding: 12px 16px;font-size: 14px}}@media (min-width: 40em) and (max-width: 63.99em){.ptopo__titulo{font-size: 42px}.ptopo__figura{width: min(100% - 12px,620px)}.ptopo__sub{max-width: 560px}.ptopo__botoes{grid-template-columns: repeat(2,minmax(0,1fr));max-width: 560px}.indice__lista{grid-template-columns: repeat(var(--n,3),minmax(0,1fr))}}@media (max-width: 63.99em) and (prefers-reduced-motion: no-preference){.ptopo::before{animation-duration: .9s;animation-delay: 0s}.ptopo__migalhas,.ptopo__rotulo{animation-duration: .6s;animation-delay: 0s}.ptopo__titulo{animation-duration: .7s;animation-delay: .08s}.ptopo__cortina{animation-duration: .7s;animation-delay: 0s}.ptopo__foto img{animation-duration: 1.1s}.ptopo__moldura{animation-duration: .7s;animation-delay: .3s}.ptopo__sub{animation-duration: .7s;animation-delay: .22s}.ptopo__botoes{animation-duration: .7s;animation-delay: .3s}.ptopo__cartao{animation-duration: .6s;animation-delay: .45s}.indice{animation-duration: .7s;animation-delay: .4s}}.indicadores-case .indicadores{margin-top: 0}.graficos-case{display: grid;grid-template-columns: minmax(0,7fr) minmax(0,5fr);align-items: start;gap: clamp(20px,2.4vw,32px);margin-top: clamp(40px,4.4vw,60px)}@media (max-width: 63.99em){.graficos-case{grid-template-columns: minmax(0,1fr)}}.etapas-case{position: relative;display: grid;grid-template-columns: repeat(4,minmax(0,1fr));gap: clamp(20px,2.4vw,36px)}.etapas-case::before{content: '';position: absolute;top: 18px;left: 17px;right: 0;height: 1.5px;background: linear-gradient(90deg,rgb(167 118 43 / .7),rgb(167 118 43 / .15));transform-origin: 0 50%}.etapa-case{position: relative;display: grid;align-content: start;gap: 14px}.etapa-case__hex{width: 36px;height: 39px;font-size: 15px}.etapa-case__nome{color: var(--petroleo);font: 700 19px/1.25 var(--fonte-titulo)}.etapa-case__lista{display: grid;gap: 10px}.etapa-case__lista li{position: relative;padding-left: 16px;color: var(--grafite);font-size: 15px;line-height: 1.55}.etapa-case__lista li::before{content: '';position: absolute;left: 0;top: .62em;width: 6px;height: 6px;border-radius: 50%;background: var(--dourado-tinta)}@media (prefers-reduced-motion: no-preference){.js .etapas-case:not(.visivel)::before{transform: scaleX(0)}.js .etapas-case.visivel::before{animation: risca-x 1.4s var(--ease-in-out) .2s backwards}}@media (max-width: 63.99em){.etapas-case{grid-template-columns: repeat(2,minmax(0,1fr));row-gap: 36px}.etapas-case::before{display: none}}@media (max-width: 39.99em){.etapas-case{grid-template-columns: minmax(0,1fr);row-gap: 30px}.etapa-case{grid-template-columns: auto minmax(0,1fr);column-gap: 16px}.etapa-case__hex{grid-row: span 2}.etapa-case__nome{align-self: center}}.ficha-case{display: grid;gap: 0}.ficha-case__foto{position: relative;z-index: 1;overflow: clip;border-radius: 12px 12px 0 0;background: #0A2A3E}.ficha-case__foto picture,.ficha-case__foto img{display: block;width: 100%;max-width: none}.ficha-case__foto img{aspect-ratio: 16 / 10;object-fit: cover}.ficha-case__folha{position: relative;z-index: 1;padding: 24px clamp(20px,2.4vw,32px) 18px;border-top: 3px solid var(--dourado);border-radius: 8px;background: linear-gradient(180deg,#FFFFFF,#F7F9FA);box-shadow: 0 40px 80px -40px rgb(0 0 0 / .95)}.ficha-case__foto + .ficha-case__folha{border-radius: 0 0 8px 8px}.ficha-case__titulo{display: flex;align-items: center;gap: 12px;padding-bottom: 14px;border-bottom: 1px solid #E8ECEF;color: var(--petroleo);font: 700 16px/1.2 var(--fonte-titulo)}.ficha-case__logo{width: 28px;height: auto}.ficha-case__dados div{display: flex;align-items: baseline;justify-content: space-between;gap: 16px;padding-block: 13px;border-bottom: 1px dashed #E1E6EA}.ficha-case__dados div:last-child{border-bottom: 0}.ficha-case__dados dt{color: #5B6670;font-size: 14px}.ficha-case__dados dd{margin: 0;color: var(--petroleo);font: 600 15px/1.3 var(--fonte-titulo);text-align: right}@media (prefers-reduced-motion: no-preference){.ficha-case__folha{animation: topo-sobe 1s var(--ease-suave) .3s backwards}}@media (max-width: 63.99em) and (prefers-reduced-motion: no-preference){.ficha-case__folha{animation-duration: .7s;animation-delay: .15s}}@media (min-width: 40em) and (max-width: 63.99em){.ficha-case{max-width: 560px}}.indicadores{display: grid;grid-template-columns: repeat(auto-fit,minmax(min(100%,170px),1fr));gap: 0 28px;margin-top: 30px}.indicador{display: grid;align-content: start;gap: 6px;padding-top: 20px;border-top: 1px solid var(--cor-linha)}.secao--escura .indicador{border-top-color: rgb(255 255 255 / .14)}.indicador__numero{color: var(--cor-destaque);font: 700 clamp(40px,1rem + 2.8vw,60px)/1 var(--fonte-titulo);letter-spacing: -.025em;white-space: nowrap}.indicador__rotulo{margin-top: 6px;color: var(--cor-titulo);font: 600 16px/1.3 var(--fonte-titulo)}.indicador__detalhe{color: var(--cor-texto);font-size: 14px;line-height: 1.5}.secao--escura .indicador__detalhe{color: var(--metal)}.gs,.gd{position: relative;min-width: 0;padding: 24px clamp(18px,2.2vw,30px) 22px;border-top: 3px solid var(--dourado);border-radius: 8px;background: linear-gradient(180deg,#FFFFFF,#F7F9FA);box-shadow: 0 34px 70px -34px rgb(0 0 0 / .9),0 1px 2px rgb(3 25 38 / .08);color: var(--grafite)}.secao--clara :is(.gs,.gd){border: 1px solid #E4E9ED;border-top: 3px solid var(--dourado);box-shadow: 0 30px 60px -36px rgb(3 25 38 / .5)}.gs__cab,.gd__cab{display: grid;gap: 4px;padding-bottom: 14px;border-bottom: 1px solid #E8ECEF}.gs__titulo,.gd__titulo{color: var(--petroleo);font: 700 16px/1.3 var(--fonte-titulo)}.gs__sub,.gd__sub{color: #5B6670;font-size: 13px;line-height: 1.4}.gs__grafico{margin-top: 26px;padding-left: 30px}.gs__plano{position: relative;height: clamp(200px,20vw,290px)}.gs__grade li{position: absolute;left: 0;right: 0;top: calc(var(--y) * 1%);border-top: 1px dashed #E1E6EA}.gs__grade li.gs__zero{border-top: 1px solid #AEB9C2}.gs__grade span{position: absolute;right: calc(100% + 8px);top: -.72em;color: #6B7680;font: 500 11.5px/1.4 var(--fonte-texto);font-variant-numeric: tabular-nums}.gs__svg{position: absolute;inset: 0;width: 100%;height: 100%;max-width: none;overflow: visible}.gs__linha{fill: none;stroke: var(--petroleo);stroke-width: 3;stroke-linecap: round;stroke-linejoin: round}.gs__revela{transform-origin: 0 0}.gs__ponto{position: absolute;left: calc(var(--x) * 1%);top: calc(var(--y) * 1%);width: 9px;height: 9px;margin: -4.5px 0 0 -4.5px;border-radius: 50%;background: var(--petroleo);box-shadow: 0 0 0 2px #FFFFFF}.gs__ponto--fim{width: 15px;height: 15px;margin: -7.5px 0 0 -7.5px;background: var(--dourado);box-shadow: 0 0 0 3px #FFFFFF,0 0 0 4px rgb(201 148 60 / .45)}.gs__valor{position: absolute;left: calc(var(--x) * 1%);top: calc(var(--y) * 1%);padding: 5px 9px;border-radius: 5px;color: var(--petroleo);font: 700 13px/1 var(--fonte-titulo);white-space: nowrap}.gs__valor--fim{translate: calc(-100% - 12px) -50%;background: var(--petroleo);color: var(--branco)}.gs__valor--ini{translate: 10px 6px;background: #EEF1F4}.gs__meses{position: relative;height: 16px;margin-top: 12px}.gs__meses li{position: absolute;left: calc(var(--x) * 1%);translate: -50% 0;color: #6B7680;font: 500 11.5px/1.4 var(--fonte-texto);font-variant-numeric: tabular-nums}.gd__legenda{display: flex;flex-wrap: wrap;gap: 6px 20px;margin-top: 16px;color: #56626C;font: 500 13px/1.3 var(--fonte-texto)}.gd__legenda li{display: inline-flex;align-items: center;gap: 8px}.gd__legenda li::before{content: '';width: 14px;height: 10px;border-radius: 2px}.gd__leg-antes::before{background: #D3DAE0}.gd__leg-hs::before{background: var(--dourado)}.gd__lista{display: grid;gap: 18px;margin-top: 20px}.gd__nome{margin-bottom: 7px;color: var(--petroleo);font: 600 14px/1.3 var(--fonte-titulo)}.gd__barra{display: flex;align-items: center;gap: 10px;min-height: 20px}.gd__barra + .gd__barra{margin-top: 5px}.gd__fill{flex: none;width: calc(var(--v) * (100% - 86px));height: 14px;border-radius: 0 4px 4px 0;background: #D3DAE0;transform-origin: 0 50%}.gd__barra--hs .gd__fill{background: linear-gradient(90deg,var(--dourado-escuro),var(--dourado) 70%,var(--dourado-claro))}.gd__num{color: #6B7680;font: 500 13px/1 var(--fonte-texto);font-variant-numeric: tabular-nums;white-space: nowrap}.gd__barra--hs .gd__num{color: var(--petroleo);font: 700 13.5px/1 var(--fonte-titulo)}@keyframes gs-revela{from{transform: scaleX(0)}}@keyframes gs-ponto{from{opacity: 0;transform: scale(.3)}}@keyframes gd-cresce{from{transform: scaleX(0)}}@media (prefers-reduced-motion: no-preference){.js .gs.visivel .gs__revela{animation: gs-revela 1.7s var(--ease-in-out) .35s backwards}.js .gs.visivel .gs__ponto{animation: gs-ponto .45s var(--ease-out) calc(var(--i,0) * 138ms + 420ms) backwards}.js .gs.visivel .gs__valor--ini{animation: aparece .6s ease .7s backwards}.js .gs.visivel .gs__valor--fim{animation: aparece .6s ease 2s backwards}.js .gd.visivel .gd__fill{animation: gd-cresce 1.1s var(--ease-out) calc(var(--i,0) * 120ms + 300ms) backwards}.js .gd.visivel .gd__barra--hs .gd__fill{animation-delay: calc(var(--i,0) * 120ms + 520ms)}.js .gd.visivel .gd__num{animation: aparece .5s ease calc(var(--i,0) * 120ms + 900ms) backwards}}@media (max-width: 39.99em){.indicadores{gap: 0 20px}.indicador__numero{font-size: min(44px,12vw)}.gs,.gd{padding: 20px 16px 18px}.gs__grafico{padding-left: 26px}.gs__plano{height: 210px}.gs__meses li:nth-child(even){visibility: hidden}}.cta-final{overflow: clip;box-shadow: inset 0 1px 0 rgb(201 148 60 / .3)}.cta-final__fundo{position: absolute;inset: 0;z-index: -1}.cta-final__fundo picture,.cta-final__fundo img{display: block;width: 100%;height: 100%;max-width: none}.cta-final__fundo img{object-fit: cover;object-position: 50% 40%}.cta-final__fundo::after{content: '';position: absolute;inset: 0;background: linear-gradient(90deg,rgb(3 25 38 / .95) 0%,rgb(3 25 38 / .82) 50%,rgb(3 25 38 / .66) 100%),linear-gradient(180deg,var(--petroleo) 0%,rgb(3 25 38 / 0) 24%,rgb(3 25 38 / 0) 76%,var(--petroleo) 100%)}.cta-final__grade{display: grid;grid-template-columns: minmax(0,1fr) auto;align-items: end;gap: 32px clamp(40px,6vw,96px)}.cta-final__titulo{max-width: 20em}.cta-final__apoio{margin-top: 16px;max-width: 36em}.cta-final__botoes{display: flex;flex-wrap: wrap;gap: 14px}.cta-final__botoes .btn{min-height: 56px;padding-inline: 28px}@media (max-width: 63.99em){.cta-final__grade{grid-template-columns: minmax(0,1fr);align-items: start}}@media (max-width: 39.99em){.cta-final__botoes{display: grid}.cta-final__botoes .btn{width: 100%}}.cta-final--home{padding-block: clamp(80px,8vw,128px)}.cta-final__botoes .btn .i:first-child:not(.i--anda){width: 20px;height: 20px}.quem-home,.solucoes,.metodo,.resultado,.filosofia,.lideranca,.experiencia,.cta-final,.rodape,.quem,.fundador,.mvvs,.servico,.comeco,.faq,.percurso,.indicadores-case{content-visibility: auto}@media (max-width: 63.99em){.js-abrindo .quem-home{content-visibility: hidden}}.cv-pronto :is(.quem-home,.solucoes,.metodo,.resultado,.filosofia,.lideranca,.experiencia,.cta-final,.rodape,.quem,.fundador,.mvvs,.servico,.comeco,.faq,.percurso,.indicadores-case){content-visibility: visible}.quem-home{contain-intrinsic-size: auto 313px}.solucoes{contain-intrinsic-size: auto 729px}.metodo{contain-intrinsic-size: auto 283px}.resultado{contain-intrinsic-size: auto 515px}.filosofia{contain-intrinsic-size: auto 569px}.lideranca{contain-intrinsic-size: auto 660px}.experiencia{contain-intrinsic-size: auto 1205px}.cta-final{contain-intrinsic-size: auto 176px}.rodape{contain-intrinsic-size: auto 301px}@media (max-width: 79.99em){.quem-home{contain-intrinsic-size: auto 282px}.solucoes{contain-intrinsic-size: auto 689px}.metodo{contain-intrinsic-size: auto 316px}.resultado{contain-intrinsic-size: auto 577px}.filosofia{contain-intrinsic-size: auto 558px}.lideranca{contain-intrinsic-size: auto 597px}.experiencia{contain-intrinsic-size: auto 1042px}.cta-final{contain-intrinsic-size: auto 172px}.rodape{contain-intrinsic-size: auto 293px}}@media (max-width: 63.99em){.quem-home{contain-intrinsic-size: auto 421px}.solucoes{contain-intrinsic-size: auto 934px}.metodo{contain-intrinsic-size: auto 582px}.resultado{contain-intrinsic-size: auto 826px}.filosofia{contain-intrinsic-size: auto 508px}.lideranca{contain-intrinsic-size: auto 1151px}.experiencia{contain-intrinsic-size: auto 983px}.cta-final{contain-intrinsic-size: auto 236px}.rodape{contain-intrinsic-size: auto 722px}}@media (max-width: 39.99em){.quem-home{contain-intrinsic-size: auto 538px}.solucoes{contain-intrinsic-size: auto 1737px}.metodo{contain-intrinsic-size: auto 751px}.resultado{contain-intrinsic-size: auto 1079px}.filosofia{contain-intrinsic-size: auto 633px}.lideranca{contain-intrinsic-size: auto 1157px}.experiencia{contain-intrinsic-size: auto 1299px}.cta-final{contain-intrinsic-size: auto 370px}.rodape{contain-intrinsic-size: auto 831px}}.quem{contain-intrinsic-size: auto 385px}.fundador{contain-intrinsic-size: auto 1200px}.mvvs{contain-intrinsic-size: auto 379px}.servico{contain-intrinsic-size: auto 612px}.comeco{contain-intrinsic-size: auto 305px}.faq{contain-intrinsic-size: auto 443px}.percurso{contain-intrinsic-size: auto 373px}.indicadores-case{contain-intrinsic-size: auto 826px}@media (max-width: 79.99em){.quem{contain-intrinsic-size: auto 385px}.fundador{contain-intrinsic-size: auto 1246px}.mvvs{contain-intrinsic-size: auto 444px}.servico{contain-intrinsic-size: auto 655px}.comeco{contain-intrinsic-size: auto 343px}.faq{contain-intrinsic-size: auto 469px}.percurso{contain-intrinsic-size: auto 416px}.indicadores-case{contain-intrinsic-size: auto 789px}}@media (max-width: 63.99em){.quem{contain-intrinsic-size: auto 711px}.fundador{contain-intrinsic-size: auto 1832px}.mvvs{contain-intrinsic-size: auto 761px}.servico{contain-intrinsic-size: auto 1218px}.comeco{contain-intrinsic-size: auto 681px}.faq{contain-intrinsic-size: auto 709px}.percurso{contain-intrinsic-size: auto 560px}.indicadores-case{contain-intrinsic-size: auto 1234px}}@media (max-width: 39.99em){.quem{contain-intrinsic-size: auto 960px}.fundador{contain-intrinsic-size: auto 2539px}.mvvs{contain-intrinsic-size: auto 939px}.servico{contain-intrinsic-size: auto 1545px}.comeco{contain-intrinsic-size: auto 863px}.faq{contain-intrinsic-size: auto 841px}.percurso{contain-intrinsic-size: auto 879px}.indicadores-case{contain-intrinsic-size: auto 1527px}}</style>
+</head>
+<body>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <header class="topo" id="topo">
+    <div class="container topo__barra">
+      <a class="marca" href="/" aria-label="HS Sindicatura, voltar ao início">
+        <picture><source type="image/avif" srcset="/assets/img/logo-hs-64.avif 64w, /assets/img/logo-hs-96.avif 96w, /assets/img/logo-hs-128.avif 128w, /assets/img/logo-hs-192.avif 192w" sizes="(min-width: 64em) 42px, 36px"><img src="/assets/img/logo-hs-96.webp" srcset="/assets/img/logo-hs-64.webp 64w, /assets/img/logo-hs-96.webp 96w, /assets/img/logo-hs-128.webp 128w, /assets/img/logo-hs-192.webp 192w" sizes="(min-width: 64em) 42px, 36px" width="96" height="108" alt="" class="marca__simbolo"></picture>
+        <span class="marca__nome" aria-hidden="true">Sindicatura</span>
+      </a>
+
+      <nav class="menu" id="menu" aria-label="Principal">
+        <ul class="menu__lista" role="list">
+          <li><a href="/">Início</a></li>
+          <li><a href="/a-hs">A HS</a></li>
+          <li><a href="/solucoes">Soluções</a></li>
+          <li><a href="/cases" aria-current="page">Cases</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+        <div class="menu__extra">
+          <a class="btn btn--dourado menu__cta" href="/contato">Agendar uma conversa<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a class="menu__fone" href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20conheci%20a%20HS%20Sindicatura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="menu-celular-fone"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-light"/></svg>(11) 93382-5442</a>
+          <p class="menu__rodape">Sede em São Paulo · Atuação em todo o Brasil</p>
+        </div>
+      </nav>
+
+      <a class="btn btn--dourado topo__cta" href="/contato">Agendar uma conversa<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+
+      <button class="topo__menu" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+        <span class="topo__menu-linhas" aria-hidden="true"><span></span></span>
+      </button>
+    </div>
+  </header>
+
+
+  <main id="conteudo">
+    <!-- Página Cases (briefing final, seções 7 e 8): por enquanto só o Sunset View. Sem a foto
+         real do condomínio, o lado direito do topo é a ficha do case (com a foto, ela entra
+         em cima: Recursos Site/CASES/sunset-view.jpg e npm run imagens). -->
+    <section class="ptopo ptopo--case" id="inicio" aria-labelledby="ptopo-titulo">
+      <div class="container ptopo__grade">
+        <nav class="migalhas ptopo__migalhas" aria-label="Você está em">
+          <ol role="list"><li><a href="/">Início</a></li><li><span aria-current="page">Cases</span></li></ol>
+        </nav>
+        <p class="rotulo ptopo__rotulo">Case Sunset View</p>
+        <h1 class="ptopo__titulo" id="ptopo-titulo">Do saldo negativo <span class="destaque">a R$ 78 mil em caixa.</span></h1>
+        <div class="ptopo__figura ficha-case">
+          
+          <div class="ficha-case__folha">
+            <p class="ficha-case__titulo"><picture><source type="image/avif" srcset="/assets/img/logo-hs-64.avif 64w, /assets/img/logo-hs-96.avif 96w, /assets/img/logo-hs-128.avif 128w, /assets/img/logo-hs-192.avif 192w" sizes="28px"><img src="/assets/img/logo-hs-96.webp" srcset="/assets/img/logo-hs-64.webp 64w, /assets/img/logo-hs-96.webp 96w, /assets/img/logo-hs-128.webp 128w, /assets/img/logo-hs-192.webp 192w" sizes="28px" width="96" height="108" alt="" class="ficha-case__logo" decoding="async"></picture>Ficha do case</p>
+            <dl class="ficha-case__dados">
+              <div><dt>Condomínio</dt><dd>Sunset View</dd></div>
+              <div><dt>Tipo</dt><dd>Residencial</dd></div>
+              <div><dt>Unidades</dt><dd>112</dd></div>
+              <div><dt>Cidade</dt><dd>São Paulo, SP</dd></div>
+              <div><dt>Período</dt><dd>12 meses de gestão HS</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="ptopo__sub">O que a HS encontrou no Sunset View, o que fez e o que mudou nos 12 primeiros meses de gestão, com os números do condomínio.</p>
+        <div class="ptopo__botoes">
+          <a class="btn btn--dourado" href="/contato">Agendar uma conversa<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a class="btn btn--contorno" href="#indicadores">Ver os números</a>
+        </div>
+      </div>
+    </section>
+
+        <!-- Cenário, diagnóstico, estratégia e ações (a estrutura do case no briefing final, seção
+         7). Os itens saíram da apresentação comercial da HS (slides 4, 10 e 11). -->
+    <section class="secao secao--clara percurso" id="percurso" aria-labelledby="percurso-titulo">
+      <div class="container">
+        <div class="cab">
+          <div data-revela>
+            <p class="rotulo">O percurso</p>
+            <h2 class="titulo" id="percurso-titulo">Cenário, diagnóstico, estratégia <span class="destaque">e ações.</span></h2>
+          </div>
+          <p class="apoio" data-revela style="--i:1">O Método HS aplicado ao Sunset View, etapa por etapa.</p>
+        </div>
+
+        <ol class="etapas-case" role="list" data-revela-lista>
+          <li class="etapa-case" style="--i:0">
+            <span class="hex etapa-case__hex" aria-hidden="true">1</span>
+            <h3 class="etapa-case__nome"><span class="sr-only">Etapa 1: </span>Cenário</h3>
+            <ul class="etapa-case__lista" role="list">
+              <li>Saldo em caixa negativo</li>
+              <li>Custos crescendo e inadimplência alta</li>
+              <li>Manutenção só quando quebrava</li>
+              <li>Comunicação frágil entre gestão e moradores</li>
+            </ul>
+          </li>
+          <li class="etapa-case" style="--i:1">
+            <span class="hex etapa-case__hex" aria-hidden="true">2</span>
+            <h3 class="etapa-case__nome"><span class="sr-only">Etapa 2: </span>Diagnóstico</h3>
+            <ul class="etapa-case__lista" role="list">
+              <li>Diagnóstico 360°: contratos, finanças, passivos trabalhistas e riscos da edificação</li>
+              <li>Revisão de todos os contratos</li>
+            </ul>
+          </li>
+          <li class="etapa-case" style="--i:2">
+            <span class="hex etapa-case__hex" aria-hidden="true">3</span>
+            <h3 class="etapa-case__nome"><span class="sr-only">Etapa 3: </span>Estratégia</h3>
+            <ul class="etapa-case__lista" role="list">
+              <li>Plano diretor com metas de curto, médio e longo prazo</li>
+              <li>Orçamento detalhado e cronograma</li>
+            </ul>
+          </li>
+          <li class="etapa-case" style="--i:3">
+            <span class="hex etapa-case__hex" aria-hidden="true">4</span>
+            <h3 class="etapa-case__nome"><span class="sr-only">Etapa 4: </span>Ações</h3>
+            <ul class="etapa-case__lista" role="list">
+              <li>Renegociação técnica dos contratos</li>
+              <li>Calendário de manutenção preventiva</li>
+              <li>Novos ritos de governança e comunicação</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="secao secao--escura indicadores-case" id="indicadores" aria-labelledby="indicadores-titulo">
+      <div class="container">
+        <div class="cab">
+          <div data-revela>
+            <p class="rotulo">Indicadores e resultado</p>
+            <h2 class="titulo" id="indicadores-titulo">O que mudou <span class="destaque">em 12 meses.</span></h2>
+          </div>
+          <p class="apoio" data-revela style="--i:1">Caixa recuperado, fundo de reserva recomposto e contratos otimizados sem perda de qualidade.</p>
+        </div>
+
+        <ul class="indicadores" role="list" data-revela-lista>
+            <li class="indicador" style="--i:0"><strong class="indicador__numero">+450%</strong><span class="indicador__rotulo">no fundo de reserva</span><span class="indicador__detalhe">em 12 meses de gestão</span></li>
+            <li class="indicador" style="--i:1"><strong class="indicador__numero">−22%</strong><span class="indicador__rotulo">nos custos fixos</span><span class="indicador__detalhe">redução média, com contratos renegociados e manutenção preventiva</span></li>
+            <li class="indicador" style="--i:2"><strong class="indicador__numero">R$ 78 mil</strong><span class="indicador__rotulo">de saldo em caixa</span><span class="indicador__detalhe">no 12º mês; no início, −R$ 5 mil</span></li>
+          </ul>
+
+        <div class="graficos-case">
+          <figure class="gs" data-revela style="--i:1">
+          <figcaption class="gs__cab"><span class="gs__titulo">Evolução do saldo em caixa</span><span class="gs__sub">Sunset View · R$ mil · meses de gestão HS</span></figcaption>
+          <div class="gs__grafico" aria-hidden="true">
+            <div class="gs__plano">
+              <ul class="gs__grade" role="list"><li style="--y:100"><span>−20</span></li><li class="gs__zero" style="--y:80"><span>0</span></li><li style="--y:60"><span>20</span></li><li style="--y:40"><span>40</span></li><li style="--y:20"><span>60</span></li><li style="--y:0"><span>80</span></li></ul>
+              <svg class="gs__svg" viewBox="0 0 1000 400" preserveAspectRatio="none" focusable="false">
+                <defs>
+                  <linearGradient id="gs-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C9943C" stop-opacity=".36"/><stop offset="1" stop-color="#C9943C" stop-opacity="0"/></linearGradient>
+                  <clipPath id="gs-recorte"><rect class="gs__revela" width="1000" height="400"/></clipPath>
+                </defs>
+                <g clip-path="url(#gs-recorte)">
+                  <path d="M0.0 340.0 C30.3 336.0 60.6 332.3 90.9 328.0 C121.2 323.7 151.5 318.7 181.8 314.0 C212.1 309.3 242.4 307.0 272.7 300.0 C303.0 293.0 333.3 280.7 363.6 272.0 C393.9 263.3 424.2 256.7 454.5 248.0 C484.8 239.3 515.2 231.3 545.5 220.0 C575.8 208.7 606.1 191.3 636.4 180.0 C666.7 168.7 697.0 162.0 727.3 152.0 C757.6 142.0 787.9 135.3 818.2 120.0 C848.5 104.7 878.8 78.7 909.1 60.0 C939.4 41.3 969.7 25.3 1000.0 8.0 L1000 400 L0 400 Z" fill="url(#gs-area)"/>
+                  <path class="gs__linha" d="M0.0 340.0 C30.3 336.0 60.6 332.3 90.9 328.0 C121.2 323.7 151.5 318.7 181.8 314.0 C212.1 309.3 242.4 307.0 272.7 300.0 C303.0 293.0 333.3 280.7 363.6 272.0 C393.9 263.3 424.2 256.7 454.5 248.0 C484.8 239.3 515.2 231.3 545.5 220.0 C575.8 208.7 606.1 191.3 636.4 180.0 C666.7 168.7 697.0 162.0 727.3 152.0 C757.6 142.0 787.9 135.3 818.2 120.0 C848.5 104.7 878.8 78.7 909.1 60.0 C939.4 41.3 969.7 25.3 1000.0 8.0" vector-effect="non-scaling-stroke"/>
+                </g>
+              </svg>
+              <span class="gs__ponto" style="--x:0;--y:85;--i:0"></span><span class="gs__ponto" style="--x:9.091;--y:82;--i:1"></span><span class="gs__ponto" style="--x:18.182;--y:78.5;--i:2"></span><span class="gs__ponto" style="--x:27.273;--y:75;--i:3"></span><span class="gs__ponto" style="--x:36.364;--y:68;--i:4"></span><span class="gs__ponto" style="--x:45.455;--y:62;--i:5"></span><span class="gs__ponto" style="--x:54.545;--y:55;--i:6"></span><span class="gs__ponto" style="--x:63.636;--y:45;--i:7"></span><span class="gs__ponto" style="--x:72.727;--y:38;--i:8"></span><span class="gs__ponto" style="--x:81.818;--y:30;--i:9"></span><span class="gs__ponto" style="--x:90.909;--y:15;--i:10"></span><span class="gs__ponto gs__ponto--fim" style="--x:100;--y:2;--i:11"></span>
+              <span class="gs__valor gs__valor--ini" style="--x:0;--y:85">−R$ 5 mil</span>
+              <span class="gs__valor gs__valor--fim" style="--x:100;--y:2">R$ 78 mil</span>
+            </div>
+            <ol class="gs__meses" role="list"><li style="--x:0">1</li><li style="--x:9.091">2</li><li style="--x:18.182">3</li><li style="--x:27.273">4</li><li style="--x:36.364">5</li><li style="--x:45.455">6</li><li style="--x:54.545">7</li><li style="--x:63.636">8</li><li style="--x:72.727">9</li><li style="--x:81.818">10</li><li style="--x:90.909">11</li><li style="--x:100">12</li></ol>
+          </div>
+          <p class="sr-only">O saldo em caixa do Sunset View sai de −R$ 5 mil no 1º mês de gestão HS e chega a R$ 78 mil no 12º mês, subindo todos os meses.</p>
+          <div class="sr-only"><table><caption>Evolução do saldo em caixa do Sunset View, mês a mês</caption><thead><tr><th scope="col">Mês de gestão</th><th scope="col">Saldo</th></tr></thead><tbody><tr><td>1º</td><td>−R$ 5 mil</td></tr><tr><td>2º</td><td>−R$ 2 mil</td></tr><tr><td>3º</td><td>R$ 1,5 mil</td></tr><tr><td>4º</td><td>R$ 5 mil</td></tr><tr><td>5º</td><td>R$ 12 mil</td></tr><tr><td>6º</td><td>R$ 18 mil</td></tr><tr><td>7º</td><td>R$ 25 mil</td></tr><tr><td>8º</td><td>R$ 35 mil</td></tr><tr><td>9º</td><td>R$ 42 mil</td></tr><tr><td>10º</td><td>R$ 50 mil</td></tr><tr><td>11º</td><td>R$ 65 mil</td></tr><tr><td>12º</td><td>R$ 78 mil</td></tr></tbody></table></div>
+        </figure>
+          <figure class="gd" data-revela style="--i:1">
+          <figcaption class="gd__cab"><span class="gd__titulo">Despesas por categoria</span><span class="gd__sub">Sunset View · antes e com a gestão HS</span></figcaption>
+          <ul class="gd__legenda" role="list" aria-hidden="true"><li class="gd__leg-antes">Antes</li><li class="gd__leg-hs">Gestão HS</li></ul>
+          <div class="gd__lista" aria-hidden="true">
+            <div class="gd__item" style="--i:0"><p class="gd__nome">Contratos gerais</p><div class="gd__barra gd__barra--antes"><span class="gd__fill" style="--v:0.6"></span><span class="gd__num">R$ 15 mil</span></div><div class="gd__barra gd__barra--hs"><span class="gd__fill" style="--v:0.44"></span><span class="gd__num">R$ 11 mil</span></div></div>
+            <div class="gd__item" style="--i:1"><p class="gd__nome">Energia</p><div class="gd__barra gd__barra--antes"><span class="gd__fill" style="--v:0.48"></span><span class="gd__num">R$ 12 mil</span></div><div class="gd__barra gd__barra--hs"><span class="gd__fill" style="--v:0.38"></span><span class="gd__num">R$ 9,5 mil</span></div></div>
+            <div class="gd__item" style="--i:2"><p class="gd__nome">Segurança</p><div class="gd__barra gd__barra--antes"><span class="gd__fill" style="--v:1"></span><span class="gd__num">R$ 25 mil</span></div><div class="gd__barra gd__barra--hs"><span class="gd__fill" style="--v:0.84"></span><span class="gd__num">R$ 21 mil</span></div></div>
+            <div class="gd__item" style="--i:3"><p class="gd__nome">Manutenção</p><div class="gd__barra gd__barra--antes"><span class="gd__fill" style="--v:0.72"></span><span class="gd__num">R$ 18 mil</span></div><div class="gd__barra gd__barra--hs"><span class="gd__fill" style="--v:0.48"></span><span class="gd__num">R$ 12 mil</span></div></div>
+          </div>
+          <div class="sr-only"><table><caption>Despesas por categoria do Sunset View, antes e com a gestão HS</caption><thead><tr><th scope="col">Categoria</th><th scope="col">Antes</th><th scope="col">Com a gestão HS</th></tr></thead><tbody><tr><th scope="row">Contratos gerais</th><td>R$ 15 mil</td><td>R$ 11 mil</td></tr><tr><th scope="row">Energia</th><td>R$ 12 mil</td><td>R$ 9,5 mil</td></tr><tr><th scope="row">Segurança</th><td>R$ 25 mil</td><td>R$ 21 mil</td></tr><tr><th scope="row">Manutenção</th><td>R$ 18 mil</td><td>R$ 12 mil</td></tr></tbody></table></div>
+        </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao secao--escura cta-final" id="proximo-passo" aria-labelledby="cta-titulo" data-zap-some>
+      <div class="cta-final__fundo" aria-hidden="true">
+        <picture><source media="(min-width: 64em)" type="image/avif" srcset="/assets/img/cta-faixa-800.avif 800w, /assets/img/cta-faixa-1280.avif 1280w, /assets/img/cta-faixa-1600.avif 1600w" sizes="100vw" width="1600" height="533"><source media="(min-width: 64em)" type="image/webp" srcset="/assets/img/cta-faixa-800.webp 800w, /assets/img/cta-faixa-1280.webp 1280w, /assets/img/cta-faixa-1600.webp 1600w" sizes="100vw" width="1600" height="533"><source type="image/avif" srcset="/assets/img/cta-fundo-800.avif 800w, /assets/img/cta-fundo-1280.avif 1280w" sizes="100vw"><img src="/assets/img/cta-fundo-800.webp" srcset="/assets/img/cta-fundo-800.webp 800w, /assets/img/cta-fundo-1280.webp 1280w" sizes="100vw" width="800" height="450" alt="" loading="lazy" decoding="async"></picture>
+      </div>
+      <div class="container cta-final__grade">
+        <div data-revela>
+          <p class="rotulo">Próximo passo</p>
+          <h2 class="titulo cta-final__titulo" id="cta-titulo">Tenha esse controle <span class="destaque">no seu condomínio.</span></h2>
+          <p class="apoio cta-final__apoio">Cada condomínio parte de um cenário diferente. O primeiro passo é uma conversa para entender o seu.</p>
+        </div>
+        <div class="cta-final__botoes" data-revela style="--i:1">
+          <a class="btn btn--dourado" href="/contato" data-zap="fim-principal">Agendar uma conversa<svg class="i i--anda" aria-hidden="true" focusable="false"><use href="#i-arrow-right-regular"/></svg></a>
+          <a target="_blank" rel="noopener" class="btn btn--contorno" href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20conheci%20a%20HS%20Sindicatura%20pelo%20site%2C%20vi%20o%20case%20do%20Sunset%20View%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." data-zap="fim-secundario">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+    <footer class="rodape" id="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div class="rodape__marca">
+          <a class="rodape__logo" href="/" aria-label="HS Sindicatura, voltar ao início">
+            <picture><source type="image/avif" srcset="/assets/img/logo-hs-64.avif 64w, /assets/img/logo-hs-96.avif 96w, /assets/img/logo-hs-128.avif 128w, /assets/img/logo-hs-192.avif 192w" sizes="64px"><img src="/assets/img/logo-hs-128.webp" srcset="/assets/img/logo-hs-64.webp 64w, /assets/img/logo-hs-96.webp 96w, /assets/img/logo-hs-128.webp 128w, /assets/img/logo-hs-192.webp 192w" sizes="64px" width="128" height="143" alt="" class="rodape__simbolo" loading="lazy" decoding="async"></picture>
+          </a>
+          <p class="rodape__frase">Gestão condominial com método, controle e resultado.</p>
+          <a class="rodape__insta" href="https://www.instagram.com/hssindicatura/" target="_blank" rel="noopener" aria-label="Instagram da HS Sindicatura (@hssindicatura)"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-instagram-logo-light"/></svg></a>
+        </div>
+
+        <nav class="rodape__col" aria-label="Navegação do rodapé">
+          <h2 class="rodape__titulo">Navegação</h2>
+          <ul role="list">
+            <li><a href="/">Início</a></li>
+            <li><a href="/a-hs">A HS</a></li>
+            <li><a href="/solucoes">Soluções</a></li>
+            <li><a href="/cases">Cases</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Soluções</h2>
+          <ul role="list">
+              <li><a href="/solucoes#implantacao">Implantação de novos empreendimentos</a></li>
+              <li><a href="/solucoes#gestao">Gestão condominial</a></li>
+              <li><a href="/solucoes#sindico-profissional">Síndico profissional</a></li>
+          </ul>
+        </div>
+
+        <div class="rodape__col">
+          <h2 class="rodape__titulo">Contato</h2>
+          <ul class="rodape__contato" role="list">
+            <li><a href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20conheci%20a%20HS%20Sindicatura%20pelo%20site%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="rodape"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-light"/></svg>(11) 93382-5442</a></li>
+            <li><a href="mailto:hssindicatura@gmail.com"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-envelope-simple-light"/></svg>hssindicatura@gmail.com</a></li>
+            <li><a href="https://www.instagram.com/hssindicatura/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-instagram-logo-light"/></svg>@hssindicatura</a></li>
+            <li><svg class="i" aria-hidden="true" focusable="false"><use href="#i-map-pin-light"/></svg>Sede em São Paulo · Atuação em todo o Brasil</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rodape__base">
+        <p class="rodape__copy">© 2026 HS Sindicatura · Todos os direitos reservados.</p>
+        <p class="rodape__credito">Site por <a href="https://www.instagram.com/credialta.sites/" target="_blank" rel="noopener">Credialta Sites</a></p>
+      </div>
+    </div>
+  </footer>
+
+
+  <a class="zap-flutuante" href="https://wa.me/5511933825442?text=Ol%C3%A1%2C%20conheci%20a%20HS%20Sindicatura%20pelo%20site%2C%20vi%20o%20case%20do%20Sunset%20View%20e%20gostaria%20de%20conversar%20sobre%20a%20gest%C3%A3o%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener" data-zap="flutuante" aria-label="Falar com a HS Sindicatura pelo WhatsApp"><svg class="i" aria-hidden="true" focusable="false"><use href="#i-whatsapp-logo-regular"/></svg></a>
+
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute;overflow:hidden"><symbol id="i-arrow-right-regular" viewBox="0 0 256 256"><path d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"/></symbol><symbol id="i-whatsapp-logo-light" viewBox="0 0 256 256"><path d="M186.68,146.63l-32-16a6,6,0,0,0-6,.38L133,141.46A42.49,42.49,0,0,1,114.54,123L125,107.33a6,6,0,0,0,.38-6l-16-32A6,6,0,0,0,104,66a38,38,0,0,0-38,38,86.1,86.1,0,0,0,86,86,38,38,0,0,0,38-38A6,6,0,0,0,186.68,146.63ZM152,178a74.09,74.09,0,0,1-74-74,26,26,0,0,1,22.42-25.75l12.66,25.32-10.39,15.58a6,6,0,0,0-.54,5.63,54.43,54.43,0,0,0,29.07,29.07,6,6,0,0,0,5.63-.54l15.58-10.39,25.32,12.66A26,26,0,0,1,152,178ZM128,26A102,102,0,0,0,38.35,176.69L26.73,211.56a14,14,0,0,0,17.71,17.71l34.87-11.62A102,102,0,1,0,128,26Zm0,192a90,90,0,0,1-45.06-12.08,6.09,6.09,0,0,0-3-.81,6.2,6.2,0,0,0-1.9.31L40.65,217.88a2,2,0,0,1-2.53-2.53L50.58,178a6,6,0,0,0-.5-4.91A90,90,0,1,1,128,218Z"/></symbol><symbol id="i-instagram-logo-light" viewBox="0 0 256 256"><path d="M128,82a46,46,0,1,0,46,46A46.06,46.06,0,0,0,128,82Zm0,80a34,34,0,1,1,34-34A34,34,0,0,1,128,162ZM176,26H80A54.06,54.06,0,0,0,26,80v96a54.06,54.06,0,0,0,54,54h96a54.06,54.06,0,0,0,54-54V80A54.06,54.06,0,0,0,176,26Zm42,150a42,42,0,0,1-42,42H80a42,42,0,0,1-42-42V80A42,42,0,0,1,80,38h96a42,42,0,0,1,42,42ZM190,76a10,10,0,1,1-10-10A10,10,0,0,1,190,76Z"/></symbol><symbol id="i-envelope-simple-light" viewBox="0 0 256 256"><path d="M224,50H32a6,6,0,0,0-6,6V192a14,14,0,0,0,14,14H216a14,14,0,0,0,14-14V56A6,6,0,0,0,224,50ZM208.58,62,128,135.86,47.42,62ZM216,194H40a2,2,0,0,1-2-2V69.64l86,78.78a6,6,0,0,0,8.1,0L218,69.64V192A2,2,0,0,1,216,194Z"/></symbol><symbol id="i-map-pin-light" viewBox="0 0 256 256"><path d="M128,66a38,38,0,1,0,38,38A38,38,0,0,0,128,66Zm0,64a26,26,0,1,1,26-26A26,26,0,0,1,128,130Zm0-112a86.1,86.1,0,0,0-86,86c0,30.91,14.34,63.74,41.47,94.94a252.32,252.32,0,0,0,41.09,38,6,6,0,0,0,6.88,0,252.32,252.32,0,0,0,41.09-38c27.13-31.2,41.47-64,41.47-94.94A86.1,86.1,0,0,0,128,18Zm0,206.51C113,212.93,54,163.62,54,104a74,74,0,0,1,148,0C202,163.62,143,212.93,128,224.51Z"/></symbol><symbol id="i-whatsapp-logo-regular" viewBox="0 0 256 256"><path d="M187.58,144.84l-32-16a8,8,0,0,0-8,.5l-14.69,9.8a40.55,40.55,0,0,1-16-16l9.8-14.69a8,8,0,0,0,.5-8l-16-32A8,8,0,0,0,104,64a40,40,0,0,0-40,40,88.1,88.1,0,0,0,88,88,40,40,0,0,0,40-40A8,8,0,0,0,187.58,144.84ZM152,176a72.08,72.08,0,0,1-72-72A24,24,0,0,1,99.29,80.46l11.48,23L101,118a8,8,0,0,0-.73,7.51,56.47,56.47,0,0,0,30.15,30.15A8,8,0,0,0,138,155l14.61-9.74,23,11.48A24,24,0,0,1,152,176ZM128,24A104,104,0,0,0,36.18,176.88L24.83,210.93a16,16,0,0,0,20.24,20.24l34.05-11.35A104,104,0,1,0,128,24Zm0,192a87.87,87.87,0,0,1-44.06-11.81,8,8,0,0,0-6.54-.67L40,216,52.47,178.6a8,8,0,0,0-.66-6.54A88,88,0,1,1,128,216Z"/></symbol></svg>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["LocalBusiness","ProfessionalService"],"@id":"https://www.hssindicatura.com.br/#negocio","name":"HS Sindicatura","description":"A HS Sindicatura é especializada em gestão condominial, síndico profissional e implantação de novos empreendimentos. Tem sede em São Paulo, capital, e disponibilidade para atuar em todo o Brasil. O fundador, Danilo Ricardo Dias, administrador de empresas com carreira em auditoria e compliance, finanças e excelência operacional, aplica a gestão corporativa ao condomínio: método, controle financeiro, governança e acompanhamento por indicadores.","slogan":"Gestão condominial com método, controle e resultado.","url":"https://www.hssindicatura.com.br/","image":"https://www.hssindicatura.com.br/assets/img/og-hs.jpg","logo":"https://www.hssindicatura.com.br/icon-512.png","telephone":"+55 11 93382-5442","email":"hssindicatura@gmail.com","founder":{"@id":"https://www.hssindicatura.com.br/#danilo"},"areaServed":[{"@type":"City","name":"São Paulo"},{"@type":"Country","name":"Brasil"}],"address":{"@type":"PostalAddress","addressLocality":"São Paulo","addressRegion":"SP","addressCountry":"BR"},"contactPoint":{"@type":"ContactPoint","contactType":"customer service","telephone":"+55 11 93382-5442","email":"hssindicatura@gmail.com","areaServed":"BR","availableLanguage":"Portuguese"},"sameAs":["https://www.instagram.com/hssindicatura/"],"knowsAbout":["síndico profissional","sindicatura profissional","gestão condominial","implantação de condomínios","administração de condomínio","prestação de contas de condomínio","gestão de contratos e fornecedores","assembleia de condomínio","manutenção predial preventiva","Código Civil, art. 1.348"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Implantação de novos empreendimentos","description":"Apoio à implantação administrativa e operacional de condomínios recém-entregues, para o empreendimento começar com regras, contratos e rotina definidos desde o primeiro dia.","url":"https://www.hssindicatura.com.br/solucoes#implantacao","areaServed":"Brasil"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestão condominial","description":"Gestão integrada de operação, finanças, fornecedores, manutenção, processos e relacionamento, com indicadores acompanhados todo mês.","url":"https://www.hssindicatura.com.br/solucoes#gestao","areaServed":"Brasil"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Síndico profissional","description":"Condução executiva do condomínio por um síndico profissional eleito em assembleia, com método, governança, transparência e acompanhamento. O síndico é o representante legal do condomínio (Código Civil, art. 1.348).","url":"https://www.hssindicatura.com.br/solucoes#sindico-profissional","areaServed":"Brasil"}}]},{"@type":"WebSite","@id":"https://www.hssindicatura.com.br/#site","name":"HS Sindicatura","url":"https://www.hssindicatura.com.br/","inLanguage":"pt-BR","publisher":{"@id":"https://www.hssindicatura.com.br/#negocio"}},{"@type":"WebPage","@id":"https://www.hssindicatura.com.br/cases#pagina","url":"https://www.hssindicatura.com.br/cases","name":"Case Sunset View: resultados da gestão condominial | HS Sindicatura","description":"Como a HS Sindicatura levou o condomínio Sunset View, em São Paulo, de saldo negativo a R$ 78 mil em caixa em 12 meses, com o fundo de reserva 450% maior e os custos fixos 22% menores.","inLanguage":"pt-BR","isPartOf":{"@id":"https://www.hssindicatura.com.br/#site"},"about":{"@id":"https://www.hssindicatura.com.br/#negocio"},"breadcrumb":{"@id":"https://www.hssindicatura.com.br/cases#migalhas"}},{"@type":"BreadcrumbList","@id":"https://www.hssindicatura.com.br/cases#migalhas","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://www.hssindicatura.com.br/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://www.hssindicatura.com.br/cases"}]}]}</script>
+  <script>;(() => {
+const temIO = 'IntersectionObserver' in window
+const alvos = document.querySelectorAll('[data-revela], [data-revela-lista]')
+if (!temIO) {
+alvos.forEach((el) => el.classList.add('visivel'))
+} else {
+const io = new IntersectionObserver(
+(entradas) => {
+for (const e of entradas) {
+if (!e.isIntersecting) continue
+e.target.classList.add('visivel')
+io.unobserve(e.target)
+}
+},
+{ rootMargin: '0px 0px -8% 0px', threshold: 0.12 },
+)
+alvos.forEach((el) => io.observe(el))
+}
+const adiadas = document.querySelectorAll('picture[data-adiada]')
+let lcpPintou = false
+let carregou = document.readyState === 'complete'
+let feito = false
+const tentarAdiadas = () => {
+if (feito || !lcpPintou || !carregou) return
+feito = true
+carregarAdiadas()
+}
+if (!(window.PerformanceObserver && PerformanceObserver.supportedEntryTypes?.includes('largest-contentful-paint'))) lcpPintou = true
+else
+new PerformanceObserver((l) => {
+if (!l.getEntries().length) return
+lcpPintou = true
+tentarAdiadas()
+}).observe({ type: 'largest-contentful-paint', buffered: true })
+setTimeout(() => {
+lcpPintou = true
+tentarAdiadas()
+}, 1500)
+if (!carregou)
+addEventListener(
+'load',
+() => {
+carregou = true
+tentarAdiadas()
+},
+{ once: true },
+)
+const carregarAdiadas = () =>
+adiadas.forEach((pic) => {
+const img = pic.querySelector('img')
+if (!img) return
+img.addEventListener('load', () => pic.classList.add('adiada--pronta'), { once: true })
+pic.querySelectorAll('[data-srcset]').forEach((el) => {
+el.srcset = el.dataset.srcset
+el.removeAttribute('data-srcset')
+})
+if (img.dataset.src) {
+img.src = img.dataset.src
+img.removeAttribute('data-src')
+}
+if (img.complete && img.naturalWidth) pic.classList.add('adiada--pronta')
+})
+tentarAdiadas()
+const topo = document.getElementById('topo')
+const hero = document.getElementById('inicio')
+const zap = document.querySelector('.zap-flutuante')
+const botoesHero = hero?.querySelector('.hero__botoes, .ptopo__botoes, [data-zap-depois]')
+const fim = document.querySelector('[data-zap-some]') || document.getElementById('rodape')
+if (temIO && hero) {
+const sentinela = document.createElement('div')
+sentinela.setAttribute('aria-hidden', 'true')
+sentinela.style.cssText = 'position:absolute;top:40px;left:0;width:1px;height:1px;pointer-events:none'
+hero.prepend(sentinela)
+new IntersectionObserver(([e]) => topo?.classList.toggle('topo--rolado', !e.isIntersecting)).observe(sentinela)
+let botoesFora = false
+let noFim = false
+const zapVisivel = () => zap?.classList.toggle('visivel', botoesFora && !noFim)
+new IntersectionObserver(([e]) => {
+botoesFora = !e.isIntersecting && e.boundingClientRect.top < 0
+zapVisivel()
+}).observe(botoesHero || hero)
+if (fim)
+new IntersectionObserver(
+([e]) => {
+noFim = e.isIntersecting || e.boundingClientRect.top < 0
+zapVisivel()
+},
+{ rootMargin: '0px 0px -35% 0px' },
+).observe(fim)
+} else {
+zap?.classList.add('visivel')
+}
+const desenharTudo = () => document.documentElement.classList.add('cv-pronto')
+const folga = () => parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0
+const alvoDe = (hash) => {
+try {
+return hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null
+} catch {
+return null
+}
+}
+const chegada = alvoDe(location.hash)
+if (chegada) {
+desenharTudo()
+const conferir = () =>
+requestAnimationFrame(() => {
+const dif = chegada.getBoundingClientRect().top - folga()
+if (Math.abs(dif) > 3) scrollBy({ top: dif, behavior: 'instant' })
+})
+if (document.readyState === 'complete') conferir()
+else addEventListener('load', conferir, { once: true })
+}
+let pendente = null
+const acertar = () => {
+if (!pendente || Date.now() > pendente.ate) return (pendente = null)
+const alvo = pendente.alvo
+pendente = null
+const dif = alvo.getBoundingClientRect().top - folga()
+if (Math.abs(dif) > 3) scrollBy({ top: dif, behavior: 'instant' })
+}
+if ('onscrollend' in window) addEventListener('scrollend', acertar)
+document.addEventListener('click', (e) => {
+const a = e.target.closest('a[href*="#"]')
+if (!a || e.defaultPrevented) return
+const destino = new URL(a.href, location.href)
+if (destino.origin !== location.origin || destino.pathname !== location.pathname) return
+const alvo = alvoDe(destino.hash)
+if (!alvo) return
+const id = alvo.id
+e.preventDefault()
+desenharTudo()
+requestAnimationFrame(() => {
+pendente = { alvo, ate: Date.now() + 4000 }
+alvo.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' })
+if (!('onscrollend' in window)) setTimeout(acertar, 1400)
+history.pushState(null, '', '#' + id)
+if (!alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1')
+alvo.focus({ preventScroll: true })
+})
+})
+document.addEventListener('click', (e) => {
+const a = e.target.closest('a[href^="https://wa.me/"]')
+if (!a) return
+const origem = a.dataset.zap || a.closest('section, header, footer')?.id || 'pagina'
+const servico = a.dataset.servico
+;(window.dataLayer = window.dataLayer || []).push({ event: 'whatsapp_clique', origem, servico, pagina: location.pathname })
+if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { origem, servico })
+})
+})()
+;
+;(() => {
+const topo = document.getElementById('topo')
+const botao = topo?.querySelector('.topo__menu')
+const menu = document.getElementById('menu')
+if (!topo || !botao || !menu) return
+const fundo = [document.querySelector('main'), document.querySelector('.rodape'), document.querySelector('.zap-flutuante'), topo.querySelector('.marca')].filter(Boolean)
+const aberto = () => topo.classList.contains('topo--aberto')
+const abrir = (sim) => {
+topo.classList.toggle('topo--aberto', sim)
+botao.setAttribute('aria-expanded', String(sim))
+botao.setAttribute('aria-label', sim ? 'Fechar menu' : 'Abrir menu')
+document.documentElement.style.overflow = sim ? 'hidden' : ''
+fundo.forEach((el) => (el.inert = sim))
+if (sim) menu.querySelector('a')?.focus({ preventScroll: true })
+}
+botao.addEventListener('click', () => abrir(!aberto()))
+menu.addEventListener('click', (e) => {
+if (e.target.closest('a')) abrir(false)
+})
+document.addEventListener('keydown', (e) => {
+if (!aberto()) return
+if (e.key === 'Escape') {
+abrir(false)
+botao.focus()
+return
+}
+if (e.key !== 'Tab') return
+const lista = [botao, ...menu.querySelectorAll('a[href]')]
+const i = lista.indexOf(document.activeElement)
+if (e.shiftKey && i <= 0) {
+e.preventDefault()
+lista[lista.length - 1].focus()
+} else if (!e.shiftKey && i === lista.length - 1) {
+e.preventDefault()
+lista[0].focus()
+}
+})
+matchMedia('(min-width: 64em)').addEventListener('change', (m) => m.matches && abrir(false))
+})()</script>
+</body>
+</html>

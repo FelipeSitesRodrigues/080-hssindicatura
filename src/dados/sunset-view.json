@@ -1,0 +1,26 @@
+{
+  "_sobre": "Case Sunset View, a prova principal do briefing final (seções 6 e 7). Fonte: a apresentação comercial da HS (Recursos Site/DOCS DA EMPRESA, slides 10 e 11). O saldo mês a mês e as despesas por categoria foram lidos dos dois gráficos da apresentação (imagens; os valores batem com as grades deles). O briefing pede validação nos balancetes antes de publicar: está nas pendências do site.config.json. Unidades: 112 no briefing final e na proposta do Piazza, 122 na apresentação. Gera o gráfico do saldo (Home e Cases) e o das despesas (Cases).",
+  "nome": "Sunset View",
+  "unidades": 112,
+  "meses": 12,
+  "indicadores": [
+    { "numero": "+450%", "rotulo": "no fundo de reserva", "detalhe": "em 12 meses de gestão" },
+    { "numero": "−22%", "rotulo": "nos custos fixos", "detalhe": "redução média, com contratos renegociados e manutenção preventiva" },
+    { "numero": "R$ 78 mil", "rotulo": "de saldo em caixa", "detalhe": "no 12º mês; no início, −R$ 5 mil" }
+  ],
+  "saldo": {
+    "titulo": "Evolução do saldo em caixa",
+    "unidade": "R$ mil",
+    "eixo": [-20, 0, 20, 40, 60, 80],
+    "valores": [-5, -2, 1.5, 5, 12, 18, 25, 35, 42, 50, 65, 78]
+  },
+  "despesas": {
+    "titulo": "Despesas por categoria",
+    "itens": [
+      { "nome": "Contratos gerais", "antes": 15000, "depois": 11000 },
+      { "nome": "Energia", "antes": 12000, "depois": 9500 },
+      { "nome": "Segurança", "antes": 25000, "depois": 21000 },
+      { "nome": "Manutenção", "antes": 18000, "depois": 12000 }
+    ]
+  }
+}

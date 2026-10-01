@@ -1,5 +1,5 @@
-/* ---------------------------------------------------------------- missão, visão e valores (Sobre, clara)
-   Na Home eles ficam na coluna ao lado do fundador; aqui ganham seção própria: três cartões
+/* ---------------------------------------------------------------- missão, visão e valores (A HS, clara)
+   Só na página A HS (o Danilo pediu missão e visão no site, no áudio de 2026-09-30): três cartões
    brancos com o filete dourado em cima, o hexágono em contorno (o selo do fundador) e, no
    canto, um hexágono grande em fio fino, cortado pela borda. Os valores viram etiquetas.  */
 .mvvs__grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }

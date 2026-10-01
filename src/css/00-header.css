@@ -1,9 +1,10 @@
 /* ---------------------------------------------------------------- header
    Mockup: faixa petróleo translúcida sobre o hero com um filete dourado fino embaixo.
    Símbolo HS + "SINDICATURA" à esquerda (o HS digitado saiu a pedido do Felipe em
-   2026-09-28: o símbolo já diz HS), menu no meio com "Home" aceso por um filete dourado,
-   e o botão dourado "Solicitar proposta" à direita. O nome vai digitado porque o logo
-   oficial escreve "SÍNDICATURA", com acento.
+   2026-09-28: o símbolo já diz HS), menu no meio com a página atual acesa por um filete
+   dourado (as 5 páginas do briefing final) e o botão dourado "Agendar uma conversa", o CTA
+   permanente do briefing, à direita. O nome vai digitado porque o logo oficial escreve
+   "SÍNDICATURA", com acento.
    Fixo: ao rolar, o fundo fica quase opaco, ganha sombra e vidro fosco (só no computador)
    e a barra encolhe um pouco (o símbolo diminui por transform, sem refazer layout).  */
 .topo {
@@ -32,7 +33,6 @@
 .marca { display: flex; align-items: center; gap: 11px; flex: none; }
 .marca__simbolo { width: 42px; transform-origin: 0 50%; transition: transform .45s var(--ease-out); }
 .marca__nome { color: var(--branco); font: 700 18px/1 var(--fonte-titulo); letter-spacing: .01em; text-transform: uppercase; white-space: nowrap; }
-.marca__hs { color: var(--dourado); }
 .topo--rolado .marca__simbolo { transform: scale(.88); }
 
 /* menu do computador */
@@ -159,7 +159,6 @@
     .topo--aberto .menu__lista li:nth-child(3) { animation-delay: 80ms; }
     .topo--aberto .menu__lista li:nth-child(4) { animation-delay: 120ms; }
     .topo--aberto .menu__lista li:nth-child(5) { animation-delay: 160ms; }
-    .topo--aberto .menu__lista li:nth-child(6) { animation-delay: 200ms; }
     .topo--aberto .menu__extra { animation: aparece .6s ease .2s backwards; }
   }
 }

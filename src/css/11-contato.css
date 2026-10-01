@@ -1,25 +1,10 @@
-/* ---------------------------------------------------------------- CTA final e contato (escura, com foto)
-   Mockup: as torres de vidro do hero bem escurecidas no fundo; à esquerda, o rótulo
-   DIAGNÓSTICO, o título, a linha de apoio e os 4 contatos com ícone dourado; à direita, o
-   card branco do formulário "Agendar diagnóstico" (6 campos em duas colunas, a autorização
-   e o botão dourado na largura toda). O envio abre o WhatsApp com os dados já escritos
-   (11-contato.js): estados de foco, erro, carregando e sucesso.
-   No celular: o texto, os contatos e o formulário em coluna; campos em uma coluna até
-   480 px, pra ficar confortável no toque (e com 16 px, pro iPhone não dar zoom).       */
-.contato { overflow: clip; }
-.contato__fundo { position: absolute; inset: 0; z-index: -1; }
-.contato__fundo picture, .contato__fundo img { display: block; width: 100%; height: 100%; max-width: none; }
-.contato__fundo img { object-fit: cover; object-position: 50% 40%; }
-.contato__fundo::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgb(3 25 38 / .94) 0%, rgb(3 25 38 / .8) 45%, rgb(3 25 38 / .7) 100%),
-    linear-gradient(180deg, var(--petroleo) 0%, rgb(3 25 38 / 0) 18%, rgb(3 25 38 / 0) 80%, var(--petroleo) 100%);
-}
-.contato__grade { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center; gap: clamp(36px, 5vw, 80px); }
-.contato__apoio { margin-top: 16px; }
+/* ---------------------------------------------------------------- canais e formulário (página Contato)
+   Era a seção de contato do fim da Home, que saiu com o briefing final (a Home termina no
+   convite, bloco 9). Ficaram as peças que a página Contato usa (cto-topo.css): os canais
+   com ícone dourado e o card branco do formulário (6 campos em duas colunas, a mensagem, a
+   autorização e o botão dourado na largura toda). O envio abre o WhatsApp com os dados já
+   escritos (11-contato.js): estados de foco, erro, carregando e sucesso. Campos em uma
+   coluna até 480 px, pra ficar confortável no toque (e com 16 px, pro iPhone não dar zoom). */
 .contato__canais { display: grid; gap: 14px; margin-top: 28px; }
 .contato__canais li, .contato__canais a { display: flex; align-items: center; gap: 14px; color: var(--branco); font: 500 16px/1.3 var(--fonte-texto); }
 .contato__canais a { transition: color .25s ease; }
@@ -99,9 +84,6 @@
   .form__sucesso:not([hidden]) { animation: sobe .6s var(--ease-suave) backwards; }
 }
 
-@media (max-width: 63.99em) {
-  .contato__grade { grid-template-columns: minmax(0, 1fr); gap: 36px; }
-}
 @media (max-width: 29.99em) {
   .form__campos { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .campo input[type='text'], .campo input[type='tel'], .campo select { font-size: 16px; }
@@ -111,14 +93,4 @@
   .contato__canais li, .contato__canais a { font-size: 15.5px; }
 }
 
-/* lugar do formulário: reserva a altura dele até o molde entrar (11-contato.js), pra página
-   não crescer no meio da rolagem */
-.contato__form { min-width: 0; }
-.contato__form:not(.contato__form--montado) { min-height: 512px; }
-@media (max-width: 63.99em) {
-  .contato__form:not(.contato__form--montado) { min-height: 479px; }
-}
-@media (max-width: 29.99em) {
-  .contato__form:not(.contato__form--montado) { min-height: 766px; }
-}
 .contato__sem-js { padding: 28px; border-radius: 12px; background: rgb(255 255 255 / .06); text-align: center; }

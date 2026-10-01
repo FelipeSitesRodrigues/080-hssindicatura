@@ -1,0 +1,35 @@
+    <!-- @usa 20-topo, cas-topo -->
+    <!-- Página Cases (briefing final, seções 7 e 8): por enquanto só o Sunset View. Sem a foto
+         real do condomínio, o lado direito do topo é a ficha do case (com a foto, ela entra
+         em cima: Recursos Site/CASES/sunset-view.jpg e npm run imagens). -->
+    <section class="ptopo ptopo--case" id="inicio" aria-labelledby="ptopo-titulo">
+      <div class="container ptopo__grade">
+        <nav class="migalhas ptopo__migalhas" aria-label="Você está em">
+          <ol role="list"><li><a href="/">Início</a></li><li><span aria-current="page">Cases</span></li></ol>
+        </nav>
+        <p class="rotulo ptopo__rotulo">Case Sunset View</p>
+        <h1 class="ptopo__titulo" id="ptopo-titulo">Do saldo negativo <span class="destaque">a R$ 78 mil em caixa.</span></h1>
+        <div class="ptopo__figura ficha-case">
+          <!-- @se-img sunset-view -->
+          <div class="ficha-case__foto">
+            <img data-img="sunset-view" data-img-max="760" sizes="(min-width: 80em) 480px, (min-width: 64em) 37vw, (min-width: 40em) 620px, calc(100vw - 54px)" alt="Fachada do condomínio Sunset View, em São Paulo" fetchpriority="high" decoding="async">
+          </div>
+          <!-- /@se-img -->
+          <div class="ficha-case__folha">
+            <p class="ficha-case__titulo"><img data-img="logo-hs" data-img-max="96" sizes="28px" alt="" class="ficha-case__logo" decoding="async">Ficha do case</p>
+            <dl class="ficha-case__dados">
+              <div><dt>Condomínio</dt><dd>{{sv.nome}}</dd></div>
+              <div><dt>Tipo</dt><dd>Residencial</dd></div>
+              <div><dt>Unidades</dt><dd>{{sv.unidades}}</dd></div>
+              <div><dt>Cidade</dt><dd>São Paulo, SP</dd></div>
+              <div><dt>Período</dt><dd>{{sv.meses}} meses de gestão HS</dd></div>
+            </dl>
+          </div>
+        </div>
+        <p class="ptopo__sub">O que a HS encontrou no Sunset View, o que fez e o que mudou nos {{sv.meses}} primeiros meses de gestão, com os números do condomínio.</p>
+        <div class="ptopo__botoes">
+          <a class="btn btn--dourado" href="/contato">Agendar uma conversa<i data-i="arrow-right" data-w="regular" class="i--anda"></i></a>
+          <a class="btn btn--contorno" href="#indicadores">Ver os números</a>
+        </div>
+      </div>
+    </section>

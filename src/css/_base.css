@@ -5,7 +5,10 @@
    escuro), branco gelo #F4F6F8 (fundo das seções claras) e branco (cards no claro).
    Derivados, só pra legibilidade:
    - dourado tinta #A7762B: o destaque dos títulos e os ícones nas seções claras. O dourado
-     puro no gelo dá 2,5:1 e reprova; este dá 3,7:1 e continua lendo como dourado.
+     puro no gelo dá 2,5:1 e reprova; este dá 3,7:1 e continua lendo como dourado (só serve
+     pra título grande e ícone).
+   - dourado texto #87601F: texto dourado pequeno no claro (rótulo em caixa alta, número),
+     5,2:1 no gelo e 5,6:1 no branco.
    - dourado claro #E2B866: o brilho de cima do botão (degradê metálico do mockup).
    Nada de azul claro, ciano ou neon. Verde só no WhatsApp flutuante.
    Cada seção escolhe o fundo com uma classe (.secao--escura ou --clara) e o fundo acerta
@@ -18,6 +21,7 @@
   --dourado-claro: #E2B866;
   --dourado-escuro: #A87A31;
   --dourado-tinta: #A7762B;
+  --dourado-texto: #87601F;
   --grafite: #333333;
   --metal: #A9A9A9;
   --gelo: #F4F6F8;
@@ -344,8 +348,12 @@ figure, blockquote { margin: 0; }
 }
 .hex { isolation: isolate; }
 
-/* check num círculo de linha dourado (listas do hero e da seção de provas) */
-.check { width: 22px; height: 22px; color: var(--cor-icone); }
+/* etiquetas da trajetória do Danilo (bloco Liderança da Home e página A HS), no escuro */
+.trajetoria { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.trajetoria li { padding: 9px 14px; border: 1px solid rgb(201 148 60 / .45); border-radius: 999px; background: rgb(255 255 255 / .03); color: rgb(255 255 255 / .9); font: 500 14px/1.2 var(--fonte-texto); }
+@media (max-width: 39.99em) {
+  .trajetoria li { font-size: 13.5px; }
+}
 
 /* ---------------------------------------------------------------- botão flutuante do WhatsApp
    O verde só existe aqui (regra do briefing). Aparece depois dos botões do hero e some em

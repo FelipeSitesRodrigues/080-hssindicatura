@@ -78,13 +78,13 @@
   // ---------------------------------------------------------------- topo e botão flutuante
   // O topo fica quase opaco quando a página sai do começo (sentinela a 40 px do topo). O
   // WhatsApp flutuante só aparece depois que os botões do topo saem da tela, e some de novo
-  // no fim: em cima do contato da Home e do convite final das outras páginas, que já levam
-  // pro WhatsApp, e no rodapé, que tem o número.
+  // no fim: em cima do convite final de cada página, que já leva pro WhatsApp, e no rodapé,
+  // que tem o número.
   const topo = document.getElementById('topo')
   const hero = document.getElementById('inicio')
   const zap = document.querySelector('.zap-flutuante')
   const botoesHero = hero?.querySelector('.hero__botoes, .ptopo__botoes, [data-zap-depois]')
-  const fim = document.querySelector('[data-zap-some]') || document.getElementById('contato') || document.getElementById('rodape')
+  const fim = document.querySelector('[data-zap-some]') || document.getElementById('rodape')
   if (temIO && hero) {
     const sentinela = document.createElement('div')
     sentinela.setAttribute('aria-hidden', 'true')
@@ -164,9 +164,6 @@
       // o foco acompanha (teclado e leitor de tela continuam de onde a página parou)
       if (!alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1')
       alvo.focus({ preventScroll: true })
-      // no computador, quem pediu o diagnóstico cai com o cursor no primeiro campo do
-      // formulário (no celular não: o teclado subiria sozinho)
-      if (id === 'contato' && matchMedia('(hover: hover) and (pointer: fine)').matches) setTimeout(() => document.getElementById('f-nome')?.focus({ preventScroll: true }), 900)
     })
   })
 

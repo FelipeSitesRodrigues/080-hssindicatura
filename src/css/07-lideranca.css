@@ -1,0 +1,28 @@
+/* ---------------------------------------------------------------- liderança (escura)
+   Bloco 7 do briefing final: foto grande do Danilo, nome, função e um resumo curto da
+   trajetória (Administração, auditoria e compliance, finanças e excelência operacional),
+   com o CTA pra página A HS, onde está o texto completo. O nome das empresas da trajetória
+   não entra (pendência com o Danilo). Foto à esquerda com a moldura de fio dourado
+   deslocada, o gesto do fundador nas páginas internas. No celular, foto em cima.         */
+.lideranca__grade { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center; gap: clamp(40px, 6vw, 96px); }
+.lideranca__foto { position: relative; width: min(100% - 18px, 440px); justify-self: center; }
+.lideranca__foto picture, .lideranca__foto img { position: relative; z-index: 1; display: block; width: 100%; max-width: none; border-radius: 8px; }
+.lideranca__foto img { aspect-ratio: 1066 / 1600; object-fit: cover; box-shadow: 0 40px 80px -40px rgb(0 0 0 / .95); }
+.lideranca__moldura { position: absolute; inset: 18px -18px -18px 18px; border: 1.5px solid rgb(201 148 60 / .75); border-radius: 8px; pointer-events: none; }
+
+.lideranca__nome { font-size: clamp(30px, 1rem + 1.8vw, 44px); }
+.lideranca__cargo { margin-top: 10px; color: var(--dourado); font: 600 13px/1.4 var(--fonte-titulo); letter-spacing: .12em; text-transform: uppercase; }
+.lideranca__resumo { max-width: 34em; margin-top: 24px; color: var(--claro-2); font-size: 17px; line-height: 1.7; }
+
+.lideranca__formacao { max-width: 36em; margin-top: 24px; color: var(--metal); font-size: 14.5px; line-height: 1.6; }
+.lideranca__formacao span { display: block; margin-bottom: 4px; color: var(--branco); font: 600 12.5px/1.3 var(--fonte-titulo); letter-spacing: .12em; text-transform: uppercase; }
+.lideranca__acao { margin-top: 32px; }
+
+@media (max-width: 63.99em) {
+  .lideranca__grade { grid-template-columns: minmax(0, 1fr); gap: 48px; }
+  .lideranca__foto { justify-self: start; width: min(100% - 18px, 420px); }
+}
+@media (max-width: 39.99em) {
+  .lideranca__resumo { font-size: 16px; }
+  .lideranca__acao .btn { width: 100%; }
+}

@@ -3,10 +3,13 @@
    petróleo denso à esquerda (onde o texto pousa) e leve à direita. À direita, só o
    hexágono HS do logo (o marinho de dentro translúcido, a cidade aparece), centrado na
    coluna ao lado do texto. O Danilo saiu do hero a pedido do Felipe (2026-09-26); ele
-   aparece na seção do fundador. Na base, a faixa de vidro dos 3 pilares.
-   Celular (mockup mobile + regra da casa): rótulo, título, o hexágono, subtítulo, os 3
-   itens, os dois botões e o card dos pilares. A foto em pé das torres fica atrás do título
-   e do hexágono e some no petróleo.
+   aparece no bloco Liderança. Texto do briefing final (bloco 1): as três frentes no rótulo,
+   o título, a frase de apoio, um botão só ("Agendar uma conversa") e a linha geográfica.
+   Os 3 itens com check, o "Solicitar proposta" e a faixa dos pilares saíram em 2026-10-01
+   (o Danilo achou o site com texto demais; os pilares viraram o bloco Filosofia).
+   Celular (mockup mobile + regra da casa): rótulo, título, o hexágono, a frase, o botão e
+   a linha geográfica. A foto em pé das torres fica atrás do título e do hexágono e some no
+   petróleo.
    Os filhos ficam soltos no grid (.hero__grade), e cada tela troca só as áreas.
    Abertura: só transform e opacity (memória do 077). A foto do fundo não entra com
    opacidade (é o LCP): quem some é a cortina petróleo por cima dela.                   */
@@ -38,16 +41,15 @@
   flex: 1;
   display: grid;
   grid-template-columns: minmax(0, 620px) minmax(0, 1fr);
-  grid-template-rows: minmax(24px, 1fr) auto auto auto auto auto minmax(28px, 1fr) auto;
+  grid-template-rows: minmax(24px, 1fr) auto auto auto auto auto minmax(40px, 1fr);
   grid-template-areas:
-    '. .'
+    '. figura'
     'rotulo figura'
     'titulo figura'
     'sub figura'
-    'lista figura'
     'botoes figura'
-    '. .'
-    'pilares pilares';
+    'geo figura'
+    '. figura';
   width: min(var(--container), 100% - var(--margem) * 2);
   margin-inline: auto;
   padding-top: var(--altura-topo);
@@ -56,24 +58,29 @@
 .hero__rotulo { grid-area: rotulo; }
 .hero__titulo { grid-area: titulo; }
 .hero__sub { grid-area: sub; }
-.hero__lista { grid-area: lista; }
 .hero__botoes { grid-area: botoes; }
-.pilares { grid-area: pilares; }
+.hero__geo { grid-area: geo; }
+/* as três frentes no rótulo, separadas por um ponto dourado (quebra de linha no celular) */
+.hero__rotulo { flex-wrap: wrap; row-gap: 8px; }
+.hero__ponto { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--dourado); opacity: .8; vertical-align: middle; }
 
 .hero__titulo {
   margin-top: 16px;
   color: var(--branco);
-  font: 700 clamp(34px, 1.1rem + 2vw, 50px)/1.08 var(--fonte-titulo);
+  font: 700 clamp(36px, 1.1rem + 2.3vw, 56px)/1.06 var(--fonte-titulo);
   letter-spacing: -.018em;
 }
 .hero__linha { display: block; }
+.hero__linha.destaque { white-space: nowrap; }
 .hero__titulo .destaque { color: var(--dourado); }
-.hero__sub { max-width: 34em; margin-top: 22px; color: rgb(255 255 255 / .8); font-size: 16.5px; line-height: 1.62; }
-.hero__lista { display: grid; gap: 12px; margin-top: 24px; }
-.hero__lista li { display: flex; align-items: center; gap: 12px; color: rgb(255 255 255 / .92); font-size: 15.5px; font-weight: 500; line-height: 1.4; }
-.hero__lista .check { width: 24px; height: 24px; color: var(--dourado); }
-.hero__botoes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
-.hero__cta, .hero__proposta { min-height: 54px; padding-inline: 28px; }
+/* a frase de apoio é o posicionamento: curta, maior e em Montserrat, com o fio dourado */
+.hero__sub { display: flex; align-items: center; gap: 16px; margin-top: 26px; color: rgb(255 255 255 / .88); font: 500 clamp(18px, .9rem + .5vw, 21px)/1.4 var(--fonte-titulo); }
+.hero__sub::before { content: ''; flex: none; width: 36px; height: 1.5px; background: var(--dourado); }
+.hero__botoes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+.hero__cta { min-height: 56px; padding-inline: 30px; }
+.hero__geo { display: flex; align-items: flex-start; gap: 10px; margin-top: 26px; color: rgb(255 255 255 / .7); font-size: 14.5px; line-height: 1.5; }
+.hero__geo .i { width: 20px; height: 20px; margin-top: 1px; color: var(--dourado); }
+.hero__geo .hero__ponto { margin: 0 8px; }
 
 /* ---------------------------------------------------------------- a figura: o hexágono do logo
    A caixa tem a proporção do hexágono (862 x 966) e guarda o lugar antes de a imagem
@@ -108,28 +115,6 @@
   background: radial-gradient(closest-side, rgb(226 184 102 / .26), rgb(201 148 60 / .1) 55%, transparent);
 }
 
-/* ---------------------------------------------------------------- faixa dos 3 pilares */
-.pilares {
-  display: grid;
-  grid-template-columns: minmax(0, 250px) minmax(0, 1fr);
-  align-items: center;
-  column-gap: 32px;
-  margin-bottom: clamp(20px, 2.4vw, 32px);
-  padding: 22px 34px;
-  border: 1px solid rgb(255 255 255 / .12);
-  border-top-color: rgb(201 148 60 / .45);
-  border-radius: var(--raio-card);
-  background: linear-gradient(180deg, rgb(10 36 53 / .9), rgb(3 25 38 / .92));
-  box-shadow: inset 0 1px 0 rgb(255 255 255 / .05), 0 24px 50px -30px rgb(0 0 0 / .9);
-}
-.pilares__titulo { color: var(--branco); font: 600 17px/1.3 var(--fonte-titulo); }
-.pilares__lista { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.pilar { display: flex; align-items: center; gap: 16px; }
-.pilar__i { width: 40px; height: 40px; color: var(--dourado); }
-.pilar__txt { display: grid; gap: 3px; }
-.pilar__nome { color: var(--branco); font: 700 14px/1.2 var(--fonte-titulo); letter-spacing: .08em; text-transform: uppercase; }
-.pilar__desc { color: var(--metal); font-size: 13.5px; line-height: 1.4; }
-
 /* ---------------------------------------------------------------- abertura (uma vez, no carregamento) */
 @keyframes hero-foto { from { transform: scale(1.07); } }
 @keyframes hero-cortina { from { opacity: 1; } to { opacity: 0; } }
@@ -146,24 +131,16 @@
   .hero__linha:nth-child(2) { animation-delay: .42s; }
   .hero__linha:nth-child(3) { animation-delay: .52s; }
   .hero__sub { animation: hero-sobe .9s var(--ease-suave) .62s backwards; }
-  .hero__lista li { animation: hero-sobe .8s var(--ease-suave) backwards; }
-  .hero__lista li:nth-child(1) { animation-delay: .7s; }
-  .hero__lista li:nth-child(2) { animation-delay: .77s; }
-  .hero__lista li:nth-child(3) { animation-delay: .84s; }
-  .hero__botoes { animation: hero-sobe .9s var(--ease-suave) .92s backwards; }
+  .hero__botoes { animation: hero-sobe .9s var(--ease-suave) .76s backwards; }
+  .hero__geo { animation: hero-sobe .9s var(--ease-suave) .9s backwards; }
   .hero__brilho { animation: aparece 1.6s ease .5s backwards; }
-  .pilares { animation: hero-sobe 1s var(--ease-suave) 1s backwards; }
-  .pilar { animation: hero-sobe .8s var(--ease-suave) backwards; }
-  .pilar:nth-child(1) { animation-delay: 1.12s; }
-  .pilar:nth-child(2) { animation-delay: 1.2s; }
-  .pilar:nth-child(3) { animation-delay: 1.28s; }
 }
 /* o fio do hexágono se desenha só no computador (stroke-dashoffset pinta a cada quadro) */
 @media (min-width: 64em) and (prefers-reduced-motion: no-preference) {
   .hero__traco path { stroke-dasharray: 1; animation: hero-traco 1.8s var(--ease-in-out) .35s both; }
 }
 
-/* telas largas: a coluna do título cresce junto com a fonte (senão "presença." cai pra 4ª linha) */
+/* telas largas: a coluna do título cresce junto com a fonte (senão "controle" cai pra outra linha) */
 @media (min-width: 94em) {
   .hero__grade { grid-template-columns: minmax(0, 690px) minmax(0, 1fr); }
 }
@@ -172,10 +149,6 @@
 @media (min-width: 64em) and (max-width: 79.99em) {
   .hero__grade { grid-template-columns: minmax(0, 520px) minmax(0, 1fr); }
   .hero__figura { width: min(82%, 380px, 56svh); }
-  .pilares { grid-template-columns: minmax(0, 190px) minmax(0, 1fr); padding: 20px 26px; column-gap: 24px; }
-  .pilar { gap: 12px; }
-  .pilar__i { width: 34px; height: 34px; }
-  .pilar__desc { font-size: 13px; }
 }
 
 /* ---------------------------------------------------------------- tablet e celular: empilhado */
@@ -191,29 +164,22 @@
   .hero__grade {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: none;
-    grid-template-areas: 'rotulo' 'titulo' 'figura' 'sub' 'lista' 'botoes' 'pilares';
+    grid-template-areas: 'rotulo' 'titulo' 'figura' 'sub' 'botoes' 'geo';
     padding-top: calc(var(--altura-topo) + 30px);
     padding-bottom: 44px;
   }
-  .hero__titulo { font-size: min(32px, 8.4vw); line-height: 1.14; margin-top: 12px; }
+  .hero__titulo { font-size: min(36px, 9.4vw); line-height: 1.12; margin-top: 12px; }
   .hero__linha { display: inline; }
-  .hero__rotulo { font-size: 12px; }
+  .hero__rotulo { font-size: 11.5px; letter-spacing: .12em; column-gap: 8px; }
 
   .hero__figura { width: min(64vw, 300px); margin-top: 34px; }
   .hero__traco { display: none; }
 
-  .hero__sub { margin-top: 18px; font-size: 16px; }
-  .hero__lista { gap: 14px; margin-top: 22px; }
-  .hero__lista li { align-items: flex-start; font-size: 15.5px; }
-  .hero__lista .check { margin-top: -1px; }
+  .hero__sub { margin-top: 26px; font-size: 18px; }
+  .hero__sub::before { width: 28px; }
   .hero__botoes { display: grid; gap: 12px; margin-top: 28px; }
-  .hero__cta, .hero__proposta { width: 100%; }
-
-  .pilares { grid-template-columns: minmax(0, 1fr); row-gap: 20px; margin: 34px 0 0; padding: 26px 22px; }
-  .pilares__lista { grid-template-columns: minmax(0, 1fr); gap: 20px; }
-  .pilar { align-items: flex-start; gap: 16px; }
-  .pilar__i { width: 38px; height: 38px; }
-  .pilar__desc { font-size: 14px; }
+  .hero__cta { width: 100%; }
+  .hero__geo { margin-top: 22px; font-size: 14px; }
 }
 /* celular: a abertura é mais curta (tudo visível antes de 1,3 s, bom pro Speed Index) e o
    título entra inteiro, porque as linhas viram texto corrido (transform não pega em inline) */
@@ -225,17 +191,12 @@
   .hero__titulo { animation: hero-sobe .8s var(--ease-suave) .16s backwards; }
   .hero__brilho { animation-delay: .3s; }
   .hero__sub { animation-delay: .5s; }
-  .hero__lista li:nth-child(1) { animation-delay: .56s; }
-  .hero__lista li:nth-child(2) { animation-delay: .61s; }
-  .hero__lista li:nth-child(3) { animation-delay: .66s; }
-  .hero__botoes { animation-delay: .72s; }
-  .pilares, .pilar { animation-delay: .8s; }
+  .hero__botoes { animation-delay: .6s; }
+  .hero__geo { animation-delay: .7s; }
 }
 /* tablet: a figura não cresce além de um tamanho confortável */
 @media (min-width: 40em) and (max-width: 63.99em) {
   .hero__titulo { font-size: 44px; }
   .hero__figura { width: 340px; }
-  .hero__sub, .hero__lista, .hero__botoes { max-width: 560px; }
-  .hero__botoes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pilares__lista { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hero__botoes { max-width: 340px; }
 }

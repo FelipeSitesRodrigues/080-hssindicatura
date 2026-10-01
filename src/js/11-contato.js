@@ -1,84 +1,36 @@
-// Formulários de contato. Na Home, o "Agendar diagnóstico" mora num <template> e só entra na
-// página quando o contato chega a 900 px da tela (ou quando alguém clica num link pro
-// #contato): com o formulário no HTML, o preenchimento automático do Chrome forçava um
-// layout da página inteira no carregamento. Na página Contato ele também mora num <template>
-// e entra logo depois da primeira pintura, com a mensagem e a escolha entre agendar o
-// diagnóstico e pedir a proposta.
+// Formulário da página Contato ("Agendar uma conversa", o CTA do briefing final). Ele mora
+// num <template> e entra logo depois da primeira pintura: no HTML, os campos e o
+// preenchimento automático do Chrome dobravam o custo do primeiro layout.
 // Depois de montado: valida no envio (e de novo a cada campo corrigido), monta a mensagem
 // com os dados e abre o WhatsApp da HS numa aba nova. Estados: erro (aria-invalid e texto
 // embaixo do campo), carregando no botão e sucesso com o link de reserva, caso o navegador
 // bloqueie a aba. Os dados ficam no formulário.
 ;(() => {
   const numero = '{{cfg.whatsapp}}'
-  const INTRO = {
-    diagnostico: 'Olá! Vim pelo site da HS Sindicatura e quero agendar um diagnóstico da gestão do meu condomínio.',
-    proposta: 'Olá! Vim pelo site da HS Sindicatura e gostaria de solicitar uma proposta de sindicatura para o meu condomínio.',
-  }
-  const ROTULO = { diagnostico: 'Agendar diagnóstico', proposta: 'Solicitar proposta' }
+  const INTRO = 'Olá, conheci a HS Sindicatura pelo site e gostaria de agendar uma conversa sobre a gestão do meu condomínio.'
 
   // os que já vêm no HTML
   document.querySelectorAll('form.form').forEach(ligar)
 
   // o da página Contato: entra logo depois da primeira pintura (o rAF cai no primeiro quadro e
-  // o setTimeout, depois dele). No HTML, os campos e o preenchimento automático do Chrome
-  // dobravam o custo do primeiro layout. Enquanto isso ele está na espera da animação de entrada.
-  const moldeContato = document.getElementById('form-molde-contato')
-  if (moldeContato) {
-    const lugarContato = moldeContato.parentElement
+  // o setTimeout, depois dele). Enquanto isso ele está na espera da animação de entrada.
+  const molde = document.getElementById('form-molde-contato')
+  if (molde) {
+    const lugar = molde.parentElement
     requestAnimationFrame(() =>
       setTimeout(() => {
-        lugarContato.append(moldeContato.content.cloneNode(true))
-        lugarContato.classList.add('cto__form--montado')
-        ligar(lugarContato.querySelector('form'))
+        lugar.append(molde.content.cloneNode(true))
+        lugar.classList.add('cto__form--montado')
+        ligar(lugar.querySelector('form'))
       }, 0),
     )
-  }
-
-  // o da Home, no molde
-  const lugar = document.querySelector('.contato__form')
-  const molde = document.getElementById('form-molde')
-  const secao = document.getElementById('contato')
-  if (lugar && molde && secao) {
-    let montado = false
-    const montar = () => {
-      if (montado) return
-      montado = true
-      lugar.append(molde.content.cloneNode(true))
-      lugar.classList.add('contato__form--montado')
-      ligar(lugar.querySelector('form'))
-    }
-    // perto da tela, no clique num link pro contato ou chegando com #contato no endereço
-    if ('IntersectionObserver' in window) {
-      const io = new IntersectionObserver(
-        ([e]) => {
-          if (!e.isIntersecting) return
-          io.disconnect()
-          montar()
-        },
-        { rootMargin: '900px 0px 900px 0px' },
-      )
-      io.observe(secao)
-    } else montar()
-    if (location.hash === '#contato') montar()
-    document.addEventListener('click', (e) => e.target.closest('a[href="#contato"]') && montar(), true)
   }
 
   function ligar(form) {
     const f = form.elements
     const sucesso = form.querySelector('.form__sucesso')
     const reserva = form.querySelector('.form__link')
-    const rotulo = form.querySelector('.form__rotulo')
     const digitos = (s) => s.replace(/\D/g, '')
-    const assunto = () => (f.assunto ? f.assunto.value : 'diagnostico')
-
-    // a escolha do assunto troca o texto do botão (e chega pelo endereço: ?assunto=proposta)
-    if (f.assunto) {
-      const pedido = new URLSearchParams(location.search).get('assunto')
-      if (pedido in ROTULO) f.assunto.value = pedido
-      const trocar = () => (rotulo.textContent = ROTULO[assunto()])
-      form.addEventListener('change', (e) => e.target.name === 'assunto' && trocar())
-      trocar()
-    }
 
     // máscara do WhatsApp: (11) 91234-5678
     f.whatsapp.addEventListener('input', () => {
@@ -121,10 +73,9 @@
         f[invalidos[0]].focus()
         return
       }
-      const qual = assunto()
       const obs = f.mensagem?.value.trim()
       const texto = [
-        INTRO[qual],
+        INTRO,
         '',
         `*Nome:* ${f.nome.value.trim()}`,
         `*WhatsApp:* ${f.whatsapp.value.trim()}`,
@@ -140,8 +91,8 @@
       const aba = window.open(url, '_blank')
       if (aba) aba.opener = null
       const origem = form.dataset.origem || 'contato'
-      ;(window.dataLayer = window.dataLayer || []).push({ event: `formulario_${qual}`, origem, tipo: f.tipo.value })
-      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { origem, assunto: qual, tipo: f.tipo.value })
+      ;(window.dataLayer = window.dataLayer || []).push({ event: 'formulario_conversa', origem, tipo: f.tipo.value })
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { origem, tipo: f.tipo.value })
       setTimeout(() => {
         form.classList.remove('form--enviando')
         sucesso.hidden = false

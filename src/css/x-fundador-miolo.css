@@ -1,0 +1,88 @@
+/* ---------------------------------------------------------------- o fundador (página A HS, escura)
+   Era a seção do fundador da Home; desde o briefing final (2026-10-01) a Home tem só o
+   bloco Liderança (07-lideranca.css) e o texto completo mora aqui, na página A HS.
+   A foto do Danilo à esquerda com uma moldura de fio dourado deslocada por trás; à direita,
+   o título, o nome, "Administrador e Empresário", a função em dourado, os 3 selos da
+   formação, as áreas da trajetória, o texto completo (6 parágrafos), a frase em dourado e
+   os dois botões. O texto é longo: no computador a foto acompanha a leitura (sticky).
+   Entrada: a foto vem da esquerda, os selos em sequência, a frase depois do texto.       */
+.fundador__grade { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); align-items: start; gap: clamp(40px, 5vw, 80px); }
+
+.fundador__foto { position: sticky; top: calc(var(--altura-topo) + 36px); }
+.fundador__foto picture, .fundador__foto img { position: relative; display: block; width: 100%; max-width: none; border-radius: 6px; }
+.fundador__foto img { aspect-ratio: 1066 / 1600; object-fit: cover; box-shadow: 0 30px 60px -34px rgb(0 0 0 / .9); }
+.fundador__moldura {
+  position: absolute;
+  inset: 16px -16px -16px 16px;
+  border: 1.5px solid rgb(201 148 60 / .8);
+  border-radius: 6px;
+  pointer-events: none;
+}
+.fundador__foto picture { z-index: 1; }
+
+.fundador__titulo { font-size: clamp(24px, .9rem + 1vw, 32px); }
+.fundador__nome { margin-top: 18px; color: var(--branco); font: 700 22px/1.2 var(--fonte-titulo); }
+.fundador__cargo { margin-top: 4px; color: var(--metal); font-size: 15px; }
+.fundador__funcao { margin-top: 8px; color: var(--dourado); font: 600 12.5px/1.4 var(--fonte-titulo); letter-spacing: .1em; text-transform: uppercase; }
+
+.fundador__selos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 24px; }
+.selo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px 15px;
+  border: 1px solid rgb(201 148 60 / .4);
+  border-radius: 8px;
+  background: rgb(255 255 255 / .03);
+  color: rgb(255 255 255 / .92);
+  font: 500 13.5px/1.35 var(--fonte-texto);
+}
+.selo__hex { position: relative; display: grid; place-items: center; flex: none; width: 36px; height: 40px; color: var(--dourado); }
+.selo__hex::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--dourado);
+  -webkit-mask: var(--hex-contorno) center / contain no-repeat;
+  mask: var(--hex-contorno) center / contain no-repeat;
+}
+.selo__hex .i { width: 18px; height: 18px; }
+
+.fundador__trajetoria { margin-top: 26px; }
+.fundador__trajetoria-titulo { color: var(--branco); font: 600 12.5px/1.3 var(--fonte-titulo); letter-spacing: .12em; text-transform: uppercase; }
+.fundador__trajetoria .trajetoria { margin-top: 12px; }
+.fundador__texto { display: grid; gap: 14px; max-width: 46em; margin-top: 28px; color: var(--claro-2); font-size: 15.5px; line-height: 1.72; }
+.fundador__frase {
+  position: relative;
+  max-width: 36em;
+  margin-top: 26px;
+  padding: 4px 0 4px 26px;
+  border-left: 2px solid var(--dourado);
+  color: var(--dourado);
+  font: 600 17.5px/1.5 var(--fonte-titulo);
+}
+.fundador__botoes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .js .fundador__selos.visivel .selo__hex { animation: cresce .6s var(--ease-out) calc(var(--i, 0) * 110ms + 200ms) backwards; }
+  .js .fundador__frase.visivel { animation: da-esquerda 1s var(--ease-suave) .15s backwards; }
+}
+
+/* 1024 a 1279: a foto um pouco mais estreita */
+@media (min-width: 64em) and (max-width: 79.99em) {
+  .fundador__grade { grid-template-columns: minmax(0, 300px) minmax(0, 1fr); }
+}
+@media (max-width: 63.99em) {
+  .fundador__grade { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .fundador__foto { position: relative; top: auto; width: min(100% - 16px, 420px); }
+}
+@media (max-width: 39.99em) {
+  .fundador__selos { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .selo { flex-direction: row; align-items: center; gap: 12px; padding: 12px 14px; }
+  .fundador__texto { font-size: 15.5px; }
+  .fundador__frase { font-size: 17px; padding-left: 20px; }
+  .fundador__botoes { display: grid; }
+  .fundador__botoes .btn { width: 100%; }
+}
